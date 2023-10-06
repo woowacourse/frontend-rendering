@@ -1,4 +1,4 @@
-import { PostRequestKind, PostSorting, PostStatus } from '@pages/HomePage/types';
+import { PostRequestKind, PostSorting, PostStatus } from '@/app/types';
 
 import { StringDate } from './time';
 
