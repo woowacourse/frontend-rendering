@@ -1,5 +1,3 @@
-import { useLocation, useParams } from 'react-router-dom';
-
 import { PostRequestKind } from '@/app/types';
 
 import { POST_TYPE } from '@/constants/api';
@@ -9,6 +7,7 @@ import { PATH } from '@/constants/path';
 import { getPathFragment } from '@/utils/getPathFragment';
 
 import { useCurrentKeyword } from './useCurrentKeyword';
+import { useRouter } from 'next/router';
 
 const REQUEST_URL: Record<string, PostRequestKind> = {
   [PATH.HOME]: POST_TYPE.ALL,
@@ -19,13 +18,12 @@ const REQUEST_URL: Record<string, PostRequestKind> = {
 };
 
 export const usePostRequestInfo = () => {
-  const params = useParams<{ categoryId?: string }>();
   const { currentKeyword } = useCurrentKeyword();
-  const { pathname } = useLocation();
+  const router = useRouter();
 
-  const categoryId = Number(params.categoryId ?? DEFAULT_CATEGORY_ID);
+  const categoryId = Number(router.query.categoryId ?? DEFAULT_CATEGORY_ID);
 
-  const convertedPathname = getPathFragment(pathname);
+  const convertedPathname = getPathFragment(router.asPath);
   const postType = REQUEST_URL[convertedPathname];
 
   const postOptionalOption = {

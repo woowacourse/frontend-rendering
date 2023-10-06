@@ -1,8 +1,8 @@
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 
 import { styled } from 'styled-components';
 
-import { theme } from '@styles/theme';
+import { theme } from '@/styles/theme';
 
 export const Container = styled.li<{ $isPreview: boolean }>`
   width: 100%;
@@ -14,7 +14,8 @@ export const Container = styled.li<{ $isPreview: boolean }>`
   line-height: 1.5;
 
   padding-bottom: ${({ $isPreview }) => $isPreview && '30px'};
-  border-bottom: ${({ $isPreview }) => $isPreview && '1px solid rgba(0, 0, 0, 0.1)'};
+  border-bottom: ${({ $isPreview }) =>
+    $isPreview && '1px solid rgba(0, 0, 0, 0.1)'};
 
   @media (min-width: ${theme.breakpoint.sm}) {
     font: var(--text-caption);
@@ -38,7 +39,8 @@ export const ActivateState = styled.div<{ $isActive: boolean }>`
   right: 0;
   top: 0;
 
-  background-color: ${({ $isActive }) => ($isActive ? 'var(--active-post)' : 'var(--dark-gray)')};
+  background-color: ${({ $isActive }) =>
+    $isActive ? 'var(--active-post)' : 'var(--dark-gray)'};
 `;
 
 export const Title = styled.p<{ $isPreview: boolean }>`
@@ -50,7 +52,7 @@ export const Title = styled.p<{ $isPreview: boolean }>`
 
   overflow: hidden;
 
-  -webkit-line-clamp: ${props => props.$isPreview && '2'};
+  -webkit-line-clamp: ${(props) => props.$isPreview && '2'};
   -webkit-box-orient: vertical;
 
   @media (min-width: ${theme.breakpoint.sm}) {
@@ -86,7 +88,7 @@ export const Content = styled.div<{ $isPreview: boolean }>`
 
   overflow: hidden;
 
-  -webkit-line-clamp: ${props => props.$isPreview && '10'};
+  -webkit-line-clamp: ${(props) => props.$isPreview && '10'};
   -webkit-box-orient: vertical;
 
   @media (min-width: ${theme.breakpoint.sm}) {
