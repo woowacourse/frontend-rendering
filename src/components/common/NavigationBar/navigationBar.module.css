@@ -1,0 +1,32 @@
+.nav {
+  width: 100%;
+  max-width: 600px;
+  height: 60px;
+  margin: 0 auto;
+}
+
+.menuList {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 60px;
+  padding-top: 4px;
+  border: 1px solid var(--border-disabled);
+  border-bottom: none;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.menuItem {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.menuText {
+  font-size: 14px;
+  line-height: 14px;
+  color: var(--text-disabled);
+}
