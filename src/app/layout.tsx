@@ -23,7 +23,7 @@ export default function RootLayout({
   const { drawerRef, closeDrawer, openDrawer } = useDrawer('left');
 
   return (
-    <html lang='en'>
+    <html lang='ko'>
       <body className={inter.className}>
         <S.HeaderWrapper>
           <NarrowMainHeader handleMenuOpenClick={openDrawer} />
