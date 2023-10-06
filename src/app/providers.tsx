@@ -3,6 +3,7 @@
 
 import React from 'react';
 import { QueryClientProvider, QueryClient } from '@tanstack/react-query';
+import { Registry as StyledComponentRegistry } from '@/styles/registry';
 
 type Props = {
   children: React.ReactNode;
@@ -12,7 +13,6 @@ function Providers({ children }: Props) {
   const [client] = React.useState(
     new QueryClient({
       defaultOptions: {
-        // react-query 전역 설정
         queries: {
           refetchOnWindowFocus: false,
           retry: false,
@@ -21,7 +21,11 @@ function Providers({ children }: Props) {
     })
   );
 
-  return <QueryClientProvider client={client}>{children}</QueryClientProvider>;
+  return (
+    <QueryClientProvider client={client}>
+      <StyledComponentRegistry>{children}</StyledComponentRegistry>
+    </QueryClientProvider>
+  );
 }
 
 export default Providers;
