@@ -1,21 +1,28 @@
 import { ChangeEvent, FormEvent, useRef } from 'react';
-import { useNavigate } from 'react-router-dom';
 
-import { SEARCH_KEYWORD_MAX_LENGTH } from '@constants/policy';
+import { SEARCH_KEYWORD_MAX_LENGTH } from '@/constants/policy';
 
-import { getTrimmedWord } from '@utils/getTrimmedWord';
+import { getTrimmedWord } from '@/utils/getTrimmedWord';
 
 import { useText } from './useText';
+import { useRouter } from 'next/router';
 
 export const useSearch = (initialKeyword = '') => {
-  const navigate = useNavigate();
+  const router = useRouter();
   const searchInputRef = useRef<HTMLInputElement>(null);
-  const { text: keyword, setText: setKeyword, handleTextChange } = useText(initialKeyword);
+  const {
+    text: keyword,
+    setText: setKeyword,
+    handleTextChange,
+  } = useText(initialKeyword);
 
   const handleKeywordChange = (event: ChangeEvent<HTMLInputElement>) => {
     if (!searchInputRef.current) return;
 
-    handleTextChange(event, { MAX_LENGTH: SEARCH_KEYWORD_MAX_LENGTH, MIN_LENGTH: 0 });
+    handleTextChange(event, {
+      MAX_LENGTH: SEARCH_KEYWORD_MAX_LENGTH,
+      MIN_LENGTH: 0,
+    });
   };
 
   const handleSearchSubmit = (event: FormEvent<HTMLFormElement>) => {
@@ -35,7 +42,7 @@ export const useSearch = (initialKeyword = '') => {
       return;
     }
 
-    navigate(`/search?keyword=${trimmedKeyword}`);
+    router.push(`/search?keyword=${trimmedKeyword}`);
   };
 
   return { keyword, handleKeywordChange, handleSearchSubmit, searchInputRef };

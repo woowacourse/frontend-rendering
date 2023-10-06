@@ -1,4 +1,4 @@
-import { DHMTime } from '@type/time';
+import { DHMTime } from '@/types/time';
 
 /**
  * @param addTime  : 사용자가 선택한 마감 시간 (EX.7일 후)

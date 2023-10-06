@@ -1,4 +1,4 @@
-import { InputLengthRange } from '@hooks/useText';
+import { InputLengthRange } from '@/hooks/useText';
 
 // 게시글 관련 상수
 export const POST = {
@@ -20,7 +20,10 @@ export const POST_CONTENT: InputLengthRange = {
   MIN_LENGTH: 2,
 } as const;
 
-type WritingOptionPolicy = { MIN_COUNT: number; MAX_COUNT: number } & InputLengthRange;
+type WritingOptionPolicy = {
+  MIN_COUNT: number;
+  MAX_COUNT: number;
+} & InputLengthRange;
 export const POST_WRITING_OPTION: WritingOptionPolicy = {
   MIN_LENGTH: 1,
   MAX_LENGTH: 50,

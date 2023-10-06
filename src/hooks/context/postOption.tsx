@@ -1,8 +1,14 @@
-import { Dispatch, PropsWithChildren, SetStateAction, createContext, useState } from 'react';
+import {
+  Dispatch,
+  PropsWithChildren,
+  SetStateAction,
+  createContext,
+  useState,
+} from 'react';
 
-import { PostSorting, PostStatus } from '@pages/HomePage/types';
+import { PostSorting, PostStatus } from '@/app/types';
 
-import { SORTING, STATUS } from '@constants/post';
+import { SORTING, STATUS } from '@/constants/post';
 
 export const PostOptionContext = createContext<PostOptionContextProps>({
   postOption: { sorting: SORTING.LATEST, status: STATUS.PROGRESS },

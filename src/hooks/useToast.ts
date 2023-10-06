@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 
-import { TOAST_TIME } from '@constants/animation';
+import { TOAST_TIME } from '@/constants/animation';
 
 export const useToast = () => {
   const [isToastOpen, setIsToastOpen] = useState(false);

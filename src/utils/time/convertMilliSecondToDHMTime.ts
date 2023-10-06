@@ -1,4 +1,4 @@
-import { DHMTime } from '@type/time';
+import { DHMTime } from '@/types/time';
 
 export const convertMilliSecondToDHMTime = (milliSecond: number): DHMTime => {
   const minuteUnit = 60_000;

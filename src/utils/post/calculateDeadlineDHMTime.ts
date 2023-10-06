@@ -1,7 +1,7 @@
-import { DHMTime, StringDate } from '@type/time';
+import { DHMTime, StringDate } from '@/types/time';
 
-import { calculateTimeGap } from '@utils/time/calculateTimeGap';
-import { convertMilliSecondToDHMTime } from '@utils/time/convertMilliSecondToDHMTime';
+import { calculateTimeGap } from '@/utils/time/calculateTimeGap';
+import { convertMilliSecondToDHMTime } from '@/utils/time/convertMilliSecondToDHMTime';
 
 export const calculateDeadlineDHMTime = (
   createdAt?: StringDate,

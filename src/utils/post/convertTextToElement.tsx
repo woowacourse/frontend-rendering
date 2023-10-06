@@ -7,14 +7,16 @@ export const convertTextToElement = (text: string) => {
     if (index % 2 === 1) {
       // 링크
       const linkText = part;
-      const linkUrl = linkText.startsWith('http' || 'https') ? linkText : `https://${linkText}`;
+      const linkUrl = linkText.startsWith('http' || 'https')
+        ? linkText
+        : `https://${linkText}`;
       return (
         <a
           key={index}
           href={linkUrl}
-          target="_blank"
+          target='_blank'
           style={{ textDecoration: 'underline', color: '#004EC5' }}
-          rel="noreferrer noopener"
+          rel='noreferrer noopener'
         >
           {linkText}
         </a>
@@ -22,7 +24,7 @@ export const convertTextToElement = (text: string) => {
     }
 
     // 링크가 아닌 문자열
-    return <span>{part}</span>;
+    return <span key={index}>{part}</span>;
   });
 
   return elementList;

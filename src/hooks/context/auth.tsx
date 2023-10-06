@@ -1,16 +1,22 @@
-import React, { Dispatch, SetStateAction, createContext, useEffect, useState } from 'react';
+import React, {
+  Dispatch,
+  SetStateAction,
+  createContext,
+  useEffect,
+  useState,
+} from 'react';
 
-import { LoggedInfo } from '@type/user';
+import { LoggedInfo } from '@/types/user';
 
-import { useUserInfo } from '@hooks/query/user/useUserInfo';
+import { useUserInfo } from '@/hooks/query/user/useUserInfo';
 
-import { logoutUser } from '@api/userInfo';
+import { logoutUser } from '@/api/userInfo';
 
-import { ACCESS_TOKEN_KEY } from '@constants/localStorage';
+import { ACCESS_TOKEN_KEY } from '@/constants/localStorage';
 
-import { clearCookie } from '@utils/cookie';
-import { getLocalStorage, removeLocalStorage } from '@utils/localStorage';
-import { decodeToken } from '@utils/login/decodeToken';
+import { clearCookie } from '@/utils/cookie';
+import { getLocalStorage, removeLocalStorage } from '@/utils/localStorage';
+import { decodeToken } from '@/utils/login/decodeToken';
 
 interface Auth {
   loggedInfo: LoggedInfo;
@@ -38,7 +44,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     if (userInfo && loggedInfo.isLoggedIn) {
-      setLoggedInfo(origin => ({ ...origin, userInfo }));
+      setLoggedInfo((origin) => ({ ...origin, userInfo }));
     }
   }, [loggedInfo.isLoggedIn, userInfo]);
 
@@ -48,12 +54,14 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     if (accessToken) {
       const decodedPayload = decodeToken(accessToken);
       const id = decodedPayload.memberId;
-      setLoggedInfo(origin => ({ ...origin, id, isLoggedIn: true }));
+      setLoggedInfo((origin) => ({ ...origin, id, isLoggedIn: true }));
     }
   }, []);
 
   return (
-    <AuthContext.Provider value={{ loggedInfo, setLoggedInfo, clearLoggedInfo }}>
+    <AuthContext.Provider
+      value={{ loggedInfo, setLoggedInfo, clearLoggedInfo }}
+    >
       {children}
     </AuthContext.Provider>
   );

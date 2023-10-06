@@ -1,4 +1,4 @@
-import { REPORT_MESSAGE } from '@constants/policyMessage';
+import { REPORT_MESSAGE } from '@/constants/policyMessage';
 
 export type ReportType = 'POST' | 'COMMENT' | 'NICKNAME';
 

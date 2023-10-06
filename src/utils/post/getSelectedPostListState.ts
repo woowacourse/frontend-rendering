@@ -1,6 +1,6 @@
-import { Category } from '@type/category';
+import { Category } from '@/types/category';
 
-import { PostRequestKind } from '@pages/HomePage/types';
+import { PostRequestKind } from '@/app/types';
 
 export interface SelectedPostListState {
   postType: PostRequestKind;
@@ -14,7 +14,9 @@ export const getSelectedPostListState = ({
   categoryList,
 }: SelectedPostListState) => {
   if (postType === 'category') {
-    const selectedCategory = categoryList.find(category => category.id === categoryId);
+    const selectedCategory = categoryList.find(
+      (category) => category.id === categoryId
+    );
 
     return selectedCategory?.name ?? '전체';
   }

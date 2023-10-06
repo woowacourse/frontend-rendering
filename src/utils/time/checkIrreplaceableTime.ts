@@ -1,16 +1,19 @@
-import { DHMTime } from '@type/time';
+import { DHMTime } from '@/types/time';
 
-import { MAX_DEADLINE } from '@constants/policy';
+import { MAX_DEADLINE } from '@/constants/policy';
 
-import { addTimeToDate } from '@utils/post/addTimeToDate';
+import { addTimeToDate } from '@/utils/post/addTimeToDate';
 
-//시간 수정을 할 수 없다면 true
-export const checkIrreplaceableTime = (addTime: DHMTime, createTime: string) => {
+//시간 수정을 할 수 없다면 trues
+export const checkIrreplaceableTime = (
+  addTime: DHMTime,
+  createTime: string
+) => {
   const transCreateTime = createTime.split('-').join('/');
   const changedDeadline = addTimeToDate(addTime, new Date(transCreateTime));
 
   //마감시한이 0시간 0분 0초 추가된다면 거절
-  if (Object.values(addTime).every(time => time === 0)) return true;
+  if (Object.values(addTime).every((time) => time === 0)) return true;
 
   const limitDeadline = addTimeToDate(
     { day: MAX_DEADLINE, hour: 0, minute: 0 },
