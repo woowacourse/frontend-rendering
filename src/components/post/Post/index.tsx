@@ -1,24 +1,24 @@
 import { ForwardedRef, forwardRef, memo, useContext, useEffect } from 'react';
 
-import { PostInfo } from '@type/post';
+import { PostInfo } from '@/types/post';
 
-import { useToast } from '@hooks';
+import { useToast } from '@/hooks';
 
-import { AuthContext } from '@hooks/context/auth';
-import { useCreateVote } from '@hooks/query/post/useCreateVote';
-import { useEditVote } from '@hooks/query/post/useEditVote';
+import { AuthContext } from '@/hooks/context/auth';
+import { useCreateVote } from '@/hooks/query/post/useCreateVote';
+import { useEditVote } from '@/hooks/query/post/useEditVote';
 
-import WrittenVoteOptionList from '@components/optionList/WrittenVoteOptionList';
+import WrittenVoteOptionList from '@/components/optionList/WrittenVoteOptionList';
 
-import { PATH } from '@constants/path';
-import { POST } from '@constants/policy';
+import { PATH } from '@/constants/path';
+import { POST } from '@/constants/policy';
 
-import { convertTextToElement } from '@utils/post/convertTextToElement';
-import { checkClosedPost } from '@utils/time/checkClosedPost';
-import { convertTimeToWord } from '@utils/time/convertTimeToWord';
+import { convertTextToElement } from '@/utils/post/convertTextToElement';
+import { checkClosedPost } from '@/utils/time/checkClosedPost';
+import { convertTimeToWord } from '@/utils/time/convertTimeToWord';
 
-import commentIcon from '@assets/comment.svg';
-import photoIcon from '@assets/photo_black.svg';
+import commentIcon from '@/assets/comment.svg';
+import photoIcon from '@/assets/photo_black.svg';
 
 import Toast from '../../common/Toast';
 
@@ -63,7 +63,9 @@ const Post = forwardRef(function Post(
   const isActive = !checkClosedPost(deadline);
 
   const isStatisticsVisible =
-    writer.id === loggedInfo.id || !isActive || voteInfo.selectedOptionId !== POST.NOT_VOTE;
+    writer.id === loggedInfo.id ||
+    !isActive ||
+    voteInfo.selectedOptionId !== POST.NOT_VOTE;
 
   const handleVoteClick = (newOptionId: number) => {
     if (!loggedInfo.isLoggedIn) {
@@ -116,7 +118,7 @@ const Post = forwardRef(function Post(
     <S.Container as={isPreview ? 'li' : 'div'} ref={ref} $isPreview={isPreview}>
       <S.DetailLink
         as={isPreview ? '' : 'main'}
-        to={isPreview ? `${PATH.POST}/${postId}` : '#'}
+        href={isPreview ? `${PATH.POST}/${postId}` : '#'}
         $isPreview={isPreview}
         aria-describedby={
           isPreview
@@ -126,13 +128,15 @@ const Post = forwardRef(function Post(
       >
         <S.Category
           tabIndex={isPreviewTabIndex}
-          aria-label={`카테고리 ${category.map(category => category.name).join('|')}`}
+          aria-label={`카테고리 ${category
+            .map((category) => category.name)
+            .join('|')}`}
         >
-          {category.map(category => category.name).join(' | ')}
+          {category.map((category) => category.name).join(' | ')}
         </S.Category>
         <S.ActivateState
           tabIndex={isPreviewTabIndex}
-          role="status"
+          role='status'
           aria-label={`게시글 ${isActive ? '진행중' : '마감완료'}`}
           $isActive={isActive}
         />
@@ -144,7 +148,10 @@ const Post = forwardRef(function Post(
           {title}
         </S.Title>
         <S.Wrapper>
-          <span aria-label={`작성자 ${writer.nickname}`} tabIndex={isPreviewTabIndex}>
+          <span
+            aria-label={`작성자 ${writer.nickname}`}
+            tabIndex={isPreviewTabIndex}
+          >
             {writer.nickname}
           </span>
           <S.Wrapper>
@@ -155,7 +162,9 @@ const Post = forwardRef(function Post(
               {`${convertTimeToWord(createTime)}  |`}
             </span>
             <span
-              aria-label={`투표 마감일시 ${isActive ? convertTimeToWord(deadline) : '마감 완료'}`}
+              aria-label={`투표 마감일시 ${
+                isActive ? convertTimeToWord(deadline) : '마감 완료'
+              }`}
               tabIndex={isPreviewTabIndex}
             >
               {isActive ? convertTimeToWord(deadline) : '마감 완료'}
@@ -169,7 +178,9 @@ const Post = forwardRef(function Post(
         >
           {convertTextToElement(content)}
         </S.Content>
-        {!isPreview && imageUrl && <S.Image src={imageUrl} alt={'본문에 포함된 이미지'} />}
+        {!isPreview && imageUrl && (
+          <S.Image src={imageUrl} alt={'본문에 포함된 이미지'} />
+        )}
       </S.DetailLink>
       <WrittenVoteOptionList
         isStatisticsVisible={isStatisticsVisible}
@@ -181,17 +192,17 @@ const Post = forwardRef(function Post(
       {isPreview && (
         <S.PreviewBottom>
           <S.IconUint>
-            <S.Icon src={photoIcon} alt="사진 갯수" />
+            <S.Icon src={photoIcon} alt='사진 갯수' />
             <span>{imageCount}</span>
           </S.IconUint>
           <S.IconUint>
-            <S.Icon src={commentIcon} alt="댓글 갯수" />
+            <S.Icon src={commentIcon} alt='댓글 갯수' />
             <span>{commentCount}</span>
           </S.IconUint>
         </S.PreviewBottom>
       )}
       {isToastOpen && (
-        <Toast size="md" position="bottom">
+        <Toast size='md' position='bottom'>
           {toastMessage}
         </Toast>
       )}

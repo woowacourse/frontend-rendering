@@ -8,8 +8,8 @@ import { usePostList } from '@/hooks/query/usePostList';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 import { usePostRequestInfo } from '@/hooks/usePostRequestInfo';
 
-import { SORTING_OPTION, STATUS_OPTION } from '@/pages/HomePage/constants';
-import { PostSorting, PostStatus } from '@/pages/HomePage/types';
+import { SORTING_OPTION, STATUS_OPTION } from '@/app/constants';
+import { PostSorting, PostStatus } from '@/app/types';
 
 import Select from '@/components/common/Select';
 import Skeleton from '@/components/common/Skeleton';
@@ -105,7 +105,7 @@ export default function PostList() {
       </S.SelectContainer>
       <S.HiddenLink
         aria-label='게시글 작성 페이지로 이동'
-        to={PATH.POST_WRITE}
+        href={PATH.POST_WRITE}
       />
       <S.PostListContainer>
         {isPostListEmpty && (
@@ -139,7 +139,7 @@ export default function PostList() {
               />
               <S.HiddenLink
                 aria-label='게시글 작성 페이지로 이동'
-                to={PATH.POST_WRITE}
+                href={PATH.POST_WRITE}
               />
             </li>
           </React.Fragment>

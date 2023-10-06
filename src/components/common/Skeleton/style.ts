@@ -1,6 +1,6 @@
 import { styled } from 'styled-components';
 
-import { theme } from '@styles/theme';
+import { theme } from '@/styles/theme';
 
 export const Container = styled.div`
   display: flex;
@@ -23,10 +23,10 @@ const Box = styled.div`
 `;
 
 export const FirstBox = styled(Box)<{ $isLarge: boolean }>`
-  height: ${props => (props.$isLarge ? '40vh' : '30vh')};
+  height: ${(props) => (props.$isLarge ? '40vh' : '30vh')};
 
   @media (min-width: ${theme.breakpoint.sm}) {
-    height: ${props => (props.$isLarge ? '44vh' : '34vh')};
+    height: ${(props) => (props.$isLarge ? '44vh' : '34vh')};
   }
 `;
 
