@@ -1,3 +1,5 @@
+'use client';
+
 import { useEffect, useRef, useState } from 'react';
 
 interface UseIntersectionObserverParams {
@@ -6,7 +8,9 @@ interface UseIntersectionObserverParams {
   thresholds: number;
 }
 
-export const useIntersectionObserver = (options: UseIntersectionObserverParams) => {
+export const useIntersectionObserver = (
+  options: UseIntersectionObserverParams
+) => {
   const [isIntersecting, setIsIntersecting] = useState(false);
   const targetRef = useRef(null);
 

@@ -1,6 +1,8 @@
+'use client';
+
 import { styled } from 'styled-components';
 
-import { theme } from '@styles/theme';
+import { theme } from '@/styles/theme';
 
 import { SELECT_DEFAULT, SELECT_DISABLED, SELECT_SELECTED } from './constants';
 
@@ -30,7 +32,10 @@ const SELECTED_CSS_OPTION = {
   },
 };
 
-type Status = typeof SELECT_DEFAULT | typeof SELECT_DISABLED | typeof SELECT_SELECTED;
+type Status =
+  | typeof SELECT_DEFAULT
+  | typeof SELECT_DISABLED
+  | typeof SELECT_SELECTED;
 
 export const SelectedContainer = styled.button<{ $status: Status }>`
   display: flex;

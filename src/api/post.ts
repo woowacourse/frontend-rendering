@@ -1,13 +1,20 @@
-import { PostInfo, PostListByOptionalOption, PostListByRequiredOption } from '@type/post';
-import { StringDate } from '@type/time';
+import {
+  PostInfo,
+  PostListByOptionalOption,
+  PostListByRequiredOption,
+} from '@/types/post';
+import { StringDate } from '@/types/time';
 
 import {
   DEFAULT_CATEGORY_ID,
   POST_TYPE,
   REQUEST_POST_KIND_URL,
   SEARCH_KEYWORD,
-} from '@constants/api';
-import { REQUEST_SORTING_OPTION, REQUEST_STATUS_OPTION } from '@constants/post';
+} from '@/constants/api';
+import {
+  REQUEST_SORTING_OPTION,
+  REQUEST_STATUS_OPTION,
+} from '@/constants/post';
 
 import {
   getFetch,
@@ -16,7 +23,7 @@ import {
   multiPutFetch,
   multiPostFetch,
   deleteFetch,
-} from '@utils/fetch';
+} from '@/utils/fetch';
 
 const BASE_URL = process.env.VOTOGETHER_BASE_URL ?? '';
 
@@ -48,7 +55,10 @@ export interface PostDetailResponse {
 
 export const transformPostResponse = (post: PostDetailResponse): PostInfo => {
   return {
-    category: post.categories.map(category => ({ id: category.id, name: category.name })),
+    category: post.categories.map((category) => ({
+      id: category.id,
+      name: category.name,
+    })),
     content: post.content,
     deadline: post.deadline,
     imageUrl: post.imageUrl,
@@ -60,7 +70,7 @@ export const transformPostResponse = (post: PostDetailResponse): PostInfo => {
     voteInfo: {
       allPeopleCount: post.voteInfo.totalVoteCount,
       selectedOptionId: post.voteInfo.selectedOptionId,
-      options: post.voteInfo.options.map(option => ({
+      options: post.voteInfo.options.map((option) => ({
         id: option.optionId,
         text: option.content,
         peopleCount: option.voteCount,
@@ -84,20 +94,27 @@ export interface OptionData {
   newOptionId: number;
 }
 
-export const changeVotedOption = async (postId: number, optionData: OptionData) => {
+export const changeVotedOption = async (
+  postId: number,
+  optionData: OptionData
+) => {
   return await patchFetch(
     `${BASE_URL}/posts/${postId}/options?source=${optionData.originOptionId}&target=${optionData.newOptionId}`
   );
 };
 
 export const getPost = async (postId: number): Promise<PostInfo> => {
-  const post = await getFetch<PostDetailResponse>(`${BASE_URL}/posts/${postId}`);
+  const post = await getFetch<PostDetailResponse>(
+    `${BASE_URL}/posts/${postId}`
+  );
 
   return transformPostResponse(post);
 };
 
 export const getPostForGuest = async (postId: number): Promise<PostInfo> => {
-  const post = await getFetch<PostDetailResponse>(`${BASE_URL}/posts/${postId}/guest`);
+  const post = await getFetch<PostDetailResponse>(
+    `${BASE_URL}/posts/${postId}/guest`
+  );
 
   return transformPostResponse(post);
 };
@@ -122,7 +139,8 @@ export const makePostListUrl = (
   requiredOption: PostListByRequiredOption,
   optionalOption: PostListByOptionalOption
 ) => {
-  const { pageNumber, postSorting, postStatus, postType, isLoggedIn } = requiredOption;
+  const { pageNumber, postSorting, postStatus, postType, isLoggedIn } =
+    requiredOption;
   const { categoryId, keyword } = optionalOption;
 
   const requestedStatus = REQUEST_STATUS_OPTION[postStatus];
@@ -156,6 +174,6 @@ export const getPostList = async (
 
   return {
     pageNumber,
-    postList: postList.map(post => transformPostResponse(post)),
+    postList: postList.map((post) => transformPostResponse(post)),
   };
 };

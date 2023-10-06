@@ -1,3 +1,5 @@
+'use client';
+
 import { ChangeEvent, FormEvent, useRef } from 'react';
 
 import { SEARCH_KEYWORD_MAX_LENGTH } from '@/constants/policy';

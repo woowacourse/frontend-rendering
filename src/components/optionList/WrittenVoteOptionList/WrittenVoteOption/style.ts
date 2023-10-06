@@ -1,6 +1,8 @@
+'use client';
+
 import { styled } from 'styled-components';
 
-import { theme } from '@styles/theme';
+import { theme } from '@/styles/theme';
 
 export const Container = styled.button<{ $isSelected: boolean }>`
   display: flex;
@@ -8,7 +10,9 @@ export const Container = styled.button<{ $isSelected: boolean }>`
   align-items: stretch;
 
   border: ${({ $isSelected }) =>
-    $isSelected ? '2px solid var(--primary-color)' : '1px solid rgba(0, 0, 0, 0.1)'};
+    $isSelected
+      ? '2px solid var(--primary-color)'
+      : '1px solid rgba(0, 0, 0, 0.1)'};
   border-radius: 4px;
   padding: 10px 15px;
 

@@ -1,3 +1,5 @@
+'use client';
+
 import { useState } from 'react';
 
 export const useToggle = (isInitialOpen = false) => {
@@ -12,7 +14,7 @@ export const useToggle = (isInitialOpen = false) => {
   };
 
   const toggleComponent = () => {
-    setIsOpen(prevIsOpen => !prevIsOpen);
+    setIsOpen((prevIsOpen) => !prevIsOpen);
   };
 
   return { isOpen, openComponent, closeComponent, toggleComponent };

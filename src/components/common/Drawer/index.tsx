@@ -1,3 +1,5 @@
+'use client';
+
 import React, {
   ForwardedRef,
   KeyboardEvent,
@@ -54,7 +56,9 @@ export default forwardRef(function Drawer(
       onClose={handleCloseClick}
       onClick={handleCloseClick}
     >
-      <S.CloseButton onClick={handleDrawerClose}>사이드바 닫기버튼</S.CloseButton>
+      <S.CloseButton onClick={handleDrawerClose}>
+        사이드바 닫기버튼
+      </S.CloseButton>
       {children}
       <div style={{ backgroundColor: 'red', width: '100%', height: '100%' }} />
     </S.Dialog>

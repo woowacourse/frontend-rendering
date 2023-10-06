@@ -1,3 +1,5 @@
+'use client';
+
 import { keyframes, styled } from 'styled-components';
 
 import { Size } from '@/types/style';

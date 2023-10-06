@@ -1,3 +1,5 @@
+'use client';
+
 import { theme } from '@/styles/theme';
 import Link from 'next/link';
 

@@ -1,7 +1,7 @@
 import { ButtonHTMLAttributes } from 'react';
 
-import logo from '@assets/logo.svg';
-import votogether from '@assets/projectName.svg';
+import logo from '@/assets/logo.svg';
+import votogether from '@/assets/projectName.svg';
 
 import * as S from './style';
 
@@ -33,15 +33,15 @@ export default function LogoButton({ content, ...rest }: LogoButtonProps) {
   if (content === 'full') {
     return (
       <S.Button content={content} aria-label={ariaLabelText} {...rest}>
-        <img src={logo} alt="로고 아이콘" />
-        <img src={votogether} alt="보투게더 아이콘" />
+        <img src={logo} alt='로고 아이콘' />
+        <img src={votogether} alt='보투게더 아이콘' />
       </S.Button>
     );
   }
 
   return (
     <S.Button content={content} aria-label={ariaLabelText} {...rest}>
-      <img src={src} alt="보투게더 아이콘" />
+      <img src={src} alt='보투게더 아이콘' />
     </S.Button>
   );
 }

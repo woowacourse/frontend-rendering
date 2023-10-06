@@ -1,7 +1,8 @@
+'use client';
 import React, { useState } from 'react';
 
-import chevronDown from '@assets/chevron-down.svg';
-import chevronUp from '@assets/chevron-up.svg';
+import chevronDown from '@/assets/chevron-down.svg';
+import chevronUp from '@/assets/chevron-up.svg';
 
 import { SELECT_DEFAULT, SELECT_DISABLED, SELECT_SELECTED } from './constants';
 import * as S from './style';
@@ -26,7 +27,7 @@ export default function Select<T extends string>({
 
   const toggleOpen = () => {
     if (isDisabled) return;
-    setIsOpen(prev => !prev);
+    setIsOpen((prev) => !prev);
   };
 
   const handleSelectClick = (option: T) => {
@@ -48,12 +49,20 @@ export default function Select<T extends string>({
 
   return (
     <S.Container>
-      <S.SelectedContainer onClick={toggleOpen} $status={getSelectStatus()} {...rest}>
+      <S.SelectedContainer
+        onClick={toggleOpen}
+        $status={getSelectStatus()}
+        {...rest}
+      >
         <span>{selectedOption}</span>
-        <S.Image src={isOpen ? chevronUp : chevronDown} alt="" $isSelected={isOpen} />
+        <S.Image
+          src={isOpen ? chevronUp : chevronDown}
+          alt=''
+          $isSelected={isOpen}
+        />
       </S.SelectedContainer>
       {isOpen && (
-        <S.ScreenReaderDirection aria-live="polite">
+        <S.ScreenReaderDirection aria-live='polite'>
           이 요소를 닫으려면 한번 더 클릭해주세요.
         </S.ScreenReaderDirection>
       )}

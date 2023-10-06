@@ -1,6 +1,6 @@
-import type { User } from '@type/user';
+import type { User } from '@/types/user';
 
-import { deleteFetch, getFetch, patchFetch } from '@utils/fetch';
+import { deleteFetch, getFetch, patchFetch } from '@/utils/fetch';
 
 export interface UserInfoResponse {
   nickname: string;
@@ -33,7 +33,9 @@ export const transformUserInfoResponse = (userInfo: UserInfoResponse): User => {
 
 const BASE_URL = process.env.VOTOGETHER_BASE_URL;
 
-export const getUserInfo = async (isLoggedIn: boolean): Promise<User | null> => {
+export const getUserInfo = async (
+  isLoggedIn: boolean
+): Promise<User | null> => {
   if (!isLoggedIn) return null;
 
   const userInfo = await getFetch<UserInfoResponse>(`${BASE_URL}/members/me`);
@@ -42,7 +44,9 @@ export const getUserInfo = async (isLoggedIn: boolean): Promise<User | null> => 
 };
 
 export const modifyNickname = async (nickname: string) => {
-  await patchFetch<ModifyNicknameRequest>(`${BASE_URL}/members/me/nickname`, { nickname });
+  await patchFetch<ModifyNicknameRequest>(`${BASE_URL}/members/me/nickname`, {
+    nickname,
+  });
 };
 
 export const withdrawalMembership = async () => {
@@ -50,7 +54,10 @@ export const withdrawalMembership = async () => {
 };
 
 export const updateUserInfo = async (userInfo: UpdateUserInfoRequest) => {
-  await patchFetch<UpdateUserInfoRequest>(`${BASE_URL}/members/me/detail`, userInfo);
+  await patchFetch<UpdateUserInfoRequest>(
+    `${BASE_URL}/members/me/detail`,
+    userInfo
+  );
 };
 
 export const logoutUser = async () => {
