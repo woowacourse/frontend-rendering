@@ -15,7 +15,7 @@ export default function EmptyPostList({ keyword, status }: EmptyPostListProps) {
     return (
       <S.Container>
         <section>
-          <S.Keyword>{keyword}</S.Keyword>
+          <S.Keyword>{keyword}+</S.Keyword>
           <S.Title>와(과) 일치하는 검색결과가 없습니다.</S.Title>
         </section>
         <S.TextCardContainer>

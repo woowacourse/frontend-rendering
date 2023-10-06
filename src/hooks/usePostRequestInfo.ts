@@ -1,3 +1,5 @@
+import { useParams, usePathname } from 'next/navigation';
+
 import { PostRequestKind } from '@/app/types';
 
 import { POST_TYPE } from '@/constants/api';
@@ -7,7 +9,6 @@ import { PATH } from '@/constants/path';
 import { getPathFragment } from '@/utils/getPathFragment';
 
 import { useCurrentKeyword } from './useCurrentKeyword';
-import { useRouter } from 'next/router';
 
 const REQUEST_URL: Record<string, PostRequestKind> = {
   [PATH.HOME]: POST_TYPE.ALL,
@@ -19,11 +20,12 @@ const REQUEST_URL: Record<string, PostRequestKind> = {
 
 export const usePostRequestInfo = () => {
   const { currentKeyword } = useCurrentKeyword();
-  const router = useRouter();
+  const params = useParams();
+  const pathname = usePathname();
 
-  const categoryId = Number(router.query.categoryId ?? DEFAULT_CATEGORY_ID);
+  const categoryId = Number(params?.categoryId ?? DEFAULT_CATEGORY_ID);
 
-  const convertedPathname = getPathFragment(router.asPath);
+  const convertedPathname = getPathFragment(pathname ?? '');
   const postType = REQUEST_URL[convertedPathname];
 
   const postOptionalOption = {

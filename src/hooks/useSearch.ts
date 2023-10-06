@@ -5,7 +5,7 @@ import { SEARCH_KEYWORD_MAX_LENGTH } from '@/constants/policy';
 import { getTrimmedWord } from '@/utils/getTrimmedWord';
 
 import { useText } from './useText';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 
 export const useSearch = (initialKeyword = '') => {
   const router = useRouter();

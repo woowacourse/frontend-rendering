@@ -9,7 +9,7 @@ import LogoButton from '../LogoButton';
 import SearchBar from '../SearchBar';
 
 import * as S from './style';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 
 interface NarrowMainHeaderProps {
   handleMenuOpenClick: () => void;

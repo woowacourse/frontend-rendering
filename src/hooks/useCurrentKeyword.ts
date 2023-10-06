@@ -2,12 +2,13 @@ import { SEARCH_KEYWORD } from '@/constants/api';
 import { SEARCH_KEYWORD_MAX_LENGTH } from '@/constants/policy';
 
 import { getTrimmedWord } from '@/utils/getTrimmedWord';
-import { useRouter } from 'next/router';
+import { useSearchParams } from 'next/navigation';
 
 export const useCurrentKeyword = () => {
-  const router = useRouter();
-  const currentKeyword =
-    router.query.keyword?.toString().slice(0, SEARCH_KEYWORD_MAX_LENGTH) ?? '';
+  const searchParams = useSearchParams();
+  const currentKeyword = searchParams
+    ? searchParams.toString().slice(0, SEARCH_KEYWORD_MAX_LENGTH) ?? ''
+    : '';
 
   return {
     currentKeyword:
