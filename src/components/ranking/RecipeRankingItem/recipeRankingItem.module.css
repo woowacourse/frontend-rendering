@@ -1,6 +1,5 @@
 .container {
   position: relative;
-  width: calc(100% - 50px);
   height: 85px;
   display: flex;
   align-items: center;

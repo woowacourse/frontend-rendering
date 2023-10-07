@@ -1,9 +1,13 @@
-import { getRecipeRanking } from '@/apis/ranking';
-import { Carousel, CarouselItem } from '@/components/common';
 import RecipeRankingItem from '../RecipeRankingItem';
 
-const RecipeRanking = async () => {
-  const { recipes } = await getRecipeRanking();
+import { RecipeRanking } from '@/apis/ranking';
+import { Carousel, CarouselItem } from '@/components/common';
+
+interface RecipeRankingProps {
+  recipes: RecipeRanking[];
+}
+
+const RecipeRanking = async ({ recipes }: RecipeRankingProps) => {
   const extendedRecipes = [...recipes, recipes[0]];
 
   return (

@@ -5,19 +5,19 @@
 
 .section {
   padding: 0 20px;
-  margin-top: 20px;
+  margin-top: 40px;
 }
 
 .sectionTitle {
   font-size: 20px;
   font-weight: 700;
+  margin-bottom: 16px;
 }
 
 .categoryWrapper {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  margin-top: 16px;
   overflow-x: auto;
   overflow-y: hidden;
 
