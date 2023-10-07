@@ -1,11 +1,6 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 
-import { Drawer, NarrowMainHeader } from '@/components';
-
-import { useDrawer } from '@/hooks/useDrawer';
-
-import * as S from './style';
 import Providers from './providers';
 
 const inter = Inter({ subsets: ['latin'] });
