@@ -1,7 +1,8 @@
 export const smoothScrollToTop = () => {
-  window.scroll({ top: 0, behavior: 'smooth' });
+  if (typeof window !== 'undefined')
+    window.scroll({ top: 0, behavior: 'smooth' });
 };
 
 export const defaultScrollToTop = () => {
-  window.scrollTo(0, 0);
+  if (typeof window !== 'undefined') window.scrollTo(0, 0);
 };

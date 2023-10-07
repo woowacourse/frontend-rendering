@@ -1,11 +1,18 @@
 export const getLocalStorage = <T>(key: string): T | null => {
-  return JSON.parse(localStorage.getItem(key) || 'null');
+  if (typeof window !== 'undefined') {
+    return JSON.parse(localStorage.getItem(key) || 'null');
+  }
+  return null;
 };
 
 export const setLocalStorage = <T>(key: string, value: T) => {
-  localStorage.setItem(key, JSON.stringify(value));
+  if (typeof window !== 'undefined') {
+    localStorage.setItem(key, JSON.stringify(value));
+  }
 };
 
 export const removeLocalStorage = (key: string) => {
-  localStorage.removeItem(key);
+  if (typeof window !== 'undefined') {
+    localStorage.removeItem(key);
+  }
 };
