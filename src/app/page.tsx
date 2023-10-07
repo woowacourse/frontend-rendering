@@ -1,9 +1,17 @@
 import Image from 'next/image';
 
 import { getCategories } from '@/apis/category';
-import { getProductRanking, getRecipeRanking } from '@/apis/ranking';
+import {
+  getProductRanking,
+  getRecipeRanking,
+  getReviewRanking,
+} from '@/apis/ranking';
 import { CategoryList } from '@/components/category';
-import { RecipeRanking, ProductRanking } from '@/components/ranking';
+import {
+  RecipeRanking,
+  ProductRanking,
+  ReviewRanking,
+} from '@/components/ranking';
 import { IMAGE_URL } from '@/constants';
 
 import styles from './home.module.css';
@@ -13,14 +21,21 @@ const Home = async () => {
   const storeCategoryData = getCategories('store');
   const recipeRankingData = getRecipeRanking();
   const productRankingData = getProductRanking();
+  const reviewRankingData = getReviewRanking();
 
-  const [foodCategories, storeCategories, { recipes }, { products }] =
-    await Promise.all([
-      foodCategoryData,
-      storeCategoryData,
-      recipeRankingData,
-      productRankingData,
-    ]);
+  const [
+    foodCategories,
+    storeCategories,
+    { recipes },
+    { products },
+    { reviews },
+  ] = await Promise.all([
+    foodCategoryData,
+    storeCategoryData,
+    recipeRankingData,
+    productRankingData,
+    reviewRankingData,
+  ]);
 
   return (
     <>
@@ -50,6 +65,13 @@ const Home = async () => {
         <h2 className={styles.sectionTitle}>👑 상품 랭킹</h2>
         <ProductRanking products={products} />
       </section>
+
+      <section className={styles.section}>
+        <h2 className={styles.sectionTitle}>📝 리뷰 랭킹</h2>
+        <ReviewRanking reviews={reviews} />
+      </section>
+
+      <div className={styles.spacing} aria-hidden />
     </>
   );
 };
