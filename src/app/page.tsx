@@ -1,3 +1,5 @@
+'use client';
+
 import { useState } from 'react';
 // import Navbar from 'components/@common/Navbar';
 import SearchBox from 'components/search/SearchBox';
@@ -16,7 +18,7 @@ const Main = () => {
         <LogoMessage>식물을 쉽게</LogoMessage>
         <ImageArea>
           <picture>
-            <source srcSet={LogoWebp} type="image/webp" />
+            <source srcSet={LogoWebp.src} type="image/webp" />
             <Image src={LogoSvg} alt="피움 로고. 녹색으로 '피움'이라는 글자가 적혀 있다." />
           </picture>
         </ImageArea>
