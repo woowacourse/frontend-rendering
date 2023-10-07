@@ -119,9 +119,7 @@ const SearchBox = (props: SearchBoxProps) => {
             </ResultList>
             <ResultMessage>
               {searchResults?.length ? '찾는 식물이 없으신가요?' : MESSAGE.noSearchResult}
-              <StyledLink to={URL_PATH.newDictionaryPlantRequest} state={value}>
-                등록 신청하기
-              </StyledLink>
+              <StyledLink href={URL_PATH.newDictionaryPlantRequest}>등록 신청하기</StyledLink>
             </ResultMessage>
           </ResultDropdown>
         </>

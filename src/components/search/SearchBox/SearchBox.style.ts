@@ -1,4 +1,6 @@
-import { Link } from 'react-router-dom';
+'use client';
+
+import Link from 'next/link';
 import styled from 'styled-components';
 
 export const Wrapper = styled.div<{ $fontSize: `${number}rem` }>`

@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import Image from 'components/@common/Image';
 import { Wrapper, Name } from './SearchResultItem.style';
 
@@ -12,7 +12,7 @@ const SearchResultItem = (props: SearchResultItemProps) => {
   const { id, name, imageUrl } = props;
 
   return (
-    <Link to={`/dict/${id}`}>
+    <Link href={`/dict/${id}`}>
       <Wrapper>
         <Image type="circle" size="55px" alt={name} src={imageUrl} />
         <Name>{name}</Name>

@@ -1,16 +1,17 @@
+'use client';
+
 import type { DictionaryPlantNameSearchResult } from 'types/dictionaryPlant';
 import { useCallback } from 'react';
-import { useNavigate, generatePath } from 'react-router-dom';
-import { URL_PATH } from 'constants/index';
+import { useRouter } from 'next/navigation';
 
 const useDictionaryPlantNavigate = () => {
-  const navigate = useNavigate();
+  const router = useRouter();
 
   const goToDictionaryPlantDetailPage = useCallback(
     ({ id }: DictionaryPlantNameSearchResult) => {
-      navigate(generatePath(URL_PATH.dictDetail, { id: id.toString() }));
+      router.push(`/dict/${id}`);
     },
-    [navigate]
+    [router]
   );
 
   const goToProperDictionaryPlantPage = useCallback(
@@ -20,13 +21,13 @@ const useDictionaryPlantNavigate = () => {
       const samePlant = searchResults.find(({ name }) => name === searchName);
 
       if (!samePlant) {
-        navigate(`/dict?search=${searchName}`);
+        router.push(`/dict?search=${searchName}`);
         return;
       }
 
       goToDictionaryPlantDetailPage(samePlant);
     },
-    [navigate, goToDictionaryPlantDetailPage]
+    [router, goToDictionaryPlantDetailPage]
   );
 
   return { goToDictionaryPlantDetailPage, goToProperDictionaryPlantPage };
