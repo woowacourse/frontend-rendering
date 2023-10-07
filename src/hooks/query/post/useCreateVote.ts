@@ -29,7 +29,7 @@ export const useCreateVote = ({
       queryClient.invalidateQueries([QUERY_KEY.POST_DETAIL, postId, LOGGED_IN]);
     },
     onError: (error) => {
-      window.console.log('투표 선택지 생성에 실패했습니다.', error);
+      console.log('투표 선택지 생성에 실패했습니다.', error);
     },
   });
 

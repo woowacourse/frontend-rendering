@@ -10,7 +10,7 @@ export const useToast = () => {
   const timeIdRef = useRef<number>();
 
   const clear = () => {
-    if (timeIdRef.current) {
+    if (timeIdRef.current && typeof window !== 'undefined') {
       window.clearTimeout(timeIdRef.current);
     }
   };
