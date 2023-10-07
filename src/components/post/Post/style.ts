@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 
 import { styled } from 'styled-components';
 
@@ -104,21 +105,6 @@ export const DetailLink = styled(Link)<{ $isPreview: boolean }>`
   gap: 10px;
 `;
 
-export const Image = styled.img`
-  width: 80%;
-  border-radius: 4px;
-  margin-bottom: 10px;
-  border: 1px solid var(--gray);
-  align-self: center;
-
-  aspect-ratio: 1/1;
-  object-fit: contain;
-
-  @media (min-width: ${theme.breakpoint.md}) {
-    margin-bottom: 20px;
-  }
-`;
-
 export const PreviewBottom = styled.div`
   display: flex;
   justify-content: flex-end;
@@ -136,7 +122,7 @@ export const IconUint = styled.div`
   font: var(--text-caption);
 `;
 
-export const Icon = styled.img`
+export const IconImage = styled(Image)`
   height: 24px;
   width: 24px;
 `;

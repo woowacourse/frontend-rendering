@@ -6,7 +6,6 @@ import chevronUp from '@/assets/chevron-up.svg';
 
 import { SELECT_DEFAULT, SELECT_DISABLED, SELECT_SELECTED } from './constants';
 import * as S from './style';
-
 export interface SelectProps<T extends string>
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   selectedOption: string;
@@ -55,7 +54,7 @@ export default function Select<T extends string>({
         {...rest}
       >
         <span>{selectedOption}</span>
-        <S.Image
+        <S.IconImage
           src={isOpen ? chevronUp : chevronDown}
           alt=''
           $isSelected={isOpen}

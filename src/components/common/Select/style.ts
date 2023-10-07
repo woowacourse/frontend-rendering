@@ -1,10 +1,17 @@
 'use client';
+import { ImageProps } from 'next/image';
+import Image from 'next/image';
 
 import { styled } from 'styled-components';
 
 import { theme } from '@/styles/theme';
 
 import { SELECT_DEFAULT, SELECT_DISABLED, SELECT_SELECTED } from './constants';
+
+interface StyledImageProps extends ImageProps {
+  // 여기에 사용자 정의 속성 추가 가능
+  $isSelected: boolean;
+}
 
 export const Container = styled.div`
   font: var(--text-caption);
@@ -83,7 +90,7 @@ export const OptionContainer = styled.div`
   }
 `;
 
-export const Image = styled.img<{ $isSelected: boolean }>`
+export const IconImage = styled(Image)<StyledImageProps>`
   width: 20px;
   height: 20px;
   border-left: 1px solid var(--slate);

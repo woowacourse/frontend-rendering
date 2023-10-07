@@ -54,7 +54,7 @@ export default function PostList() {
       postType,
       postSorting: selectedSortingOption,
       postStatus: selectedStatusOption,
-      isLoggedIn: loggedInfo.isLoggedIn,
+      isLoggedIn: false,
     },
     postOptionalOption
   );

@@ -13,7 +13,6 @@ import WrittenVoteOptionList from '@/components/optionList/WrittenVoteOptionList
 import { PATH } from '@/constants/path';
 import { POST } from '@/constants/policy';
 
-import { convertTextToElement } from '@/utils/post/convertTextToElement';
 import { checkClosedPost } from '@/utils/time/checkClosedPost';
 import { convertTimeToWord } from '@/utils/time/convertTimeToWord';
 
@@ -63,7 +62,7 @@ const Post = forwardRef(function Post(
   const isActive = !checkClosedPost(deadline);
 
   const isStatisticsVisible =
-    writer.id === loggedInfo.id ||
+    writer.id === -1 ||
     !isActive ||
     voteInfo.selectedOptionId !== POST.NOT_VOTE;
 
@@ -176,11 +175,8 @@ const Post = forwardRef(function Post(
           aria-label={`내용: ${content}`}
           $isPreview={isPreview}
         >
-          {convertTextToElement(content)}
+          {content}
         </S.Content>
-        {!isPreview && imageUrl && (
-          <S.Image src={imageUrl} alt={'본문에 포함된 이미지'} />
-        )}
       </S.DetailLink>
       <WrittenVoteOptionList
         isStatisticsVisible={isStatisticsVisible}
@@ -192,11 +188,11 @@ const Post = forwardRef(function Post(
       {isPreview && (
         <S.PreviewBottom>
           <S.IconUint>
-            <S.Icon src={photoIcon} alt='사진 갯수' />
+            <S.IconImage src={photoIcon} alt='사진 갯수' />
             <span>{imageCount}</span>
           </S.IconUint>
           <S.IconUint>
-            <S.Icon src={commentIcon} alt='댓글 갯수' />
+            <S.IconImage src={commentIcon} alt='댓글 갯수' />
             <span>{commentCount}</span>
           </S.IconUint>
         </S.PreviewBottom>
