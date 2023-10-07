@@ -1,13 +1,15 @@
 'use client';
 
-import { ReactNode } from 'react';
+import { ReactNode, useContext } from 'react';
+
+import { CarouselContext } from './Carousel';
 
 interface CarouselItemProps {
   children: ReactNode;
 }
 
 const CarouselItem = ({ children }: CarouselItemProps) => {
-  const carouselWidth = window.innerWidth;
+  const carouselWidth = useContext(CarouselContext);
 
   return <li style={{ width: `${carouselWidth}px` }}>{children}</li>;
 };
