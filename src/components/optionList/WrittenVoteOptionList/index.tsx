@@ -1,4 +1,4 @@
-import { WrittenVoteOptionType } from '@type/post';
+import { WrittenVoteOptionType } from '@/types/post';
 
 import * as S from './style';
 import WrittenVoteOption from './WrittenVoteOption';
@@ -19,19 +19,25 @@ export default function WrittenVoteOptionList({
   handleVoteClick,
 }: WrittenVoteOptionListProps) {
   return (
-    <S.VoteOptionListContainer aria-label="투표 선택지">
+    <S.VoteOptionListContainer aria-label='투표 선택지'>
       {voteOptionList.map((voteOption, index) => {
         const isSelected = selectedOptionId === voteOption.id;
 
         return (
           <WrittenVoteOption
-            ariaLabel={`선택지 내용: ${voteOption.text}, 선택지 순서: ${index + 1}번 , 
+            ariaLabel={`선택지 내용: ${voteOption.text}, 선택지 순서: ${
+              index + 1
+            }번 , 
             ${
               isStatisticsVisible
                 ? `투표한 인원: ${voteOption.peopleCount}명, 전체 투표 중 차지 비율: ${voteOption.percent}%, `
                 : ''
             }
-            ${isSelected ? '투표 완료한 선택지 상태' : '투표하지 않은 선택지 상태'}
+            ${
+              isSelected
+                ? '투표 완료한 선택지 상태'
+                : '투표하지 않은 선택지 상태'
+            }
             `}
             key={voteOption.id}
             {...voteOption}
