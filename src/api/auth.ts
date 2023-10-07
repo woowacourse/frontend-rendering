@@ -1,4 +1,4 @@
-import { makeFetchHeaders } from '@utils/fetch';
+import { makeFetchHeaders } from '@/utils/fetch';
 
 interface AuthResponse {
   accessToken: string;
