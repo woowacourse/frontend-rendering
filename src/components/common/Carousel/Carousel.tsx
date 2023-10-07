@@ -45,6 +45,7 @@ const Carousel = ({ children }: CarouselProps) => {
           style={{
             transform: 'translateX(-' + currentIndex * carouselWidth + 'px)',
             transition: currentIndex !== 0 ? 'all 0.5s ease-in-out' : undefined,
+            opacity: carouselWidth !== 0 ? 1 : 0,
           }}
         >
           {children}
