@@ -20,24 +20,12 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const { drawerRef, closeDrawer, openDrawer } = useDrawer('left');
-
   return (
     <html lang='ko'>
+      <head>
+        <title>VoTogether by Next</title>
+      </head>
       <body className={inter.className}>
-        <S.HeaderWrapper>
-          <NarrowMainHeader handleMenuOpenClick={openDrawer} />
-        </S.HeaderWrapper>
-        <S.DrawerWrapper>
-          <Drawer
-            handleDrawerClose={closeDrawer}
-            placement='left'
-            width='225px'
-            ref={drawerRef}
-          >
-            Drawer 예시
-          </Drawer>
-        </S.DrawerWrapper>
         <Providers>{children}</Providers>
       </body>
     </html>

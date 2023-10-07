@@ -13,6 +13,7 @@ import { SEARCH_KEYWORD_MAX_LENGTH } from '@/constants/policy';
 import searchIcon from '@/assets/search_black.svg';
 
 import * as S from './style';
+import Image from 'next/image';
 
 interface SearchBarProps extends HTMLAttributes<HTMLInputElement> {
   size: Size | 'free';
@@ -38,7 +39,7 @@ export default function SearchBar({ size, isOpen, ...rest }: SearchBarProps) {
         {...rest}
       />
       <S.Button type='submit'>
-        <img src={searchIcon} alt='검색버튼' />
+        <Image src={searchIcon} alt='검색버튼' />
       </S.Button>
       {isOpen && (
         <S.ScreenReaderDirection aria-live='polite'>
