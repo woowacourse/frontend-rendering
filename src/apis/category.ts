@@ -6,7 +6,7 @@ export interface Category {
   image: string;
 }
 
-export const getCategories = (type: string): Promise<Category[]> => {
+export const getCategories = (type: string) => {
   const endpoint = `categories/?type=${type}`;
-  return fetchApi(endpoint);
+  return fetchApi<Category[]>(endpoint);
 };
