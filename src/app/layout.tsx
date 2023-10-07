@@ -1,5 +1,7 @@
 import './globals.css';
 import type { Metadata } from 'next';
+import { Header } from '@/components/common';
+import { NavigationBar } from '@/components/common';
 
 export const metadata: Metadata = {
   title: '펀잇',
@@ -16,7 +18,9 @@ export default function RootLayout({
     <html lang='ko'>
       <body>
         <div className='layout-container'>
+          <Header />
           <main className='main'>{children}</main>
+          <NavigationBar />
         </div>
       </body>
     </html>
