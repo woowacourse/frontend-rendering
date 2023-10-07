@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+  width: 100%;
+  border: 1px solid var(--border-disabled);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.carouselList {
+  display: flex;
+}
+
+.carouselItem {
+  height: fit-content;
+}
