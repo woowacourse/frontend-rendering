@@ -4,8 +4,6 @@ import { Inter } from 'next/font/google';
 
 import { Header, NavigationBar } from '@/components/common';
 
-const inter = Inter({ subsets: ['latin'] });
-
 export const metadata: Metadata = {
   title: '펀잇',
   description:
@@ -19,7 +17,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang='ko'>
-      <body className={inter.className}>
+      <head>
+        <link
+          rel='stylesheet'
+          as='style'
+          crossOrigin='anonymous'
+          href='https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/variable/pretendardvariable-dynamic-subset.css'
+        />
+      </head>
+      <body>
         <div className='layout-container'>
           <Header />
           <main className='main'>{children}</main>
