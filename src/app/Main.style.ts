@@ -50,10 +50,6 @@ export const SearchMessage = styled.p`
   animation: ${bounce} 6s infinite;
 `;
 
-export const Image = styled.img`
-  width: 112px;
-`;
-
 export const ImageArea = styled.div`
   height: 128px;
   margin-top: 16px;

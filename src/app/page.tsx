@@ -1,12 +1,12 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 // import Navbar from 'components/@common/Navbar';
 import SearchBox from 'components/search/SearchBox';
-import { LogoMessage, SearchBoxArea, SearchMessage, Wrapper, Image, ImageArea } from './Main.style';
+import { LogoMessage, SearchBoxArea, SearchMessage, Wrapper, ImageArea } from './Main.style';
 import useDictionaryNavigate from 'hooks/dictionaryPlant/useDictionaryPlantNavigate';
 import LogoSvg from 'assets/logo.svg';
-import LogoWebp from 'assets/logo.webp';
 
 const Main = () => {
   const { goToProperDictionaryPlantPage, goToDictionaryPlantDetailPage } = useDictionaryNavigate();
@@ -17,10 +17,12 @@ const Main = () => {
       <Wrapper>
         <LogoMessage>식물을 쉽게</LogoMessage>
         <ImageArea>
-          <picture>
-            <source srcSet={LogoWebp.src} type="image/webp" />
-            <Image src={LogoSvg} alt="피움 로고. 녹색으로 '피움'이라는 글자가 적혀 있다." />
-          </picture>
+          <Image
+            src={LogoSvg}
+            alt="피움 로고. 녹색으로 '피움'이라는 글자가 적혀 있다."
+            width={112}
+            priority={true}
+          />
         </ImageArea>
         <SearchBoxArea>
           <SearchBox
