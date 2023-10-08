@@ -22,9 +22,9 @@ export default function Home() {
       <section>
         <h4>셀럽잇 추천 맛집!</h4>
         <div className='pl-4 pr-4 flex gap-4 overflow-x-scroll'>
-          <RestaurantCard />
-          <RestaurantCard />
-          <RestaurantCard />
+          <RestaurantCard flexCol />
+          <RestaurantCard flexCol />
+          <RestaurantCard flexCol />
         </div>
       </section>
 
