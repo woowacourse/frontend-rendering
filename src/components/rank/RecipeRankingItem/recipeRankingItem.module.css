@@ -1,5 +1,7 @@
 .recipeRankingItemContainer {
-  width: calc(100% - 50px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   max-width: 560px;
   margin: 12px 0;
   padding: 0 5px;
