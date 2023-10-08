@@ -16,6 +16,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang='ko'>
+      <head>
+        <link
+          rel='preload'
+          as='font'
+          crossOrigin='anonymous'
+          href='https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/variable/pretendardvariable-dynamic-subset.css'
+        />
+      </head>
       <body>
         <div className='layout-container'>
           <Header />
