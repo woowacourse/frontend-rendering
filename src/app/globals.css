@@ -54,6 +54,13 @@
   margin: 0;
 
   font-size: 62.5%;
+
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+*::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera*/
 }
 
 html,
@@ -66,6 +73,11 @@ body {
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+}
+
+img {
+  user-select: none;
+  -webkit-user-drag: none;
 }
 
 a {
