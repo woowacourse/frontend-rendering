@@ -55,6 +55,7 @@ const RootLayout = (props: React.PropsWithChildren) => {
             </QueryClientProvider>
           </ThemeProvider>
         </StyledComponentsRegistry>
+        <div id="toast-root" />
       </body>
     </html>
   );
