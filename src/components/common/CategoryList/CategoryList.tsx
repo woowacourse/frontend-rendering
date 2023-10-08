@@ -1,5 +1,5 @@
 import styles from './CategoryList.module.css';
-import CategoryItem from '../CategoryItem/CategoryItem';
+import CategoryItem from '../CategoryItem';
 
 import { Category } from '@/types/common';
 

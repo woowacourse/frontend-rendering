@@ -2,7 +2,7 @@ import Image from 'next/image';
 import styles from './page.module.css';
 import { IMAGE_URL } from '@/constants';
 import useCategory from '@/hooks/useCategory';
-import CategoryList from '@/components/common/CategoryList';
+import { CategoryList } from '@/components/common';
 
 const Home = async () => {
   const foodCategory = await useCategory('food');
