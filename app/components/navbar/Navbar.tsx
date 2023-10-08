@@ -11,7 +11,13 @@ const Navbar = () => {
   return (
     <nav className={styles.container}>
       <Link href="/">
-        <Image src={logo} alt="요즘카페 로고" width={117} height={30} />
+        <Image
+          src={logo}
+          alt="요즘카페 로고"
+          width={117}
+          height={30}
+          priority={true}
+        />
       </Link>
       <div className={styles.buttonContainer}>
         <Link href="/">
