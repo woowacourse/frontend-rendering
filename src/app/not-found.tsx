@@ -1,12 +1,12 @@
 import Image from 'next/image';
-import styles from './error.module.css';
 import Link from 'next/link';
+import styles from './error.module.css';
 
 const NotFound = () => {
   return (
     <>
       <header className={styles.header}>
-        <Image src='/zipgo_logo_light.svg' width={113} height={36} alt='집고 로고' />
+        <Image src='/zipgo_logo_light.svg' width={113} height={36} alt='집고 로고' priority />
       </header>
       <section className={styles.backgroundBox}>
         <h1 className={styles.errorCode}>404</h1>

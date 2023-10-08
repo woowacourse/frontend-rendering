@@ -8,7 +8,7 @@ const Error = ({ error, reset }: { error: Error; reset: () => void }) => {
   return (
     <>
       <header className={styles.header}>
-        <Image src='/zipgo_logo_light.svg' width={113} height={36} alt='집고 로고' />
+        <Image src='/zipgo_logo_light.svg' width={113} height={36} alt='집고 로고' priority />
       </header>
       <section className={styles.backgroundBox}>
         <h1 className={styles.errorCode}>Error</h1>
