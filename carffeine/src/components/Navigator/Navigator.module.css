@@ -1,0 +1,13 @@
+.container {
+  width: 50px;
+  height: 100vh;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  z-index: 1000;
+
+  border-right: 1px solid;
+  background-color: #fff;
+}
