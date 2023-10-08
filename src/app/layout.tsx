@@ -10,6 +10,12 @@ import { PageArea, Wrapper } from './layout.style';
 
 const queryClient = new QueryClient();
 
+if (process.env.NODE_ENV === 'development') {
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
+  const { server } = require('../mocks/server');
+  server.listen();
+}
+
 const RootLayout = (props: React.PropsWithChildren) => {
   const { children } = props;
 
