@@ -36,7 +36,7 @@ const Carousel = ({ carouselList }: CarouselProps) => {
         {extendedCarouselList.map(({ id, children }) => (
           <li
             className={styles.carouselItem}
-            key={id}
+            key={index === extendedCarouselList.length - 1 ? `${id}-last` : id}
             style={{ width: `${CAROUSEL_WIDTH}px` }}
           >
             {children}
