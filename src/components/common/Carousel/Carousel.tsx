@@ -3,6 +3,7 @@
 import { useEffect, useState, useRef } from 'react';
 import styles from './carousel.module.css';
 import type { CarouselChildren } from '@/types/common';
+import useResponsiveWidth from '@/hooks/useResponsiveWidth';
 
 interface CarouselProps {
   carouselList: CarouselChildren[];
@@ -11,27 +12,9 @@ interface CarouselProps {
 const Carousel = ({ carouselList }: CarouselProps) => {
   const extendedCarouselList = [...carouselList, carouselList[0]];
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [carouselWidth, setCarouselWidth] = useState(0);
 
   const containerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (containerRef.current) {
-      setCarouselWidth(containerRef.current.offsetWidth);
-
-      const resizeListener = () => {
-        if (containerRef.current) {
-          setCarouselWidth(containerRef.current.offsetWidth);
-        }
-      };
-
-      window.addEventListener('resize', resizeListener);
-
-      return () => {
-        window.removeEventListener('resize', resizeListener);
-      };
-    }
-  }, []);
+  const carouselWidth = useResponsiveWidth(containerRef);
 
   const showNextSlide = () => {
     setCurrentIndex((prev) => (prev === carouselList.length ? 0 : prev + 1));
