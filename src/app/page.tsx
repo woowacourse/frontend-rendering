@@ -1,8 +1,13 @@
 import Image from 'next/image';
 import styles from './page.module.css';
 import { IMAGE_URL } from '@/constants';
+import useCategory from '@/hooks/useCategory';
+import CategoryList from '@/components/common/CategoryList';
 
-export default function Home() {
+const Home = async () => {
+  const foodCategory = await useCategory('food');
+  const storeCategory = await useCategory('store');
+
   return (
     <>
       <section>
@@ -16,6 +21,10 @@ export default function Home() {
       </section>
       <section className={styles.section}>
         <h2 className={styles.title}>카테고리</h2>
+        <div className={styles.categoryWrapper}>
+          <CategoryList categories={foodCategory} />
+          <CategoryList categories={storeCategory} />
+        </div>
       </section>
       <section className={styles.section}>
         <h2 className={styles.title}>🍯 꿀조합 랭킹</h2>
@@ -28,4 +37,6 @@ export default function Home() {
       </section>
     </>
   );
-}
+};
+
+export default Home;

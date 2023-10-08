@@ -1,0 +1,4 @@
+.categoryList {
+  display: flex;
+  gap: 16px;
+}

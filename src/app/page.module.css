@@ -3,6 +3,12 @@
   padding: 0px 20px;
 }
 
+.title {
+  margin-bottom: 16px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
 /* 배너 이미지 */
 .bannerImage {
   width: 100%;
@@ -10,8 +16,15 @@
 }
 
 /* 카테고리 */
-.title {
-  margin-bottom: 16px;
-  font-size: 20px;
-  font-weight: 700;
+
+.categoryWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  @media screen and (min-width: 500px) {
+    align-items: center;
+  }
 }
