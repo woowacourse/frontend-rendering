@@ -7,6 +7,8 @@ import SvgSpriteMap from 'components/@common/SvgIcons/SvgSpriteMap';
 import theme from 'style/theme.style';
 import StyledComponentsRegistry from 'style/registry';
 import { PageArea, Wrapper } from './layout.style';
+import { RecoilRoot } from 'recoil';
+import ToastList from 'components/Toast/ToastList';
 
 const queryClient = new QueryClient();
 
@@ -48,10 +50,13 @@ const RootLayout = (props: React.PropsWithChildren) => {
           <GlobalStyle />
           <ThemeProvider theme={theme}>
             <QueryClientProvider client={queryClient}>
-              <SvgSpriteMap />
-              <Wrapper>
-                <PageArea>{children}</PageArea>
-              </Wrapper>
+              <RecoilRoot>
+                <SvgSpriteMap />
+                <Wrapper>
+                  <PageArea>{children}</PageArea>
+                </Wrapper>
+                <ToastList />
+              </RecoilRoot>
             </QueryClientProvider>
           </ThemeProvider>
         </StyledComponentsRegistry>

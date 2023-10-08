@@ -1,3 +1,5 @@
+'use client';
+
 import { useContext } from 'react';
 import { RadioContext } from 'components/@common/InlineRadio/radioContext';
 import { ERROR } from 'constants/index';

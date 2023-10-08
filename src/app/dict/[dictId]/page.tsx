@@ -1,4 +1,6 @@
-import { generatePath, useNavigate, useParams } from 'react-router-dom';
+'use client';
+
+import { useRouter } from 'next/navigation';
 import { Header } from './DictionaryPlantDetail.style';
 import Image from 'components/@common/Image';
 import SvgFill from 'components/@common/SvgIcons/SvgFill';
@@ -10,8 +12,16 @@ import useDictionaryPlantDetail from 'hooks/queries/dictionaryPlant/useDictionar
 import { URL_PATH } from 'constants/index';
 import theme from 'style/theme.style';
 
-const DictionaryPlantDetail = () => {
-  const { id } = useParams();
+interface DictionaryPlantDetailProps {
+  params: {
+    dictId: string;
+  };
+}
+
+const DictionaryPlantDetail = (props: DictionaryPlantDetailProps) => {
+  const {
+    params: { dictId: id },
+  } = props;
   if (!id) throw new Error('URL에 id가 없습니다.');
 
   const { isSuccess: isLoggedIn } = useCheckSessionId(false);
@@ -21,18 +31,18 @@ const DictionaryPlantDetail = () => {
   const { data: dictionaryPlantDetail } = useDictionaryPlantDetail(dictionaryPlantId);
   const { image, name } = dictionaryPlantDetail;
 
-  const navigate = useNavigate();
+  const router = useRouter();
 
   const goBack = () => {
-    navigate(-1);
+    router.back();
   };
 
   const goPetPlantRegisterForm = () => {
-    navigate(generatePath(URL_PATH.petRegisterForm, { id: String(dictionaryPlantId) }));
+    router.push(`/pet/register/${id}`);
   };
 
   const goLogin = () => {
-    navigate(URL_PATH.login);
+    router.push(URL_PATH.login);
   };
 
   const warning = () => {

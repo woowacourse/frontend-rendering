@@ -1,4 +1,6 @@
-import { useNavigate } from 'react-router';
+'use client';
+
+import { useRouter } from 'next/navigation';
 import { useSetRecoilState } from 'recoil';
 import SeeMoreContentBox from 'components/@common/SeeMoreContentBox';
 import SvgIcons from 'components/@common/SvgIcons/SvgFill';
@@ -43,7 +45,7 @@ const DictionaryPlantContent = (props: DictionaryPlantExtendCycles) => {
   } = props;
 
   const setSelectedDictionaryPlant = useSetRecoilState(selectedDictionaryPlantState);
-  const navigate = useNavigate();
+  const router = useRouter();
 
   const goFilteredGarden = () => {
     setSelectedDictionaryPlant({
@@ -51,7 +53,7 @@ const DictionaryPlantContent = (props: DictionaryPlantExtendCycles) => {
       name,
       image,
     });
-    navigate(URL_PATH.garden);
+    router.push(URL_PATH.garden);
   };
 
   const place = postingPlace.map((position, idx) => {
@@ -61,6 +63,7 @@ const DictionaryPlantContent = (props: DictionaryPlantExtendCycles) => {
 
   const { type: tempType, temperature: minTemp } = parseTemperature(minimumTemp);
   const { primary: primaryColor, accent: accentColor } = theme.color;
+
   return (
     <>
       <HeaderBox>
