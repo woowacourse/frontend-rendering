@@ -1,3 +1,3 @@
 export default function Home() {
-  return <>HaruStudy with NextJS</>;
+  return <>Hello!</>;
 }

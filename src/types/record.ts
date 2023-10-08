@@ -1,4 +1,10 @@
-import type { StudyInfo } from './study';
+export type StudyInfo = {
+  studyId: string;
+  name: string;
+  totalCycle: number;
+  timePerCycle: number;
+  createdDate: string;
+};
 
 export type MonthStorage = {
   day: number;
