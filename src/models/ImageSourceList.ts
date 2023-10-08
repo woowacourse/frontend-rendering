@@ -24,8 +24,6 @@ class ImageSourceList {
       if (!failedImageUrls.has(pngUrl)) this.fallbackImages.push(pngUrl);
       if (!failedImageUrls.has(webpUrl)) this.fallbackImages.push(webpUrl);
     }
-
-    console.log(this.fallbackImages);
   }
 
   getCurrent() {
