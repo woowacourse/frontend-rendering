@@ -1,4 +1,4 @@
-import styles from './CategoryList.module.css';
+import styles from './categoryList.module.css';
 import CategoryItem from '../CategoryItem';
 
 import { Category } from '@/types/common';

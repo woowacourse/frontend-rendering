@@ -1,0 +1,55 @@
+.recipeRankingItemContainer {
+  width: calc(100% - 50px);
+  max-width: 560px;
+  margin: 12px 0;
+  padding: 0 20px;
+}
+
+.recipeRankingWrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 95%;
+}
+
+.rankingRecipeWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.rankingRecipeImage {
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+.titleFavoriteWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+  margin-left: 20px;
+}
+
+.recipeName,
+.favoriteCount {
+  font-weight: 600;
+}
+
+.favoriteWrapper {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.authorWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+}
+
+.authorImage {
+  border: 2px solid var(--color-primary);
+  border-radius: 50%;
+  object-fit: cover;
+}

@@ -3,6 +3,7 @@ import styles from './page.module.css';
 import { IMAGE_URL } from '@/constants';
 import useCategory from '@/hooks/useCategory';
 import { CategoryList } from '@/components/common';
+import RecipeRankingList from '@/components/rank/RecipeRankingList';
 
 const Home = async () => {
   const foodCategory = await useCategory('food');
@@ -28,6 +29,7 @@ const Home = async () => {
       </section>
       <section className={styles.section}>
         <h2 className={styles.title}>🍯 꿀조합 랭킹</h2>
+        <RecipeRankingList />
       </section>
       <section className={styles.section}>
         <h2 className={styles.title}>👑 상품 랭킹</h2>

@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import styles from './CategoryItem.module.css';
+import styles from './categoryItem.module.css';
 
 interface CategoryItemProps {
   name: string;
