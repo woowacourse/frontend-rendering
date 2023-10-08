@@ -42,15 +42,21 @@ const ENDPOINT = 'ranks';
 
 export const getRecipeRanking = async () => {
   const endpoint = `${ENDPOINT}/recipes`;
-  return fetchApi<RecipeRankingResponse>(endpoint);
+  return fetchApi<RecipeRankingResponse>(endpoint, {
+    next: { revalidate: 7 * 24 * 60 * 60 },
+  });
 };
 
 export const getProductRanking = async () => {
   const endpoint = `${ENDPOINT}/products`;
-  return fetchApi<ProductRankingResponse>(endpoint);
+  return fetchApi<ProductRankingResponse>(endpoint, {
+    next: { revalidate: 14 * 24 * 60 * 60 },
+  });
 };
 
 export const getReviewRanking = async () => {
   const endpoint = `${ENDPOINT}/reviews`;
-  return fetchApi<ReviewRankingResponse>(endpoint);
+  return fetchApi<ReviewRankingResponse>(endpoint, {
+    next: { revalidate: 7 * 24 * 60 * 60 },
+  });
 };
