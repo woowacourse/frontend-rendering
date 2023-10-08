@@ -7,6 +7,22 @@ const nextConfig = {
     });
     return config;
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'www.celuveat.com',
+        port: '',
+        pathname: '/images-data/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'yt3.googleusercontent.com',
+        port: '',
+        pathname: '/*',
+      },
+    ],
+  },
 };
 
 module.exports = nextConfig;
