@@ -1,6 +1,6 @@
 import { styled } from 'styled-components';
 
-import { Size } from '@type/style';
+import { Size } from '@/types/style';
 
 const SIZE = {
   sm: { height: '40px' },
@@ -15,22 +15,22 @@ export const Wrapper = styled.div<{ $size: Size | 'free' }>`
   align-items: center;
   justify-items: center;
 
-  height: ${props => SIZE[props.$size].height};
-  border: 1.5px solid var(--primary-color);
-  border-radius: 4px;
+  height: ${(props) => SIZE[props.$size].height};
+
+  border-color: #f85554;
 `;
 
 export const Content = styled.button<{ $isSelected: boolean }>`
-  border-radius: 4px;
+  height: calc(100% - 1px);
+  width: 100%;
 
-  height: calc(100% - 10px);
-  width: calc(100% - 10px);
+  background-color: ${(props) => props.$isSelected && '#F85554'};
+  color: ${(props) => (props.$isSelected ? 'white' : 'var(--primary-color)')};
 
-  background-color: ${props => props.$isSelected && 'var(--primary-color)'};
-  color: ${props => (props.$isSelected ? 'white' : 'var(--primary-color)')};
-
-  font: var(--text-caption);
+  font-size: 17px;
+  font-weight: 600;
   letter-spacing: 1px;
 
+  border-color: #f85554;
   cursor: pointer;
 `;

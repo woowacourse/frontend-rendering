@@ -1,4 +1,4 @@
-import { Size } from '@type/style';
+import { Size } from '@/types/style';
 
 import * as S from './style';
 
@@ -34,7 +34,10 @@ export default function ToggleSwitch({
 
   return (
     <S.Wrapper $size={size}>
-      <S.Content onClick={handleFirstButtonClick} $isSelected={selectedButton === firstButton.text}>
+      <S.Content
+        onClick={handleFirstButtonClick}
+        $isSelected={selectedButton === firstButton.text}
+      >
         {firstButton.text}
       </S.Content>
       <S.Content
