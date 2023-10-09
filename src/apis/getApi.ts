@@ -1,7 +1,5 @@
-const { NEXT_PUBLIC_DEFAULT_URL } = process.env;
-
 export const getApi = async <T>(url: string) => {
-  const apiUrl = `${NEXT_PUBLIC_DEFAULT_URL + url}`;
+  const apiUrl = `${url}`;
   const headers: any = {
     'content-type': 'application/json',
   };
