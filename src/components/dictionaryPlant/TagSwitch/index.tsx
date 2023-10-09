@@ -1,3 +1,5 @@
+'use client';
+
 import { Fragment, useState } from 'react';
 import InlineRadio from 'components/@common/InlineRadio';
 import { TagVariantType } from 'components/@common/Tag';

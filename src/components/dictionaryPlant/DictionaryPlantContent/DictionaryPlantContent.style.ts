@@ -1,3 +1,5 @@
+'use client';
+
 import { styled } from 'styled-components';
 
 export const HeaderBox = styled.section`
@@ -23,19 +25,6 @@ export const FamilyName = styled.p`
   font: 500 1.2rem/1.6rem 'NanumSquareRound';
   color: ${(props) => props.theme.color.sub};
   text-align: left;
-`;
-
-export const GardenButton = styled.button`
-  display: flex;
-  column-gap: 4px;
-  align-items: center;
-
-  height: 24px;
-  margin-top: 16px;
-
-  font-size: 1.4rem;
-  font-weight: 600;
-  color: ${(props) => props.theme.color.sub};
 `;
 
 export const ContentBox = styled.section`

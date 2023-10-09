@@ -1,3 +1,5 @@
+'use client';
+
 import { Fragment } from 'react';
 import { ContentBox, SeeMoreButton, SeeMoreButtonArea, Wrapper } from './SeeMoreContentBox.styles';
 import useShowState from './hooks/useShowState';
