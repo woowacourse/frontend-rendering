@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useState } from 'react';
+import { Fragment } from 'react';
 import { styled } from 'styled-components';
 
 import Box from '../common/Box';
@@ -23,22 +23,12 @@ export interface GetMyTopics {
 }
 
 interface TopicCardContainerProps {
-  url: string;
+  topics: TopicCardProps[];
   containerTitle: string;
   containerDescription: string;
 }
 
-function TopicCardContainer({ url, containerTitle, containerDescription }: TopicCardContainerProps) {
-  const [topics, setTopics] = useState<TopicCardProps[] | null>(null);
-
-  useEffect(() => {
-    getTopics().then(res => {
-      if (res !== topics) { 
-        setTopics(res);
-      }
-    });
-  }, []);
-
+async function TopicCardContainer({ topics, containerTitle, containerDescription }: TopicCardContainerProps) {
   return (
     <section>
       <Flex $justifyContent="space-between" $alignItems="flex-end">
