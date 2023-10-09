@@ -1,6 +1,5 @@
 import type { LiHTMLAttributes, PropsWithChildren } from 'react';
-import { styled } from 'styled-components';
-import color from '@/styles/color';
+import { layout, separator } from './menuItem.css';
 
 type Props = {
   bottomSeparator?: boolean;
@@ -22,29 +21,12 @@ const MenuItem = ({
 
   return (
     <>
-      <MenuItemLayout onClick={handleClick} {...props}>
+      <li className={layout} onClick={handleClick} {...props}>
         {children}
-      </MenuItemLayout>
-      {bottomSeparator && <Separator />}
+      </li>
+      {bottomSeparator && <div className={separator} />}
     </>
   );
 };
 
 export default MenuItem;
-
-const MenuItemLayout = styled.li`
-  padding: 6px 24px;
-
-  transition: background-color 0.2s ease;
-
-  cursor: pointer;
-
-  &:hover {
-    background-color: ${color.neutral[100]};
-  }
-`;
-
-const Separator = styled.div`
-  height: 1.5px;
-  background-color: ${color.neutral[100]};
-`;

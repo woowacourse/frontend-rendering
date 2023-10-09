@@ -1,7 +1,8 @@
+'use client';
+
 import Menu from '@/components/Menu/Menu';
 import { useRouter } from 'next/navigation';
 import MenuTrigger from '../MenuTrigger/MenuTrigger';
-import { css } from 'styled-components';
 
 const DEFAULT_MENU_ITEMS = [
   {
@@ -29,17 +30,7 @@ const MemberProfile = () => {
   const today = new Date();
 
   return (
-    <Menu
-      trigger={<MenuTrigger />}
-      $menuListPosition="left"
-      $style={css`
-        margin: 0 0 0 auto;
-        cursor: pointer;
-      `}
-      $menuListStyle={css`
-        top: 46px;
-      `}
-    >
+    <Menu trigger={<MenuTrigger />}>
       <Menu.Item
         onClick={() =>
           router.push(
