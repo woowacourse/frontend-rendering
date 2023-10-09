@@ -6,6 +6,7 @@ export const HeaderWrapper = styled.div`
   width: 100%;
 
   position: fixed;
+  left: 0;
 
   z-index: ${theme.zIndex.header};
 
@@ -35,7 +36,8 @@ export const PageHeader = styled.div`
   margin: 15px;
 
   text-align: center;
-  font: var(--text-title);
+  font-size: 26px;
+  font-weight: 600;
 `;
 
 export const ContentContainer = styled.div`

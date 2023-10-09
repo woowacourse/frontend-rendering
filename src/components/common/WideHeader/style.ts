@@ -10,8 +10,9 @@ export const Container = styled.div`
 
   position: fixed;
   top: 0;
+  left: 0;
 
-  background-color: var(--header);
+  background-color: black;
 
   padding: 0 80px;
 `;
