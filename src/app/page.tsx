@@ -1,4 +1,5 @@
 import { getCelebs } from '@/api/celeb';
+import { getPopularRestaurants } from '@/api/restaurant';
 import CategoryList from '@/components/CategoryList';
 import CelebProfile from '@/components/CelebProfile';
 import RegionIcon from '@/components/RegionIcon';
@@ -7,6 +8,7 @@ import { use } from 'react';
 
 export default function Home() {
   const celebs = use(getCelebs());
+  const popularRestaurants = use(getPopularRestaurants());
 
   return (
     <main className='w-full flex flex-col gap-4'>
@@ -22,9 +24,13 @@ export default function Home() {
       <section>
         <h4>셀럽잇 추천 맛집!</h4>
         <div className='pl-4 pr-4 flex gap-4 overflow-x-scroll'>
-          <RestaurantCard flexCol />
-          <RestaurantCard flexCol />
-          <RestaurantCard flexCol />
+          {popularRestaurants.map((restaurant) => (
+            <RestaurantCard
+              key={restaurant.id}
+              restaurant={restaurant}
+              flexCol
+            />
+          ))}
         </div>
       </section>
 
