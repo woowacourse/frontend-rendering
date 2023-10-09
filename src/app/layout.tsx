@@ -1,9 +1,6 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
 
 import Providers from './providers';
-
-const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'VoTogether',
@@ -20,7 +17,7 @@ export default function RootLayout({
       <head>
         <title>VoTogether by Next</title>
       </head>
-      <body className={inter.className}>
+      <body>
         <Providers>{children}</Providers>
       </body>
     </html>
