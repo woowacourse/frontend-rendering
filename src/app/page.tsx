@@ -4,6 +4,7 @@ import { IMAGE_URL } from '@/constants';
 import useCategory from '@/hooks/useCategory';
 import { CategoryList } from '@/components/common';
 import RecipeRankingList from '@/components/rank/RecipeRankingList';
+import ProductRankingList from '@/components/rank/ProductRankingList';
 
 const Home = async () => {
   const foodCategory = await useCategory('food');
@@ -33,6 +34,7 @@ const Home = async () => {
       </section>
       <section className={styles.section}>
         <h2 className={styles.title}>👑 상품 랭킹</h2>
+        <ProductRankingList />
       </section>
       <section className={styles.section}>
         <h2 className={styles.title}>📝 리뷰 랭킹</h2>

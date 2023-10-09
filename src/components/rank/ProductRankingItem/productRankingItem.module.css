@@ -1,0 +1,30 @@
+.rankingContainer {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  height: 50px;
+  margin-top: 16px;
+  padding: 0 15px;
+  border-radius: 8px;
+  background-color: var(--color-gray1);
+}
+
+.rank {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.productImage {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+
+.productName {
+  font-size: 18px;
+  font-weight: 700;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  overflow: hidden;
+}

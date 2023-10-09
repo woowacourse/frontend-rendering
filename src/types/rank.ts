@@ -7,3 +7,9 @@ export interface RecipeRanking {
   author: Member;
   favoriteCount: number;
 }
+
+export interface ProductRanking {
+  id: number;
+  name: string;
+  image: string | null;
+}
