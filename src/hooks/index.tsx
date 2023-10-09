@@ -21,6 +21,7 @@ import { useSelect } from './useSelect';
 import { useText } from './useText';
 import { useToast } from './useToast';
 import { useToggle } from './useToggle';
+import { useToggleSwitch } from './useToggleSwitch';
 
 export {
   useCurrentKeyword,
@@ -32,13 +33,9 @@ export {
   useText,
   useToast,
   useToggle,
+  useToggleSwitch,
 };
 
-export {
-  usePostList,
-  useCreateVote,
-  useEditVote,
-  usePostDetail,
-};
+export { usePostList, useCreateVote, useEditVote, usePostDetail };
 
 export { AuthContext, PostOptionContext };
