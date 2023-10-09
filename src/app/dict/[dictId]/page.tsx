@@ -1,5 +1,4 @@
-import type { DictionaryPlant, Season } from 'types/dictionaryPlant';
-import type { DictionaryPlantExtendCycles } from 'types/dictionaryPlant';
+import type { DictionaryPlant } from 'types/dictionaryPlant';
 import Image from 'next/image';
 import { Header } from './DictionaryPlantDetail.style';
 import DictionaryPlantContent from 'components/dictionaryPlant/DictionaryPlantContent';
@@ -7,32 +6,13 @@ import { BottomSheet, Main } from './DictionaryPlantDetail.style';
 import BackButton from 'components/@common/BackButton';
 import RegisterButton from 'components/dictionaryPlant/RegisterButton';
 import DictionaryPlantAPI from 'apis/dictionaryPlant';
-import { SEASONS } from 'constants/index';
+import toDictionaryPlantExtendCycles from 'utils/toDictionaryPlantExtendCycles';
 
 interface DictionaryPlantDetailProps {
   params: {
     dictId: DictionaryPlant['id'];
   };
 }
-
-const initialWaterOptions: DictionaryPlantExtendCycles['waterOptions'] = {
-  봄: '',
-  여름: '',
-  가을: '',
-  겨울: '',
-};
-
-const toDictionaryPlantExtendCycles = (data: DictionaryPlant): DictionaryPlantExtendCycles => {
-  const { waterCycle } = data;
-
-  const waterOptions = [...Object.entries(waterCycle)].reduce((prev, cur) => {
-    const [season, data] = cur as [Season, string];
-    const key = SEASONS[season];
-    return { ...prev, [key]: data };
-  }, initialWaterOptions);
-
-  return { ...data, waterOptions };
-};
 
 export function generateStaticParams() {
   return [{ dictId: '1' }, { dictId: '2' }, { dictId: '3' }, { dictId: '4' }, { dictId: '5' }];
