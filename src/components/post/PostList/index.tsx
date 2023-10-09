@@ -3,7 +3,6 @@ import React, { useContext, useEffect, useRef } from 'react';
 
 import { useSelect } from '@/hooks';
 
-import { AuthContext } from '@/hooks/context/auth';
 import { PostOptionContext } from '@/hooks/context/postOption';
 import { usePostList } from '@/hooks/query/usePostList';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
@@ -25,7 +24,6 @@ import * as S from './style';
 export default function PostList() {
   const topButtonRef = useRef<HTMLButtonElement>(null);
   const { postType, postOptionalOption } = usePostRequestInfo();
-  const { loggedInfo } = useContext(AuthContext);
   const { targetRef, isIntersecting } = useIntersectionObserver({
     root: null,
     rootMargin: '',
