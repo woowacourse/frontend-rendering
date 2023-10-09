@@ -1,10 +1,14 @@
 import StyledComponentsRegistry from './lib/registry';
+import GlobalStyles from './styles/GlobalStyles';
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html>
       <body>
-        <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+        <StyledComponentsRegistry>
+          <GlobalStyles />
+          {children}
+        </StyledComponentsRegistry>
       </body>
     </html>
   );
