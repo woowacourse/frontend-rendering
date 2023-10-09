@@ -4,6 +4,7 @@ import CategoryList from '@/components/CategoryList';
 import CelebProfile from '@/components/CelebProfile';
 import RegionIcon from '@/components/RegionIcon';
 import RestaurantCard from '@/components/RestaurantCard';
+import { RECOMMENDED_REGION } from '@/constants/recommendedRegion';
 import { use } from 'react';
 
 export default function Home() {
@@ -37,10 +38,9 @@ export default function Home() {
       <section>
         <h4>어디로 가시나요?</h4>
         <div className='pl-4 pr-4 flex gap-4 overflow-x-scroll'>
-          <RegionIcon />
-          <RegionIcon />
-          <RegionIcon />
-          <RegionIcon />
+          {Object.entries(RECOMMENDED_REGION).map((region) => (
+            <RegionIcon key={region[0]} region={region} />
+          ))}
         </div>
       </section>
 
