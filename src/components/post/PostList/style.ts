@@ -21,7 +21,11 @@ export const SelectContainer = styled.div`
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 
   @media (min-width: ${theme.breakpoint.sm}) {
-    padding: 40px 20px;
+    padding: 30px 20px 40px 20px;
+  }
+
+  @media (max-width: ${theme.breakpoint.sm}) {
+    margin-top: 10px;
   }
 `;
 
