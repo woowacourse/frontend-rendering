@@ -8,10 +8,6 @@
 
 * {
   font-family: "Pretendard", sans-serif;
-
-  &::-webkit-scrollbar {
-    display: none;
-  }
 }
 
 body {
@@ -28,6 +24,7 @@ body {
 #root {
   position: relative;
 
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
 
@@ -35,4 +32,8 @@ body {
   max-width: 495px;
 
   box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.24);
+}
+
+#root::-webkit-scrollbar {
+  display: none;
 }
