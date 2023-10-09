@@ -1,8 +1,6 @@
 import './globals.css';
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
-
-const inter = Inter({ subsets: ['latin'] });
+import { Header, NavigationBar, SvgSprite } from '@/components/Common';
 
 export const metadata: Metadata = {
   title: '펀잇',
@@ -17,7 +15,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang='ko'>
-      <body className={inter.className}>{children}</body>
+      <body>
+        <SvgSprite />
+        <Header />
+        <main className='main'>{children}</main>
+        <NavigationBar />
+      </body>
     </html>
   );
 }
