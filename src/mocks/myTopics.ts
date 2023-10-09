@@ -1,4 +1,4 @@
-import { Topic } from "@/types/topic";
+import { Topic } from "@/types/Topic";
 
 const myTopics :Topic[]= [
   {

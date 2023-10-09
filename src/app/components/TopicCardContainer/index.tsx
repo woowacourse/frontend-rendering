@@ -6,7 +6,7 @@ import Flex from '../common/Flex';
 import Space from '../common/Space';
 import Text from '../common/Text';
 import TopicCard from '../TopicCard';
-import { Topic } from '@/types/topic';
+import { Topic } from '@/types/Topic';
 
 interface TopicCardContainerProps {
   topics: Topic[]; 

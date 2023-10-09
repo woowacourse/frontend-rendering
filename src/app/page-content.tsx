@@ -6,7 +6,7 @@ import TopicCardContainer from './components/TopicCardContainer';
 import Box from './components/common/Box';
 import Logo from './components/Logo';
 import { Fragment } from 'react';
-import { Topic } from '@/types/topic';
+import { Topic } from '@/types/Topic';
 
 export interface PageContentProps {
   topics: Topic[];

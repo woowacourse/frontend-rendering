@@ -6,7 +6,7 @@ import Flex from '../common/Flex';
 import ImageCommon from '../common/Image';
 import Space from '../common/Space';
 import Text from '../common/Text';
-import { Topic } from '@/types/topic'; 
+import { Topic } from '@/types/Topic'; 
 
 type TopicCardProps = Omit<Topic, "id">;
 
