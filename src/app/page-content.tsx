@@ -66,6 +66,14 @@ const TopicContainerWrapper = styled.article`
   margin: 0 auto;
   position: relative;
   padding-top: 50px;
+
+  @media (max-width: 1076px) {
+    width: 684px;
+  }
+
+  @media (max-width: 724px) {
+    width: 332px;
+  }
 `;
 
 export default PageContent;
