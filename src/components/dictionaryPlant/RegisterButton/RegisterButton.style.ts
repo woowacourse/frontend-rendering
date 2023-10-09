@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import nanumSquareRound from 'style/font';
 
 export const PrimaryButton = styled.button`
   display: inline-flex;
@@ -9,7 +10,7 @@ export const PrimaryButton = styled.button`
   height: 36px;
   padding: 0 1rem;
 
-  font: 500 1.5rem/ 1.8rem NanumSquareRound;
+  font: 500 1.5rem/ 1.8rem ${nanumSquareRound.style.fontFamily};
   color: ${({ theme }) => theme.color.background};
   letter-spacing: 1px;
 

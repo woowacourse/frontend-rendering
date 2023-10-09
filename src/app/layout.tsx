@@ -1,8 +1,9 @@
+import dynamic from 'next/dynamic';
 import SvgSpriteMap from 'components/@common/SvgIcons/SvgSpriteMap';
 import StyledComponentsRegistry from 'style/registry';
+import nanumSquareRound from 'style/font';
 import { PageArea, Wrapper } from './layout.style';
 import ClientLayout from './ClientLayout';
-import dynamic from 'next/dynamic';
 
 import 'style/reset.css';
 import 'style/global.css';
@@ -35,7 +36,7 @@ const RootLayout = (props: React.PropsWithChildren) => {
           content="피움은 여러분의 반려 식물 관리 경험을 기록할 수 있도록 도와주고 각자에게 알맞은 관리법을 빠르게 찾도록 도와주고 있어요."
         />
       </head>
-      <body>
+      <body className={nanumSquareRound.className}>
         <noscript>화면을 보기 위해서는 자바스크립트를 켜 주셔야 해요!</noscript>
         <StyledComponentsRegistry>
           <ClientLayout>

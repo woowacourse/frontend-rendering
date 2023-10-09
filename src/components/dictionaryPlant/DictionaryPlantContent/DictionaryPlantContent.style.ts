@@ -1,6 +1,7 @@
 'use client';
 
 import { styled } from 'styled-components';
+import nanumSquareRound from 'style/font';
 
 export const HeaderBox = styled.section`
   display: flex;
@@ -15,14 +16,14 @@ export const HeaderBox = styled.section`
 `;
 
 export const Name = styled.p`
-  font: 900 2.4rem/4rem 'GmarketSans';
+  font: 900 2.4rem/4rem ${nanumSquareRound.style.fontFamily};
   color: ${(props) => props.theme.color.sub};
   text-align: left;
 `;
 
 export const FamilyName = styled.p`
   margin-bottom: 4px;
-  font: 500 1.2rem/1.6rem 'NanumSquareRound';
+  font: 500 1.2rem/1.6rem ${nanumSquareRound.style.fontFamily};
   color: ${(props) => props.theme.color.sub};
   text-align: left;
 `;
