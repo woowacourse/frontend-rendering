@@ -1,4 +1,7 @@
-export const RECOMMENDED_REGION = {
+export const RECOMMENDED_REGION: Record<
+  string,
+  { name: string[]; code: number[] }
+> = {
   jamsil: {
     name: ['잠실'],
     code: [1171010100],

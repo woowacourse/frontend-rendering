@@ -1,6 +1,7 @@
 import { getAllRestaurants } from '@/api/restaurant';
 import RestaurantCard from '@/components/RestaurantCard';
 import { CELEB } from '@/constants/celeb';
+import { RECOMMENDED_REGION } from '@/constants/recommendedRegion';
 import Link from 'next/link';
 import { use } from 'react';
 
@@ -9,6 +10,12 @@ const ResultPage = ({ params }: { params: { theme: string; key: string } }) => {
 
   const celebsRestaurants = allRestaurants.filter((restaurant) =>
     restaurant.celebs.some((celeb) => String(celeb.id) === params.key)
+  );
+
+  const recommendedRegionRestaurants = allRestaurants.filter((restaurant) =>
+    RECOMMENDED_REGION[params.key as keyof typeof RECOMMENDED_REGION].name.some(
+      (regionName) => restaurant.roadAddress.includes(regionName)
+    )
   );
 
   return (
@@ -20,10 +27,24 @@ const ResultPage = ({ params }: { params: { theme: string; key: string } }) => {
             맛집
           </h4>
         )}
+        {params.theme === 'region' && (
+          <h4>
+            ←
+            {
+              RECOMMENDED_REGION[params.key as keyof typeof RECOMMENDED_REGION]
+                .name
+            }
+            맛집
+          </h4>
+        )}
       </Link>
       <div className='w-full flex flex-col gap-2 p-4'>
         {params.theme === 'celeb' &&
           celebsRestaurants.map((restaurant) => (
+            <RestaurantCard key={restaurant.id} restaurant={restaurant} />
+          ))}
+        {params.theme === 'region' &&
+          recommendedRegionRestaurants.map((restaurant) => (
             <RestaurantCard key={restaurant.id} restaurant={restaurant} />
           ))}
       </div>

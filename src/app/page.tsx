@@ -42,7 +42,9 @@ export default function Home() {
         <h4>어디로 가시나요?</h4>
         <div className='pl-4 pr-4 flex gap-4 overflow-x-scroll'>
           {Object.entries(RECOMMENDED_REGION).map((region) => (
-            <RegionIcon key={region[0]} region={region} />
+            <Link key={region[0]} href={`/result/region/${region[0]}`}>
+              <RegionIcon key={region[0]} region={region} />
+            </Link>
           ))}
         </div>
       </section>
