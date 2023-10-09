@@ -4,6 +4,9 @@ import { PageArea, Wrapper } from './layout.style';
 import ClientLayout from './ClientLayout';
 import dynamic from 'next/dynamic';
 
+import 'style/reset.css';
+import 'style/global.css';
+
 const ToastList = dynamic(() => import('components/Toast/ToastList'), { ssr: false });
 
 const RootLayout = (props: React.PropsWithChildren) => {
