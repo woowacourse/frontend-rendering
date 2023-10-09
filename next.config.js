@@ -12,14 +12,10 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 'www.celuveat.com',
-        port: '',
-        pathname: '/images-data/**',
       },
       {
         protocol: 'https',
         hostname: 'yt3.googleusercontent.com',
-        port: '',
-        pathname: '/*',
       },
     ],
   },
