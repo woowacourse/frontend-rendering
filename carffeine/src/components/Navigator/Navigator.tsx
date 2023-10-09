@@ -1,10 +1,11 @@
-import styles from './Navigator.module.css';
-import Button from './components/Button';
+import NavigationBar from './NavigationBar';
 
-export default function Navigator() {
+const Navigator = () => {
   return (
-    <div className={styles.container}>
-      <Button />
-    </div>
+    <NavigationBar>
+      <NavigationBar.Menu />
+    </NavigationBar>
   );
-}
+};
+
+export default Navigator;
