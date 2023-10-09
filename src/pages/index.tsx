@@ -1,5 +1,9 @@
-import BottomTabBar from "@/components/BottomTabBar";
+import Header from "@/common/Header";
 
 export default function Home() {
-  return <>쿠폰리스트</>;
+  return (
+    <>
+      <Header /> 쿠폰리스트
+    </>
+  );
 }
