@@ -1,16 +1,19 @@
+import { Celeb } from '@/@types/api.types';
 import Image from 'next/image';
 
-const CelebProfile = () => {
+interface CelebProfile {
+  celeb: Celeb;
+}
+
+const CelebProfile = ({ celeb }: CelebProfile) => {
+  const { name, profileImageUrl } = celeb;
+
   return (
     <div className='flex flex-col items-center gap-2'>
       <div className='w-16 h-16 rounded-full overflow-hidden relative'>
-        <Image
-          alt='성시경'
-          fill={true}
-          src='https://yt3.googleusercontent.com/vQrdlCaT4Tx1axJtSUa1oxp2zlnRxH-oMreTwWqB-2tdNFStIOrWWw-0jwPvVCUEjm_MywltBFY=s176-c-k-c0x00ffffff-no-rj'
-        />
+        <Image alt={name} fill={true} src={profileImageUrl} />
       </div>
-      <span className='text-xs'>성시경</span>
+      <span className='text-xs'>{name}</span>
     </div>
   );
 };

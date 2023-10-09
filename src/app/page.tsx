@@ -1,21 +1,21 @@
+import { getCelebs } from '@/api/celeb';
 import CategoryList from '@/components/CategoryList';
 import CelebProfile from '@/components/CelebProfile';
 import RegionIcon from '@/components/RegionIcon';
 import RestaurantCard from '@/components/RestaurantCard';
+import { use } from 'react';
 
 export default function Home() {
+  const celebs = use(getCelebs());
+
   return (
     <main className='w-full flex flex-col gap-4'>
       <section>
         <h4>셀럽 BEST</h4>
         <div className='pl-4 pr-4 flex gap-4 overflow-x-scroll'>
-          <CelebProfile />
-          <CelebProfile />
-          <CelebProfile />
-          <CelebProfile />
-          <CelebProfile />
-          <CelebProfile />
-          <CelebProfile />
+          {celebs.map((celeb) => (
+            <CelebProfile key={celeb.id} celeb={celeb} />
+          ))}
         </div>
       </section>
 
