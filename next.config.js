@@ -6,8 +6,10 @@ const nextConfig = {
 
   env: {
     HOST:
-      process.env.NODE_ENV === 'development' ? 'http://localhost:7942' : 'https://api.pium.life',
-    DICT_COUNT: process.env.NODE_ENV === 'development' ? 5 : 333,
+      process.env.NODE_ENV === 'development'
+        ? 'http://localhost:7942'
+        : 'https://server-frontend-rendering-1d9d4e7d2546.herokuapp.com',
+    DICT_COUNT: 5,
   },
 
   images: {
