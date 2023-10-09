@@ -25,3 +25,7 @@ export interface DictionaryPlantRegistrationForm {
   name?: string;
   image?: File;
 }
+
+export interface DictionaryPlantExtendCycles extends DictionaryPlant {
+  waterOptions: Record<SeasonKor, string>;
+}

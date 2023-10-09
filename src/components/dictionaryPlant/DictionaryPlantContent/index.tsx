@@ -1,5 +1,6 @@
 'use client';
 
+import type { DictionaryPlantExtendCycles } from 'types/dictionaryPlant';
 import { useRouter } from 'next/navigation';
 import { useSetRecoilState } from 'recoil';
 import SeeMoreContentBox from 'components/@common/SeeMoreContentBox';
@@ -21,7 +22,6 @@ import {
   PropsBox,
 } from './DictionaryPlantContent.style';
 import { selectedDictionaryPlantState } from 'store/atoms/garden';
-import type { DictionaryPlantExtendCycles } from 'hooks/queries/dictionaryPlant/useDictionaryPlantDetail';
 import parseTemperature from 'utils/parseTemperature';
 import { NO_INFORMATION, URL_PATH } from 'constants/index';
 import theme from 'style/theme.style';

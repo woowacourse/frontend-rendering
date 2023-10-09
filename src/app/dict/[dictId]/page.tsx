@@ -1,75 +1,75 @@
-'use client';
-
-import { useRouter } from 'next/navigation';
+import type { DictionaryPlant, Season } from 'types/dictionaryPlant';
+import type { DictionaryPlantExtendCycles } from 'types/dictionaryPlant';
+import Image from 'next/image';
 import { Header } from './DictionaryPlantDetail.style';
-import Image from 'components/@common/Image';
-import SvgFill from 'components/@common/SvgIcons/SvgFill';
 import DictionaryPlantContent from 'components/dictionaryPlant/DictionaryPlantContent';
-import { BackButton, BottomSheet, Main, PrimaryButton } from './DictionaryPlantDetail.style';
-import useAddToast from 'hooks/@common/useAddToast';
-import useCheckSessionId from 'hooks/queries/auth/useCheckSessionId';
-import useDictionaryPlantDetail from 'hooks/queries/dictionaryPlant/useDictionaryPlantDetail';
-import { URL_PATH } from 'constants/index';
-import theme from 'style/theme.style';
+import { BottomSheet, Main } from './DictionaryPlantDetail.style';
+import BackButton from 'components/@common/BackButton';
+import RegisterButton from 'components/dictionaryPlant/RegisterButton';
+import DictionaryPlantAPI from 'apis/dictionaryPlant';
+import { SEASONS } from 'constants/index';
 
 interface DictionaryPlantDetailProps {
   params: {
-    dictId: string;
+    dictId: DictionaryPlant['id'];
   };
 }
 
-const DictionaryPlantDetail = (props: DictionaryPlantDetailProps) => {
+const initialWaterOptions: DictionaryPlantExtendCycles['waterOptions'] = {
+  봄: '',
+  여름: '',
+  가을: '',
+  겨울: '',
+};
+
+const toDictionaryPlantExtendCycles = (data: DictionaryPlant): DictionaryPlantExtendCycles => {
+  const { waterCycle } = data;
+
+  const waterOptions = [...Object.entries(waterCycle)].reduce((prev, cur) => {
+    const [season, data] = cur as [Season, string];
+    const key = SEASONS[season];
+    return { ...prev, [key]: data };
+  }, initialWaterOptions);
+
+  return { ...data, waterOptions };
+};
+
+export function generateStaticParams() {
+  return [{ dictId: '1' }, { dictId: '2' }, { dictId: '3' }, { dictId: '4' }, { dictId: '5' }];
+}
+
+const DictionaryPlantDetail = async (props: DictionaryPlantDetailProps) => {
   const {
-    params: { dictId: id },
+    params: { dictId },
   } = props;
-  if (!id) throw new Error('URL에 id가 없습니다.');
+  if (!dictId) throw new Error('URL에 id가 없습니다.');
 
-  const { isSuccess: isLoggedIn } = useCheckSessionId(false);
-  const addToast = useAddToast();
-
-  const dictionaryPlantId = Number(id);
-  const { data: dictionaryPlantDetail } = useDictionaryPlantDetail(dictionaryPlantId);
+  const dictionaryPlantId = Number(dictId);
+  const response = await DictionaryPlantAPI.getDetail(dictionaryPlantId);
+  const dictionaryPlantDetail: DictionaryPlant = await response.json();
   const { image, name } = dictionaryPlantDetail;
-
-  const router = useRouter();
-
-  const goBack = () => {
-    router.back();
-  };
-
-  const goPetPlantRegisterForm = () => {
-    router.push(`/pet/register/${id}`);
-  };
-
-  const goLogin = () => {
-    router.push(URL_PATH.login);
-  };
-
-  const warning = () => {
-    addToast({
-      type: 'info',
-      message: '로그인 후 등록할 수 있어요',
-      time: 4000,
-      buttonContent: '로그인',
-      onClickButton: goLogin,
-    });
-  };
 
   return (
     <>
       <Header>
-        <BackButton onClick={goBack}>
-          <SvgFill icon="line-arrow-left" aria-label="뒤로 가기" color={theme.color.sub} />
-        </BackButton>
+        <BackButton />
       </Header>
       <Main>
-        <Image type="wide" src={image} alt={name} size="300px" />
-        <DictionaryPlantContent {...dictionaryPlantDetail} />
+        <Image
+          src={image}
+          alt={name}
+          width={768}
+          height={300}
+          priority
+          style={{
+            width: '100%',
+            objectFit: 'cover',
+          }}
+        />
+        <DictionaryPlantContent {...toDictionaryPlantExtendCycles(dictionaryPlantDetail)} />
       </Main>
       <BottomSheet>
-        <PrimaryButton onClick={isLoggedIn ? goPetPlantRegisterForm : warning}>
-          반려 식물로 등록하기
-        </PrimaryButton>
+        <RegisterButton dictionaryPlantId={dictionaryPlantId} />
       </BottomSheet>
     </>
   );
