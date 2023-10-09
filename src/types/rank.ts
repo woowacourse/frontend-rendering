@@ -13,3 +13,13 @@ export interface ProductRanking {
   name: string;
   image: string | null;
 }
+
+export interface ReviewRanking {
+  reviewId: number;
+  productId: number;
+  productName: string;
+  content: string;
+  rating: number;
+  favoriteCount: number;
+  categoryType: string;
+}

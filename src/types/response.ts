@@ -1,4 +1,4 @@
-import { ProductRanking, RecipeRanking } from './rank';
+import { ProductRanking, RecipeRanking, ReviewRanking } from './rank';
 
 export interface ErrorResponse {
   code: number;
@@ -11,4 +11,8 @@ export interface RecipeRankingResponse {
 
 export interface ProductRankingResponse {
   products: ProductRanking[];
+}
+
+export interface ReviewRankingResponse {
+  reviews: ReviewRanking[];
 }
