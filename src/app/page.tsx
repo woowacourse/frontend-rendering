@@ -5,6 +5,7 @@ import CelebProfile from '@/components/CelebProfile';
 import RegionIcon from '@/components/RegionIcon';
 import RestaurantCard from '@/components/RestaurantCard';
 import { RECOMMENDED_REGION } from '@/constants/recommendedRegion';
+import Link from 'next/link';
 import { use } from 'react';
 
 export default function Home() {
@@ -17,7 +18,9 @@ export default function Home() {
         <h4>셀럽 BEST</h4>
         <div className='pl-4 pr-4 flex gap-4 overflow-x-scroll'>
           {celebs.map((celeb) => (
-            <CelebProfile key={celeb.id} celeb={celeb} />
+            <Link key={celeb.id} href={`/result/celeb/${celeb.id}`}>
+              <CelebProfile celeb={celeb} />
+            </Link>
           ))}
         </div>
       </section>

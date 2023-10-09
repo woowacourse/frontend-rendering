@@ -5,3 +5,9 @@ export const getPopularRestaurants = async (): Promise<RestaurantData[]> => {
 
   return res.json();
 };
+
+export const getAllRestaurants = async (): Promise<RestaurantData[]> => {
+  const res = await fetch('http://localhost:9999/restaurants');
+
+  return res.json();
+};
