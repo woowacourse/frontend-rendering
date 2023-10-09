@@ -4,7 +4,7 @@ import Layout from '@/components/common/Layout';
 
 import ToggleSwitch from '@/components/common/ToggleSwitch';
 
-import * as S from './style';
+import * as S from '@/styles/rankingStyle';
 import { useToggleSwitch } from '@/hooks';
 
 import firstRankIcon from '@/assets/first-rank.webp';
