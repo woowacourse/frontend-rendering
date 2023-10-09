@@ -1,16 +1,10 @@
-'use client';
-
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { ThemeProvider } from 'styled-components';
-import { GlobalStyle } from 'style/Global.style';
 import SvgSpriteMap from 'components/@common/SvgIcons/SvgSpriteMap';
-import theme from 'style/theme.style';
 import StyledComponentsRegistry from 'style/registry';
 import { PageArea, Wrapper } from './layout.style';
-import { RecoilRoot } from 'recoil';
-import ToastList from 'components/Toast/ToastList';
+import ClientLayout from './ClientLayout';
+import dynamic from 'next/dynamic';
 
-const queryClient = new QueryClient();
+const ToastList = dynamic(() => import('components/Toast/ToastList'), { ssr: false });
 
 const RootLayout = (props: React.PropsWithChildren) => {
   const { children } = props;
@@ -41,18 +35,13 @@ const RootLayout = (props: React.PropsWithChildren) => {
       <body>
         <noscript>화면을 보기 위해서는 자바스크립트를 켜 주셔야 해요!</noscript>
         <StyledComponentsRegistry>
-          <GlobalStyle />
-          <ThemeProvider theme={theme}>
-            <QueryClientProvider client={queryClient}>
-              <RecoilRoot>
-                <SvgSpriteMap />
-                <Wrapper>
-                  <PageArea>{children}</PageArea>
-                </Wrapper>
-                <ToastList />
-              </RecoilRoot>
-            </QueryClientProvider>
-          </ThemeProvider>
+          <ClientLayout>
+            <SvgSpriteMap />
+            <Wrapper>
+              <PageArea>{children}</PageArea>
+            </Wrapper>
+            <ToastList />
+          </ClientLayout>
         </StyledComponentsRegistry>
         <div id="toast-root" />
       </body>
