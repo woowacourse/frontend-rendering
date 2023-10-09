@@ -1,7 +1,6 @@
 import { RestaurantData } from '@/@types/api.types';
 import { getAllRestaurants } from '@/api/restaurant';
 import RestaurantCard from '@/components/RestaurantCard';
-import { CELEB } from '@/constants/celeb';
 import { RECOMMENDED_REGION } from '@/constants/recommendedRegion';
 import Link from 'next/link';
 import { use } from 'react';
@@ -13,7 +12,7 @@ const ResultPage = ({ params }: { params: { theme: string; key: string } }) => {
 
   if (params.theme === 'celeb')
     filteredRestaurants = allRestaurants.filter((restaurant) =>
-      restaurant.celebs.some((celeb) => String(celeb.id) === params.key)
+      restaurant.celebs.some((celeb) => celeb.name === decodeURI(params.key))
     );
 
   if (params.theme === 'region')
@@ -32,10 +31,7 @@ const ResultPage = ({ params }: { params: { theme: string; key: string } }) => {
     <div>
       <Link href='/'>
         {params.theme === 'celeb' && (
-          <h4>
-            ←{CELEB.find((celeb) => String(celeb.id) === params.key)?.name} 추천
-            맛집
-          </h4>
+          <h4>← {decodeURI(params.key)} 추천 맛집</h4>
         )}
         {params.theme === 'region' && (
           <h4>
