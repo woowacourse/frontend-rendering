@@ -3,7 +3,7 @@ const MY_END_POINT = BASE_URL + '/api';
 
 const fetcher = (endpoint: string) => {
   return <T>(url: string, options?: RequestInit): Promise<T> => {
-    return fetch(endpoint + url, { ...options, cache: options?.cache || 'no-store' })
+    return fetch(endpoint + url, { ...options })
       .then((res) => {
         if (res.ok) return res.json();
         else {

@@ -3,7 +3,7 @@ import { myFetcher } from './fetcher';
 
 export const getPetFoods = async () => {
   try {
-    const { petFoods } = await myFetcher<GetPetFoodsRes>('/pet-foods', { cache: 'force-cache' });
+    const { petFoods } = await myFetcher<GetPetFoodsRes>('/pet-foods');
 
     return petFoods;
   } catch (e) {
