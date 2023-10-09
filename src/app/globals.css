@@ -21,7 +21,7 @@ body {
 }
 
 body {
-  background: #ffffff;
+  background: #3e5e8e;
 }
 
 img {
@@ -50,4 +50,39 @@ button:hover {
 .flex {
   display: flex;
   gap: 1.6rem;
+}
+
+.layout {
+  width: 100vw;
+  height: 100%;
+
+  background-color: #ffffff;
+  overflow-y: auto;
+}
+
+.flexCenter {
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (min-width: 768px) {
+  .layout {
+    max-width: 430px;
+  }
+
+  .zipgoBackground {
+    width: 100%;
+
+    background-image: url('/zipgo_background.webp');
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .defaultDesktop {
+    display: flex;
+    justify-content: flex-end;
+
+    width: 1024px;
+  }
 }
