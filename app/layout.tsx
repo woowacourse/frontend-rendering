@@ -1,6 +1,5 @@
 import "./styles/globals.css";
 import "./styles/resetStyle.css";
-import Navbar from "./components/navbar/Navbar";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -16,10 +15,7 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body>
-        <div id="root">
-          <Navbar />
-          {children}
-        </div>
+        <div id="root">{children}</div>
       </body>
     </html>
   );
