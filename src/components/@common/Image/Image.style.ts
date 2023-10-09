@@ -1,5 +1,3 @@
-'use client';
-
 import { keyframes, styled } from 'styled-components';
 
 export interface StyledImageProps {

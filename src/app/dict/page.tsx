@@ -1,30 +1,21 @@
-'use client';
-
-import { useState } from 'react';
-import { useSearchParams } from 'next/navigation';
 // import Navbar from 'components/@common/Navbar';
-import SearchBox from 'components/search/SearchBox';
 import SearchResults from 'components/search/SearchResults';
+import DictionarySearchBox from 'components/dictionaryPlant/DictionarySearchBox/DictionarySearchBox';
 import { Title, Wrapper } from './DictionaryPlantSearch.style';
-import useDictionaryNavigate from 'hooks/dictionaryPlant/useDictionaryPlantNavigate';
 
-const DictionarySearch = () => {
-  const params = useSearchParams();
-  const search = params.get('search') ?? '';
+interface DictionarySearchProps {
+  searchParams: { search: string };
+}
 
-  const { goToProperDictionaryPlantPage, goToDictionaryPlantDetailPage } = useDictionaryNavigate();
-  const [searchValue, setSearchValue] = useState('');
+const DictionarySearch = (props: DictionarySearchProps) => {
+  const {
+    searchParams: { search },
+  } = props;
 
   return (
     <>
       <Wrapper>
-        <SearchBox
-          value={searchValue}
-          onChangeValue={setSearchValue}
-          onEnter={goToProperDictionaryPlantPage}
-          onNextClick={goToProperDictionaryPlantPage}
-          onResultClick={goToDictionaryPlantDetailPage}
-        />
+        <DictionarySearchBox initialSearch={search} />
         <Title>&quot;{search}&quot; 검색 결과</Title>
         <SearchResults plantName={search} />
       </Wrapper>

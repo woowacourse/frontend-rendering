@@ -1,17 +1,10 @@
-'use client';
-
-import { useState } from 'react';
 import Image from 'next/image';
 // import Navbar from 'components/@common/Navbar';
-import SearchBox from 'components/search/SearchBox';
+import DictionarySearchBox from 'components/dictionaryPlant/DictionarySearchBox/DictionarySearchBox';
 import { LogoMessage, SearchBoxArea, SearchMessage, Wrapper, ImageArea } from './Main.style';
-import useDictionaryNavigate from 'hooks/dictionaryPlant/useDictionaryPlantNavigate';
 import LogoSvg from 'assets/logo.svg';
 
 const Main = () => {
-  const { goToProperDictionaryPlantPage, goToDictionaryPlantDetailPage } = useDictionaryNavigate();
-  const [searchValue, setSearchValue] = useState('');
-
   return (
     <>
       <Wrapper>
@@ -25,13 +18,7 @@ const Main = () => {
           />
         </ImageArea>
         <SearchBoxArea>
-          <SearchBox
-            value={searchValue}
-            onChangeValue={setSearchValue}
-            onEnter={goToProperDictionaryPlantPage}
-            onNextClick={goToProperDictionaryPlantPage}
-            onResultClick={goToDictionaryPlantDetailPage}
-          />
+          <DictionarySearchBox />
         </SearchBoxArea>
         <SearchMessage>피움에 등록된 식물을 검색해 보세요!</SearchMessage>
       </Wrapper>

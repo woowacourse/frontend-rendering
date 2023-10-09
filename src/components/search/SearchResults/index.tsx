@@ -1,15 +1,19 @@
 import SearchResultItem from 'components/search/SearchResultItem';
 import { Title, ResultList, Wrapper, StyledLink } from './SearchResults.style';
-import useDictionaryPlantSearch from 'hooks/queries/dictionaryPlant/useDictionaryPlantSearch';
 import { URL_PATH } from 'constants/index';
+import DictionaryPlantAPI from 'apis/dictionaryPlant';
+import type { DictionaryPlantNameSearchResult } from 'types/dictionaryPlant';
 
 interface SearchResultsProps {
   plantName: string;
 }
 
-const SearchResults = (props: SearchResultsProps) => {
+const SearchResults = async (props: SearchResultsProps) => {
   const { plantName } = props;
-  const { data: searchResults } = useDictionaryPlantSearch(plantName);
+
+  const response = await DictionaryPlantAPI.getSearch(plantName);
+  const { data: searchResults }: { data: DictionaryPlantNameSearchResult[] } =
+    await response.json();
 
   const samePlant = searchResults?.find(({ name }) => name === plantName);
   const similarPlants = searchResults?.filter(({ name }) => name !== plantName);

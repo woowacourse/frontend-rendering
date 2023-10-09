@@ -1,4 +1,6 @@
-import { forwardRef } from 'react';
+'use client';
+
+import { forwardRef, useEffect, useMemo, useState } from 'react';
 import type { StyledImageProps } from './Image.style';
 import { StyledImage } from './Image.style';
 import ImageSourceList from 'models/ImageSourceList';
@@ -8,14 +10,23 @@ type ImageProps = Omit<React.ImgHTMLAttributes<HTMLImageElement>, 'onError'> &
   Partial<StyledImageProps>;
 
 const Image = forwardRef<HTMLImageElement, ImageProps>(function Image(props, ref) {
-  const { type = 'circle', size = '77px', src = sadpiumiPng, ...imageProps } = props;
+  const { type = 'circle', size = '77px', src: srcProp = sadpiumiPng, ...imageProps } = props;
+
+  const [src, setSrc] = useState(srcProp);
 
   const sizeValue = Number(size.slice(0, -2));
-  const imageSources = new ImageSourceList(typeof src === 'string' ? src : src.src, sizeValue);
+  const imageSources = useMemo(
+    () => new ImageSourceList(typeof srcProp === 'string' ? srcProp : srcProp.src, sizeValue),
+    [srcProp, sizeValue]
+  );
 
-  const setErrorImage: React.ReactEventHandler<HTMLImageElement> = ({ currentTarget }) => {
-    currentTarget.src = imageSources.getNext();
+  const setErrorImage: React.ReactEventHandler<HTMLImageElement> = () => {
+    setSrc(imageSources.getNext());
   };
+
+  useEffect(() => {
+    setSrc(imageSources.getCurrent());
+  }, [imageSources]);
 
   return (
     <StyledImage
@@ -24,7 +35,7 @@ const Image = forwardRef<HTMLImageElement, ImageProps>(function Image(props, ref
       size={size}
       onError={setErrorImage}
       loading="lazy"
-      src={imageSources.getCurrent()}
+      src={typeof src === 'string' ? src : src.src}
       {...imageProps}
     />
   );
