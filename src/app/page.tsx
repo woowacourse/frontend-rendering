@@ -1,5 +1,5 @@
 import Image from 'next/image';
-// import Navbar from 'components/@common/Navbar';
+import NavBar from 'components/@common/NavBar';
 import DictionarySearchBox from 'components/dictionaryPlant/DictionarySearchBox/DictionarySearchBox';
 import { LogoMessage, SearchBoxArea, SearchMessage, Wrapper, ImageArea } from './Main.style';
 import LogoSvg from 'assets/logo.svg';
@@ -22,7 +22,7 @@ const Main = () => {
         </SearchBoxArea>
         <SearchMessage>피움에 등록된 식물을 검색해 보세요!</SearchMessage>
       </Wrapper>
-      {/* <Navbar /> */}
+      <NavBar />
     </>
   );
 };

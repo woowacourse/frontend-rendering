@@ -1,4 +1,4 @@
-// import Navbar from 'components/@common/Navbar';
+import NavBar from 'components/@common/NavBar';
 import SearchResults from 'components/search/SearchResults';
 import DictionarySearchBox from 'components/dictionaryPlant/DictionarySearchBox/DictionarySearchBox';
 import { Title, Wrapper } from './DictionaryPlantSearch.style';
@@ -19,7 +19,7 @@ const DictionarySearch = (props: DictionarySearchProps) => {
         <Title>&quot;{search}&quot; 검색 결과</Title>
         <SearchResults plantName={search} />
       </Wrapper>
-      {/* <Navbar /> */}
+      <NavBar />
     </>
   );
 };
