@@ -7,6 +7,7 @@ import BackButton from 'components/@common/BackButton';
 import RegisterButton from 'components/dictionaryPlant/RegisterButton';
 import DictionaryPlantAPI from 'apis/dictionaryPlant';
 import toDictionaryPlantExtendCycles from 'utils/toDictionaryPlantExtendCycles';
+import { DICTIONARY_PLANT_COUNT } from 'constants/index';
 
 interface DictionaryPlantDetailProps {
   params: {
@@ -15,7 +16,9 @@ interface DictionaryPlantDetailProps {
 }
 
 export function generateStaticParams() {
-  return [{ dictId: '1' }, { dictId: '2' }, { dictId: '3' }, { dictId: '4' }, { dictId: '5' }];
+  return Array.from({ length: DICTIONARY_PLANT_COUNT }).map((_, index) => ({
+    dictId: (index + 1).toString(),
+  }));
 }
 
 const DictionaryPlantDetail = async (props: DictionaryPlantDetailProps) => {

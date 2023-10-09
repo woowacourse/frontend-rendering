@@ -1,8 +1,8 @@
 import { Season, SeasonKor } from 'types/dictionaryPlant';
 
-export const BASE_URL = 'http://localhost:7942';
-// export const BASE_URL = process.env.HOST;
+export const BASE_URL = process.env.HOST;
 export const STATIC_BASE_URL = 'https://static.pium.life';
+export const DICTIONARY_PLANT_COUNT = process.env.DICT_COUNT ? Number(process.env.DICT_COUNT) : 0;
 
 export const URL_PATH = {
   main: '/',
