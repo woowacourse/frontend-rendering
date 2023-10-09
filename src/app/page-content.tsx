@@ -6,22 +6,13 @@ import TopicCardContainer from './components/TopicCardContainer';
 import Box from './components/common/Box';
 import Logo from './components/Logo';
 import { Fragment } from 'react';
+import { Topic } from '@/types/topic';
 
-export interface TopicCardProps {
-  id: number;
-  name: string;
-  image: string;
-  creator: string;
-  pinCount: number;
-  bookmarkCount: number;
-  updatedAt: string;
+export interface PageContentProps {
+  topics: Topic[];
 }
 
-interface PageContent {
-  topics: TopicCardProps[];
-}
-
-function PageContent({ topics }: PageContent) {
+function PageContent({ topics }: PageContentProps) {
   return (
     <Fragment>
       <HeaderWrapper>

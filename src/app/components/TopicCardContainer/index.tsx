@@ -6,24 +6,10 @@ import Flex from '../common/Flex';
 import Space from '../common/Space';
 import Text from '../common/Text';
 import TopicCard from '../TopicCard';
-import { getTopics } from '@/apis/topics';
-
-export interface TopicCardProps {
-  id: number;
-  name: string;
-  image: string;
-  creator: string;
-  pinCount: number;
-  bookmarkCount: number;
-  updatedAt: string;
-}
-
-export interface GetMyTopics {
-  myTopics: TopicCardProps[];
-}
+import { Topic } from '@/types/topic';
 
 interface TopicCardContainerProps {
-  topics: TopicCardProps[];
+  topics: Topic[]; 
   containerTitle: string;
   containerDescription: string;
 }

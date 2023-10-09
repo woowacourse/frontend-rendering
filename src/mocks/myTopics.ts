@@ -1,14 +1,6 @@
-export interface TopicCardProps {
-  id: number;
-  name: string;
-  image: string;
-  creator: string;
-  pinCount: number;
-  bookmarkCount: number;
-  updatedAt: string;
-}
+import { Topic } from "@/types/topic";
 
-const myTopics :TopicCardProps[]= [
+const myTopics :Topic[]= [
   {
     id: 1,
     name: '패트릭의 맛집',

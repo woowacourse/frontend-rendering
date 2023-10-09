@@ -1,16 +1,7 @@
 import { getApi } from './getApi';
-
-export interface TopicCardProps {
-  id: number;
-  name: string;
-  image: string;
-  creator: string;
-  pinCount: number;
-  bookmarkCount: number;
-  updatedAt: string;
-}
+import { Topic } from '@/types/topic';
 
 export const getTopics = () => {
   const url = `/api`;
-  return getApi<TopicCardProps[]>(url);
+  return getApi<Topic[]>(url);
 };
