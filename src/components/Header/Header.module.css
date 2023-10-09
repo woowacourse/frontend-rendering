@@ -1,0 +1,34 @@
+/* headerStyling.module.css */
+
+.headerStyling {
+  position: sticky;
+  top: 0;
+  height: 81px;
+  border-bottom: 1px solid #e8e8e8;
+  z-index: 2;
+  background-color: white;
+  padding: 24px 50px;
+}
+
+@media screen and (max-width: 600px) {
+  .headerStyling {
+    height: 65px;
+    padding: 16px 24px;
+  }
+}
+
+/* getItemStyling.module.css */
+
+.getItemStyling {
+  position: relative;
+  cursor: pointer;
+}
+
+/* getTapNavigateButtonStyling.module.css */
+
+.getTapNavigateButtonStyling {
+  display: none;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+}
