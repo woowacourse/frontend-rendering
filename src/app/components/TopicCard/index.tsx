@@ -50,7 +50,7 @@ function TopicCard({ image, creator, name, updatedAt, pinCount, bookmarkCount }:
               </Text>
             </Flex>
             <Flex $alignItems="center" width="64px">
-              <Image src="/smallTopicStar.svg" alt="핀 이미지" layout="intrinsic" width={18} height={16} />
+              <Image src="/smallTopicStar.svg" alt="즐겨찾기 이미지" layout="intrinsic" width={18} height={16} />
               <Space size={0} />
               <Text
                 color="black"
