@@ -1,6 +1,8 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import { Noto_Sans_KR } from 'next/font/google';
+import StyledComponentsRegistry from './registry';
+import type { ReactNode } from 'react';
 
 const font = Noto_Sans_KR({ subsets: ['latin'], weight: ['400', '500', '700'] });
 
@@ -10,10 +12,12 @@ export const metadata: Metadata = {
   icons: ['/favicon.ico'],
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang='ko'>
-      <body className={font.className}>{children}</body>
+      <body className={font.className}>
+        <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+      </body>
     </html>
   );
 }
