@@ -1,5 +1,5 @@
 import { css, styled } from 'styled-components';
-import defaultAlbumJacket from '@/assets/icon/album-jacket-default.svg';
+import defaultAlbumJacket from '@/assets/default-jacket.svg';
 import type { ImgHTMLAttributes, SyntheticEvent } from 'react';
 
 interface ThumbnailProps extends ImgHTMLAttributes<HTMLImageElement> {

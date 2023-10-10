@@ -6,7 +6,7 @@ import useFetch from '@/shared/hooks/useFetch';
 import { getHighLikedSongs } from '../remotes/song';
 import type { Genre, Song } from '../types/Song.type';
 import GENRES from '../constants/genre';
-import SongItem from './Songitem';
+import SongItem from './SongItem';
 
 interface SongItemListProps {
   genre: Genre;
