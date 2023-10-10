@@ -11,11 +11,9 @@ import Navbar from './Navbar';
 
 export interface PageContentProps {
   topics: Topic[];
-  newestTopics: Topic[];
-  bestTopics: Topic[];
 }
 
-function PageContent({ topics, newestTopics, bestTopics }: PageContentProps) {
+function PageContent({ topics }: PageContentProps) {
   return (
     <Fragment>
       <HeaderWrapper>
@@ -29,14 +27,14 @@ function PageContent({ topics, newestTopics, bestTopics }: PageContentProps) {
         <Space size={1} />
         <Space size={1} />
         <TopicCardContainer
-          topics={bestTopics}
+          topics={topics}
           containerTitle="인기 급상승할 지도?"
           containerDescription="즐겨찾기가 많이 된 지도를 확인해보세요."
         />
         <Space size={9} />
 
         <TopicCardContainer
-          topics={newestTopics}
+          topics={topics}
           containerTitle="새로울 지도?"
           containerDescription="방금 핀이 추가된 지도를 확인해보세요."
         />
