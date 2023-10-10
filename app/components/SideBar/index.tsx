@@ -6,7 +6,6 @@ import {
   EmptyContent,
   LabelContent,
   LogoHeader,
-  LogoImg,
   LogoImgWrapper,
   LogoutButton,
   LogoutContainer,
@@ -21,7 +20,7 @@ import PiStampLight from '@/public/stamp.svg';
 import PiUserListLight from '@/public/user_list.svg';
 import { IoIosLogOut } from '@react-icons/all-files/io/IoIosLogOut';
 
-import { useRouter } from 'next/navigation';
+import { useRouter, usePathname } from 'next/navigation';
 import { Option, RouterPath } from '@/app/types';
 import { ROUTER_PATH } from '@/app/constants';
 
@@ -47,7 +46,7 @@ const SIDEBAR_ICONS = [
 
 const SideBar = () => {
   const router = useRouter();
-  const current: RouterPath = '/admin';
+  const current = usePathname();
   const [isDesignCoupon, setIsDesignCoupon] = useState(false);
   const [isEarnStamp, setIsEarnStamp] = useState(false);
   const [isUseReward, setIsUseReward] = useState(false);
@@ -89,7 +88,7 @@ const SideBar = () => {
   }, [current]);
 
   const handleLogout = () => {
-    console.log('logout');
+    alert('로그아웃되었습니다');
   };
 
   const checkIncludeRoute = (
@@ -98,7 +97,7 @@ const SideBar = () => {
     routes: string[]
   ) => {
     if (value !== route) return false;
-    return routes.some((route) => current.includes(route));
+    return routes.some((route) => current!.includes(route));
   };
 
   const routeSideBar = (index: number) => () => {

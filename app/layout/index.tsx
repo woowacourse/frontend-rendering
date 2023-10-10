@@ -1,9 +1,9 @@
 import { PropsWithChildren } from 'react';
-import SideBar from '../SideBar';
+import SideBar from '../components/SideBar';
 import { BaseTemplate, Footer, PageContainer, SideBarWrapper } from './style';
 import { AiOutlineMail } from '@react-icons/all-files/ai/AiOutlineMail';
 
-const Template = ({ children }: PropsWithChildren) => {
+const Layout = ({ children }: PropsWithChildren) => {
   return (
     <>
       <BaseTemplate>
@@ -23,4 +23,4 @@ const Template = ({ children }: PropsWithChildren) => {
   );
 };
 
-export default Template;
+export default Layout;
