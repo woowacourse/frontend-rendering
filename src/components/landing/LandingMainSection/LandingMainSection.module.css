@@ -22,23 +22,30 @@
   .headerText {
     font-weight: 500;
   }
+}
 
-  @media screen and (max-width: 768px) {
-    .mainSectionContents {
-      width: 100%;
+@media screen and (max-width: 768px) {
+  .mainSectionContents {
+    width: 100%;
 
-      justify-self: center;
-      text-align: center;
+    justify-self: center;
+    text-align: center;
 
-      .headerText {
-        font-size: 28px;
-      }
+    .headerText {
+      font-size: 28px;
     }
   }
 }
 
 .heroImage {
   width: 50%;
+}
+
+@media screen and (max-width: 768px) {
+  .heroImage {
+    display: none;
+    width: 0;
+  }
 }
 
 .loadMoreContents {
