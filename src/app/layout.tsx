@@ -1,4 +1,8 @@
-import RootStyleRegistry from "../lib/RootStyleRegistry";
+"use client";
+
+import PageLayout from "@/components/pageLayout/PageLayout";
+import GlobalStyle from "@/styles/GlobalStyle";
+import Providers from "@/Providers";
 
 export default function RootLayout({
   children,
@@ -8,7 +12,10 @@ export default function RootLayout({
   return (
     <html>
       <body>
-        <RootStyleRegistry>{children}</RootStyleRegistry>
+        <Providers>
+          <GlobalStyle />
+          <PageLayout>{children}</PageLayout>
+        </Providers>
       </body>
     </html>
   );

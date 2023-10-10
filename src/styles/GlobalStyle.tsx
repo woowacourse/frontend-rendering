@@ -1,71 +1,105 @@
 import { createGlobalStyle } from "styled-components";
 
-const GlobalStyle = createGlobalStyle`
+const styled = { createGlobalStyle };
+
+const GlobalStyle = styled.createGlobalStyle`
   /*! minireset.css v0.0.6 | MIT License | github.com/jgthms/minireset.css */
   html {
-    box-sizing: border-box
+    box-sizing: border-box;
   }
 
-  blockquote, body, dd, dl, dt, fieldset, figure, h1, h2, h3, h4, h5, h6, hr, html, iframe, legend, li, ol, p, pre, textarea, ul {
+  blockquote,
+  body,
+  dd,
+  dl,
+  dt,
+  fieldset,
+  figure,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  hr,
+  html,
+  iframe,
+  legend,
+  li,
+  ol,
+  p,
+  pre,
+  textarea,
+  ul {
     margin: 0;
-    padding: 0
+    padding: 0;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-size: 100%;
-    font-weight: 400
+    font-weight: 400;
   }
 
   ul {
-    list-style: none
+    list-style: none;
   }
 
   li {
     list-style: none;
   }
 
-  button, input, select {
+  button,
+  input,
+  select {
     margin: 0;
     background-color: transparent;
     border: none;
   }
 
-  *, :after, :before {
+  *,
+  :after,
+  :before {
     box-sizing: inherit;
   }
 
-  img, video {
+  img,
+  video {
     max-width: 100%;
-    height: auto
+    height: auto;
   }
 
   iframe {
-    border: 0
+    border: 0;
   }
-
 
   table {
     border-spacing: 0;
-    border-collapse: collapse
+    border-collapse: collapse;
   }
 
-  td, th {
-    padding: 0
+  td,
+  th {
+    padding: 0;
   }
 
   /* global styles */
 
   @font-face {
-    font-family: 'Noto Sans KR';
+    font-family: "Noto Sans KR";
     font-display: optional;
-    src: ("/fonts/NotoSansKR-Regular.woff") format('woff');
+    src: ("/fonts/NotoSansKR-Regular.woff") format("woff");
     unicode-range: U+0020-007E;
   }
 
   @font-face {
-    font-family: 'Noto Sans';
+    font-family: "Noto Sans";
     font-display: optional;
-    src: url("/fonts/NotoSans-Regular.woff") format('woff');
+    src: url("/fonts/NotoSans-Regular.woff") format("woff");
     unicode-range: U+0020-007E;
   }
 
@@ -84,9 +118,8 @@ const GlobalStyle = createGlobalStyle`
 
   * {
     scrollbar-width: none;
-    font-family: 'Noto Sans KR', 'Noto Sans' , sans-serif;
+    font-family: "Noto Sans KR", "Noto Sans", sans-serif;
     white-space: pre-wrap;
-
 
     &::-webkit-scrollbar {
       display: none; /* 크롬, 사파리, 오페라, 엣지 */
@@ -94,7 +127,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   input {
-    padding:0 ;
+    padding: 0;
     border: none;
     outline: none;
   }
@@ -109,16 +142,18 @@ const GlobalStyle = createGlobalStyle`
   abbr {
     text-decoration: none;
   }
-  
-  button, select {
+
+  button,
+  select {
     cursor: pointer;
   }
-  
+
   a {
     text-decoration: none;
   }
-  
-  input, select {
+
+  input,
+  select {
     background: inherit;
   }
 `;
