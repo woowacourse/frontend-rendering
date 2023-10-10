@@ -1,0 +1,15 @@
+.smallPrimary {
+  width: fit-content;
+  position: relative;
+  background-color: #3b82f6;
+  color: #ffffff;
+  padding: 12px 24px;
+  font-size: 2rem;
+  border: 1px solid transparent;
+  border-radius: 7px;
+  transition: background-color 0.2s ease;
+}
+
+.smallPrimary:hover:enabled {
+  background-color: #2563eb;
+}
