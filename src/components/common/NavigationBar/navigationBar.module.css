@@ -30,3 +30,7 @@
   line-height: 14px;
   color: var(--text-disabled);
 }
+
+.currentPath {
+  color: var(--text-sub);
+}
