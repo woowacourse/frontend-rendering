@@ -16,7 +16,7 @@ const Home = () => {
               <p className={styles.mainLore}>팀 프로젝트의 모든 것을</p>
               <p className={styles.mainLore}>팀바팀으로 관리해보세요.</p>
             </div>
-            <Link href={"/team"} className={styles.googleLoginButton}>
+            <Link href={"/team/link"} className={styles.googleLoginButton}>
               <div className={styles.googleLoginButtonAppearance}>
                 <div className={styles.googleLoginText}>로그인 하기</div>
               </div>
