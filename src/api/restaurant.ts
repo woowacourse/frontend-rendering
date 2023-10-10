@@ -6,7 +6,9 @@ export const getPopularRestaurants = async (): Promise<RestaurantData[]> => {
   return res.json();
 };
 
-export const getRestaurantsByAddress = async (codes: number[]) => {
+export const getRestaurantsByAddress = async (
+  codes: number[]
+): Promise<RestaurantListData> => {
   const res = await fetch(
     `${process.env.BASE_URL}/main-page/region?codes=${codes.join(',')}&page=0`
   );
