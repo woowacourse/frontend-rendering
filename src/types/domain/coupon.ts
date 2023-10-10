@@ -1,12 +1,13 @@
-import { EXPIRE_DATE_NONE } from '../../constants/magicString';
-import { Coordinate, Option } from '../utils';
+// import { EXPIRE_DATE_NONE } from "../../constants/magicString";
+import { Coordinate, Option } from "../utils";
 
+export interface CafeInfo {
+  id: number;
+  name: string;
+  isFavorites: boolean;
+}
 export interface Coupon {
-  cafeInfo: {
-    id: number;
-    name: string;
-    isFavorites: boolean;
-  };
+  cafeInfo: CafeInfo;
   couponInfos: CouponInfo[];
 }
 
@@ -47,21 +48,21 @@ export interface IssuedCoupon {
   maxStampCount: number;
 }
 
-export type CouponActivate = 'current' | 'new';
+export type CouponActivate = "current" | "new";
 
 export interface StampCountOption extends Option {
   value: StampCountOptionValue;
 }
 
 export interface ExpireDateOption extends Option {
-  value: ExpireDateOptionValue;
+  // value: ExpireDateOptionValue;
 }
 
-export type CouponCreated = 'template' | 'custom';
+export type CouponCreated = "template" | "custom";
 
 export type StampCountOptionValue = `${number}개`;
 
-export type ExpireDateOptionValue = `${number}개월` | typeof EXPIRE_DATE_NONE;
+// export type ExpireDateOptionValue = `${number}개월` | typeof EXPIRE_DATE_NONE;
 
 export type CouponDesignLocation = {
   state: {
