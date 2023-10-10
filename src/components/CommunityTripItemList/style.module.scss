@@ -1,0 +1,58 @@
+// CommunityTripItemList.module.scss
+
+.containerStyling {
+  @media screen and (max-width: 600px) {
+    min-height: calc(100vh - 48px);
+  }
+}
+
+.gridBoxStyling {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  row-gap: 32px;
+  column-gap: 24px;
+  place-items: center;
+  margin: 24px 50px 0;
+
+  @media screen and (max-width: 600px) {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    place-items: center;
+    margin: 24px 24px 64px;
+  }
+}
+
+.headingStyling {
+  font-size: 24px;
+
+  @media screen and (max-width: 600px) {
+    font-size: 20px;
+    line-height: 28px;
+  }
+}
+
+.toggleGroupStyling {
+  margin-top: 16px;
+
+  @media screen and (max-width: 600px) {
+    display: none;
+  }
+}
+
+.textStyling {
+  padding: 8px 0 16px;
+  font-size: 18px;
+
+  @media screen and (max-width: 600px) {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+.emptyBoxStyling {
+  margin-left: 50px;
+
+  @media screen and (max-width: 600px) {
+    margin-left: 24px;
+  }
+}

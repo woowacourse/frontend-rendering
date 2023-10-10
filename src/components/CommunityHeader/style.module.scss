@@ -1,0 +1,37 @@
+.imageStyling {
+  width: 854px;
+  margin-right: 50px;
+
+  @media screen and (max-width: 1200px) {
+    width: 65%;
+  }
+
+  @media screen and (max-width: 600px) {
+    display: none;
+  }
+}
+
+.communityHeader {
+  display: flex;
+  justify-content: "space-between";
+  align-items: "center";
+  width: "100vw";
+  margin-top: "16px";
+  margin-bottom: "24px";
+}
+
+.headingStyling {
+  margin-left: 50px;
+  font-size: 36px;
+
+  @media screen and (max-width: 600px) {
+    margin-left: 24px;
+    padding: 36px 0;
+    font-size: 28px;
+  }
+}
+
+.headingEmphasisStyling {
+  color: #00b2ff;
+  font-weight: bold;
+}
