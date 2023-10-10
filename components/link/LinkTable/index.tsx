@@ -10,7 +10,7 @@ const env = process.env.NODE_ENV;
 const baseUrl =
   env === "development"
     ? "http://localhost:3000/"
-    : "https://frontend-rendering-83ikd2c5n-hafnium1923s-projects.vercel.app/";
+    : "https://frontend-rendering-jobokm01u-hafnium1923s-projects.vercel.app/";
 interface TeamLinksResponse {
   teamLinks: TeamLink[];
 }
