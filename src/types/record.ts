@@ -25,3 +25,11 @@ export type CalendarRecord = {
 };
 
 export type Period = keyof typeof PERIOD;
+
+export type ResponseMemberListRecord = {
+  studyRecords: StudyInfo[];
+  pageInfo: {
+    pageNum: number;
+    totalPages: number;
+  };
+};

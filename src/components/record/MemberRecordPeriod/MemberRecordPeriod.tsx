@@ -1,51 +1,21 @@
+'use client';
+
 import PeriodSelectionBar from '../PeriodSelectionBar/PeriodSelectionBar';
 import PaginationButton from '../PaginationButton/PaginationButton';
 import MemberRecordPeriodList from '../MemberRecordPeriodList/MemberRecordPeriodList';
 import { layout } from './memberRecordPeriod.css';
+import useMemberListRecord from '@/hooks/useMemberListRecord';
 
 const MemberRecordPeriod = () => {
-  // const {
-  //   memberRecords,
-  //   isLoading,
-  //   totalPagesNumber,
-  //   currentPageNumber = 1,
-  //   shiftPage,
-  // } = useMemberListRecord({
-  //   memberId: 1,
-  // });
-
-  const data: {
-    studyRecords: {
-      studyId: string;
-      name: string;
-      timePerCycle: number;
-      totalCycle: number;
-      createdDate: string;
-    }[];
-    pageInfo: {
-      totalPages: number;
-    };
-  } = {
-    studyRecords: Array.from({ length: 27 }).map((_, index) => {
-      return {
-        studyId: String(index),
-        name: `안오면 지상렬${index + 1} 1개월`,
-        totalCycle: Math.floor(Math.random() * 8) + 1,
-        timePerCycle: (Math.floor(Math.random() * (12 - 1 + 1)) + 1) * 5,
-        createdDate: '2023-08-16T13:33:02.810Z',
-      };
-    }),
-    pageInfo: {
-      totalPages: 12,
-    },
-  };
-
-  const totalPagesNumber = data.pageInfo.totalPages;
-  const currentPageNumber = 1;
-  const isLoading = false;
-  const shiftPage = async (page: number) => {
-    'use server';
-  };
+  const {
+    memberRecords,
+    isLoading,
+    totalPagesNumber,
+    currentPageNumber = 1,
+    shiftPage,
+  } = useMemberListRecord({
+    memberId: '1',
+  });
 
   return (
     <div className={layout}>
@@ -59,10 +29,10 @@ const MemberRecordPeriod = () => {
         />
       )}
       <MemberRecordPeriodList
-        memberRecords={data.studyRecords}
+        memberRecords={memberRecords}
         isLoading={isLoading}
       />
-      {data.studyRecords && data.studyRecords.length > 3 && (
+      {memberRecords && memberRecords.length > 3 && (
         <PaginationButton
           totalPagesNumber={totalPagesNumber}
           currentPageNumber={currentPageNumber}
