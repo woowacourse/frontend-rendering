@@ -47,6 +47,10 @@ const LinkTable = async () => {
           {teamLinks.length > 0 ? (
             <div className={styles.tableBody}>
               <table className={`${styles.table} ${styles.tableProperties}`}>
+                <th style={{ height: 0, padding: 0 }} />
+                <th style={{ height: 0, padding: 0 }} />
+                <th style={{ height: 0, padding: 0 }} />
+                <th style={{ height: 0, padding: 0 }} />
                 {teamLinks.map(({ id, title, url, memberName, updatedAt }) => (
                   <tr key={id}>
                     <td>
