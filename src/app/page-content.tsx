@@ -7,6 +7,7 @@ import Box from './components/common/Box';
 import Logo from './components/Logo';
 import { Fragment } from 'react';
 import { Topic } from '@/types/Topic';
+import Navbar from './Navbar';
 
 export interface PageContentProps {
   topics: Topic[];
@@ -50,6 +51,10 @@ function PageContent({ topics, newestTopics, bestTopics }: PageContentProps) {
 
         <Space size={5} />
       </TopicContainerWrapper>
+
+      <NavbarWrapper>
+        <Navbar />
+      </NavbarWrapper>
     </Fragment>
   );
 }
@@ -76,6 +81,17 @@ const TopicContainerWrapper = styled.article`
   @media (max-width: 724px) {
     width: 332px;
   }
+`;
+
+const NavbarWrapper = styled.section`
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+
+  padding: 12px 20px 0 20px;
+  background-color: white;
+
+  z-index: 1;
 `;
 
 export default PageContent;
