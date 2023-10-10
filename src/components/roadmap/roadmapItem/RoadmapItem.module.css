@@ -1,0 +1,78 @@
+.RoadmapItem {
+    position: relative;
+    flex-shrink: 0;
+    width: 19rem;
+    height: fit-content;
+    padding: 3rem 2.6rem 3rem 2.6rem;
+    background: #FFFFFF;
+    border-radius: 18px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.RoadmapTitle,
+.Description {
+    font-size: 1.5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 1rem;
+}
+
+.ExtraHeader,
+.ItemExtraInfos {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 3rem;
+    margin-bottom: 2rem;
+    background: #F1F1F1;
+    border-radius: 8px;
+    padding: 0.6rem;
+}
+
+.ExtraHeaderText {
+    width: 30%;
+    text-align: center;
+}
+
+.RecommendedRoadmapPeriodNumber {
+    color: #333333;
+}
+
+.ExtraInfoBox,
+.Difficulty,
+.RecommendedRoadmapPeriod,
+.ExtraInfoCol {
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 4rem;
+    height: 4rem;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+}
+
+.ItemFooter {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-top: 2.5rem;
+}
+
+.CreatedBy,
+.Tags {
+    font-size: 18px;
+    color: #AAAAAA;
+}
+
+.LookButton {
+    width: 100%;
+    height: 2rem;
+    margin-top: 1.5rem;
+    border-radius: 8px;
+    background: #77A082;
+    color: white;
+    border: none;
+}
