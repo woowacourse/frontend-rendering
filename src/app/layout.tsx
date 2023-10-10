@@ -1,4 +1,5 @@
 import Link from "next/link";
+import "./global.scss";
 import styles from "./layout.module.scss";
 import type { Metadata } from "next";
 import Logo from "@/assets/logo.svg";
