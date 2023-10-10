@@ -29,32 +29,33 @@ const customerList = [...customers];
 
 export const handlers = [
   // 카페 사장이 고객 목록 조회 가능
-  rest.get('/admin/cafes/:cafeId/customers', (req, res, ctx) => {
-    const { cafeId } = req.params;
-    const registerTypeParam = req.url.searchParams.get('customer-type');
+  rest.get(
+    'http://localhost:3000/api/admin/cafes/1/customers',
+    (req, res, ctx) => {
+      const registerTypeParam = req.url.searchParams.get('customer-type');
 
-    const registeredCustomers = customers.filter(
-      (customer) => customer.isRegistered
-    );
-    const temporaryCustomers = customers.filter(
-      (customer) => !customer.isRegistered
-    );
+      const registeredCustomers = customers.filter(
+        (customer) => customer.isRegistered
+      );
+      const temporaryCustomers = customers.filter(
+        (customer) => !customer.isRegistered
+      );
 
-    if (!cafeId) {
-      return res(ctx.status(400));
+      if (registerTypeParam === 'register') {
+        return res(
+          ctx.status(200),
+          ctx.json({ customers: registeredCustomers })
+        );
+      }
+
+      if (registerTypeParam === 'temporary') {
+        return res(
+          ctx.status(200),
+          ctx.json({ customers: temporaryCustomers })
+        );
+      }
+
+      return res(ctx.status(200), ctx.json({ customers: customerList }));
     }
-    if (+cafeId !== 1) {
-      return res(ctx.status(200), ctx.json({ customers: [] }));
-    }
-
-    if (registerTypeParam === 'register') {
-      return res(ctx.status(200), ctx.json({ customers: registeredCustomers }));
-    }
-
-    if (registerTypeParam === 'temporary') {
-      return res(ctx.status(200), ctx.json({ customers: temporaryCustomers }));
-    }
-
-    return res(ctx.status(200), ctx.json({ customers: customerList }));
-  }),
+  ),
 ];

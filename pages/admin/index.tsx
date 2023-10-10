@@ -1,5 +1,5 @@
-'use client';
-
+import type { InferGetServerSidePropsType, GetServerSideProps } from 'next';
+import { use } from 'react';
 import {
   CustomerContainer,
   Container,
@@ -8,12 +8,13 @@ import {
   RegisterTypeTab,
 } from './style';
 import { useState } from 'react';
-import LoadingSpinner from '@/public/loading_spinner.svg';
-import Customers from './Customers';
-import useGetCustomers, { CustomerOrderOption } from './hooks/useGetCustomers';
-import { Option, RegisterType } from '@/app/types';
-import Text from '@/app/components/Text';
-import SelectBox from '@/app/components/SelectBox';
+import { CustomerOrderOption } from '../../components/CustomerList/hooks/useGetCustomers';
+import { Option } from '@/app/types';
+import Text from '@/components/Text';
+import SelectBox from '@/components/SelectBox';
+import Customers from '../../components/CustomerList/Customers';
+import { CustomersRes } from '@/app/types/api';
+import { getServerSideProps } from '..';
 
 const CUSTOMERS_ORDER_OPTIONS: CustomerOrderOption[] = [
   {
@@ -39,6 +40,7 @@ const REGISTER_TYPE_OPTION: Option[] = [
 
 const CustomerList = () => {
   const cafeId = 1;
+
   const [registerType, setRegisterType] = useState<Option>({
     key: 'all',
     value: '전체',
@@ -48,18 +50,10 @@ const CustomerList = () => {
     value: '스탬프순',
   });
   const registerTypeKey = registerType.key === 'all' ? null : registerType.key;
-  const { data: customers, status } = useGetCustomers(
-    cafeId,
-    orderOption as CustomerOrderOption,
-    registerTypeKey as RegisterType
-  );
 
   const changeRegisterType = (registerType: Option) => () => {
     setRegisterType(registerType);
   };
-
-  if (status === 'loading') return <LoadingSpinner />;
-  if (status === 'error') return <CustomerContainer>Error</CustomerContainer>;
 
   return (
     <CustomerContainer>
@@ -82,14 +76,14 @@ const CustomerList = () => {
           setCheckedOption={setOrderOption}
         />
       </Container>
-      {customers.length === 0 ? (
+      {/* {customers.length === 0 ? (
         <EmptyCustomers>
           <span>NO RESULT 🥲</span> 아직 고객이 없어요! <br />
           카페를 방문한 고객에게 스탬프를 적립해 보세요.
         </EmptyCustomers>
       ) : (
         <Customers registerTypeOption={registerType} customers={customers} />
-      )}
+      )} */}
     </CustomerContainer>
   );
 };
