@@ -2,16 +2,21 @@ import { getTopics } from '@/app/apis/topics';
 import styles from './index.module.css';
 import TopicCard from '../TopicCard';
 
-const TopicCardContainer = async () => {
+interface Props {
+  title: string;
+  description: string;
+}
+
+const TopicCardContainer = async ({ title, description }: Props) => {
   const topics = await getTopics();
 
   return (
     <section>
       <div className={styles.info}>
         <div>
-          <span className={styles.title}>asdfsd</span>
+          <span className={styles.title}>{title}</span>
           <div className={styles.space} />
-          <span className={styles.description}>asdfsdafsdfsadf</span>
+          <span className={styles.description}>{description}</span>
         </div>
       </div>
 
