@@ -1,0 +1,87 @@
+.studyStepGuideLayout {
+  display: flex;
+  flex-direction: column;
+  gap: 135px;
+}
+
+.stepGuide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 80px;
+}
+
+.stepGuide.isEvenIndex {
+  flex-direction: row;
+}
+
+.stepGuide:not(.isEvenIndex) {
+  flex-direction: row-reverse;
+}
+
+@media screen and (max-width: 768px) {
+  .stepGuide {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .stepGuide.isEvenIndex {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .stepGuide:not(.isEvenIndex) {
+    flex-direction: column;
+    gap: 40px;
+  }
+}
+
+.stepGuideImage {
+  width: 55%;
+  border-radius: 20px;
+
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+}
+
+@media screen and (max-width: 768px) {
+  .stepGuideImage {
+    width: 100%;
+  }
+}
+
+.stepGuideDescription {
+  width: 40%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  margin-right: auto;
+  white-space: pre-line;
+}
+
+@media screen and (max-width: 768px) {
+  .stepGuideDescription {
+    width: 100%;
+  }
+
+  .stepGuideDescription h2 {
+    font-size: 32px;
+  }
+
+  .stepGuideDescription p {
+    font-size: 20px;
+  }
+}
+
+.stepGuideDescriptionHeader {
+  font-size: 4rem;
+  font-weight: 700;
+}
+
+.stepGuideDescriptionText {
+  font-size: 2.4rem;
+  font-weight: 500;
+  color: #737373;
+  word-break: keep-all;
+}
