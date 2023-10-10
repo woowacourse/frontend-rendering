@@ -1,0 +1,26 @@
+.categoryButton {
+  width: 60px;
+  height: 100px;
+  text-align: center;
+}
+
+.imageWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+}
+
+.categoryImage {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.categoryName {
+  margin-top: 10px;
+  font-weight: 600;
+  font-size: 12px;
+}
