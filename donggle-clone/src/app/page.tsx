@@ -2,6 +2,7 @@ import Image from 'next/image';
 // import { BlurBackgroundIcon, DonggleIcon } from '@/assets/icons';
 import LoginModal from '@/components/Modal/LoginModal/LoginModal';
 import { AbsoluteDiv, Container, Content, Header, Introduce, Logo } from './styles';
+import { DonggleIcon } from '@/assets/icons';
 
 export default function Page() {
   // const { authToken } = useAuthToken();
@@ -13,7 +14,7 @@ export default function Page() {
     <Container>
       <Header>
         <Logo>
-          {/* <DonggleIcon width={20} height={20} /> */}
+          <Image src="icons/donggle-logo.svg" alt="동글로고" width={20} height={20} />
           동글
         </Logo>
         {/* <LoginModalButton onClick={openModal}>로그인하기</LoginModalButton>
