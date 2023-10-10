@@ -4,6 +4,7 @@ import GuideSection from "@/components/landing/GuideSection/GuideSection";
 import StartSection from "@/components/landing/StartSection/StartSection";
 import styles from "./landing.module.css";
 import Footer from "@/components/common/Footer/Footer";
+import SideLink from "@/components/landing/SideLink/SideLink";
 
 export default function Landing() {
   return (
@@ -16,6 +17,7 @@ export default function Landing() {
         <GuideSection />
         <StartSection />
         <Footer />
+        <SideLink />
       </div>
     </>
   );
