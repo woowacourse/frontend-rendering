@@ -1,0 +1,60 @@
+.infoContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 60px 30px;
+  gap: 20px;
+}
+
+.nameContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 36px;
+  gap: 10px;
+}
+
+.cafeName {
+  font-size: 36px;
+  font-weight: 700;
+  margin-top: 5px;
+}
+
+.progressBarContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 24px;
+  color: #888;
+}
+
+.backDrop {
+  z-index: -10;
+  width: 100%;
+  max-width: 450px;
+  overflow: hidden;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  /* background: linear-gradient(
+      white,
+      rgba(255, 255, 255, 0.5) 32%,
+      ${({ $couponMainColor }) => $couponMainColor} 80%,
+      white
+    ); */
+  opacity: 0.7;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.stampCount {
+  margin-left: 10px;
+  font-size: 36px;
+  font-weight: 600;
+  color: black;
+}
+
+.maxStampCount {
+  font-size: 24px;
+  color: #f3b209;
+}
