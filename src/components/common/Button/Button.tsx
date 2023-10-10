@@ -2,7 +2,7 @@ import type { ComponentPropsWithoutRef, PropsWithChildren } from 'react';
 import { layout } from './button.css';
 
 type Props = {
-  onClick: () => void;
+  onClick?: () => void;
 };
 
 const Button = ({

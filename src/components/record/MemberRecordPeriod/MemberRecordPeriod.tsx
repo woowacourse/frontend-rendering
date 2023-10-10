@@ -58,10 +58,10 @@ const MemberRecordPeriod = () => {
           shiftPage={shiftPage}
         />
       )}
-      {/* <MemberRecordPeriodList
+      <MemberRecordPeriodList
         memberRecords={data.studyRecords}
         isLoading={isLoading}
-      /> */}
+      />
       {data.studyRecords && data.studyRecords.length > 3 && (
         <PaginationButton
           totalPagesNumber={totalPagesNumber}

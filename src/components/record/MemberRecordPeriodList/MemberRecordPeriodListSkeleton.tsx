@@ -1,28 +1,13 @@
-import { styled } from 'styled-components';
-
-import { TextSkeletonStyle } from '@Styles/common';
+import { layout, skeletonItem } from './memberRecordPeriodList.css';
 
 const MemberRecordPeriodListSkeleton = () => {
   return (
-    <SkeletonLayout>
-      <SkeletonItem />
-      <SkeletonItem />
-      <SkeletonItem />
-    </SkeletonLayout>
+    <div className={layout}>
+      <div className={skeletonItem} />
+      <div className={skeletonItem} />
+      <div className={skeletonItem} />
+    </div>
   );
 };
 
 export default MemberRecordPeriodListSkeleton;
-
-const SkeletonLayout = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-
-  max-width: 1200px;
-`;
-
-const SkeletonItem = styled.div`
-  height: 130px;
-  ${TextSkeletonStyle}
-`;

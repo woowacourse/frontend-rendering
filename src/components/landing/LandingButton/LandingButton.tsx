@@ -1,7 +1,7 @@
 'use client';
 
 import Button from '@/components/common/Button/Button';
-import { buttonContainer } from './LandingButton.css';
+import { buttonContainer } from './landingButton.css';
 
 const LandingButton = () => {
   const handleClickStartButton = () => {
