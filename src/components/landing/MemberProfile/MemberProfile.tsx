@@ -1,6 +1,6 @@
 'use client';
 
-import Menu from '@/components/Menu/Menu';
+import Menu from '@/components/common/Menu/Menu';
 import { useRouter } from 'next/navigation';
 import MenuTrigger from '../MenuTrigger/MenuTrigger';
 

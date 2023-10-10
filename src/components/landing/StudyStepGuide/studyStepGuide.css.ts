@@ -18,6 +18,7 @@ export const stepGuide = style({
   '@media': {
     'screen and (max-width: 768px)': {
       width: '100%',
+      flexDirection: 'column',
     },
   },
 });
@@ -48,6 +49,12 @@ export const stepGuideDescription = style({
 
   marginRight: 'auto',
   whiteSpace: 'pre-line',
+
+  '@media': {
+    'screen and (max-width: 768px)': {
+      width: '100%',
+    },
+  },
 });
 
 export const titleStyle = style({

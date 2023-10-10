@@ -1,6 +1,6 @@
 'use client';
 
-import Button from '@/components/Button/Button';
+import Button from '@/components/common/Button/Button';
 import { buttonContainer } from './LandingButton.css';
 
 const LandingButton = () => {

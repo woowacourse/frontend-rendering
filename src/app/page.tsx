@@ -1,12 +1,12 @@
-import Header from '@/components/Header/Header';
-import { landingContents, landingHeader } from './main.css';
-import MemberProfile from './components/MemberProfile/MemberProfile';
-import LandingMainSection from './components/LandingMainSection/LandingMainSection';
-import GuideSection from './components/GuideSection/GuideSection';
-import StartSection from './components/StartSection/StartSection';
-import Footer from '@/components/Footer/Footer';
+import Header from '@/components/common/Header/Header';
+import { landingContents, landingHeader } from './landing.css';
+import MemberProfile from '../components/landing/MemberProfile/MemberProfile';
+import LandingMainSection from '../components/landing/LandingMainSection/LandingMainSection';
+import GuideSection from '../components/landing/GuideSection/GuideSection';
+import StartSection from '../components/landing/StartSection/StartSection';
+import Footer from '@/components/common/Footer/Footer';
 
-export default function Home() {
+export default function Landing() {
   return (
     <>
       <main className={landingHeader}>
