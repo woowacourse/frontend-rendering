@@ -5,16 +5,16 @@
   align-items: center;
   gap: 0.8rem;
 
-  width: 68px;
+  width: 70px;
 
   padding: 0.4rem;
 
   border: none;
   background: none;
 
-  font-size: 20px;
+  font-size: 16px;
 
-  & > div:first-child {
+  & > *:first-child {
     display: flex;
     justify-content: center;
     align-items: center;
