@@ -7,22 +7,25 @@ import EmptyLinkPlaceholder from "@/components/link/EmptyLinkPlaceholder";
 const linkTableHeaderValues = ["링크명", "이름", "날짜", ""];
 const env = process.env.NODE_ENV;
 
-const baseUrl = env === "development" ? "http://localhost:3000" : "";
+const baseUrl =
+  env === "development"
+    ? "http://localhost:3000/"
+    : "https://frontend-rendering-83ikd2c5n-hafnium1923s-projects.vercel.app/";
 interface TeamLinksResponse {
   teamLinks: TeamLink[];
 }
 
-// const fetchTeamLink = async (): Promise<TeamLinksResponse> => {
-//   const res = await fetch(baseUrl + "/api/team-links", {
-//     cache: "no-store",
-//   });
+const fetchTeamLink = async (): Promise<TeamLinksResponse> => {
+  const res = await fetch(baseUrl + "api/team-links", {
+    cache: "no-store",
+  });
 
-//   return res.json();
-// };
+  return res.json();
+};
 
 const LinkTable = async () => {
-  // const { teamLinks } = await fetchTeamLink();
-  const teamLinks = [] as TeamLink[];
+  const { teamLinks } = await fetchTeamLink();
+
   return (
     <>
       <div className={styles.container}>
