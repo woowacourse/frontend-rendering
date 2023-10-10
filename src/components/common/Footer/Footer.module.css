@@ -1,0 +1,25 @@
+.footerLayout {
+  width: 100%;
+  height: 100px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.linkContainer {
+  display: flex;
+  gap: 20px;
+
+  margin-top: 10px;
+}
+
+.linkContainer p {
+  text-decoration: underline;
+}
+
+.footerText {
+  font-size: 12px;
+  font-weight: 300;
+}
