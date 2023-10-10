@@ -1,5 +1,4 @@
 'use client';
-
 import Spacing from '@/common/Spacing';
 import Thumbnail from './Thumbnail';
 import styles from './SongItem.module.css';
@@ -17,7 +16,7 @@ const SongItem = ({ albumCoverUrl, title, singer }: SongItemProps) => {
     <div
       className={styles.flex}
       onClick={() => {
-        alert('페이지 이동...');
+        alert('노래 듣기 페이지로 이동...');
       }}
     >
       <Thumbnail size="xl" src={albumCoverUrl} />
