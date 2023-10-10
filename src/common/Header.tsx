@@ -8,7 +8,7 @@ const Header = () => {
   return (
     <Wrapper>
       <Link href={ROUTER_PATH.home}>
-        <Image src={StampcrushLogo} alt="스탬프크러쉬 로고" />
+        <Image src={StampcrushLogo} alt="스탬프크러쉬 로고" priority={true} />
       </Link>
     </Wrapper>
   );
