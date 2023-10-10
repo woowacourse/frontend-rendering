@@ -27,8 +27,6 @@ const DEFAULT_MENU_ITEMS = [
 const MemberProfile = () => {
   const router = useRouter();
 
-  const today = new Date();
-
   return (
     <Menu trigger={<MenuTrigger />}>
       <Menu.Item

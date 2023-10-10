@@ -20,3 +20,7 @@ export const guestProfileWrapper = style({
   backgroundColor: color.neutral[100],
   borderRadius: '50%',
 });
+
+export const profileImage = style({
+  borderRadius: '50%',
+});
