@@ -22,13 +22,10 @@ const customers = [
     maxStampCount: 10,
     firstVisitDate: '2023:04:07',
     isRegistered: false,
-    recentVisitDate: '2023:08:09',
+    recentVisitDate: '2023:08:10',
   },
 ];
 
 export async function GET() {
-  // const customerData = getCustomerData.getCustomers();
-  // console.log(customerData, 'customerData');
-  // console.log(NextResponse.json(customerData));
   return NextResponse.json(customers);
 }
