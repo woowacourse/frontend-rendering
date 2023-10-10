@@ -1,7 +1,8 @@
 import { RestaurantData, RestaurantListData } from '@/@types/api.types';
 import {
-  getCelebsRestaurants,
+  getRestaurantsByCeleb,
   getRestaurantsByAddress,
+  getRestaurantsByCategory,
 } from '@/api/restaurant';
 import RestaurantCard from '@/components/RestaurantCard';
 import { RECOMMENDED_REGION } from '@/constants/recommendedRegion';
@@ -12,17 +13,17 @@ const ResultPage = ({ params }: { params: { theme: string; key: string } }) => {
   let filteredRestaurants: RestaurantData[] = [];
 
   if (params.theme === 'celeb')
-    filteredRestaurants = use(getCelebsRestaurants(Number(params.key))).content;
+    filteredRestaurants = use(
+      getRestaurantsByCeleb(Number(params.key))
+    ).content;
 
   if (params.theme === 'region')
     filteredRestaurants = use(
       getRestaurantsByAddress(RECOMMENDED_REGION[params.key].code)
     );
 
-  // if (params.theme === 'category')
-  //   filteredRestaurants = allRestaurants.filter(
-  //     (restaurant) => restaurant.category === decodeURI(params.key)
-  //   );
+  if (params.theme === 'category')
+    filteredRestaurants = use(getRestaurantsByCategory(params.key)).content;
 
   return (
     <div>
@@ -43,7 +44,7 @@ const ResultPage = ({ params }: { params: { theme: string; key: string } }) => {
         {params.theme === 'category' && <h4>←{decodeURI(params.key)}</h4>}
       </Link>
       <div className='w-full flex flex-col gap-2 p-4'>
-        {filteredRestaurants.length &&
+        {filteredRestaurants?.length &&
           filteredRestaurants?.map((restaurant: RestaurantData) => (
             <RestaurantCard key={restaurant.id} restaurant={restaurant} />
           ))}
