@@ -3,8 +3,7 @@
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
-const useSearchParams = <T>() => {
-  const url = new URL(window.location.href);
+const useSearchParams = <T>(url: URL) => {
   const params = new URLSearchParams(url.search);
 
   const initSearchParams: Record<string, string> = {};

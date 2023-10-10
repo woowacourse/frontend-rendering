@@ -31,7 +31,7 @@ const MemberRecordPeriodProvider = ({ children }: PropsWithChildren) => {
     page: string;
     start?: string;
     end?: string;
-  }>();
+  }>(new URL(window.location.href));
 
   const [triggerSearchRecord, setTriggerSearchRecord] = useState(0);
   const [hoveredDay, setHoveredDay] = useState<Date | null>(null);
