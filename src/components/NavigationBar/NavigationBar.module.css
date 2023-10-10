@@ -1,0 +1,35 @@
+.nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 70px;
+  height: 100%;
+  padding: 14px 0 18px 0;
+  row-gap: 30px;
+}
+
+.navLink {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  row-gap: 4px;
+  padding: 4px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.navLink:nth-child(2) {
+  background-color: var(--color-gray200);
+}
+
+.navLink:last-child {
+  font-size: 11px;
+}
+
+.navLink:hover {
+  background-color: var(--color-gray200);
+}
