@@ -20,18 +20,18 @@ interface Category {
 }
 
 const RESTAURANT_CATEGORY: Category[] = [
-  { label: '전체', icon: <All /> },
+  // { label: '전체', icon: <All /> },
   { label: '한식', icon: <Korean /> },
-  { label: '탕,찌개', icon: <Soup /> },
+  // { label: '탕,찌개', icon: <Soup /> },
   { label: '중식', icon: <Chinese /> },
   { label: '일식', icon: <Japanese /> },
   { label: '양식', icon: <Spaghetti /> },
-  { label: '회,수산물', icon: <Sushi /> },
+  // { label: '회,수산물', icon: <Sushi /> },
   { label: '고기', icon: <Beef /> },
   { label: '아시안', icon: <Asian /> },
   { label: '면류', icon: <Noodle /> },
   { label: '분식', icon: <Snackbar /> },
-  { label: '패스트푸드', icon: <Pizza /> },
+  // { label: '패스트푸드', icon: <Pizza /> },
   { label: '디저트', icon: <Bakery /> },
   { label: '세계요리', icon: <World /> },
   { label: '주점', icon: <Wine /> },
