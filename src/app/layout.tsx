@@ -2,6 +2,7 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import Header from '@/common/Header';
+import LayoutContainer from '@/common/LayoutContainer';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -16,7 +17,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="ko">
       <body className={inter.className}>
         <Header />
-        {children}
+        <LayoutContainer>{children}</LayoutContainer>
       </body>
     </html>
   );
