@@ -4,7 +4,7 @@ import MemberProfile from '../components/landing/MemberProfile/MemberProfile';
 import LandingMainSection from '../components/landing/LandingMainSection/LandingMainSection';
 import GuideSection from '../components/landing/GuideSection/GuideSection';
 import StartSection from '../components/landing/StartSection/StartSection';
-import Footer from '@/components/common/Footer/Footer';
+import Footer from '@/components/landing/Footer/Footer';
 
 export default function Landing() {
   return (
