@@ -1,6 +1,7 @@
 import { styled } from 'styled-components';
 import Spacing from '@/shared/components/Spacing';
 import Thumbnail from './Thumbnail';
+import theme from '@/shared/styles/theme';
 
 interface SongItemProps {
   rank: number;
@@ -26,7 +27,7 @@ export default SongItem;
 const Flex = styled.div`
   display: flex;
   flex-direction: column;
-  color: ${({ theme: { color } }) => color.white};
+  color: ${theme.color.white};
 `;
 
 const SongTitle = styled.div`
