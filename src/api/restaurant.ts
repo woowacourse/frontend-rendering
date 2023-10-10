@@ -15,3 +15,10 @@ export const getCelebsRestaurants = async (
 
   return res.json();
 };
+
+export const getRestaurantsByAddress = async (codes: number[]) => {
+  const res = await fetch(
+    `${process.env.BASE_URL}/main-page/region?codes=${codes.join(',')}&page=0`
+  );
+  return res.json();
+};
