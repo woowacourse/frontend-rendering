@@ -4,9 +4,7 @@ import type { AppProps } from "next/app";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import initMockAPI from "@/mocks";
 
-if (process.env.NEXT_PUBLIC_API_MOCKING === "enabled") {
-  initMockAPI();
-}
+initMockAPI();
 
 const queryClient = new QueryClient({
   defaultOptions: {
