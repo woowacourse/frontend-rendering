@@ -1,0 +1,62 @@
+.mainSectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  height: calc(100vh - 240px);
+}
+
+.headerText {
+  font-size: 4rem;
+  font-weight: 700;
+}
+
+.mainSectionContents {
+  width: 40%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-self: center;
+
+  .headerText {
+    font-weight: 500;
+  }
+
+  @media screen and (max-width: 768px) {
+    .mainSectionContents {
+      width: 100%;
+
+      justify-self: center;
+      text-align: center;
+
+      .headerText {
+        font-size: 28px;
+      }
+    }
+  }
+}
+
+.heroImage {
+  width: 50%;
+}
+
+.loadMoreContents {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.emphasis {
+  color: #3b82f6;
+}
+
+.customImage {
+  position: inherit;
+}
+
+.cycleDescription {
+  font-size: 2rem;
+  font-weight: 300;
+}

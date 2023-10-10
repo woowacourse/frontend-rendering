@@ -1,0 +1,11 @@
+.landingHeader {
+  display: flex;
+  align-items: center;
+  padding-right: 40px;
+}
+
+.landingContents {
+  width: 90%;
+
+  margin: 0 auto;
+}
