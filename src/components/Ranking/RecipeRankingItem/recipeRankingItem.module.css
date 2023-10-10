@@ -40,6 +40,10 @@
   align-items: center;
 }
 
+.favoriteIcon {
+  fill: red;
+}
+
 .authorWrapper {
   display: flex;
   flex-direction: column;

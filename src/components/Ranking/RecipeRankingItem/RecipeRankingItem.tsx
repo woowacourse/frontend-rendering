@@ -33,6 +33,7 @@ const RecipeRankingItem = ({ rank, recipe }: RecipeRankingItemProps) => {
             <p className={styles.bold}>{title}</p>
             <div className={styles.favoriteWrapper}>
               <SvgIcon
+                className={styles.favoriteIcon}
                 variant='favoriteFilled'
                 width={16}
                 height={16}
