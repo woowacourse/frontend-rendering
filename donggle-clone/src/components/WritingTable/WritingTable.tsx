@@ -12,8 +12,8 @@ type Props = {
 };
 
 export const blogIcon: Record<Blog, ReactElement> = {
-  MEDIUM: <MediumLogoIcon width='2.4rem' height='2.4rem' />,
-  TISTORY: <TistoryLogoIcon width='2.4rem' height='2.4rem' />,
+  MEDIUM: <MediumLogoIcon width={24} height={24} />,
+  TISTORY: <TistoryLogoIcon width={24} height={24} />,
 };
 
 const WritingTable = ({ writings, categoryId }: Props) => {
@@ -25,11 +25,11 @@ const WritingTable = ({ writings, categoryId }: Props) => {
   }, [writings]);
 
   return (
-    <S.WritingTableContainer summary='카테고리 내부 글 목록을 나타낸'>
+    <S.WritingTableContainer summary="카테고리 내부 글 목록을 나타낸">
       <colgroup>
-        <col width='60%' />
-        <col width='20%' />
-        <col width='20%' />
+        <col width="60%" />
+        <col width="20%" />
+        <col width="20%" />
       </colgroup>
       <thead>
         <tr ref={rowRef} tabIndex={0}>
@@ -43,7 +43,7 @@ const WritingTable = ({ writings, categoryId }: Props) => {
           <tr
             key={id}
             onClick={() => goWritingPage({ categoryId, writingId: id, isDeletedWriting: false })}
-            role='button'
+            role="button"
             tabIndex={0}
           >
             <td>{title}</td>

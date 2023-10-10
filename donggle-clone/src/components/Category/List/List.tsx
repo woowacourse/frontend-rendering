@@ -21,7 +21,7 @@ const List = () => {
 
   return (
     <Accordion>
-      {categories.map((category, index) => {
+      {categories.map((category: any, index: any) => {
         return (
           <Item
             key={category.id}

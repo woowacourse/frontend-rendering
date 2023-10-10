@@ -1,8 +1,8 @@
+import { CloseIcon } from 'assets/icons';
 import { useCallback, useEffect, useRef } from 'react';
 import { ComponentPropsWithoutRef } from 'react';
 import { createPortal } from 'react-dom';
 import { styled } from 'styled-components';
-import { CloseIcon } from 'assets/icons';
 
 type Props = {
   isOpen: boolean;
@@ -28,7 +28,7 @@ const Modal = ({
       if (event.key !== 'Escape') return;
       closeModal();
     },
-    [closeModal],
+    [closeModal]
   );
 
   useEffect(() => {
@@ -59,7 +59,7 @@ const Modal = ({
           <S.Backdrop onClick={canBackdropClose ? closeModal : undefined} />
           <S.Content ref={myRef} aria-modal={isOpen} {...rest}>
             {hasCloseButton && (
-              <S.CloseButton type='button' onClick={closeModal} aria-label='모달 닫기'>
+              <S.CloseButton type="button" onClick={closeModal} aria-label="모달 닫기">
                 <CloseIcon width={24} height={24} />
               </S.CloseButton>
             )}
@@ -68,7 +68,7 @@ const Modal = ({
         </>
       )}
     </S.ModalWrapper>,
-    document.body,
+    document.body
   );
 };
 

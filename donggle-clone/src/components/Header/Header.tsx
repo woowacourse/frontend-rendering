@@ -24,20 +24,20 @@ const Header = ({ onClickLeftSidebar, onClickRightSidebar, isWritingViewerActive
   return (
     <S.Container>
       <S.IconsBox>
-        <S.TransparentButton onClick={goMyPage} aria-label='마이 페이지 이동'>
-          <SettingIcon width='2.4rem' height='2.4rem' />
+        <S.TransparentButton onClick={goMyPage} aria-label="마이 페이지 이동">
+          <SettingIcon width={24} height={24} />
         </S.TransparentButton>
-        <S.TransparentButton onClick={onClickLeftSidebar} aria-label='왼쪽 사이드바 토글'>
-          <SidebarLeftIcon width='2.4rem' height='2.4rem' />
+        <S.TransparentButton onClick={onClickLeftSidebar} aria-label="왼쪽 사이드바 토글">
+          <SidebarLeftIcon width={24} height={24} />
         </S.TransparentButton>
       </S.IconsBox>
       <S.IconsBox>
-        <Button size='small' variant='text' onClick={() => logout.mutate()}>
+        <Button size="small" variant="text" onClick={() => logout.mutate()}>
           로그아웃
         </Button>
         {isWritingViewerActive && (
-          <S.TransparentButton onClick={onClickRightSidebar} aria-label='오른쪽 사이드바 토글'>
-            <SidebarRightIcon width='2.4rem' height='2.4rem' />
+          <S.TransparentButton onClick={onClickRightSidebar} aria-label="오른쪽 사이드바 토글">
+            <SidebarRightIcon width={24} height={24} />
           </S.TransparentButton>
         )}
       </S.IconsBox>

@@ -8,8 +8,8 @@ const KakaoLoginButton = () => {
   };
 
   return (
-    <S.KakaoLoginButton onClick={redirectToKakao} aria-label='카카오 로그인 화면으로 이동'>
-      <KakaoSymbol width='18px' height='18px' />
+    <S.KakaoLoginButton onClick={redirectToKakao} aria-label="카카오 로그인 화면으로 이동">
+      <KakaoSymbol width={18} height={18} />
       <S.KakaoLoginText>카카오로 시작하기</S.KakaoLoginText>
     </S.KakaoLoginButton>
   );
