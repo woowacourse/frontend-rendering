@@ -16,10 +16,12 @@ export default function RootLayout({
   return (
     <html lang='ko'>
       <body>
-        <SvgSprite />
-        <Header />
-        <main className='main'>{children}</main>
-        <NavigationBar />
+        <div className='container'>
+          <SvgSprite />
+          <Header />
+          <main className='main'>{children}</main>
+          <NavigationBar />
+        </div>
       </body>
     </html>
   );
