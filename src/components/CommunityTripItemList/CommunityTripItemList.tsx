@@ -7,7 +7,7 @@ const CommunityTripItemList = async () => {
   const { trips }: CommunityTripsData = await fetch(
     `https://frontend-rendering-eight.vercel.app/api/community-trips`,
     {
-      cache: "force-cache",
+      cache: "no-store",
     }
   )
     .then((res) => res.json())
