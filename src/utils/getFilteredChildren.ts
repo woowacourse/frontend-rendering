@@ -12,7 +12,6 @@ const getFilteredChildren = (
   childrenProp: React.ReactNode,
   count?: number
 ) => {
-  console.log(childrenProp);
   const children = Children.toArray(childrenProp);
 
   return children
