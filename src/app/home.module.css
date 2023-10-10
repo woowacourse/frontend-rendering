@@ -2,3 +2,15 @@
   width: 100%;
   height: auto;
 }
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 0px 20px;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+}
