@@ -18,7 +18,7 @@ export default function Home() {
         <h4>셀럽 BEST</h4>
         <div className='pl-4 pr-4 flex gap-4 overflow-x-scroll hide-scroll'>
           {celebs.map((celeb) => (
-            <Link key={celeb.id} href={`/result/celeb/${celeb.name}`}>
+            <Link key={celeb.id} href={`/result/celeb/${celeb.id}`}>
               <CelebProfile celeb={celeb} />
             </Link>
           ))}
