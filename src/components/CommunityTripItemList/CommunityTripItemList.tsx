@@ -1,16 +1,11 @@
 import styles from "./style.module.scss";
 import CommunityTripsItem from "../CommunityTripsItem/CommunityTripsItem";
 
-const { NEXT_PUBLIC_BASE_URL } = process.env;
-
-import type {
-  CommunityTripsData,
-  RecommendedTripsData,
-} from "../../types/trips";
+import type { CommunityTripsData } from "../../types/trips";
 
 const CommunityTripItemList = async () => {
   const { trips }: CommunityTripsData = await fetch(
-    `${process.env.NEXT_PUBLIC_BASE_URL}/api/community-trips`,
+    `https://frontend-rendering-git-step1-woochan-lims-projects/api/community-trips`,
     {
       cache: "force-cache",
     }
