@@ -1,7 +1,8 @@
 import Header from "@/components/common/Header/Header";
-import styles from "./landing.module.css";
 import LandingMainSection from "@/components/landing/LandingMainSection/LandingMainSection";
 import GuideSection from "@/components/landing/GuideSection/GuideSection";
+import StartSection from "@/components/landing/StartSection/StartSection";
+import styles from "./landing.module.css";
 
 export default function Landing() {
   return (
@@ -12,6 +13,7 @@ export default function Landing() {
       <div className={styles.landingContents}>
         <LandingMainSection />
         <GuideSection />
+        <StartSection />
       </div>
     </>
   );
