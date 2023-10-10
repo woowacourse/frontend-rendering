@@ -5,6 +5,7 @@ import {
   getRestaurantsByCategory,
 } from '@/api/restaurant';
 import RestaurantCard from '@/components/RestaurantCard';
+import { CELEB } from '@/constants/celeb';
 import { RECOMMENDED_REGION } from '@/constants/recommendedRegion';
 import Link from 'next/link';
 import { use } from 'react';
@@ -28,9 +29,7 @@ const ResultPage = ({ params }: { params: { theme: string; key: string } }) => {
   return (
     <div>
       <Link href='/'>
-        {params.theme === 'celeb' && (
-          <h4>← {decodeURI(params.key)} 추천 맛집</h4>
-        )}
+        {params.theme === 'celeb' && <h4>← {CELEB[params.key]} 추천 맛집</h4>}
         {params.theme === 'region' && (
           <h4>
             ←
