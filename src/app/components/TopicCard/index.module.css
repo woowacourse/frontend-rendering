@@ -1,0 +1,61 @@
+.container {
+  width: 332px;
+  height: 140px;
+  cursor: pointer;
+  border: 1px solid #767676;
+  border-radius: 4px;
+}
+
+.info {
+  width: 192px;
+  padding: 8px;
+}
+
+.name {
+  color: #454545;
+  height: 52px;
+}
+
+.topic-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: #454545;
+}
+
+.creator {
+  font-size: 14px;
+  font-weight: 400;
+  color: #454545;
+}
+
+.updateAt {
+  font-size: 14px;
+  font-weight: 400;
+  color: #767676;
+}
+
+.count {
+  font-size: 12px;
+  font-weight: 400;
+  color: #454545;
+}
+
+.count-container {
+  display: flex;
+  align-items: center;
+  width: 64px;
+}
+
+.inner {
+  display: flex;
+  position: relative;
+}
+
+.space {
+  min-width: 4px;
+  min-height: 4px;
+}
+
+.flex {
+  display: flex;
+}
