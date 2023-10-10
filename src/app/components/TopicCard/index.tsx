@@ -30,11 +30,13 @@ const TopicCard = ({
           <span className={styles.creator}>{creator}</span>
 
           <div className={styles.space} />
+          <div className={styles.space} />
 
           <span className={styles.updateAt}>
             {updatedAt.split('T')[0].replaceAll('-', '.')} 업데이트
           </span>
 
+          <div className={styles.space} />
           <div className={styles.space} />
 
           <div className={styles.flex}>
@@ -52,6 +54,7 @@ const TopicCard = ({
                 {pinCount > 999 ? '+999' : pinCount}개
               </span>
             </div>
+
             <div className={styles['count-container']}>
               <Image
                 src="/assets/smallTopicStar.svg"
