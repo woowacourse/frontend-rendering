@@ -1,4 +1,3 @@
-'use client';
 import { store } from '@utils/external-state';
 import {
   DEFAULT_CENTER,

@@ -1,6 +1,6 @@
 'use client';
 import { Status, Wrapper } from '@googlemaps/react-wrapper';
-import CarFfeineMapListener from '@map/CarFfeineListener';
+import CarFfeineMap from '@map/CarFfeineMap';
 import Loading from '@ui/Loading';
 import MapController from '@ui/MapController';
 import Navigator from '@ui/Navigator/Navigator';
@@ -12,7 +12,7 @@ const render = (status: Status) => {
     case Status.FAILURE:
       return <>에러 발생</>;
     case Status.SUCCESS:
-      return <CarFfeineMapListener />;
+      return <CarFfeineMap />;
   }
 };
 
