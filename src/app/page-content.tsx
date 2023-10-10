@@ -25,7 +25,6 @@ function PageContent({ topics }: PageContentProps) {
 
       <TopicContainerWrapper>
         <Space size={1} />
-        <Space size={1} />
         <TopicCardContainer
           topics={topics}
           containerTitle="인기 급상승할 지도?"
@@ -71,6 +70,7 @@ const TopicContainerWrapper = styled.article`
   margin: 0 auto;
   position: relative;
   padding-top: 50px;
+  padding-bottom: 64px;
 
   @media (max-width: 1076px) {
     width: 684px;
