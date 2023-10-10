@@ -12,17 +12,17 @@ interface TeamLinksResponse {
   teamLinks: TeamLink[];
 }
 
-const fetchTeamLink = async (): Promise<TeamLinksResponse> => {
-  const res = await fetch(baseUrl + "/api/team-links", {
-    cache: "no-store",
-  });
+// const fetchTeamLink = async (): Promise<TeamLinksResponse> => {
+//   const res = await fetch(baseUrl + "/api/team-links", {
+//     cache: "no-store",
+//   });
 
-  return res.json();
-};
+//   return res.json();
+// };
 
 const LinkTable = async () => {
-  const { teamLinks } = await fetchTeamLink();
-
+  // const { teamLinks } = await fetchTeamLink();
+  const teamLinks = [] as TeamLink[];
   return (
     <>
       <div className={styles.container}>
