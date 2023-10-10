@@ -12,8 +12,8 @@ const RoadmapList = async () => {
 
   return (
     <div className={styles.roadmapList}>
-      {roadmaps.map((roadmap: any) => {
-        return <RoadmapItem item={roadmap} />;
+      {roadmaps.map((roadmap) => {
+        return <RoadmapItem key={roadmap.roadmapId} item={roadmap} />;
       })}
     </div>
   );
