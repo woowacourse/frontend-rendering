@@ -11,6 +11,7 @@ const fetcher = async (url: string, method: string, body?: unknown) => {
   const options: RequestInit = {
     method,
     headers,
+    next: { revalidate: 60 * 60 },
   };
 
   if (body) {
