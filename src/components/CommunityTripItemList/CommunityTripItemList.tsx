@@ -1,13 +1,11 @@
 import styles from "./style.module.scss";
 import CommunityTripsItem from "../CommunityTripsItem/CommunityTripsItem";
 
-const { NEXT_PUBLIC_BASE_URL } = process.env;
-
 import type { CommunityTripsData } from "../../types/trips";
 
 const CommunityTripItemList = async () => {
   const { trips }: CommunityTripsData = await fetch(
-    `${NEXT_PUBLIC_BASE_URL}/api/community-trips`,
+    `https://frontend-rendering-eight.vercel.app/api/community-trips`,
     {
       cache: "force-cache",
     }
