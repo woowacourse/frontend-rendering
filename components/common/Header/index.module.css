@@ -1,0 +1,137 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+
+  width: 100%;
+  height: 64px;
+  padding: 0 14px;
+
+  border-bottom: 2px solid var(--gray200);
+}
+
+.innerContainer {
+  display: flex;
+  column-gap: 20px;
+}
+
+.innerContainer div {
+  display: flex;
+  align-items: center;
+  column-gap: 12px;
+}
+
+.buttonContainer {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+}
+
+.divider {
+  width: 1px;
+  height: 24px;
+
+  background-color: var(--gray500);
+}
+
+.teamBadgeEditIconWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.teamBadgeEditIconWrapper svg {
+  width: 20px;
+  height: 20px;
+
+  color: var(--white);
+}
+
+.teamNameWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.profileImage {
+  width: 40px;
+  height: 40px;
+
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.teamPlaceName {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.notificationButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 44px;
+  height: 44px;
+  padding: 0;
+
+  border-radius: 50%;
+}
+
+.notificationButton:hover {
+  background-color: var(--gray200);
+}
+
+.teamPlaceInfoButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 44px;
+  height: 44px;
+  padding: 0;
+
+  border-radius: 50%;
+}
+
+.teamPlaceInfoButton:hover {
+  background-color: var(--gray200);
+}
+
+.userInfoButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 50px;
+  height: 50px;
+  padding: 0;
+}
+
+.teamColorButton {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+
+  cursor: pointer;
+}
+
+.teamBadge {
+  width: 24px;
+  height: 24px;
+
+  border-radius: 50%;
+  background-color: aqua;
+}
+
+.teamName {
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  width: 260px;
+
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 22px;
+  white-space: nowrap;
+}
