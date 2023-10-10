@@ -8,7 +8,7 @@ import {
   EmptyCustomers,
   RegisterTypeTab,
   TabContainer,
-} from './admin/style';
+} from '../components/CustomerList/style';
 import Text from '@/components/Text';
 import { CustomerOrderOption } from '@/components/CustomerList/hooks/useGetCustomers';
 import SelectBox from '@/components/SelectBox';
@@ -91,9 +91,7 @@ export default function Home({ customers }: Props) {
 }
 
 export async function getServerSideProps() {
-  const res = await fetch(
-    'https://frontend-rendering-rego.vercel.app/api/customers'
-  );
+  const res = await fetch('http://localhost:3000/api/customers');
   const customers = await res.json();
 
   return {
