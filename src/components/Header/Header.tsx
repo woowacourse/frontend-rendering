@@ -1,6 +1,6 @@
 import Image from 'next/image';
+import Spacing from '@/components/Spacing/Spacing';
 import styles from './Header.module.css';
-import Spacing from '../Spacing/Spacing';
 
 const Header = () => {
   return (
