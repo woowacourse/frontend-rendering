@@ -7,6 +7,9 @@ const nextConfig = {
     });
     return config;
   },
+  images: {
+    domains: ['res.klook.com'],
+  },
 };
 
 module.exports = nextConfig;

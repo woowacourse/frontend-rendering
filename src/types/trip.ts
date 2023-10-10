@@ -15,3 +15,13 @@ export interface DateRangeData {
   startDate: string | null;
   endDate: string | null;
 }
+
+export interface TripsData {
+  id: number;
+  title: string;
+  imageUrl: string | null;
+  cities: CityData[];
+  startDate: string;
+  endDate: string;
+  description?: string | null;
+}
