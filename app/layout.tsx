@@ -19,9 +19,7 @@ export default function RootLayout({
         <base href="/" />
         <title>팀바팀</title>
       </head>
-      <body>
-        <body>{children}</body>
-      </body>
+      <body>{children}</body>
     </html>
   );
 }
