@@ -1,15 +1,16 @@
 'use client';
 
-import { ReactNode, useCallback, useEffect, useState } from 'react';
+import { ReactNode, useCallback, useEffect, useRef, useState } from 'react';
 
 import styles from './carousel.module.css';
+import useResponsiveWidth from './useResponsiveWidth';
 
-interface CarouselChildren {
+export interface CarouselChildren {
   id: number;
   children: ReactNode;
 }
 
-interface CarouselProps {
+export interface CarouselProps {
   carouselList: CarouselChildren[];
 }
 
@@ -17,7 +18,9 @@ const Carousel = ({ carouselList }: CarouselProps) => {
   const extendedCarouselList = [...carouselList, carouselList[0]];
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const CAROUSEL_WIDTH = window.innerWidth;
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  const CAROUSEL_WIDTH = useResponsiveWidth(containerRef);
 
   const showNextSlide = useCallback(() => {
     setCurrentIndex((prev) => (prev === carouselList.length ? 0 : prev + 1));
@@ -30,7 +33,7 @@ const Carousel = ({ carouselList }: CarouselProps) => {
   }, [showNextSlide, currentIndex]);
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} ref={containerRef}>
       <ul
         className={styles.carouselWrapper}
         style={{
