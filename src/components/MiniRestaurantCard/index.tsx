@@ -3,6 +3,7 @@ import type { Celeb, Restaurant } from "@/app/types";
 import Love from "@/assets/love.svg";
 import Star from "@/assets/star.svg";
 import WaterMarkImage from "../WaterMarkImage";
+import Link from "next/link";
 
 interface MiniRestaurantCardProps {
   restaurant: Restaurant;
@@ -12,14 +13,15 @@ interface MiniRestaurantCardProps {
   showWaterMark?: boolean;
 }
 
-function MiniRestaurantCard({ restaurant }: MiniRestaurantCardProps) {
-  const { images, name, roadAddress, category } = restaurant;
+function MiniRestaurantCard({ restaurant, celebs }: MiniRestaurantCardProps) {
+  const { id, images, name, roadAddress, category } = restaurant;
 
   const rating = 5;
 
   return (
     <>
-      <li
+      <Link
+        href={`/restaurants/${id}?celebId=${celebs[0].id}`}
         className={styles.container}
         data-cy="음식점 카드"
         aria-label={`${name} 카드`}
@@ -27,7 +29,6 @@ function MiniRestaurantCard({ restaurant }: MiniRestaurantCardProps) {
       >
         <section className={styles.imageSection}>
           <WaterMarkImage imageUrl={images[0].name} sns={images[0].sns} />
-
           <button
             className={styles.likeButton}
             aria-label="좋아요"
@@ -42,18 +43,18 @@ function MiniRestaurantCard({ restaurant }: MiniRestaurantCardProps) {
           </button>
         </section>
         <section className={styles.infoSection}>
-          <section className={styles.infoTopSection}>
-            <h5 className={styles.name} role="columnheader">
+          <div className={styles.infoTopSection}>
+            <div className={styles.name} role="columnheader">
               {name}
-            </h5>
+            </div>
             <span className={styles.rating}>
               <Star /> {rating.toFixed(2)}
             </span>
-          </section>
+          </div>
           <span className={styles.category}>{category}</span>
           <span className={styles.address}>{roadAddress}</span>
         </section>
-      </li>
+      </Link>
     </>
   );
 }
