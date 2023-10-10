@@ -1,0 +1,55 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+
+  width: 100%;
+  height: 100%;
+  padding: 50px;
+}
+
+.sampleBadge {
+  width: 36px;
+  height: 36px;
+
+  border-radius: 18px;
+  background-color: var(--blue600);
+}
+
+.calendarHeaderContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 16px;
+
+  width: 100%;
+  height: 40px;
+}
+
+.calendarContainer {
+  position: relative;
+
+  width: 100%;
+  height: 500px;
+}
+
+.calendarTable {
+  display: grid;
+  grid-template-rows: repeat(6, 1fr);
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+
+  width: 100%;
+  height: 100%;
+}
+
+.calendarCell {
+  background-color: var(--blue200);
+}
+
+.calendarHeaderText {
+  color: var(--blue600);
+
+  font-weight: 600;
+  font-size: 28px;
+}
