@@ -1,7 +1,6 @@
 export const GENRES = {
   ALL: '전체',
   DANCE: '댄스',
-  HIPHOP: '힙합',
   BALLAD: '발라드',
   POP: '팝',
   RHYTHM_AND_BLUES: 'R&B/Soul',
