@@ -1,0 +1,23 @@
+.loginSmall {
+  background: linear-gradient(50deg, #eb23f9, #7733ff);
+  box-shadow: rgba(31, 34, 37, 0.09) 0px 0px 0px 1px,
+    rgba(0, 0, 0, 0.04) 0px 24px 48px, rgba(0, 0, 0, 0.02) 0px 4px 16px;
+  color: #fff;
+  width: 11rem;
+  height: 3.5rem;
+  border-radius: 8px;
+  z-index: 2;
+}
+
+.loginLarge {
+  background: linear-gradient(50deg, #eb23f9, #7733ff);
+  box-shadow: rgba(31, 34, 37, 0.09) 0px 0px 0px 1px,
+    rgba(0, 0, 0, 0.04) 0px 24px 48px, rgba(0, 0, 0, 0.02) 0px 4px 16px;
+  color: #ffffffdf;
+  width: 20rem;
+  font-size: 2rem;
+  font-weight: 500;
+  height: 5rem;
+  border-radius: 8px;
+  z-index: 2;
+}
