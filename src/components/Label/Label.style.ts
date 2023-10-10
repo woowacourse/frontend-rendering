@@ -6,19 +6,19 @@ const themeStyles = {
   RED: css`
     border: 1px solid var(--white-color);
 
-    background: var(--baton-red);
+    background: #f64545;
 
     color: var(--white-color);
   `,
 
   WHITE: css`
-    border: 1px solid var(--baton-red);
+    border: 1px solid #f64545;
 
-    color: var(--baton-red);
+    color: #f64545;
   `,
 
   GRAY: css`
-    background: var(--gray-500);
+    background: #a6a6a6;
 
     color: white;
   `,

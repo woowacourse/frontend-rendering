@@ -11,7 +11,7 @@ export const RunnerPostItemContainer = styled.li`
   height: max-content;
   padding: 35px 40px;
 
-  border: 1px solid var(--gray-500);
+  border: 1px solid #a6a6a6;
   border-radius: 12px;
   box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
 
@@ -20,7 +20,7 @@ export const RunnerPostItemContainer = styled.li`
   &:hover {
     transition: all 0.3s ease;
     transform: scale(1.015);
-    outline: 1.5px solid var(--baton-red);
+    outline: 1.5px solid #f64545;
   }
 
   @media (max-width: 768px) {
@@ -48,7 +48,7 @@ export const DeadLineContainer = styled.div`
 export const DeadLine = styled.p`
   margin-bottom: 60px;
 
-  color: var(--gray-600);
+  color: #a6a6a6;
 
   @media (max-width: 768px) {
     margin-bottom: 40px;
@@ -68,7 +68,7 @@ export const Tag = styled.span`
   margin-right: 10px;
 
   font-size: 14px;
-  color: var(--gray-600);
+  color: #a6a6a6;
 `;
 
 export const LeftSideContainer = styled.div``;

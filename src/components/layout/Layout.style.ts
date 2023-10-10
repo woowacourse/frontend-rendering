@@ -6,6 +6,8 @@ export const LayoutContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  padding: 0 30px;
 `;
 
 export const ChildrenWrapper = styled.article<{ $maxWidth?: string }>`

@@ -66,7 +66,7 @@ export const SearchInput = styled.input`
   font-size: 14px;
 
   border-radius: 6px;
-  border: 1px solid var(--gray-500);
+  border: 1px solid #a6a6a6;
 `;
 
 export const SearchLabel = styled.label`

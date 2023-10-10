@@ -15,7 +15,7 @@ export const Image = styled.img<{
   width: ${({ $width }) => $width || '60px'};
   height: ${({ $height }) => $height || '60px'};
 
-  border: 0.5px solid var(--gray-800);
+  border: 0.5px solid #282828;
   border-radius: 50%;
 
   object-fit: cover;
