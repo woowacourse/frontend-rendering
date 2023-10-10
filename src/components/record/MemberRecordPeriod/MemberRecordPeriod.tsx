@@ -13,10 +13,6 @@ const MemberRecordPeriod = () => {
   // } = useMemberListRecord({
   //   memberId: 1,
   // });
-  const totalPagesNumber = 0;
-  const currentPageNumber = 1;
-  const isLoading = false;
-  const shiftPage = () => {};
 
   const data: {
     studyRecords: {
@@ -40,14 +36,21 @@ const MemberRecordPeriod = () => {
       };
     }),
     pageInfo: {
-      totalPages: 2,
+      totalPages: 12,
     },
+  };
+
+  const totalPagesNumber = data.pageInfo.totalPages;
+  const currentPageNumber = 1;
+  const isLoading = false;
+  const shiftPage = async (page: number) => {
+    'use server';
   };
 
   return (
     <div className={layout}>
       <PeriodSelectionBar />
-      {/* {totalPagesNumber !== 0 && (
+      {totalPagesNumber !== 0 && (
         <PaginationButton
           totalPagesNumber={totalPagesNumber}
           currentPageNumber={currentPageNumber}
@@ -55,10 +58,10 @@ const MemberRecordPeriod = () => {
           shiftPage={shiftPage}
         />
       )}
-      <MemberRecordPeriodList
+      {/* <MemberRecordPeriodList
         memberRecords={data.studyRecords}
         isLoading={isLoading}
-      />
+      /> */}
       {data.studyRecords && data.studyRecords.length > 3 && (
         <PaginationButton
           totalPagesNumber={totalPagesNumber}
@@ -66,7 +69,7 @@ const MemberRecordPeriod = () => {
           isLoading={isLoading}
           shiftPage={shiftPage}
         />
-      )} */}
+      )}
     </div>
   );
 };

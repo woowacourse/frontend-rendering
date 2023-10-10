@@ -1,10 +1,12 @@
-import { css, styled } from 'styled-components';
+'use client';
 
-import color from '@Styles/color';
-
-import { useNotification } from '@Contexts/NotificationProvider';
-
-import ArrowIcon from '@Assets/icons/ArrowIcon';
+import ArrowIcon from '@/components/icons/ArrowIcon';
+import color from '@/styles/color';
+import {
+  currentButton,
+  layout,
+  paginationButton,
+} from './paginationButton.css';
 
 type Props = {
   totalPagesNumber: number;
@@ -13,17 +15,20 @@ type Props = {
   shiftPage: (page: number) => void;
 };
 
-const PaginationButton = ({ totalPagesNumber, currentPageNumber, isLoading, shiftPage }: Props) => {
-  const { send } = useNotification();
-
+const PaginationButton = ({
+  totalPagesNumber,
+  currentPageNumber,
+  isLoading,
+  shiftPage,
+}: Props) => {
   const handleClickPageButton = (page: number) => {
     if (page < 1) {
-      send({ message: '첫 페이지예요.' });
+      window.alert('첫 페이지예요.');
       return;
     }
 
     if (page > totalPagesNumber) {
-      send({ message: '마지막 페이지예요.' });
+      window.alert('마지막 페이지예요.');
       return;
     }
 
@@ -35,7 +40,9 @@ const PaginationButton = ({ totalPagesNumber, currentPageNumber, isLoading, shif
   };
 
   const getRenderingPageButtons = () => {
-    const renderingPages = Array.from({ length: totalPagesNumber }).map((_, index) => index + 1);
+    const renderingPages = Array.from({ length: totalPagesNumber }).map(
+      (_, index) => index + 1
+    );
 
     if (totalPagesNumber < 6) return renderingPages.slice();
 
@@ -47,62 +54,42 @@ const PaginationButton = ({ totalPagesNumber, currentPageNumber, isLoading, shif
   };
 
   return (
-    <Layout>
-      <Button disabled={isLoading} onClick={() => handleClickPageButton(currentPageNumber - 1)}>
+    <div className={layout}>
+      <button
+        className={paginationButton}
+        disabled={isLoading}
+        onClick={() => handleClickPageButton(currentPageNumber - 1)}
+      >
         <ArrowIcon color={color.neutral[500]} direction="left" />
-      </Button>
+      </button>
       {getRenderingPageButtons().map((pageNumber) => {
         const isCurrentButton = currentPageNumber === pageNumber;
         return (
-          <Button
+          <button
+            className={`${paginationButton} ${
+              isCurrentButton && currentButton
+            }`}
             disabled={isLoading}
             key={pageNumber}
             onClick={() => handleClickPageButton(pageNumber)}
-            $isCurrentButton={isCurrentButton}
           >
             {pageNumber}
-          </Button>
+          </button>
         );
       })}
-      <Button disabled={isLoading} onClick={() => handleClickPageButton(currentPageNumber + 1)}>
-        <ArrowIcon color={color.neutral[500]} direction="right" />
-      </Button>
-    </Layout>
+      <button
+        className={paginationButton}
+        disabled={isLoading}
+        onClick={() => handleClickPageButton(currentPageNumber + 1)}
+      >
+        <ArrowIcon
+          color={color.neutral[500]}
+          direction="right"
+          style={{ width: '12px', height: '12px' }}
+        />
+      </button>
+    </div>
   );
 };
 
 export default PaginationButton;
-
-const Layout = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 10px;
-
-  color: ${color.neutral[500]};
-
-  svg {
-    width: 12px;
-    height: 12px;
-  }
-`;
-
-type PaginationButtonProps = {
-  $isCurrentButton?: boolean;
-};
-
-const Button = styled.button<PaginationButtonProps>`
-  width: 30px;
-  height: 30px;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  border-radius: 4px;
-
-  ${({ $isCurrentButton }) => css`
-    color: ${$isCurrentButton && color.white};
-    background-color: ${$isCurrentButton && color.blue[400]};
-  `}
-`;
