@@ -18,9 +18,7 @@ export default function Home() {
   initMockAPI();
   return (
     <QueryClientProvider client={queryClient}>
-      <Template>
-        <CustomerList />
-      </Template>
+      <CustomerList />
     </QueryClientProvider>
   );
 }

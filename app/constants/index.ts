@@ -1,7 +1,7 @@
 import { RouterPath } from '../types';
 
 export const ROUTER_PATH: Record<string, RouterPath> = {
-  customerList: '/admin',
+  customerList: '/',
   adminLogin: '/admin/login',
   adminAuth: '/admin/login/auth/kakao',
   auth: '/login/auth/kakao',
