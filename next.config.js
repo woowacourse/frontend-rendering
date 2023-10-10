@@ -20,16 +20,12 @@ const nextConfig = {
         port: '',
         pathname: '/**',
       },
-      ...(process.env.NODE_ENV === 'development'
-        ? [
-            {
-              protocol: 'https',
-              hostname: 'images.unsplash.com',
-              port: '',
-              pathname: '/*',
-            },
-          ]
-        : []),
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+        port: '',
+        pathname: '/*',
+      },
     ],
   },
 };
