@@ -1,0 +1,11 @@
+.container {
+  height: 64px;
+  padding: 0 14px;
+}
+
+.headerTitle {
+  font-size: 32px;
+  font-weight: 800;
+  color: "#516FFF";
+  text-align: right;
+}
