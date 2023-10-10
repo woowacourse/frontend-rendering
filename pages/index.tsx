@@ -1,7 +1,8 @@
 import { Inter } from 'next/font/google';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import Template from '@/app/components/Template';
 import initMockAPI from '@/app/mocks';
-import CustomerList from '@/app/page';
+import CustomerList from '@/app/page/CustomerList';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -17,7 +18,9 @@ export default function Home() {
   initMockAPI();
   return (
     <QueryClientProvider client={queryClient}>
-      <CustomerList />
+      <Template>
+        <CustomerList />
+      </Template>
     </QueryClientProvider>
   );
 }

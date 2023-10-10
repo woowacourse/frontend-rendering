@@ -1,7 +1,7 @@
 import { RouterPath } from '../types';
 
 export const ROUTER_PATH: Record<string, RouterPath> = {
-  customerList: '/',
+  customerList: '/admin',
   adminLogin: '/admin/login',
   adminAuth: '/admin/login/auth/kakao',
   auth: '/login/auth/kakao',
@@ -15,6 +15,17 @@ export const ROUTER_PATH: Record<string, RouterPath> = {
   templateCouponDesign: '/template-coupon-design',
   customCouponDesign: '/custom-coupon-design',
   useReward: '/admin/use-reward',
+  couponList: '/',
+  login: '/login',
+  signup: '/sign-up',
+  myPage: '/my-page',
+  rewardList: '/reward-list',
+  rewardHistory: '/reward-history',
+  stampHistory: '/stamp-history',
+  inputPhoneNumber: '/input-phone-number',
+  customerCancellation: '/cancellation',
+  customerSetting: '/customer-setting',
+  greeting: '/greeting',
 } as const;
 
 export const PARAMS_ERROR_MESSAGE = '[ERROR] params를 지정해주세요.';

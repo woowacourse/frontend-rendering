@@ -1,5 +1,5 @@
 import { PropsWithChildren } from 'react';
-import SideBar from '../components/SideBar';
+import SideBar from '../SideBar';
 import { BaseTemplate, Footer, PageContainer, SideBarWrapper } from './style';
 import { AiOutlineMail } from '@react-icons/all-files/ai/AiOutlineMail';
 

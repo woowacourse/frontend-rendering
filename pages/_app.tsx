@@ -1,4 +1,4 @@
-import Template from '@/app/Template';
+import Template from '@/app/components/Template';
 import '@/styles/globals.css';
 import type { AppProps } from 'next/app';
 
