@@ -4,8 +4,7 @@ import theme from '@/styles/theme';
 
 export type ButtonVariant = 'primary' | 'secondary' | 'custom';
 
-export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant: ButtonVariant;
   children: React.ReactNode;
 }
@@ -40,8 +39,7 @@ const Button = styled.button<ButtonProps>`
   border: ${({ variant }) => variants[variant].border};
   opacity: ${({ disabled }) => (disabled ? 0.5 : 1)};
   border-radius: ${({ theme }) => theme.radius.small};
-  padding: ${({ variant }) =>
-    variants[variant].padding || `${theme.spacing['2']} ${theme.spacing['3']}`};
+  padding: ${({ variant }) => variants[variant].padding || `${theme.spacing['2']} ${theme.spacing['3']}`};
   font-size: ${({ theme }) => theme.fontSize.small};
 
   &:hover {

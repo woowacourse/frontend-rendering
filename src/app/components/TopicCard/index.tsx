@@ -6,9 +6,9 @@ import Flex from '../common/Flex';
 import ImageCommon from '../common/Image';
 import Space from '../common/Space';
 import Text from '../common/Text';
-import { Topic } from '@/types/Topic'; 
+import { Topic } from '@/types/Topic';
 
-type TopicCardProps = Omit<Topic, "id">;
+type TopicCardProps = Omit<Topic, 'id'>;
 
 function TopicCard({ image, creator, name, updatedAt, pinCount, bookmarkCount }: TopicCardProps) {
   return (

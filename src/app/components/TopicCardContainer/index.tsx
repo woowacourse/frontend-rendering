@@ -9,12 +9,12 @@ import TopicCard from '../TopicCard';
 import { Topic } from '@/types/Topic';
 
 interface TopicCardContainerProps {
-  topics: Topic[]; 
+  topics: Topic[];
   containerTitle: string;
   containerDescription: string;
 }
 
-async function TopicCardContainer({ topics, containerTitle, containerDescription }: TopicCardContainerProps) {
+function TopicCardContainer({ topics, containerTitle, containerDescription }: TopicCardContainerProps) {
   return (
     <section>
       <Flex $justifyContent="space-between" $alignItems="flex-end">

@@ -7,7 +7,6 @@ import Flex from './components/common/Flex';
 import Space from './components/common/Space';
 import Text from './components/common/Text';
 import Image from 'next/image';
-import Link from 'next/link';
 
 function Error({ reset }: { reset: () => void }) {
   return (
