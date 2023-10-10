@@ -1,9 +1,9 @@
+import Image from 'next/image';
 import {
 	LogoMessage,
 	SearchBoxArea,
 	SearchMessage,
 	Wrapper,
-	Image,
 	ImageArea,
 } from './page.style';
 import LogoSvg from '@/assets/logo.svg';
@@ -19,6 +19,8 @@ const Main = () => {
 					<Image
 						src={LogoSvg}
 						alt="피움 로고. 녹색으로 '피움'이라는 글자가 적혀 있다."
+						width={112}
+						priority={true}
 					/>
 				</ImageArea>
 				<SearchBoxArea>
