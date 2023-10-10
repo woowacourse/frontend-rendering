@@ -32,13 +32,7 @@ const MemberProfile = () => {
   return (
     <Menu trigger={<MenuTrigger />}>
       <Menu.Item
-        onClick={() =>
-          router.push(
-            `record/calendar?year=${today.getFullYear()}&month=${
-              today.getMonth() + 1
-            }`
-          )
-        }
+        onClick={() => router.push('member-record/list?period=entire&page=1')}
       >
         스터디 기록
       </Menu.Item>

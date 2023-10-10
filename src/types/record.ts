@@ -1,3 +1,5 @@
+import { PERIOD } from '@/contants/record';
+
 export type StudyInfo = {
   studyId: string;
   name: string;
@@ -21,3 +23,5 @@ export type CalendarRecord = {
   records: StudyInfo[];
   restRecordsNumber: number;
 };
+
+export type Period = keyof typeof PERIOD;

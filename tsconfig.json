@@ -19,14 +19,7 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"],
-      "@/components": ["./src/components/*"],
-      "@/hooks": ["./src/hooks/*"],
-      "@/styles": ["./src/styles/*"],
-      "@/types": ["./src/types/*"],
-      "@/utils": ["./src/utils/*"],
-      "@/icons": ["src/components/icons/*"],
-      "@/libs": ["./src/libs/*"]
+      "@/*": ["./src/*"]
     }
   },
   "include": [

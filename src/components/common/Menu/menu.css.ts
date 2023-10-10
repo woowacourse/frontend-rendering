@@ -21,7 +21,7 @@ export const menuList = style({
   rowGap: '6px',
 
   width: 'max-content',
-  maxHeight: '80vh',
+  maxHeight: '320px',
   overflow: 'auto',
 
   padding: '10px 0px',
