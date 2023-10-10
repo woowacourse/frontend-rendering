@@ -1,7 +1,5 @@
 import styled from 'styled-components';
 import Spacing from '@/shared/components/Spacing';
-// import ROUTE_PATH from '@/shared/constants/path';
-import useFetch from '@/shared/hooks/useFetch';
 
 import { getHighLikedSongs } from '../remotes/song';
 import type { Genre, Song } from '../types/Song.type';
@@ -12,22 +10,18 @@ interface SongItemListProps {
   genre: Genre;
 }
 
-const SongItemList = ({ genre }: SongItemListProps) => {
-  const { data: songs } = useFetch<Song[]>(() => getHighLikedSongs(genre));
+const SongItemList = async ({ genre }: SongItemListProps) => {
+  const songs = await getHighLikedSongs(genre);
 
-  if (songs === null || songs?.length === 0) return;
+  if (songs.length === 0) return;
 
   return (
     <>
       <Title>{`${GENRES[genre]} Top 10`}</Title>
       <Spacing direction='vertical' size={16} />
       <SongList>
-        {songs?.map(({ id, albumCoverUrl, title, singer, totalLikeCount }, i) => (
+        {songs.map(({ id, albumCoverUrl, title, singer, totalLikeCount }, i) => (
           <Li key={id}>
-            {/* <StyledLink
-              to={`${ROUTE_PATH.SONG_DETAILS}/${id}/${genre}`}
-              aria-label={`${GENRES[genre]} 장르 ${i + 1}등 ${singer} ${title}`}
-            > */}
             <SongItem
               rank={i + 1}
               albumCoverUrl={albumCoverUrl}
@@ -35,7 +29,6 @@ const SongItemList = ({ genre }: SongItemListProps) => {
               singer={singer}
               totalLikeCount={totalLikeCount}
             />
-            {/* </StyledLink> */}
           </Li>
         ))}
       </SongList>
@@ -63,15 +56,6 @@ const Li = styled.li`
   scroll-snap-stop: normal;
   max-width: 120px;
 `;
-
-// const StyledLink = styled(Link)`
-//   width: 100%;
-
-//   &:hover,
-//   &:focus {
-//     background-color: ${({ theme }) => theme.color.secondary};
-//   }
-// `;
 
 const Title = styled.h2`
   align-self: flex-start;
