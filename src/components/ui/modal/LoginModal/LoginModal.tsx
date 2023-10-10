@@ -11,6 +11,7 @@ import Text from '@common/Text';
 
 import GoogleLogo from '@assets/google-logo.svg';
 import Logo from '@assets/logo-md.svg';
+import Image from 'next/image';
 
 const LoginModal = () => {
   const handleLogin = () => {
@@ -32,13 +33,13 @@ const LoginModal = () => {
         <XMarkIcon width={28} />
       </Button>
 
-      <Logo />
+      <Image src={Logo} alt="로고"/>
       <Text tag="h2" variant="h5" weight="regular" color="#333" mt={2}>
         카페인
       </Text>
 
       <GoogleLogin onClick={handleLogin}>
-        <GoogleLogo width="24" />
+        <Image src={GoogleLogo} alt="구글 로고" width={24}/>
         <Text variant="label" weight="regular" color="#666">
           구글 로그인
         </Text>
