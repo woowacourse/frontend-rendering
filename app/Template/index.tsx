@@ -3,7 +3,7 @@ import SideBar from '../components/SideBar';
 import { BaseTemplate, Footer, PageContainer, SideBarWrapper } from './style';
 import { AiOutlineMail } from '@react-icons/all-files/ai/AiOutlineMail';
 
-const Layout = ({ children }: PropsWithChildren) => {
+const Template = ({ children }: PropsWithChildren) => {
   return (
     <>
       <BaseTemplate>
@@ -23,4 +23,4 @@ const Layout = ({ children }: PropsWithChildren) => {
   );
 };
 
-export default Layout;
+export default Template;
