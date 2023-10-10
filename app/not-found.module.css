@@ -23,21 +23,12 @@
   width: 690px;
 
   @media (max-width: 750px) {
-    & {
-      width: 333px;
-    }
+    width: 333px;
   }
 
   @media (max-width: 450px) {
-    & {
-      scale: 0.8;
-    }
+    scale: 0.8;
   }
-}
-
-.errorImg {
-  width: 333px;
-  height: 307px;
 }
 
 .errorDetails {
@@ -56,10 +47,8 @@
   height: 102px;
 
   @media (max-width: 750px) {
-    & {
-      width: 162px;
-      height: 71px;
-    }
+    width: 162px;
+    height: 71px;
   }
 }
 

@@ -1,11 +1,16 @@
 .container {
   height: 64px;
   padding: 0 14px;
+
+  display: flex;
+  align-items: center;
+
+  column-gap: 20px;
 }
 
 .headerTitle {
   font-size: 32px;
   font-weight: 800;
-  color: "#516FFF";
+  color: #516fff;
   text-align: right;
 }
