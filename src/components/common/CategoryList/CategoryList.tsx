@@ -1,16 +1,19 @@
 import styles from './categoryList.module.css';
 import CategoryItem from '../CategoryItem';
 
-import { Category } from '@/types/common';
+import { CategoryVariant } from '@/constants';
+import useCategory from '@/hooks/useCategory';
 
 interface CategoryListProps {
-  categories: Category[];
+  menuVariant: CategoryVariant;
 }
 
-const CategoryList = ({ categories }: CategoryListProps) => {
+const CategoryList = async ({ menuVariant }: CategoryListProps) => {
+  const categoriesResponse = await useCategory(menuVariant);
+
   return (
     <ul className={styles.container}>
-      {categories.map(({ id, name, image }) => (
+      {categoriesResponse.map(({ id, name, image }) => (
         <li key={id}>
           <CategoryItem name={name} image={image} />
         </li>

@@ -1,3 +1,5 @@
+export type CategoryVariant = 'food' | 'store';
+
 export const SVG_ICON_VARIANTS = [
   'recipe',
   'list',
