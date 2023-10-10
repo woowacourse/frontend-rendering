@@ -1,19 +1,17 @@
 'use client';
 
-import Image from 'next/image';
-
 import { styled } from 'styled-components';
 // import CarouselItem from '@/features/songs/components/CarouselItem';
 // import CollectionCarousel from '@/features/songs/components/CollectionCarousel';
-// import SongItemList from '@/app/SongItemList';
-// import GENRES from '@/features/songs/constants/genres';
 import Spacing from '@/shared/components/Spacing';
 import theme from '@/shared/styles/theme';
 // import useFetch from '@/shared/hooks/useFetch';
 // import fetcher from '@/shared/remotes';
-// import type { Genre, VotingSong } from '@/features/songs/types/Song.type';
+import type { Genre } from '@/features/songs/types/Song.type';
+import GENRES from '@/features/songs/constants/genre';
+import SongItemList from '@/features/songs/components/SongItemList';
 
-// const genres = Object.keys(GENRES) as Genre[];
+const genres = Object.keys(GENRES) as Genre[];
 
 const MainPage = () => {
   // const { data: votingSongs } = useFetch<VotingSong[]>(() => fetcher('/voting-songs', 'GET'));
@@ -38,9 +36,9 @@ const MainPage = () => {
         )}
       </CollectionCarousel> */}
       <Spacing direction='vertical' size={24} />
-      {/* {genres.map(genre => (
+      {genres.map(genre => (
         <SongItemList key={genre} genre={genre} />
-      ))} */}
+      ))}
     </Container>
   );
 };
