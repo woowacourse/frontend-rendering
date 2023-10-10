@@ -9,11 +9,6 @@ export const GENRES = {
   ROCK_METAL: '락/메탈',
   TROT: '트로트',
   FOLK_BLUES: '포크/블루스',
-  JAZZ: '재즈',
-  CLASSIC: '클래식',
-  J_POP: 'J-POP',
-  EDM: 'EDM',
-  ETC: '기타',
 } as const;
 
 export const GENRES_LIST = Object.keys(GENRES) as Genre[];
