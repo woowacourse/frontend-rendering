@@ -1,4 +1,4 @@
-.carouselContainer {
+.container {
   display: flex;
   width: 100%;
   border: 1px solid var(--border-disabled);
@@ -6,7 +6,7 @@
   overflow: hidden;
 }
 
-.carouselWrapper {
+.wrapper {
   display: flex;
 }
 

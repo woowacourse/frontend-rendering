@@ -27,9 +27,9 @@ const Carousel = ({ carouselList }: CarouselProps) => {
   }, [currentIndex]);
 
   return (
-    <div className={styles.carouselContainer} ref={containerRef}>
+    <div className={styles.container} ref={containerRef}>
       <ul
-        className={styles.carouselWrapper}
+        className={styles.wrapper}
         style={{
           transform: `translateX(-${currentIndex * carouselWidth}px)`,
           transition: currentIndex !== 0 ? 'all 0.5s ease-in-out' : undefined,

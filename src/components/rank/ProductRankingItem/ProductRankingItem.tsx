@@ -9,7 +9,7 @@ interface ProductRankingItemProps {
 
 const ProductRankingItem = ({ name, image, rank }: ProductRankingItemProps) => {
   return (
-    <div className={styles.rankingContainer}>
+    <div className={styles.container}>
       <p className={styles.rank}>{rank}</p>
       {image ? (
         <Image

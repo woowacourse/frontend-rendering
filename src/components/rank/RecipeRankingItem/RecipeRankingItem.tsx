@@ -17,13 +17,13 @@ const RecipeRankingItem = ({ rank, recipe }: RecipeRankingItemProps) => {
   } = recipe;
 
   return (
-    <div className={styles.recipeRankingItemContainer}>
-      <div className={styles.recipeRankingWrapper}>
-        <div className={styles.rankingRecipeWrapper}>
+    <div className={styles.container}>
+      <div className={styles.rankingWrapper}>
+        <div className={styles.recipeWrapper}>
           {image !== null ? (
             <>
               <Image
-                className={styles.rankingRecipeImage}
+                className={styles.recipeImage}
                 src={image}
                 alt={`${rank}위 꿀조합`}
                 width={60}
@@ -32,14 +32,14 @@ const RecipeRankingItem = ({ rank, recipe }: RecipeRankingItemProps) => {
             </>
           ) : (
             <Image
-              className={styles.rankingRecipeImage}
+              className={styles.recipeImage}
               src='/plate.svg'
               width={60}
               height={60}
               alt={`랭킹 미존재`}
             />
           )}
-          <div className={styles.titleFavoriteWrapper}>
+          <div className={styles.InfoWrapper}>
             <p className={styles.recipeName}>{title}</p>
             <div className={styles.favoriteWrapper}>
               <SvgIcon

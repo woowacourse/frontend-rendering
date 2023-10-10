@@ -1,4 +1,4 @@
-.recipeRankingItemContainer {
+.container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -7,23 +7,23 @@
   padding: 0 5px;
 }
 
-.recipeRankingWrapper {
+.rankingWrapper {
   display: flex;
   justify-content: space-between;
   width: 95%;
 }
 
-.rankingRecipeWrapper {
+.recipeWrapper {
   display: flex;
   align-items: center;
 }
 
-.rankingRecipeImage {
+.recipeImage {
   border-radius: 5px;
   object-fit: cover;
 }
 
-.titleFavoriteWrapper {
+.InfoWrapper {
   display: flex;
   flex-direction: column;
   justify-content: space-around;

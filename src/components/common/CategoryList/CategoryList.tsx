@@ -9,7 +9,7 @@ interface CategoryListProps {
 
 const CategoryList = ({ categories }: CategoryListProps) => {
   return (
-    <ul className={styles.categoryList}>
+    <ul className={styles.container}>
       {categories.map(({ id, name, image }) => (
         <li key={id}>
           <CategoryItem name={name} image={image} />
