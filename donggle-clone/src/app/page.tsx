@@ -1,95 +1,149 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+'use client';
 
-export default function Home() {
+import Image from 'next/image';
+import styles from './page.module.css';
+import styled from 'styled-components';
+import { BlurBackgroundIcon, DonggleIcon } from '@/assets/icons';
+import LoginModal from '@/components/Modal/LoginModal/LoginModal';
+
+export default function Page() {
+  // const { authToken } = useAuthToken();
+  // const { isOpen, openModal, closeModal } = useModal();
+
+  // if (authToken) return <Navigate to={`${PATH.space}`} />;
+
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
+    <S.Container>
+      <S.Header>
+        <S.Logo>
+          <DonggleIcon width={20} height={20} />
+          동글
+        </S.Logo>
+        {/* <S.LoginModalButton onClick={openModal}>로그인하기</S.LoginModalButton>
+        <LoginModal isOpen={isOpen} closeModal={closeModal} /> */}
+      </S.Header>
+      <S.Content>
+        <S.Introduce>
+          <S.AbsoluteDiv>
+            <BlurBackgroundIcon />
+          </S.AbsoluteDiv>
+          <h1>
+            동글에서 블로그 글을
+            <br /> 간편하게 포스팅 하세요
+          </h1>
+          <p>블로그 포스팅뿐만 아니라 글 관리까지 한 번에</p>
+          {/* <S.LoginModalButtonLarge onClick={openModal}>동글 시작하기</S.LoginModalButtonLarge> */}
+          {/* <picture>
+            <source
+              type="image/avif"
+              style={{ width: '600px' }}
+              srcSet={`${donggleExampleAvif}, ${donggleExampleAvif2X} 2x`}
             />
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+            <source
+              type="image/webp"
+              style={{ width: '600px' }}
+              srcSet={`${donggleExampleWebp}, ${donggleExampleWebp2X} 2x`}
+            />
+            <img
+              src={donggleExamplePng}
+              style={{ width: '600px' }}
+              srcSet={`${donggleExamplePng}, ${donggleExamplePng2X} 2x`}
+            />
+          </picture> */}
+        </S.Introduce>
+      </S.Content>
+    </S.Container>
+  );
 }
+
+const S = {
+  AbsoluteDiv: styled.div`
+    position: absolute;
+    top: -40%;
+    opacity: 0.7;
+  `,
+  Content: styled.section`
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    picture {
+      border-radius: 4px;
+      box-shadow: rgba(31, 34, 37, 0.09) 0px 0px 0px 1px, rgba(0, 0, 0, 0.04) 0px 24px 48px,
+        rgba(0, 0, 0, 0.02) 0px 4px 16px;
+      z-index: 2;
+    }
+
+    picture:hover {
+      transition: 0.4s all;
+      transform: scale(1.1);
+    }
+  `,
+  Introduce: styled.div`
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    gap: 4rem;
+
+    h1 {
+      font-size: 4rem;
+      text-align: center;
+    }
+    p {
+      font-size: 2rem;
+      color: ${({ theme }) => theme.color.gray8};
+    }
+  `,
+  Container: styled.div`
+    background: linear-gradient(to top, #ffffff, #fef8ee);
+
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  `,
+
+  LoginModalButton: styled.button`
+    background: linear-gradient(50deg, #eb23f9, #7733ff);
+    box-shadow: rgba(31, 34, 37, 0.09) 0px 0px 0px 1px, rgba(0, 0, 0, 0.04) 0px 24px 48px,
+      rgba(0, 0, 0, 0.02) 0px 4px 16px;
+    color: #fff;
+    width: 11rem;
+    height: 3.5rem;
+    border-radius: 8px;
+    z-index: 2;
+  `,
+  LoginModalButtonLarge: styled.button`
+    background: linear-gradient(50deg, #eb23f9, #7733ff);
+    box-shadow: rgba(31, 34, 37, 0.09) 0px 0px 0px 1px, rgba(0, 0, 0, 0.04) 0px 24px 48px,
+      rgba(0, 0, 0, 0.02) 0px 4px 16px;
+    color: #ffffffdf;
+    width: 20rem;
+    font-size: 2rem;
+    font-weight: 500;
+    height: 5rem;
+    border-radius: 8px;
+    z-index: 2;
+  `,
+  Header: styled.header`
+    position: sticky;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10%;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    background-color: #ffffffbc;
+    flex: 0 0 5rem;
+    z-index: 1;
+  `,
+  Logo: styled.div`
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 2rem;
+    font-weight: 900;
+  `,
+};
