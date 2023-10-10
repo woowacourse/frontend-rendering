@@ -1,10 +1,12 @@
-import { fetchProductRanking } from '@/apis/ranking';
-import { ProductRankingList } from '@/components/Ranking';
+import { fetchProductRanking } from '@/apis/productRanking';
+import { fetchRecipeRanking } from '@/apis/recipeRanking';
+import { ProductRankingList, RecipeRankingList } from '@/components/Ranking';
 import Image from 'next/image';
 import styles from './home.module.css';
 
 export default async function Home() {
   const { products } = await fetchProductRanking();
+  const { recipes } = await fetchRecipeRanking();
 
   return (
     <>
@@ -16,7 +18,11 @@ export default async function Home() {
         alt='배너'
       />
       <section className={styles.section}>
-        <p className={styles.title}>상품 랭킹</p>
+        <h2 className={styles.title}>🍯 꿀조합 랭킹</h2>
+        <RecipeRankingList recipes={recipes} />
+      </section>
+      <section className={styles.section}>
+        <h2 className={styles.title}>상품 랭킹</h2>
         <ProductRankingList products={products} />
       </section>
     </>

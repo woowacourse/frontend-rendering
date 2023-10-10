@@ -1,4 +1,4 @@
-import { type ProductRanking } from '@/apis/ranking';
+import { type ProductRanking } from '@/apis/productRanking';
 import ProductRankingItem from '../ProductRankingItem/ProductRankingItem';
 
 interface ProductRankingListProps {
