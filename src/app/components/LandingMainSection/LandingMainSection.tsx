@@ -6,7 +6,7 @@ import {
   loadMoreContents,
   mainDescription,
 } from './landingMainSection.css';
-import ArrowIcon from '@/icons/ArrowIcon';
+import ArrowIcon from '@/components/icons/ArrowIcon';
 import LandingButton from '../LandingButton/LandingButton';
 import Image from '../Image/Image';
 

@@ -1,3 +1,4 @@
+import color from '@/styles/color';
 import { style } from '@vanilla-extract/css';
 
 export const layout = style({
@@ -27,6 +28,8 @@ export const menuList = style({
   borderRadius: '8px',
 
   boxShadow: 'rgba(99, 99, 99, 0.2) 0px 2px 8px 0px',
+
+  backgroundColor: color.white,
 
   zIndex: '10',
 });

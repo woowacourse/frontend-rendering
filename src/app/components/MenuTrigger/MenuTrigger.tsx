@@ -1,5 +1,5 @@
 import color from '@/styles/color';
-import UserProfileIcon from '@/icons/UserProfileIcon';
+import UserProfileIcon from '@/components/icons/UserProfileIcon';
 import { guestProfileWrapper, layout, name } from './menuTrigger.css';
 
 const MenuTrigger = () => {
