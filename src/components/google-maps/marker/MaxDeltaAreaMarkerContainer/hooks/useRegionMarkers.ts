@@ -6,7 +6,7 @@ import { SERVER_URL } from '@constants/server';
 import type { Region } from '../types';
 
 export const fetchRegionMarkers = async () => {
-  const stationMarkers = await fetch(`${SERVER_URL}/stations/markers/regions?regions=all`)
+  const stationMarkers = await fetch(`${SERVER_URL}/stations/regions?regions=all`)
     .then<Region[]>(async (response) => {
       const data = await response.json();
 
