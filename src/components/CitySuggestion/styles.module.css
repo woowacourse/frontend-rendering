@@ -1,0 +1,22 @@
+.containerStyling {
+  width: 400px;
+  max-height: 300px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  transform: translateY(0);
+}
+
+.itemStyling {
+  background-color: #ffffff;
+  font-size: 16px;
+  padding: 12px 16px;
+}
+
+.focused {
+  background-color: #e8e8e8;
+}
+
+.emptyTextStyling {
+  padding: 12px 16px;
+  color: #a6a6a6;
+}

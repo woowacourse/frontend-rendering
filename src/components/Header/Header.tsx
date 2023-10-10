@@ -1,5 +1,4 @@
 'use client';
-import Image from 'next/image';
 
 import LogoHorizontal from '@/assets/svg/logo-horizontal.svg';
 import styles from './styles.module.css';
@@ -14,20 +13,12 @@ const Header = () => {
     <header className={styles.headerStyling}>
       <div className={styles.outerFlexBox}>
         <div className={styles.innerFlexBox}>
-          {/* <LogoHorizontal
+          <LogoHorizontal
             className="getItemStyling"
             tabIndex={0}
             aria-label="행록 로고"
             onClick={alertNotSupport}
-          /> */}
-          <Image
-            src="src/assets/svg/logo-horizontal.svg"
-            alt="행록 로고"
-            width="94"
-            height="32"
-            onClick={alertNotSupport}
           />
-
           <Text
             className="getTapNavigateButtonStyling"
             tabIndex={1}
