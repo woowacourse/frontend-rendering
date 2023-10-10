@@ -1,17 +1,20 @@
 import Link from "next/link";
 import styles from "./page.module.scss";
-import { getCelebs } from "./lib/getCelebs";
+
 import Banner from "@/assets/banner.svg";
-import type { Celeb } from "./types";
-import popularRestaurants from "./data/popularRestaurants";
+
 import ProfileImage from "@/components/ProfileImage";
 import MiniRestaurantCard from "@/components/MiniRestaurantCard";
 import RegionList from "@/components/RegionList";
 import CategoryNavbar from "@/components/CategoryNavBar";
 import { RESTAURANT_CATEGORY } from "@/constants";
+import { getCelebs, getPopularRestaurants } from "../apiCall";
+
+import type { Celeb, RestaurantData } from "./types";
 
 export default async function Home() {
   const celebs: Celeb[] = await getCelebs();
+  const popularRestaurants: RestaurantData[] = await getPopularRestaurants();
 
   return (
     <main className={styles.layout}>
@@ -22,7 +25,7 @@ export default async function Home() {
         <div>
           <h5 className={styles.title}>셀럽 BEST</h5>
           <div className={styles.iconBox}>
-            {celebs.map((celeb) => {
+            {celebs?.map((celeb) => {
               const { name, profileImageUrl, id } = celeb;
               return (
                 <Link className={styles.celeb} key={id} href={`/celeb/${id}`}>
@@ -36,7 +39,7 @@ export default async function Home() {
         <div>
           <h5 className={styles.title}>셀럽잇 추천 맛집!</h5>
           <div className={styles.popularRestaurantBox}>
-            {popularRestaurants.map(({ celebs, ...restaurant }) => (
+            {popularRestaurants?.map(({ celebs, ...restaurant }) => (
               <MiniRestaurantCard
                 key={restaurant.id}
                 celebs={celebs}

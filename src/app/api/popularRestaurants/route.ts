@@ -1,3 +1,5 @@
+import { NextResponse } from "next/server";
+
 const popularRestaurants = [
   {
     lat: 37.5332565,
@@ -429,4 +431,6 @@ const popularRestaurants = [
   },
 ];
 
-export default popularRestaurants;
+export async function GET() {
+  return Response.json(popularRestaurants);
+}
