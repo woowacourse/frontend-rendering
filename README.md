@@ -16,9 +16,9 @@ https://github.com/woowacourse/frontend-rendering/assets/24777828/4ce82a7f-722a-
 ### 🚀 구현한 페이지의 주소와 방식
 
 - 주소: [집사의고민 클론 페이지](https://frontend-rendering-kappa.vercel.app/)
-- 렌더링 방식: SSG
+- 렌더링 방식: SSG(Static Site Generation)
 
-### ✅ 선택한 렌더링 방식의 이유
+### ✅ SSG 렌더링 방식을 선택한 이유
 
 이번 미션에서 클론 코딩한 페이지는 [집사의고민](https://zipgo.pet)의 메인페이지입니다.
 
