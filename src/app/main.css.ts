@@ -6,3 +6,9 @@ export const landingHeader = style({
   paddingRight: '40px',
   justifyContent: 'space-between',
 });
+
+export const landingContents = style({
+  width: '90%',
+
+  margin: '0 auto',
+});
