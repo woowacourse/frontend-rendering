@@ -91,7 +91,9 @@ export default function Home({ customers }: Props) {
 }
 
 export async function getServerSideProps() {
-  const res = await fetch('http://localhost:3000/api/customers');
+  const res = await fetch(
+    'https://frontend-rendering-rego.vercel.app/api/customers'
+  );
   const customers = await res.json();
 
   return {
