@@ -25,6 +25,7 @@ import { EMPTY_MEMBER_TOKEN, MOBILE_BREAKPOINT } from '@constants';
 import Logo from '@assets/logo-sm.svg';
 
 import { useNavigationBar } from './hooks/useNavigationBar';
+import Image from 'next/image';
 
 const Menu = () => {
   const { openBasePanel } = useNavigationBar();
@@ -45,8 +46,7 @@ const Menu = () => {
         aria-label="새로 고침"
         onClick={() => location.reload()}
       >
-        {/*<Logo />*/}
-        로고
+        <Image src={Logo} alt="로고"/>
       </Button>
 
       <Button
