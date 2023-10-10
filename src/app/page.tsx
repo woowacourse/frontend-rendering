@@ -13,8 +13,6 @@ const MainPage = () => {
   return (
     <Container>
       <Title>현재 인기있는 노래</Title>
-      <Spacing direction='vertical' size={16} />
-
       <Spacing direction='vertical' size={24} />
       {genres.map(genre => (
         <SongItemList key={genre} genre={genre} />

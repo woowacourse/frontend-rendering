@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import Spacing from '@/shared/components/Spacing';
-
 import { getHighLikedSongs } from '../remotes/song';
 import type { Genre } from '../types/Song.type';
 import GENRES from '../constants/genre';
