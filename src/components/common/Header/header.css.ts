@@ -9,7 +9,7 @@ export const layout = style({
 export const title = style({
   display: 'inline',
   fontSize: '4rem',
-  fontWeight: 500,
+  fontWeight: 300,
 });
 
 export const emphasis = style({
