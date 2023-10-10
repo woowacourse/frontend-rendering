@@ -1,8 +1,4 @@
-import { styled } from 'styled-components';
-
-const Div = styled.h1`
-  background-color: red;
-`;
+import Div from '../components/Div';
 
 const Test = () => {
   return <Div>Hello, World!</Div>;
