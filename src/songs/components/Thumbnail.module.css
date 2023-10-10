@@ -1,0 +1,18 @@
+.wrapper {
+  overflow: hidden;
+}
+
+.md {
+  width: 60px;
+  height: 60px;
+}
+
+.lg {
+  width: 70px;
+  height: 70px;
+}
+
+.xl {
+  width: 120px;
+  height: 120px;
+}
