@@ -1,5 +1,4 @@
-import { styled } from 'styled-components';
-import Typography from '../Typography/Typography';
+import { layout, linkContainer, typography } from './footer.css';
 
 const URL = {
   github: 'https://github.com/woowacourse-teams/2023-haru-study',
@@ -9,48 +8,21 @@ const URL = {
 
 const Footer = () => {
   return (
-    <Layout>
-      <Typography variant="p3" fontSize="12px">
-        우아한테크코스 5기 하루스터디
-      </Typography>
-      <Typography variant="p3" fontSize="12px">
+    <footer className={layout}>
+      <p className={typography}>우아한테크코스 5기 하루스터디</p>
+      <p className={typography}>
         Copyright © 2023 하루스터디 - All rights reserved.
-      </Typography>
-      <LinkContainer>
+      </p>
+      <div className={linkContainer}>
         <a target="_blank" href={URL.github}>
-          <Typography variant="p3" fontSize="12px">
-            Github
-          </Typography>
+          <p className={typography}>Github</p>
         </a>
         <a target="_blank" href={URL.feedback}>
-          <Typography variant="p3" fontSize="12px">
-            사용자 피드백
-          </Typography>
+          <p className={typography}>사용자 피드백</p>
         </a>
-      </LinkContainer>
-    </Layout>
+      </div>
+    </footer>
   );
 };
 
 export default Footer;
-
-const Layout = styled.footer`
-  width: 100%;
-  height: 100px;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-`;
-
-const LinkContainer = styled.div`
-  display: flex;
-  gap: 20px;
-
-  margin-top: 10px;
-
-  p {
-    text-decoration: underline;
-  }
-`;

@@ -4,6 +4,7 @@ import MemberProfile from './components/MemberProfile/MemberProfile';
 import LandingMainSection from './components/LandingMainSection/LandingMainSection';
 import GuideSection from './components/GuideSection/GuideSection';
 import StartSection from './components/StartSection/StartSection';
+import Footer from '@/components/Footer/Footer';
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
         <GuideSection />
         <StartSection />
       </div>
+      <Footer />
     </>
   );
 }

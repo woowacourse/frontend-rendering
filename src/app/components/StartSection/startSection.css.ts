@@ -1,4 +1,3 @@
-import color from '@/styles/color';
 import { style } from '@vanilla-extract/css';
 
 export const layout = style({
