@@ -44,6 +44,12 @@
   color: inherit;
 }
 
+*::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+  background: transparent;
+}
 
 *,
 :after,
@@ -79,7 +85,11 @@ ol, ul {
   list-style: none;
 }
 
-
+body::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  background: transparent;
+}
 
 
 
