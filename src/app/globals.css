@@ -3,6 +3,7 @@ html {
 }
 
 body {
+  position: relative;
   max-width: 40rem;
   min-height: 100vh;
 
