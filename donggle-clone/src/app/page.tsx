@@ -39,23 +39,13 @@ export default function Page() {
           </h1>
           <p>블로그 포스팅뿐만 아니라 글 관리까지 한 번에</p>
           <LoginModalButtonLarge onClick={openModal}>동글 시작하기</LoginModalButtonLarge>
-          {/* <picture>
-            <source
-              type="image/avif"
-              style={{ width: '600px' }}
-              srcSet={`${donggleExampleAvif}, ${donggleExampleAvif2X} 2x`}
-            />
-            <source
-              type="image/webp"
-              style={{ width: '600px' }}
-              srcSet={`${donggleExampleWebp}, ${donggleExampleWebp2X} 2x`}
-            />
-            <img
-              src={donggleExamplePng}
-              style={{ width: '600px' }}
-              srcSet={`${donggleExamplePng}, ${donggleExamplePng2X} 2x`}
-            />
-          </picture> */}
+          <Image
+            className="centerImage"
+            src="/donggle-example-webp-2x.webp"
+            alt="소개 페이지 사진"
+            width={600}
+            height={333}
+          />
         </Introduce>
       </Content>
     </Container>

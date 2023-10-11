@@ -11,14 +11,14 @@ export const Content = styled.section`
   flex: 1;
   display: flex;
   flex-direction: column;
-  picture {
+  .centerImage {
     border-radius: 4px;
     box-shadow: rgba(31, 34, 37, 0.09) 0px 0px 0px 1px, rgba(0, 0, 0, 0.04) 0px 24px 48px,
       rgba(0, 0, 0, 0.02) 0px 4px 16px;
     z-index: 2;
   }
 
-  picture:hover {
+  .centerImage:hover {
     transition: 0.4s all;
     transform: scale(1.1);
   }
