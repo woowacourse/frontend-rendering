@@ -10,7 +10,8 @@ const MainPage = async () => {
   const { data: posts } = await getRunnerPost(10);
 
   return (
-    <Layout>
+    <Layout maxWidth="none">
+      <Banner />
       <S.MainContainer>
         <S.TitleWrapper>
           <S.Title>서포터를 찾고 있어요 👀</S.Title>
