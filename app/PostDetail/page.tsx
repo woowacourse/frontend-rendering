@@ -10,17 +10,17 @@ import PostDetail from "./PostDetail";
 
 const PostDetailPage = () => {
   return (
-    // <Layout isSidebarVisible={true} isMobileDefaultHeaderVisible={false}>
-    //   <Suspense
-    //     fallback={
-    //       <MobileLayoutTemplate>
-    //         <Skeleton isLarge={true} />
-    //       </MobileLayoutTemplate>
-    //     }
-    //   >
-    <PostDetail />
-    //   </Suspense>
-    // </Layout>
+    <Layout isSidebarVisible={true} isMobileDefaultHeaderVisible={false}>
+      <Suspense
+        fallback={
+          <MobileLayoutTemplate>
+            <Skeleton isLarge={true} />
+          </MobileLayoutTemplate>
+        }
+      >
+        <PostDetail />
+      </Suspense>
+    </Layout>
   );
 };
 
