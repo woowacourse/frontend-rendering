@@ -5,15 +5,16 @@ import NodeContent from "../nodeContent/NodeContent";
 import ExtraInfo from "../extraInfo/ExtraInfo";
 
 import { useEffect, useState } from "react";
+import { fetchData } from "@/apis/fetcher";
+import { RoadmapDetailType } from "@/myTypes/roadmap/internal";
 
 const RoadmapDetail = () => {
-  const [roadmapInfo, setRoadInfo] = useState<any>();
+  const [roadmapInfo, setRoadInfo] = useState<RoadmapDetailType>();
 
   useEffect(() => {
     async function get() {
-      const response = await fetch("https://dev.kirikiri.lol/api/roadmaps/18");
-      const data = await response.json();
-      setRoadInfo(data);
+      const roadmapData = await fetchData<RoadmapDetailType>("roadmaps/18");
+      setRoadInfo(roadmapData);
     }
 
     get();
