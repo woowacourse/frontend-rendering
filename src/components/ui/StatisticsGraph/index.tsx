@@ -1,4 +1,4 @@
-import type { GraphProps } from 'components/ui/StatisticsGraph/Graph';
+import type { GraphProps } from '@components/ui/StatisticsGraph/Graph';
 
 import type { DayMenusProps } from '@ui/StatisticsGraph/Graph/DayMenus';
 

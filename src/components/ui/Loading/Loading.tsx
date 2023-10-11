@@ -1,6 +1,7 @@
 import { StyledLoadingSvgContainer, StyledMessage } from '@ui/Loading/Loading.style';
 
 import LoadingSvg from '@assets/loading.svg';
+import Image from 'next/image';
 
 const Loading = () => {
   return (
@@ -9,7 +10,7 @@ const Loading = () => {
         열심히 로딩하고 있어요<span>잠시만 기다려 주세요...</span>
       </StyledMessage>
       <StyledLoadingSvgContainer>
-        <LoadingSvg />
+        <Image src={LoadingSvg} alt="로딩중..."/>
       </StyledLoadingSvgContainer>
     </>
   );
