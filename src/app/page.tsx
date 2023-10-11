@@ -1,4 +1,3 @@
-import { Suspense } from 'react';
 import Header from '@/components/Header/Header';
 import NavigationBar from '@/components/NavigationBar/NavigationBar';
 import CalendarPage from '@/components/CalendarPage/CalendarPage';
@@ -11,9 +10,7 @@ export default function Home() {
       <div className={styles.inner}>
         <NavigationBar />
         <main className={styles.main}>
-          <Suspense fallback={<div>loading...</div>}>
-            <CalendarPage />
-          </Suspense>
+          <CalendarPage />
         </main>
       </div>
     </div>
