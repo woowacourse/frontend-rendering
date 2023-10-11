@@ -1,3 +1,5 @@
+"use client";
+
 import { DefaultTheme, keyframes } from "styled-components";
 
 const breakpoint = {
