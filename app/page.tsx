@@ -1,6 +1,18 @@
 import FoodDetailProvider from './pages/FoodDetail/FoodDetailProvider';
 
 export default function Home() {
+  const queryClient = new QueryClient({
+    defaultOptions: {
+      queries: {
+        suspense: true,
+        retry: false,
+        useErrorBoundary: true,
+      },
+      mutations: {
+        useErrorBoundary: true,
+      },
+    },
+  });
   return (
     <main
       style={{
