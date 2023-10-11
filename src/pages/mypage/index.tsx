@@ -1,4 +1,3 @@
-import SubHeader from "@/common/SubHeader";
 import { AiOutlineUnorderedList } from "@react-icons/all-files/ai/AiOutlineUnorderedList";
 import { AiOutlineLogout } from "@react-icons/all-files/ai/AiOutlineLogout";
 import { AiOutlineFileText } from "@react-icons/all-files/ai/AiOutlineFileText";
@@ -79,16 +78,6 @@ const MyPage = ({ data }: MyPageProps) => {
 };
 
 export default MyPage;
-
-const ArrowIconWrapper = styled.button`
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  width: 24px;
-  height: 24px;
-  color: black;
-  background: transparent;
-`;
 
 const NicknameContainer = styled.header`
   display: flex;

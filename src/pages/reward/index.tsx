@@ -20,22 +20,33 @@ interface HomeProps {
 export default function RewardPage({ data }: HomeProps) {
   const { rewards } = data;
 
+  if (rewards.length === 0)
+    return (
+      <>
+        <SubHeader title="내 리워드" />
+        <EmptyList>
+          보유한 리워드가 없어요 🥲 <br /> 스탬프를 차곡차곡 쌓아 리워드를
+          받아보세요!
+        </EmptyList>
+      </>
+    );
+
   return (
     <>
       <SubHeader title="내 리워드" />
-      <RewardContainer>
+      <RewardsContainer>
         {rewards.map((reward) => (
           <RewardWrapper key={reward.id}>
             <CafeName>{reward.cafeName}</CafeName>
             <RewardName>{reward.rewardName}</RewardName>
           </RewardWrapper>
         ))}
-      </RewardContainer>
+      </RewardsContainer>
     </>
   );
 }
 
-const RewardContainer = styled.li`
+const RewardsContainer = styled.li`
   list-style-type: none;
 `;
 
@@ -64,8 +75,8 @@ const RewardName = styled.span`
 `;
 
 const EmptyList = styled.p`
+  margin-top: 100px;
+  line-height: 24px;
   color: gray;
   text-align: center;
-  margin: auto;
-  line-height: 24px;
 `;
