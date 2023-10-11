@@ -4,11 +4,11 @@ import styled, { css } from 'styled-components';
 
 const themeStyles = {
   RED: css`
-    border: 1px solid var(--white-color);
+    border: 1px solid #ffffff;
 
     background: #f64545;
 
-    color: var(--white-color);
+    color: #ffffff;
   `,
 
   WHITE: css`
@@ -27,21 +27,21 @@ const themeStyles = {
 export const LabelWrapper = styled.div``;
 
 export const Label = styled.div<{
-  $colorTheme: 'RED' | 'WHITE' | 'GRAY';
+  $colorTheme?: 'RED' | 'WHITE' | 'GRAY';
   $width?: string | number;
   $height?: string | number;
   $fontSize?: string | number;
   $fontWeight?: number;
   $mobileFontSize?: string;
 }>`
-  ${({ $colorTheme }) => themeStyles[$colorTheme]}
+  ${({ $colorTheme }) => themeStyles[$colorTheme ?? 'RED']}
 
   display: flex;
   justify-content: center;
   align-items: center;
 
   width: ${({ $width }) => $width};
-  height: ${({ $height }) => $height || '22px'};
+  height: ${({ $height }) => $height ?? '15px'};
   border-radius: 16px;
   padding: 10px 10px;
 

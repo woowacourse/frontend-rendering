@@ -1,7 +1,10 @@
+'use client';
+
 import { RunnerPost } from '../../../types/runnerPost';
 import Label from '../../Label/Label';
 import Avatar from '../../Avatar/Avatar';
 import * as S from './RunnerPostItem.style';
+import { useRouter } from 'next/navigation';
 
 const REVIEW_STATUS_LABEL_TEXT = {
   ALL: '전체',
@@ -10,8 +13,10 @@ const REVIEW_STATUS_LABEL_TEXT = {
   DONE: '리뷰 완료',
   OVERDUE: '기간 만료',
 };
+
 const RunnerPostItem = ({
   runnerPostData: {
+    runnerPostId,
     title,
     deadline,
     tags,
@@ -23,14 +28,17 @@ const RunnerPostItem = ({
 }: {
   runnerPostData: RunnerPost;
 }) => {
+  const postUrl = `/runnerPost/${runnerPostId}`;
+  const router = useRouter();
+
   return (
-    <S.RunnerPostItemContainer>
+    <S.RunnerPostItemContainer onClick={() => router.push(postUrl)}>
       <S.LeftSideContainer>
         <S.PostTitle>{title}</S.PostTitle>
         <S.DeadLineContainer>
           <S.DeadLine>{deadline.replace('T', ' ')} 까지</S.DeadLine>
           <Label
-            height="20px"
+            height="15px"
             colorTheme={
               reviewStatus === 'NOT_STARTED'
                 ? 'WHITE'

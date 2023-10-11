@@ -1,4 +1,4 @@
-import RootStyleRegistry from '@/libs/useServerInsertedRegistry';
+import StyledComponentsRegistry from '@/lib/registry';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -14,7 +14,7 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body>
-        <RootStyleRegistry>{children}</RootStyleRegistry>
+        <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
       </body>
     </html>
   );

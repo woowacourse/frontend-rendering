@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import styled, { css } from 'styled-components';
 
@@ -83,7 +85,7 @@ const S = {
 
 export const themeStyles = {
   RED: css`
-    background: var(--baton-red);
+    background: #f64545;
     border-radius: 6px;
 
     color: #ffffff;
@@ -91,18 +93,18 @@ export const themeStyles = {
 
   WHITE: css`
     background: #ffffff;
-    border: 1px solid var(--baton-red);
+    border: 1px solid #f64545;
     border-radius: 6px;
 
-    color: var(--baton-red);
+    color: #f64545;
   `,
 
   GRAY: css`
     background: #ffffff;
-    border: 1px solid var(--gray-500);
+    border: 1px solid #a6a6a6;
     border-radius: 6px;
 
-    color: var(--gray-400);
+    color: #a6a6a6;
   `,
 
   BLACK: css`

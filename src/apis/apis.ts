@@ -1,10 +1,9 @@
 import { request } from './fetch';
 import {
+  GetDetailedRunnerPostResponse,
   GetRunnerPostResponse,
   getRunnerPostRequestParams,
 } from '../types/runnerPost';
-import { GetSearchTagResponse } from '../types/tags';
-import { GetHeaderProfileResponse } from '../types/profile';
 
 export const getRunnerPost = ({
   limit,
@@ -25,13 +24,9 @@ export const getRunnerPost = ({
   );
 };
 
-export const getSearchTag = (keyword: string) => {
-  return request.get<GetSearchTagResponse>(
-    `/tags/search?tagName=${keyword}`,
-    false
+export const getRunnerPostDetail = (runnerPostId: number, isLogin: boolean) => {
+  return request.get<GetDetailedRunnerPostResponse>(
+    `/posts/runner/${runnerPostId}`,
+    isLogin
   );
-};
-
-export const getHeaderProfile = () => {
-  return request.get<GetHeaderProfileResponse>('/profile/me', true);
 };
