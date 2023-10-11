@@ -35,6 +35,7 @@ function CategoryNavbar({
           <Link
             href={`/category/${label}`}
             className={styles.navItemButton}
+            key={label}
             aria-label={label}
             data-label={label}
             type="button"
