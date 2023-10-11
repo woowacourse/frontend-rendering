@@ -1,5 +1,5 @@
-import React from 'react';
-import { styled } from 'styled-components';
+import React from "react";
+import * as S from "./PostTagStyled";
 
 interface Props {
   tag: string;
@@ -10,16 +10,3 @@ function PostTag({ tag }: Props) {
 }
 
 export default PostTag;
-
-const S = {
-  TagName: styled.li`
-    float: left;
-
-    font-size: 18px;
-    color: var(--gray-500);
-
-    @media (max-width: 768px) {
-      font-size: 12px;
-    }
-  `,
-};

@@ -1,6 +1,6 @@
-import React from 'react';
-import { styled } from 'styled-components';
-import PostTag from '../PostTag/PostTag';
+import React from "react";
+import PostTag from "../PostTag/PostTag";
+import * as S from "./PostTagListStyled";
 
 interface Props {
   tags: string[];
@@ -17,17 +17,3 @@ function PostTagList({ tags }: Props) {
 }
 
 export default PostTagList;
-
-const S = {
-  List: styled.ul`
-    list-style: none;
-
-    li:not(:last-child) {
-      margin-right: 10px;
-
-      @media (max-width: 768px) {
-        margin-right: 5px;
-      }
-    }
-  `,
-};
