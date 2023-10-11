@@ -12,7 +12,9 @@ import {
   Logo,
 } from './styles';
 import { useModal } from 'hooks/@common/useModal';
-import { DonggleIcon } from 'assets/icons';
+import { BlurBackgroundIcon, DonggleIcon } from 'assets/icons';
+import dynamic from 'next/dynamic';
+import Image from 'next/image';
 
 export default function Page() {
   // const { authToken } = useAuthToken();
