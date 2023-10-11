@@ -1,5 +1,9 @@
 import { request } from "./fetch";
-import { GetRunnerPostResponse, ReviewStatus } from "@/types/runnerPost";
+import {
+  GetDetailedRunnerPostResponse,
+  GetRunnerPostResponse,
+  ReviewStatus,
+} from "@/types/runnerPost";
 
 export const getRunnerPost = (
   limit: number,
@@ -15,4 +19,8 @@ export const getRunnerPost = (
   });
 
   return request.get<GetRunnerPostResponse>(`/posts/runner?${params.toString()}`, false);
+};
+
+export const getRunnerPostDetail = (runnerPostId: number) => {
+  return request.get<GetDetailedRunnerPostResponse>(`/posts/runner/${runnerPostId}`, false);
 };

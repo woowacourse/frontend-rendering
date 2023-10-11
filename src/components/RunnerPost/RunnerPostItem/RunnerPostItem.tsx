@@ -1,10 +1,12 @@
+"use client";
+
 import React from "react";
 import Avatar from "@/components/common/Avatar/Avatar";
 import { RunnerPost } from "@/types/runnerPost";
 import Label from "@/components/common/Label/Label";
 import { REVIEW_STATUS_LABEL_TEXT } from "@/constants";
-import useViewport from "@/hooks/useViewport";
 import * as S from "./RunnerPostItemStyled";
+import { useRouter } from "next/navigation";
 
 const RunnerPostItem = ({
   runnerPostData: {
@@ -20,8 +22,10 @@ const RunnerPostItem = ({
 }: {
   runnerPostData: RunnerPost;
 }) => {
+  const { push } = useRouter();
+
   return (
-    <S.RunnerPostItemContainer>
+    <S.RunnerPostItemContainer onClick={() => push(`/post/${runnerPostId}`)}>
       <S.LeftSideContainer>
         <S.PostTitle>{title}</S.PostTitle>
         <S.DeadLineContainer>
