@@ -1,0 +1,33 @@
+.titleContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.title {
+  color: black;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.description {
+  color: gray;
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.space {
+  min-width: 4px;
+  min-height: 4px;
+}
+
+.space4 {
+  min-width: 16px;
+  min-height: 16px;
+}
+.showMore {
+  color: #ff6b6b;
+  font-size: 16px;
+  font-weight: normal;
+  cursor: pointer;
+}
