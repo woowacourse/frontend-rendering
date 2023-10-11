@@ -10,12 +10,9 @@ const getData = async () => {
 	return await res.json();
 };
 const ReminderPage = async () => {
-	// const data = await getData();
-	// const reminderData = convertReminderData(data);
-	const reminderData: { data: []; status: TodayStatus } = {
-		data: [],
-		status: 'late',
-	};
+	const data = await getData();
+	const reminderData = convertReminderData(data);
+
 	return (
 		<Wrapper $status={reminderData.status}>
 			<ContentHeader title='리마인더' />
