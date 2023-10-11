@@ -2,5 +2,6 @@
 // 게시글 리엑트 쿼리 훅
 import { useText } from './useText';
 import { useToast } from './useToast';
+import { useMoreComment } from './useMoreComment';
 
-export { useText, useToast };
+export { useText, useToast, useMoreComment };

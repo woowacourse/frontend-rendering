@@ -1,6 +1,5 @@
 import { useToast } from '@hooks';
 
-// import CommentList from '@components/comment/CommentList';
 import NarrowTemplateHeader from '@components/common/NarrowTemplateHeader';
 import TagButton from '@components/common/TagButton';
 import Toast from '@components/common/Toast';
@@ -15,6 +14,7 @@ import Image from 'next/image';
 import { transformPostResponse } from '@api/post';
 import { MOCK_GUEST_POST_INFO } from '@mocks/post';
 import BottomButtonPart from './BottomButtonPart';
+import CommentList from '@components/CommentList';
 
 export default function PostDetail() {
   const { isToastOpen, openToast, toastMessage } = useToast();
@@ -61,12 +61,12 @@ export default function PostDetail() {
         <Post postInfo={postDataFallback} isPreview={false} />
         <BottomButtonPart handleEvent={{ openToast }} />
       </S.MainContainer>
-      {/* <S.BottomContainer>
+      <S.BottomContainer>
         <CommentList
-          postId={postId}
+          postId={postDataFallback.postId}
           postWriterName={postDataFallback.writer.nickname}
         />
-      </S.BottomContainer> */}
+      </S.BottomContainer>
       {isToastOpen && (
         <Toast size="md" position="bottom">
           {toastMessage}
