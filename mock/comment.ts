@@ -31,7 +31,7 @@ const nicknameList = [
 
 const getMockComment = (): CommentResponse => ({
   id: Math.floor(Math.random() * 100000),
-  content: commentList[Math.floor(Math.random() * 12)],
+  content: commentList[Math.floor(Math.random() * 11)],
   createdAt: "2023.7.27. 07:43",
   member: {
     id: Math.floor(Math.random() * 100000),
