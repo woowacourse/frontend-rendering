@@ -1,5 +1,5 @@
-export const baseURL = process.env.BASE_URL;
-export const domainURL = process.env.DOMAIN_URL;
+export const baseURL = process.env.NEXT_PUBLIC_BASE_URL;
+export const domainURL = process.env.NEXT_PUBLIC_DOMAIN_URL;
 
 export const writingURL = `${baseURL}/writings`;
 export const categoryURL = `${baseURL}/categories`;
