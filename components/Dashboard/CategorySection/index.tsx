@@ -3,11 +3,13 @@ import { useCategoryList } from "@/hooks/useCategoryList";
 import CategoryToggle from "../CategoryToggle";
 
 import * as S from "./style";
+import { MOCK_GUEST_CATEGORY_LIST } from "@/mock/categoryList";
 
 const CategorySection = () => {
   const isLoggedIn = false;
 
-  const { data: categoryList } = useCategoryList(isLoggedIn);
+  // const { data: categoryList } = useCategoryList(isLoggedIn);
+  const categoryList = MOCK_GUEST_CATEGORY_LIST;
 
   const categoryListFallback = categoryList ?? [];
 
