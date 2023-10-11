@@ -13,7 +13,9 @@ const RoadmapDetail = () => {
 
   useEffect(() => {
     async function get() {
-      const roadmapData = await fetchData<RoadmapDetailType>("roadmaps/18");
+      const roadmapData = await fetchData<RoadmapDetailType>(
+        "roadmapDetail.json"
+      );
       setRoadInfo(roadmapData);
     }
 
