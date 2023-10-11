@@ -1,4 +1,4 @@
-import Celuveat from '../assets/icon/celuveat.svg';
+import Celuveat from '@/assets/icon/celuveat.svg';
 
 const Header = () => {
   return (

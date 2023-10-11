@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import Star from '../assets/icon/star.svg';
+import Star from '@/assets/icon/star.svg';
 import { RestaurantData } from '@/@types/api.types';
 
 interface RestaurantCardProps {
