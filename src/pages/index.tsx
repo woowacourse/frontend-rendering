@@ -101,12 +101,12 @@ export default function Home({ data }: HomeProps) {
 }
 
 export async function getServerSideProps() {
-  const res = await fetch('/coupons');
+  const res = await fetch(`${process.env.BASE_URL}/api/coupons`);
   const body = await res.json();
 
   return {
     props: {
       data: body,
-    }
+    },
   };
 }
