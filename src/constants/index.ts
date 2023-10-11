@@ -3,3 +3,8 @@ export const ROUTER_PATH = {
   reward: "/reward",
   mypage: "/mypage",
 } as const;
+
+export const API_BASE_URL =
+  process.env.NODE_ENV === "development"
+    ? process.env.NEXT_PUBLIC_API_DEV_URL
+    : process.env.NEXT_PUBLIC_API_PRO_URL;
