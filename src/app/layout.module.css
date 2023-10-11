@@ -1,0 +1,28 @@
+.layoutContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  padding: 0 12.33%;
+  color: var(--color-white);
+  background-color: var(--color-black);
+}
+
+@media (max-width: 1440px) {
+  .layoutContainer {
+    padding: 0 8.33%;
+  }
+}
+
+@media (max-width: 768px) {
+  .layoutContainer {
+    padding: 0 4.16%;
+  }
+}
+
+@media (max-width: 380px) {
+  .layoutContainer {
+    padding: 0 16px;
+  }
+}
