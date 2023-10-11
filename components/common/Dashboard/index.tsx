@@ -1,5 +1,3 @@
-import { Suspense, useContext } from 'react';
-
 import CategorySection from './CategorySection';
 import GuestProfile from './GuestProfile';
 import * as S from './style';

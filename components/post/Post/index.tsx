@@ -1,5 +1,3 @@
-'use client';
-
 import { ForwardedRef, forwardRef, memo } from 'react';
 
 import WrittenVoteOptionList from '@components/optionList/WrittenVoteOptionList';
