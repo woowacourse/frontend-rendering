@@ -6,6 +6,7 @@ import CafeMenuBottomSheet from "./CafeMenuBottomSheet";
 import LikeButton from "./LikeButton";
 import ShareButton from "./ShareButton";
 import styles from "./styles.module.css";
+import type { Cafe } from "../../types";
 
 type CafeActionBarProps = {
   cafe: Cafe;
