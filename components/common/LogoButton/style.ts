@@ -19,6 +19,6 @@ export const Button = styled.button<{ content: Content }>`
   }
 
   & :last-child {
-    height: ${props => props.content !== 'icon' && '60%'};
+    height: ${(props) => props.content !== 'icon' && '60%'};
   }
 `;
