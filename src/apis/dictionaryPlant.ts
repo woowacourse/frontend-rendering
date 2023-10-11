@@ -1,6 +1,6 @@
-import { BASE_URL } from "@/constants";
+import { API_URL } from "@/constants";
 
-export const DICTIONARY_PLANT_URL = `${BASE_URL}/api/dictionary-plants`;
+export const DICTIONARY_PLANT_URL = `${API_URL}/dictionary-plants`;
 
 const getDetail = (id: number) => {
   return fetch(`${DICTIONARY_PLANT_URL}/${id}`, { method: "GET" });

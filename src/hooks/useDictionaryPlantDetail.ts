@@ -1,8 +1,12 @@
-import type { DictionaryPlant, Season, SeasonKor } from "@/types";
+import type {
+  DictionaryPlant,
+  Season,
+  SeasonKor,
+} from "@/types/dictionaryPlant";
 import { useSuspenseQuery } from "@tanstack/react-query";
 import DictionaryPlantAPI, {
   DICTIONARY_PLANT_URL,
-} from "@/apis/dictionaryPlants";
+} from "@/apis/dictionaryPlant";
 import { SEASONS } from "@/constants";
 
 export interface DictionaryPlantExtendCycles extends DictionaryPlant {

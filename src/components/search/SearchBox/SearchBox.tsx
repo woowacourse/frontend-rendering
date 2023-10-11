@@ -1,6 +1,6 @@
 "use client";
 
-import type { DictionaryPlantNameSearchResult } from "@/types";
+import type { DictionaryPlantNameSearchResult } from "@/types/dictionaryPlant";
 import Image from "@/components/common/Image/Image";
 import {
   InputBox,

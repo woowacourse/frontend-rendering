@@ -1,6 +1,6 @@
 import type { Season, SeasonKor } from "@/types";
 
-export const BASE_URL = "http://localhost:3000";
+export const API_URL = "https://dev.api.pium.life";
 export const STATIC_BASE_URL = "https://static.pium.life";
 
 export const URL_PATH = {
