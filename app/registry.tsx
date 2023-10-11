@@ -3,6 +3,9 @@
 import React, { useState } from "react";
 import { useServerInsertedHTML } from "next/navigation";
 import { StyleRegistry, createStyleRegistry } from "styled-jsx";
+import { ThemeProvider } from "styled-components";
+import { theme } from "@/styles/theme";
+import { GlobalStyle } from "@/styles/globalStyle";
 
 const StyledJsxRegistry = ({ children }: { children: React.ReactNode }) => {
   const [jsxStyleRegistry] = useState(() => createStyleRegistry());
@@ -13,7 +16,16 @@ const StyledJsxRegistry = ({ children }: { children: React.ReactNode }) => {
     return <>{styles}</>;
   });
 
-  return <StyleRegistry registry={jsxStyleRegistry}>{children}</StyleRegistry>;
+  if (typeof window !== "undefined") return <>{children}</>;
+
+  return (
+    <StyleRegistry registry={jsxStyleRegistry}>
+      <ThemeProvider theme={theme}>
+        <GlobalStyle />
+        {children}
+      </ThemeProvider>
+    </StyleRegistry>
+  );
 };
 
 export default StyledJsxRegistry;
