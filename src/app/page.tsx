@@ -12,9 +12,7 @@ const RoadmapDetail = () => {
 
   useEffect(() => {
     async function getRoadmapDetail() {
-      const data = await (
-        await fetch("https://dev.kirikiri.lol/api/roadmaps/10107")
-      ).json();
+      const data = await (await fetch("roadmapDetail.json")).json();
 
       setRoadInfo(data);
     }
