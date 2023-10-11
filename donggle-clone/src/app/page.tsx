@@ -1,5 +1,4 @@
 'use client';
-
 import LoginModal from 'components/Modal/LoginModal/LoginModal';
 import {
   AbsoluteDiv,
@@ -15,9 +14,14 @@ import { useModal } from 'hooks/@common/useModal';
 import { BlurBackgroundIcon, DonggleIcon } from 'assets/icons';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
+import { useAuthToken } from 'hooks/useAuthToken';
+
+const DynamicLoginModal = dynamic(() => import('components/Modal/LoginModal/LoginModal'), {
+  ssr: false,
+});
 
 export default function Page() {
-  // const { authToken } = useAuthToken();
+  const { authToken } = useAuthToken();
   const { isOpen, openModal, closeModal } = useModal();
 
   // if (authToken) return <Navigate to={`${PATH.space}`} />;
@@ -30,7 +34,7 @@ export default function Page() {
           동글
         </Logo>
         <LoginModalButton onClick={openModal}>로그인하기</LoginModalButton>
-        <LoginModal isOpen={isOpen} closeModal={closeModal} />
+        <DynamicLoginModal isOpen={isOpen} closeModal={closeModal} />
       </Header>
       <Content>
         <Introduce>
