@@ -1,5 +1,4 @@
 'use client';
-import LoginModal from 'components/Modal/LoginModal/LoginModal';
 import {
   AbsoluteDiv,
   Container,
