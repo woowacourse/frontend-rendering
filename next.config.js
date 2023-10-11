@@ -4,7 +4,10 @@ const nextConfig = {
 		styledComponents: true,
 	},
 	env: {
-		HOST: 'http://localhost:3000',
+		HOST:
+			process.env.NODE_ENV === 'development'
+				? 'http://localhost:3000'
+				: 'https://clean-fake-pium.vercel.app',
 	},
 
 	images: {
