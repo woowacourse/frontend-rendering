@@ -10,10 +10,10 @@
 }
 
 .img {
-  max-width: 400px;
-  max-height: 400px;
+  max-width: 40rem;
+  max-height: 40rem;
   width: 100%;
-  margin-top: -160px;
+  margin-top: -16rem;
 }
 
 .button {
