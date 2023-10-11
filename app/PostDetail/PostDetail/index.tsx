@@ -94,7 +94,11 @@ const PostDetail = () => {
         <BottomButtonPart
           isClosed={isClosed}
           isWriter={isWriter}
-          handleEvent={{ movePage, controlPost, openToast: alert }}
+          handleEvent={{
+            movePage,
+            controlPost,
+            openToast: () => alert("지원하지 않는 기능입니다."),
+          }}
           isEventLoading={{
             isDeletePostLoading: false,
             isReportPostLoading: false,
