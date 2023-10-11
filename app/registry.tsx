@@ -16,8 +16,6 @@ const StyledJsxRegistry = ({ children }: { children: React.ReactNode }) => {
     return <>{styles}</>;
   });
 
-  if (typeof window !== "undefined") return <>{children}</>;
-
   return (
     <StyleRegistry registry={jsxStyleRegistry}>
       <ThemeProvider theme={theme}>
