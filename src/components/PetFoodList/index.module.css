@@ -1,5 +1,7 @@
 .petFoodListWrapper {
   padding: 2rem;
+
+  background-color: white;
 }
 
 .petFoodListGrid {
