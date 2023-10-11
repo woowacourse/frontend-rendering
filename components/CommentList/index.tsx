@@ -1,3 +1,5 @@
+'use client';
+
 import { useRef, Fragment } from 'react';
 
 import { useMoreComment } from '@hooks';
@@ -7,21 +9,19 @@ import SquareButton from '@components/common/SquareButton';
 import CommentItem from './CommentItem';
 import CommentLoginSection from './CommentLoginSection';
 import * as S from './style';
-import { MOCK_TRANSFORMED_COMMENT_LIST } from '@mocks/comment';
 import { smoothScrollToTop } from '@utils/scrollToTop';
+import { Comment } from '@type/comment';
 
 interface CommentListProps {
-  postId: number;
+  commentList: Comment[];
   postWriterName: string;
 }
 
 export default function CommentList({
-  postId,
+  commentList,
   postWriterName,
 }: CommentListProps) {
   const inputRef = useRef<HTMLInputElement>(null);
-
-  const commentList = MOCK_TRANSFORMED_COMMENT_LIST;
 
   const { slicedCommentList, handleMoreComment, hasMoreComment } =
     useMoreComment(commentList ?? []);

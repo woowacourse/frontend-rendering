@@ -1,8 +1,8 @@
 import { Comment } from '@type/comment';
 
-import { getFetch } from '@utils/fetch';
+import { getSSRFetch } from '@utils/fetch';
 
-const BASE_URL = process.env.VOTOGETHER_BASE_URL ?? '';
+const BASE_URL = process.env.NEXT_PUBLIC_ENV_BASE_URL ?? '';
 
 export interface CommentResponse {
   id: number;
@@ -30,7 +30,7 @@ export const transformCommentListResponse = (
 };
 
 export const getCommentList = async (postId: number): Promise<Comment[]> => {
-  const commentList = await getFetch<CommentResponse[]>(
+  const commentList = await getSSRFetch<CommentResponse[]>(
     `${BASE_URL}/posts/${postId}/comments`
   );
 

@@ -1,4 +1,4 @@
-import { getFetch } from '@utils/fetch';
+import { getSSRFetch } from '@utils/fetch';
 
 export interface CategoryResponse {
   id: number;
@@ -16,10 +16,10 @@ export const transformCategoryListResponse = (
   }));
 };
 
-const BASE_URL = process.env.VOTOGETHER_BASE_URL;
+const BASE_URL = process.env.NEXT_PUBLIC_ENV_BASE_URL ?? '';
 
 export const getGuestCategoryList = async () => {
-  const categoryList = await getFetch<CategoryResponse[]>(
+  const categoryList = await getSSRFetch<CategoryResponse[]>(
     `${BASE_URL}/categories/guest`
   );
 

@@ -1,8 +1,8 @@
 import { PostInfo } from '@type/post';
 import { StringDate } from '@type/time';
-import { getFetch } from '@utils/fetch';
+import { getSSRFetch } from '@utils/fetch';
 
-const BASE_URL = process.env.VOTOGETHER_BASE_URL ?? '';
+const BASE_URL = process.env.NEXT_PUBLIC_ENV_BASE_URL ?? '';
 
 interface WrittenVoteOptionTypeResponse {
   optionId: number;
@@ -68,7 +68,7 @@ export interface OptionData {
 }
 
 export const getPostForGuest = async (postId: number): Promise<PostInfo> => {
-  const post = await getFetch<PostDetailResponse>(
+  const post = await getSSRFetch<PostDetailResponse>(
     `${BASE_URL}/posts/${postId}/guest`
   );
 

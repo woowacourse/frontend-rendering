@@ -1,4 +1,4 @@
-import { PropsWithChildren, useEffect } from 'react';
+import { PropsWithChildren } from 'react';
 
 import Dashboard from '@components/common/Dashboard';
 import WideHeader from '@components/common/WideHeader';
@@ -7,8 +7,10 @@ import IconButton from '../IconButton';
 import NarrowTemplateHeader from '../NarrowTemplateHeader';
 
 import * as S from './style';
+import { Category } from '@type/category';
 
 interface LayoutProps extends PropsWithChildren {
+  categoryList: Category[];
   isSidebarVisible: boolean;
   isChannelTalkVisible?: boolean;
   isMobileDefaultHeaderVisible?: boolean;
