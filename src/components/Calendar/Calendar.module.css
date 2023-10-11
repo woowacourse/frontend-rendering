@@ -71,6 +71,10 @@
   opacity: 0.8;
 }
 
+.scheduleBarContainer {
+  position: relative;
+}
+
 .dateCellContainer {
   display: grid;
   grid-template-columns: repeat(7, 1fr);

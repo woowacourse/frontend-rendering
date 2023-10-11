@@ -1,13 +1,15 @@
 'use client';
 
+import { Fragment } from 'react';
 import Image from 'next/image';
 import Spacing from '@/components/Spacing/Spacing';
+import DateCell from '@/components/DateCell/DateCell';
+import ScheduleBar from '@/components/ScheduleBar/ScheduleBar';
 import { useCalendar } from '@/hooks/useCalendar';
+import { generateScheduleBars } from '@/utils/generateScheduleBars';
 import { Schedule } from '@/types/schedule';
 import { DAYS_OF_WEEK } from '@/constants/calendar';
 import styles from './Calendar.module.css';
-import { Fragment } from 'react';
-import DateCell from '@/components/DateCell/DateCell';
 
 interface CalendarProps {
   schedules: Schedule[];
@@ -23,6 +25,7 @@ const Calendar = (props: CalendarProps) => {
 
     handlers: { handlePrevButtonClick, handleNextButtonClick },
   } = useCalendar();
+  const scheduleBars = generateScheduleBars(year, month, schedules);
 
   return (
     <div className={styles.container}>
@@ -85,12 +88,23 @@ const Calendar = (props: CalendarProps) => {
         </div>
       </div>
 
-      <div className={styles.dateCellContainer}>
-        {calendar.map((week, rowIndex) => {
-          return (
-            <Fragment key={rowIndex}>
+      {calendar.map((week, rowIndex) => {
+        return (
+          <Fragment key={rowIndex}>
+            <div className={styles.scheduleBarContainer}>
+              {scheduleBars.map((scheduleBar) => {
+                const { id, row } = scheduleBar;
+
+                if (row === rowIndex) {
+                  return <ScheduleBar key={id} {...scheduleBar} />;
+                }
+
+                return null;
+              })}
+            </div>
+            <div key={week.toString()} className={styles.dateCellContainer}>
               {week.map((date, colIndex) => {
-                const key = date.toISOString();
+                const key = date.toString();
                 const currentMonth = currentDate.getMonth();
 
                 return (
@@ -101,10 +115,10 @@ const Calendar = (props: CalendarProps) => {
                   />
                 );
               })}
-            </Fragment>
-          );
-        })}
-      </div>
+            </div>
+          </Fragment>
+        );
+      })}
     </div>
   );
 };
