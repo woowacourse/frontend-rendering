@@ -29,3 +29,8 @@ export const ROUTER_PATH: Record<string, RouterPath> = {
 } as const;
 
 export const PARAMS_ERROR_MESSAGE = '[ERROR] params를 지정해주세요.';
+
+export const API_BASE_URL =
+  process.env.NODE_ENV === 'development'
+    ? process.env.API_DEV_URL
+    : process.env.API_PROD_URL;

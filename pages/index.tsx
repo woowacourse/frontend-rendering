@@ -1,7 +1,7 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Inter } from 'next/font/google';
 
-import { Customer, Option } from '@/app/types';
+import { Customer, CustomerOrderOption, Option } from '@/app/types';
 import {
   Container,
   CustomerContainer,
@@ -10,9 +10,10 @@ import {
   TabContainer,
 } from '../components/CustomerList/style';
 import Text from '@/components/Text';
-import { CustomerOrderOption } from '@/components/CustomerList/hooks/useGetCustomers';
+
 import SelectBox from '@/components/SelectBox';
 import Customers from '@/components/CustomerList/Customers';
+import { API_BASE_URL } from '@/app/constants';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -43,14 +44,61 @@ type Props = {
 };
 
 export default function Home({ customers }: Props) {
+  const [customerData, setCustomerData] = useState<Customer[]>([]);
+
   const [registerType, setRegisterType] = useState<Option>({
     key: 'all',
     value: '전체',
   });
+
   const [orderOption, setOrderOption] = useState({
     key: 'stampCount',
     value: '스탬프순',
   });
+  /** TODO: 필터링 기능 구현 */
+  // useEffect(() => {
+  //   let filteredData = [...customers];
+
+  //   switch (orderOption.key) {
+  //     case 'stampCount':
+  //       filteredData.sort((a, b) => a.stampCount - b.stampCount);
+  //       break;
+  //     case 'rewardCount':
+  //       filteredData.sort((a, b) => a.rewardCount - b.rewardCount);
+  //       break;
+  //     case 'visitCount':
+  //       filteredData.sort((a, b) => a.visitCount - b.visitCount);
+  //       break;
+  //     case 'recentVisitDate':
+  //       filteredData.sort((a, b) =>
+  //         a.recentVisitDate < b.recentVisitDate
+  //           ? -1
+  //           : a.recentVisitDate > b.recentVisitDate
+  //           ? 1
+  //           : 0
+  //       );
+  //       break;
+  //   }
+
+  //   switch (registerType.key) {
+  //     case 'all':
+  //       break;
+  //     case 'register':
+  //       filteredData.filter((customer) => customer.isRegistered);
+  //       console.log(filteredData);
+  //       break;
+  //     case 'temporary':
+  //       filteredData.filter((customer) => !customer.isRegistered);
+  //       console.log(filteredData);
+
+  //       break;
+  //   }
+
+  //   setCustomerData(filteredData);
+
+  //   console.log(customerData);
+  // }, [orderOption, registerType]);
+
   const registerTypeKey = registerType.key === 'all' ? null : registerType.key;
 
   const changeRegisterType = (registerType: Option) => () => {
@@ -91,9 +139,7 @@ export default function Home({ customers }: Props) {
 }
 
 export async function getServerSideProps() {
-  const res = await fetch(
-    'https://frontend-rendering-rego.vercel.app/api/customers'
-  );
+  const res = await fetch(`${API_BASE_URL}/api/customers`);
   const customers = await res.json();
 
   return {

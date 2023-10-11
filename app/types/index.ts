@@ -28,3 +28,7 @@ export interface CustomerRegisterType extends CustomerPhoneNumber {
 }
 
 export type RegisterType = 'temporary' | 'register';
+
+export interface CustomerOrderOption extends Omit<Option, 'key'> {
+  key: keyof Customer;
+}
