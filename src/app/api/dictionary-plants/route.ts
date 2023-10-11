@@ -6,5 +6,5 @@ export async function GET(request: Request) {
   const target = searchParams.get("name") ?? "";
   const searchResult = SEARCH_DATA.filter(({ name }) => name.includes(target));
 
-  return Response.json(searchResult);
+  return Response.json({ data: searchResult });
 }
