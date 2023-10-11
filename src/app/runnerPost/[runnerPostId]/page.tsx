@@ -1,4 +1,4 @@
-import RunnerPostPage from '@/pages/RunnerPostPage/RunnerPostPage';
+import RunnerPostPage from '@/components/RunnerPostPage/RunnerPostPage';
 
 export default function Page({ params }: { params: { runnerPostId: string } }) {
   if (isNaN(Number(params.runnerPostId)))

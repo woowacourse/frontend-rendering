@@ -4,7 +4,6 @@ import * as S from './Header.style';
 import { getRunnerPost } from '@/apis/apis';
 
 const Header = async () => {
-  // const profile = await getHeaderProfile();
   const profile = { name: '도리', imageUrl: null };
 
   return (
