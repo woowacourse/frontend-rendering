@@ -1,6 +1,6 @@
-import type { TripsData } from '@/types/trip';
+import { TripsData } from '@/types/trip';
 
-export const getTrips = (): TripsData[] => [
+export const tripsData: TripsData[] = [
   {
     id: 1,
     title: '런던 여행',
@@ -140,6 +140,3 @@ export const getTrips = (): TripsData[] => [
     description: '어쩌구 저쩌구 좌충우돌 야미의 리옹 여행기',
   },
 ];
-
-const Trips = { getTrips };
-export default Trips;
