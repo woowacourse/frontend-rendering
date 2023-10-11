@@ -2,8 +2,8 @@ import type { Season, SeasonKor } from "@/types/dictionaryPlant";
 
 export const API_URL =
   process.env.NODE_ENV === "development"
-    ? process.env.LOCAL_HOST_API_URL
-    : process.env.PROD_API_URL;
+    ? process.env.NEXT_PUBLIC_DEV_API_URL
+    : process.env.NEXT_PUBLIC_PROD_API_URL;
 
 export const STATIC_BASE_URL = "https://static.pium.life";
 
