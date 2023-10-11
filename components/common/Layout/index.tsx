@@ -10,7 +10,6 @@ import * as S from './style';
 import { Category } from '@type/category';
 
 interface LayoutProps extends PropsWithChildren {
-  categoryList: Category[];
   isSidebarVisible: boolean;
   isChannelTalkVisible?: boolean;
   isMobileDefaultHeaderVisible?: boolean;

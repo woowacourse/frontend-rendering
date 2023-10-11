@@ -1,8 +1,4 @@
-import { useToast } from '@hooks';
-
-import NarrowTemplateHeader from '@components/common/NarrowTemplateHeader';
 import TagButton from '@components/common/TagButton';
-import Toast from '@components/common/Toast';
 import Post from '@components/post/Post';
 
 import copyURL from '@assets/chain.svg';
@@ -11,16 +7,14 @@ import * as S from './style';
 import Image from 'next/image';
 import BottomButtonPart from './BottomButtonPart';
 import CommentList from '@components/CommentList';
-import { Comment } from '@type/comment';
-import { PostInfo } from '@type/post';
+import { getPostForGuest } from '@api/post';
+import { getCommentList } from '@api/comment';
 
-interface PostDetailProps {
-  post: PostInfo;
-  commentList: Comment[];
-}
+export default async function PostDetail() {
+  const postId = 1;
 
-export default function PostDetail({ post, commentList }: PostDetailProps) {
-  const { isToastOpen, openToast, toastMessage } = useToast();
+  const post = await getPostForGuest(postId);
+  const commentList = await getCommentList(postId);
 
   const isWriter = false;
 
@@ -31,17 +25,9 @@ export default function PostDetail({ post, commentList }: PostDetailProps) {
     reportNickname: async (reason: string) => {},
     copyPostURL: () => {
       const currentURL = window.location.href;
-      navigator.clipboard
-        .writeText(currentURL)
-        .then(() => {
-          openToast('게시물 URL이 클립보드에 복사되었습니다.');
-        })
-        .catch((error) => {
-          console.error('URL 복사 실패:', error);
-          openToast(
-            'URL을 클립보드에 복사하는 동안 오류가 발생했습니다. 다시 시도해주세요.'
-          );
-        });
+      navigator.clipboard.writeText(currentURL).catch((error) => {
+        console.error('URL 복사 실패:', error);
+      });
     },
   };
 
@@ -58,7 +44,7 @@ export default function PostDetail({ post, commentList }: PostDetailProps) {
           </TagButton>
         </S.TagButtonWrapper>
         <Post postInfo={post} isPreview={false} />
-        <BottomButtonPart handleEvent={{ openToast }} />
+        <BottomButtonPart handleEvent={{ openToast: () => {} }} />
       </S.MainContainer>
       <S.BottomContainer>
         <CommentList
@@ -66,11 +52,6 @@ export default function PostDetail({ post, commentList }: PostDetailProps) {
           postWriterName={post.writer.nickname}
         />
       </S.BottomContainer>
-      {isToastOpen && (
-        <Toast size="md" position="bottom">
-          {toastMessage}
-        </Toast>
-      )}
     </>
   );
 }
