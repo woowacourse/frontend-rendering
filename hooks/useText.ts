@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState } from 'react';
 
 export type InputLengthRange = Record<'MAX_LENGTH' | 'MIN_LENGTH', number>;

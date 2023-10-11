@@ -1,3 +1,5 @@
+'use client';
+
 import { TOAST_TIME } from '@constants/animation';
 import { useEffect, useRef, useState } from 'react';
 
