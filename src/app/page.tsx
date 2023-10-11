@@ -9,7 +9,9 @@ export default function Home() {
       <Header />
       <div className={styles.inner}>
         <NavigationBar />
-        {/* <main className={styles.main}><CalendarPage /></main> */}
+        <main className={styles.main}>
+          <CalendarPage />
+        </main>
       </div>
     </div>
   );
