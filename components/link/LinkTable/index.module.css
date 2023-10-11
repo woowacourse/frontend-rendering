@@ -49,10 +49,6 @@
   width: 100%;
 }
 
-.tableTh {
-  height: 0px;
-}
-
 .table td > a {
   font-weight: 800;
   text-decoration: underline;
@@ -118,10 +114,12 @@
 
 .tableProperties > th:nth-child(2),
 .tableProperties td:nth-child(2) {
+  text-align: center;
   width: 20%;
 }
 .tableProperties > th:nth-child(3),
 .tableProperties td:nth-child(3) {
+  text-align: center;
   width: 30%;
 }
 
