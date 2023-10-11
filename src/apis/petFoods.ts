@@ -5,7 +5,9 @@ const { BASE_URL } = process.env;
 
 export const getPetFoods = async (): Promise<GetPetFoodsRes> => {
   try {
-    const res = await fetch(`${BASE_URL}/api/petFoods`);
+    const res = await fetch(`${BASE_URL}/api/petFoods`, {
+      cache: 'force-cache',
+    });
 
     if (res.ok) {
       return await res.json();
