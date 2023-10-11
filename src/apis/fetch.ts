@@ -30,7 +30,7 @@ const fetchApi = <T>(
     ...(isAuth && {
       headers: {
         ...(body && { 'Content-Type': 'application/json' }),
-        Authorization: `Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJiYXRvbiIsImlhdCI6MTY5NjkxNDkyNCwiZXhwIjoxNjk2OTE1MTA0LCJzb2NpYWxJZCI6InRrZHJiMTIifQ.Qsg6YN9HXD7o3BuSZXED_vl1V3-Yt2QtpPmRNHHaaCo`,
+        Authorization: 'Bearer no Token',
         credentials: 'include',
       },
     }),
