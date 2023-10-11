@@ -2,8 +2,11 @@ import Banner from '@/components/Banner/Banner';
 import Header from '@/components/common/Header/Header';
 import * as styles from './main.css';
 import RunnerPostList from '@/components/runnerPost/RunnerPostList/RunnerPostList';
+import { getRunnerPost } from '@/api/runnerPost';
 
-export default function Main() {
+export default async function Main() {
+  const posts = await getRunnerPost();
+
   return (
     <div>
       <Header />
@@ -13,15 +16,8 @@ export default function Main() {
           <h1 className={styles.title}>서포터를 찾고 있어요 👀</h1>
         </header>
 
-        <div className={styles.controlPanelContainer}>
-          <div className={styles.leftSideContainer}>리뷰 대기중</div>
-          <div className={styles.rightSideContainer}>
-            <button>리뷰 요청글 작성</button>
-          </div>
-        </div>
-
         <div className={styles.runnerPostContainer}>
-          <RunnerPostList />
+          <RunnerPostList posts={posts.data} />
         </div>
       </section>
     </div>

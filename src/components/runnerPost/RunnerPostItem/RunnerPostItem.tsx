@@ -2,6 +2,7 @@ import { RunnerPost } from '@/types/runnerPost';
 import * as styles from './runnerPostItem.css';
 import Avatar from '@/components/common/Avatar/Avatar';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const RunnerPostItem = ({
   runnerPostData: { runnerPostId, title, deadline, tags, runnerProfile, watchedCount, applicantCount, reviewStatus },
@@ -9,7 +10,7 @@ const RunnerPostItem = ({
   runnerPostData: RunnerPost;
 }) => {
   return (
-    <div className={styles.runnerPostItemContainer} onClick={() => {}}>
+    <Link className={styles.runnerPostItemContainer} href={`runnerPostDetail/${runnerPostId}`}>
       <div className={styles.leftSideContainer}>
         <p className={styles.postTitle}>{title}</p>
         <div className={styles.deadLineContainer}>
@@ -40,7 +41,7 @@ const RunnerPostItem = ({
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 

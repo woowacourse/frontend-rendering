@@ -24,3 +24,14 @@ export interface Supporter {
   supporterId: number;
   name: string;
 }
+
+export interface GetDetailedRunnerPostResponse extends RunnerPost {
+  implementedContents: string;
+  curiousContents: string;
+  postscriptContents: string;
+  isOwner: boolean;
+  isApplied: boolean;
+  pullRequestUrl: string;
+  runnerProfile: RunnerProfile;
+  supporter: Supporter;
+}
