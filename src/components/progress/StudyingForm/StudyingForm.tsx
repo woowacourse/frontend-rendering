@@ -11,29 +11,29 @@ import type { Plan } from "@/types/study";
 
 import useStudyingForm from "../hooks/useStudyingForm";
 
-const StudyingForm = () => {
-  const { planList, submitForm } = useStudyingForm();
+const StudyingForm = async () => {
+  const { getPlanList, submitForm } = useStudyingForm();
+
+  const planList = await getPlanList();
 
   const planKeywords = Object.keys(PLAN_KEYWORDS) as Array<Plan>;
 
   return (
-    planList && (
-      <Layout>
-        <PlanResultList>
-          {planKeywords.map((planKey) => (
-            <QuestionAnswer
-              key={planKey}
-              question={PLAN_KEYWORDS[planKey]}
-              answer={planList[planKey]}
-              iconColor={color.red[600]}
-            />
-          ))}
-        </PlanResultList>
-        <Button variant="danger" onClick={submitForm}>
-          학습 마치기
-        </Button>
-      </Layout>
-    )
+    <Layout>
+      <PlanResultList>
+        {planKeywords.map((planKey) => (
+          <QuestionAnswer
+            key={planKey}
+            question={PLAN_KEYWORDS[planKey]}
+            answer={planList[planKey]}
+            iconColor={color.red[600]}
+          />
+        ))}
+      </PlanResultList>
+      <Button variant="danger" onClick={submitForm}>
+        학습 마치기
+      </Button>
+    </Layout>
   );
 };
 
