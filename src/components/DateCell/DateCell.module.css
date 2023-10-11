@@ -1,0 +1,21 @@
+.dateCell {
+  cursor: pointer;
+  border-right: 2px solid var(--color-gray200);
+  border-bottom: 2px solid var(--color-gray200);
+  padding: 4px;
+}
+
+.date {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  font-size: 13px;
+  margin-left: auto;
+}
+
+.date:hover {
+  background-color: var(--color-gray300);
+}
