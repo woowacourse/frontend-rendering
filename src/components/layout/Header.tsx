@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import Avatar from '../Avatar/Avatar';
 import * as S from './Header.style';
-import { getHeaderProfile, getRunnerPost } from '@/apis/apis';
+import { getRunnerPost } from '@/apis/apis';
 
 const Header = async () => {
   // const profile = await getHeaderProfile();
