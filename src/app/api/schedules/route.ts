@@ -1,7 +1,6 @@
-import type { NextApiResponse } from 'next';
 import { schedules } from '@/mocks/fixtures/schedule';
-import { Schedule } from '@/types/schedule';
+import { NextResponse } from 'next/server';
 
-export default function handler(res: NextApiResponse<Schedule[]>) {
-  res.status(200).json(schedules);
+export async function GET() {
+  return NextResponse.json(schedules);
 }
