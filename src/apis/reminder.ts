@@ -6,11 +6,12 @@ const headers = {
 	'Content-Type': 'application/json',
 };
 
-const getReminder = () => {
-	return fetch(REMINDER_URL, {
+const getReminder = async () => {
+	return await fetch(REMINDER_URL, {
 		method: 'GET',
 		credentials: 'include',
 		headers,
+		cache: 'no-store',
 	});
 };
 

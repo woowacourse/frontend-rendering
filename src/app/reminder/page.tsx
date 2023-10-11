@@ -1,5 +1,4 @@
 import ReminderBox from '@/app/reminder/components/ReminderBox';
-import ContentHeader from '@/components/@common/ContentHeader';
 
 import {
 	dehydrate,
