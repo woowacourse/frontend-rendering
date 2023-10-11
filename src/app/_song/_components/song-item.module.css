@@ -1,0 +1,21 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  overflow: hidden;
+
+  font-size: 14px;
+  font-weight: 700;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.singer {
+  overflow: hidden;
+
+  font-size: 12px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
