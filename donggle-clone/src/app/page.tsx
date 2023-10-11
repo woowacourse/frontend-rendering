@@ -32,7 +32,9 @@ export default function Page() {
       </Header>
       <Content>
         <Introduce>
-          <AbsoluteDiv>{/* <BlurBackgroundIcon /> */}</AbsoluteDiv>
+          <AbsoluteDiv>
+            <BlurBackgroundIcon width={1500} height={878} />
+          </AbsoluteDiv>
           <h1>
             동글에서 블로그 글을
             <br /> 간편하게 포스팅 하세요
