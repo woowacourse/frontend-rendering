@@ -7,7 +7,7 @@ import Button from '../common/Button/Button';
 
 const Header = () => {
   const alertNotSupport = () => {
-    () => alert('현재 지원하지 않는 서비스입니다.');
+    alert('현재 지원하지 않는 서비스입니다.');
   };
   return (
     <header className={styles.headerStyling}>

@@ -33,8 +33,8 @@ const TripsItem = ({
     >
       <Image
         src={coverImage ?? DefaultThumbnail}
-        width={500}
-        height={200}
+        width={300}
+        height={100}
         className={styles.imageStyling}
         alt={`${itemName} 대표 이미지`}
       />
