@@ -1,6 +1,6 @@
 export interface ToastItem {
   id: string;
-  type: 'info' | 'success' | 'warning' | 'error';
+  type: "info" | "success" | "warning" | "error";
   message: string;
   time?: number;
   buttonContent?: string;
