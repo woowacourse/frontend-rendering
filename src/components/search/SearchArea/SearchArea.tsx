@@ -1,6 +1,6 @@
 "use client";
 
-import { DictionaryPlantNameSearchResult } from "@/types";
+import { DictionaryPlantNameSearchResult } from "@/types/dictionaryPlant";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import SearchBox from "@/components/search/SearchBox/SearchBox";
