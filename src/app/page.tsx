@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import styles from './page.module.css';
+import PetFoodList from '@/components/PetFoodList';
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
           priority
         />
       </section>
+      <PetFoodList />
     </div>
   );
 }
