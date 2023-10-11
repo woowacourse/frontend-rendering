@@ -1,10 +1,10 @@
-"use client"
+"use client";
 
 import { styled } from "styled-components";
 
 import { theme } from "@/styles/theme";
 
-export const Container = styled.li<{ $isPreview: boolean }>`
+export const Container = styled.div<{ $isPreview: boolean }>`
   width: 100%;
 
   position: relative;
@@ -96,7 +96,7 @@ export const Content = styled.div<{ $isPreview: boolean }>`
   }
 `;
 
-export const DetailLink = styled.span<{ $isPreview: boolean }>`
+export const DetailLink = styled.div<{ $isPreview: boolean }>`
   display: flex;
   flex-direction: column;
   gap: 10px;

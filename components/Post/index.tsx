@@ -51,9 +51,8 @@ const Post = forwardRef(function Post(
   const isPreviewTabIndex = isPreview ? undefined : 0;
 
   return (
-    <S.Container as={isPreview ? "li" : "div"} ref={ref} $isPreview={isPreview}>
+    <S.Container $isPreview={isPreview}>
       <S.DetailLink
-        as={isPreview ? "" : "main"}
         $isPreview={isPreview}
         aria-describedby={
           isPreview
