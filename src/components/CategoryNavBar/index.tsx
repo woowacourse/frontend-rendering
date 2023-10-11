@@ -28,14 +28,14 @@ function CategoryNavbar({
 }: CategoryProps) {
   return (
     <ul className={styles.container} aria-hidden>
-      {categories.map(({ icon, label }) => {
+      {categories.map(({ icon, label }, index) => {
         if (!includeAll && label === "전체") return null;
 
         return (
           <Link
             href={`/category/${label}`}
             className={styles.navItemButton}
-            key={label}
+            key={index}
             aria-label={label}
             data-label={label}
             type="button"
