@@ -1,4 +1,4 @@
-// "use client";
+"use client";
 
 import { useRef, Fragment } from "react";
 
@@ -8,34 +8,18 @@ import { smoothScrollToTop } from "@/utils/scrollToTop";
 
 import CommentItem from "./CommentItem";
 import CommentLoginSection from "./CommentLoginSection";
-import CommentTextForm from "./CommentTextForm";
 import { COMMENT_USER } from "./constants";
 import * as S from "./style";
-import { useCommentList } from "@/hooks/useCommentList";
 import { useMoreComment } from "@/hooks/useMoreComment";
-import { MOCK_TRANSFORMED_COMMENT_LIST } from "@/mock/comment";
+import { Comment } from "@/types/comment";
 
 interface CommentListProps {
-  postId: number;
+  commentList: Comment[];
   postWriterName: string;
 }
 
-const initialComment = {
-  id: -1,
-  member: {
-    id: -1,
-    nickname: "",
-  },
-  content: "",
-  createdAt: "",
-  isEdit: false,
-};
-
-const CommentList = ({ postId, postWriterName }: CommentListProps) => {
+const CommentList = ({ commentList, postWriterName }: CommentListProps) => {
   const inputRef = useRef<HTMLInputElement>(null);
-  // const { data: commentList } = useCommentList(postId);
-  const commentList = MOCK_TRANSFORMED_COMMENT_LIST;
-  const isGuest = true;
 
   const { slicedCommentList, handleMoreComment, hasMoreComment } =
     useMoreComment(commentList ?? []);
@@ -43,11 +27,7 @@ const CommentList = ({ postId, postWriterName }: CommentListProps) => {
   return (
     <S.Container>
       <S.TextOrLoginWrapper>
-        {isGuest ? (
-          <CommentLoginSection name={postWriterName} />
-        ) : (
-          <CommentTextForm commentId={-1} initialComment={initialComment} />
-        )}
+        <CommentLoginSection name={postWriterName} />
       </S.TextOrLoginWrapper>
       <S.ListContainer>
         {slicedCommentList.map((comment, index) => {

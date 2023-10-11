@@ -1,15 +1,5 @@
-"use client";
-
-import { Suspense } from "react";
-
-import { PostInfo } from "@/types/post";
-import { ReportRequest } from "@/types/report";
-
-import { usePostDetail } from "@/hooks/usePostDetail";
-
 import CommentList from "@/components/comment/CommentList";
 import NarrowTemplateHeader from "@/components/NarrowTemplateHeader";
-import Skeleton from "@/components/Skeleton";
 import TagButton from "@/components/TagButton";
 
 import { checkClosedPost } from "@/utils/checkClosedPost";
@@ -22,19 +12,59 @@ import InnerHeaderPart from "../InnerHeaderPart";
 import * as S from "./style";
 import Image from "next/image";
 import Post from "@/components/Post";
-import { getMockGuestPost } from "@/mock/post";
-import { transformPostResponse } from "@/api/post";
+import { Comment } from "@/types/comment";
+import { getFetch } from "@/utils/fetch";
+import { PostDetailResponse, transformPostResponse } from "@/mock/post";
 
-const PostDetail = () => {
-  const postId = 1;
-  const isLoggedIn = false;
+export interface CommentResponse {
+  id: number;
+  member: {
+    id: number;
+    nickname: string;
+  };
+  content: string;
+  createdAt: string;
+  updatedAt: string;
+}
 
-  // const { data: postData } = usePostDetail(isLoggedIn, postId);
-  const postData = transformPostResponse(getMockGuestPost());
-  const postDataFallback = postData ?? ({} as PostInfo);
+export const transformCommentListResponse = (
+  commentList: CommentResponse[]
+): Comment[] => {
+  return commentList.map((comment) => ({
+    id: comment.id,
+    content: comment.content,
+    createdAt: comment.createdAt,
+    member: comment.member,
+    isEdit: comment.createdAt !== comment.updatedAt,
+  }));
+};
+
+const BASE_URL = "https://api.dev.votogether.com";
+
+async function getPost(postId: number) {
+  const post = await getFetch<PostDetailResponse>(
+    `${BASE_URL}/posts/${postId}/guest`,
+    { cache: "no-store" }
+  );
+
+  return transformPostResponse(post);
+}
+
+async function getCommentList(postId: number) {
+  const commentList = await getFetch<CommentResponse[]>(
+    `${BASE_URL}/posts/${postId}/comments`,
+    { cache: "no-store" }
+  );
+
+  return transformCommentListResponse(commentList);
+}
+
+const PostDetail = async () => {
+  const postInfo = await getPost(10004);
+  const commentList = await getCommentList(10004);
 
   const isWriter = false;
-  const isClosed = checkClosedPost(postDataFallback.deadline);
+  const isClosed = checkClosedPost(postInfo.deadline);
 
   const movePage = {
     moveWritePostPage: () => {},
@@ -90,7 +120,7 @@ const PostDetail = () => {
             <Image src={copyURL} alt="링크 복사 아이콘" />
           </TagButton>
         </S.TagButtonWrapper>
-        <Post postInfo={postDataFallback} isPreview={false} />
+        <Post postInfo={postInfo} isPreview={false} />
         <BottomButtonPart
           isClosed={isClosed}
           isWriter={isWriter}
@@ -107,12 +137,10 @@ const PostDetail = () => {
         />
       </S.MainContainer>
       <S.BottomContainer>
-        <Suspense fallback={<Skeleton isLarge={false} />}>
-          <CommentList
-            postId={postId}
-            postWriterName={postDataFallback.writer.nickname}
-          />
-        </Suspense>
+        <CommentList
+          postWriterName={postInfo.writer.nickname}
+          commentList={commentList}
+        />
       </S.BottomContainer>
     </>
   );

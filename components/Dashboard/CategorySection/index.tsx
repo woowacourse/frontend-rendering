@@ -4,12 +4,40 @@ import CategoryToggle from "../CategoryToggle";
 
 import * as S from "./style";
 import { MOCK_GUEST_CATEGORY_LIST } from "@/mock/categoryList";
+import { getFetch } from "@/utils/fetch";
 
-const CategorySection = () => {
+const BASE_URL = "https://api.dev.votogether.com";
+
+export interface CategoryResponse {
+  id: number;
+  name: string;
+  isFavorite: boolean;
+}
+
+export const transformCategoryListResponse = (
+  categoryList: CategoryResponse[]
+) => {
+  return categoryList.map((category) => ({
+    id: category.id,
+    name: category.name,
+    isFavorite: category.isFavorite,
+  }));
+};
+
+async function getCategoryList() {
+  const categoryList = await getFetch<CategoryResponse[]>(
+    `${BASE_URL}/categories/guest`,
+    { cache: "no-store" }
+  );
+
+  return transformCategoryListResponse(categoryList);
+}
+
+const CategorySection = async () => {
   const isLoggedIn = false;
 
-  // const { data: categoryList } = useCategoryList(isLoggedIn);
-  const categoryList = MOCK_GUEST_CATEGORY_LIST;
+  const categoryList = await getCategoryList();
+  // const categoryList = MOCK_GUEST_CATEGORY_LIST;
 
   const categoryListFallback = categoryList ?? [];
 
