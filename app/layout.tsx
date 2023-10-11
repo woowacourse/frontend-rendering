@@ -1,10 +1,6 @@
-import "./globals.css";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import StyledJsxRegistry from "./registry";
 import QueryWrapper from "./QueryWrapper";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "chsua-votogether-next-app",
@@ -14,11 +10,11 @@ export const metadata: Metadata = {
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="en">
-      <div>
+      <body>
         <QueryWrapper>
           <StyledJsxRegistry>{children}</StyledJsxRegistry>
         </QueryWrapper>
-      </div>
+      </body>
     </html>
   );
 };
