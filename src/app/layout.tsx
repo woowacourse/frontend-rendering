@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import { MSWComponent } from '@/mocks/MSWcomponent';
 
 export const metadata: Metadata = {
   title: 'Baton by NEXT.js',
@@ -10,9 +9,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ko">
-      <body>
-        <MSWComponent>{children}</MSWComponent>
-      </body>
+      <body>{children}</body>
     </html>
   );
 }
