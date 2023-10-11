@@ -11,10 +11,15 @@ import { RESTAURANT_CATEGORY } from "@/constants";
 import { getCelebs, getPopularRestaurants } from "../apiCall";
 
 import type { Celeb, RestaurantData } from "./types";
+import { notFound } from "next/navigation";
 
 export default async function Home() {
   const celebs: Celeb[] = await getCelebs();
   const popularRestaurants: RestaurantData[] = await getPopularRestaurants();
+
+  if (!(celebs || popularRestaurants)) {
+    notFound();
+  }
 
   return (
     <main className={styles.layout}>
