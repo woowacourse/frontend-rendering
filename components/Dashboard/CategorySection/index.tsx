@@ -1,28 +1,11 @@
-import { useCategoryList } from "@/hooks/useCategoryList";
-
+import { CategoryResponse } from "@/types/category";
 import CategoryToggle from "../CategoryToggle";
 
 import * as S from "./style";
-import { MOCK_GUEST_CATEGORY_LIST } from "@/mock/categoryList";
 import { getFetch } from "@/utils/fetch";
+import { transformCategoryListResponse } from "@/utils/transType";
 
-const BASE_URL = "https://api.dev.votogether.com";
-
-export interface CategoryResponse {
-  id: number;
-  name: string;
-  isFavorite: boolean;
-}
-
-export const transformCategoryListResponse = (
-  categoryList: CategoryResponse[]
-) => {
-  return categoryList.map((category) => ({
-    id: category.id,
-    name: category.name,
-    isFavorite: category.isFavorite,
-  }));
-};
+const BASE_URL = process.env.NEXT_PUBLIC_ENV_VOTOGETHER_BASE_URL;
 
 async function getCategoryList() {
   const categoryList = await getFetch<CategoryResponse[]>(
@@ -34,10 +17,7 @@ async function getCategoryList() {
 }
 
 const CategorySection = async () => {
-  const isLoggedIn = false;
-
   const categoryList = await getCategoryList();
-  // const categoryList = MOCK_GUEST_CATEGORY_LIST;
 
   const categoryListFallback = categoryList ?? [];
 

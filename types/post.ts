@@ -48,3 +48,29 @@ export const REQUEST_POST_KIND_URL = {
 } as const;
 
 export type PostRequestKind = keyof typeof REQUEST_POST_KIND_URL;
+
+interface WrittenVoteOptionTypeResponse {
+  optionId: number;
+  content: string;
+  voteCount: number;
+  votePercent: number;
+  imageUrl: string;
+}
+
+export interface PostDetailResponse {
+  postId: number;
+  title: string;
+  writer: { id: number; nickname: string };
+  content: string;
+  imageUrl: string;
+  categories: { id: number; name: string }[];
+  createdAt: StringDate;
+  deadline: StringDate;
+  imageCount: number;
+  commentCount: number;
+  voteInfo: {
+    selectedOptionId: number;
+    totalVoteCount: number;
+    options: WrittenVoteOptionTypeResponse[];
+  };
+}

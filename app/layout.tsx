@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import StyledJsxRegistry from "./registry";
-import QueryWrapper from "./QueryWrapper";
 
 export const metadata: Metadata = {
   title: "chsua-votogether-next-app",
@@ -11,9 +10,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="en">
       <body>
-        <QueryWrapper>
-          <StyledJsxRegistry>{children}</StyledJsxRegistry>
-        </QueryWrapper>
+        <StyledJsxRegistry>{children}</StyledJsxRegistry>
       </body>
     </html>
   );

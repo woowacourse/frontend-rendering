@@ -12,34 +12,15 @@ import InnerHeaderPart from "../InnerHeaderPart";
 import * as S from "./style";
 import Image from "next/image";
 import Post from "@/components/Post";
-import { Comment } from "@/types/comment";
 import { getFetch } from "@/utils/fetch";
-import { PostDetailResponse, transformPostResponse } from "@/mock/post";
+import { PostDetailResponse } from "@/types/post";
+import { CommentResponse } from "@/types/comment";
+import {
+  transformCommentListResponse,
+  transformPostResponse,
+} from "@/utils/transType";
 
-export interface CommentResponse {
-  id: number;
-  member: {
-    id: number;
-    nickname: string;
-  };
-  content: string;
-  createdAt: string;
-  updatedAt: string;
-}
-
-export const transformCommentListResponse = (
-  commentList: CommentResponse[]
-): Comment[] => {
-  return commentList.map((comment) => ({
-    id: comment.id,
-    content: comment.content,
-    createdAt: comment.createdAt,
-    member: comment.member,
-    isEdit: comment.createdAt !== comment.updatedAt,
-  }));
-};
-
-const BASE_URL = "https://api.dev.votogether.com";
+const BASE_URL = process.env.NEXT_PUBLIC_ENV_VOTOGETHER_BASE_URL;
 
 async function getPost(postId: number) {
   const post = await getFetch<PostDetailResponse>(
