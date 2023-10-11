@@ -30,14 +30,6 @@ export const usePostDetail = (isLoggedIn: boolean, postId: number) => {
 
         return data;
       },
-      retry: (failCount, error) => {
-        const fetchError = error as Error;
-        const status = JSON.parse(fetchError.message).status;
-        if (status === 404) {
-          return false;
-        }
-        return failCount <= 3;
-      },
     }
   );
 
