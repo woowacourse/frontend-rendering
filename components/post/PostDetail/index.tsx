@@ -11,7 +11,7 @@ import { getPostForGuest } from '@api/post';
 import { getCommentList } from '@api/comment';
 
 export default async function PostDetail() {
-  const postId = 1;
+  const postId = 100033;
 
   const post = await getPostForGuest(postId);
   const commentList = await getCommentList(postId);
