@@ -1,10 +1,13 @@
 import { styled } from "styled-components";
 
 import Button from "@/components/common/Button/Button";
+import { useRouter } from "next/navigation";
 
 const LandingButton = () => {
+  const navigate = useRouter();
+
   const handleClickStartButton = () => {
-    alert("하루스터디 시작하기");
+    navigate.push("/progress");
   };
 
   return (
