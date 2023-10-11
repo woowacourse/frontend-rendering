@@ -77,10 +77,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/styled-components", "npm:5.1.28"],\
             ["axios", "npm:1.5.1"],\
             ["babel-plugin-styled-components", "virtual:eabc90e8f9acf7b3d3d578cfed456c31953e21821e16166b57e93444be688ec735c0930f0d059ee4d778683f0db2fe4d844de1be0c1239e8cd08e8fc39fbf972#npm:2.1.4"],\
+<<<<<<< HEAD
             ["debug", "virtual:feb0771c9f8eadaf509cfed41e14a8bebbea5442233275c1c87085111077a08ef71eb773b899665b154d8203a55a489610a54117ae059fce5f5b8b844493b1b1#npm:4.3.4"],\
+=======
             ["eslint", "npm:8.51.0"],\
-            ["eslint-config-airbnb", "virtual:eabc90e8f9acf7b3d3d578cfed456c31953e21821e16166b57e93444be688ec735c0930f0d059ee4d778683f0db2fe4d844de1be0c1239e8cd08e8fc39fbf972#npm:19.0.4"],\
-            ["eslint-config-next", "virtual:eabc90e8f9acf7b3d3d578cfed456c31953e21821e16166b57e93444be688ec735c0930f0d059ee4d778683f0db2fe4d844de1be0c1239e8cd08e8fc39fbf972#npm:13.5.4"],\
             ["eslint-plugin-import", "virtual:eabc90e8f9acf7b3d3d578cfed456c31953e21821e16166b57e93444be688ec735c0930f0d059ee4d778683f0db2fe4d844de1be0c1239e8cd08e8fc39fbf972#npm:2.28.1"],\
             ["eslint-plugin-jsx-a11y", "virtual:eabc90e8f9acf7b3d3d578cfed456c31953e21821e16166b57e93444be688ec735c0930f0d059ee4d778683f0db2fe4d844de1be0c1239e8cd08e8fc39fbf972#npm:6.7.1"],\
             ["eslint-plugin-prettier", "virtual:eabc90e8f9acf7b3d3d578cfed456c31953e21821e16166b57e93444be688ec735c0930f0d059ee4d778683f0db2fe4d844de1be0c1239e8cd08e8fc39fbf972#npm:5.0.0"],\
@@ -3249,6 +3249,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+<<<<<<< HEAD
       ["@types/debug", [\
         ["npm:4.1.9", {\
           "packageLocation": "./.yarn/cache/@types-debug-npm-4.1.9-8e7cf27fbd-e88ee8b19d.zip/node_modules/@types/debug/",\
@@ -3259,6 +3260,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+=======
+>>>>>>> 4a70173 (chore: yarn berry 환경 설정)
       ["@types/hoist-non-react-statics", [\
         ["npm:3.3.3", {\
           "packageLocation": "./.yarn/cache/@types-hoist-non-react-statics-npm-3.3.3-6a79e5822d-107ac20ab3.zip/node_modules/@types/hoist-non-react-statics/",\
@@ -3288,6 +3291,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+<<<<<<< HEAD
       ["@types/ms", [\
         ["npm:0.7.32", {\
           "packageLocation": "./.yarn/cache/@types-ms-npm-0.7.32-38dadca018-610744605c.zip/node_modules/@types/ms/",\
@@ -3297,6 +3301,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+=======
+>>>>>>> 4a70173 (chore: yarn berry 환경 설정)
       ["@types/node", [\
         ["npm:20.8.4", {\
           "packageLocation": "./.yarn/cache/@types-node-npm-20.8.4-eacd001178-2106b9ef97.zip/node_modules/@types/node/",\
