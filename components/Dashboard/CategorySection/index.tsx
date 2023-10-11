@@ -4,7 +4,7 @@ import CategoryToggle from "../CategoryToggle";
 
 import * as S from "./style";
 
-export default function CategorySection() {
+const CategorySection = () => {
   const isLoggedIn = false;
 
   const { data: categoryList } = useCategoryList(isLoggedIn);
@@ -31,4 +31,6 @@ export default function CategorySection() {
       </S.ContentContainer>
     </>
   );
-}
+};
+
+export default CategorySection;

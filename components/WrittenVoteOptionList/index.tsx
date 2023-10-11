@@ -11,13 +11,13 @@ interface WrittenVoteOptionListProps {
   handleVoteClick: (newOptionId: number) => void;
 }
 
-export default function WrittenVoteOptionList({
+const WrittenVoteOptionList = ({
   isPreview,
   isStatisticsVisible,
   voteOptionList,
   selectedOptionId,
   handleVoteClick,
-}: WrittenVoteOptionListProps) {
+}: WrittenVoteOptionListProps) => {
   return (
     <S.VoteOptionListContainer aria-label="투표 선택지">
       {voteOptionList.map((voteOption, index) => {
@@ -50,4 +50,6 @@ export default function WrittenVoteOptionList({
       })}
     </S.VoteOptionListContainer>
   );
-}
+};
+
+export default WrittenVoteOptionList;

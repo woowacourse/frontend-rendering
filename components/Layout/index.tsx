@@ -14,11 +14,11 @@ interface LayoutProps extends PropsWithChildren {
   isMobileDefaultHeaderVisible?: boolean;
 }
 
-export default function Layout({
+const Layout = ({
   children,
   isSidebarVisible,
   isMobileDefaultHeaderVisible = true,
-}: LayoutProps) {
+}: LayoutProps) => {
   return (
     <S.Container>
       <S.WideHeaderWrapper>
@@ -48,4 +48,6 @@ export default function Layout({
       </S.ContentContainer>
     </S.Container>
   );
-}
+};
+
+export default Layout;

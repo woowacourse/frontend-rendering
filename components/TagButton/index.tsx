@@ -8,10 +8,12 @@ interface TagButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   size: Size;
 }
 
-export default function TagButton({ size, ...rest }: TagButtonProps) {
+const TagButton = ({ size, ...rest }: TagButtonProps) => {
   return (
     <S.Button $size={size} {...rest}>
       {rest.children}
     </S.Button>
   );
-}
+};
+
+export default TagButton;

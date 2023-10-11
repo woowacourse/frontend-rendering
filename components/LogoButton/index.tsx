@@ -27,7 +27,7 @@ interface LogoButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   content: Content;
 }
 
-export default function LogoButton({ content, ...rest }: LogoButtonProps) {
+const LogoButton = ({ content, ...rest }: LogoButtonProps) => {
   const src = contentCategory[content].url;
   const ariaLabelText = contentCategory[content].name;
 
@@ -45,4 +45,6 @@ export default function LogoButton({ content, ...rest }: LogoButtonProps) {
       <Image src={src} alt="보투게더 아이콘" />
     </S.Button>
   );
-}
+};
+
+export default LogoButton;

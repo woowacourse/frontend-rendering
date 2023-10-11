@@ -7,7 +7,7 @@ interface CommentItemProps {
   userType: "GUEST" | "NOT_WRITER" | "WRITER";
 }
 
-export default function CommentItem({ comment }: CommentItemProps) {
+const CommentItem = ({ comment }: CommentItemProps) => {
   const { member, content, createdAt, isEdit } = comment;
 
   return (
@@ -26,4 +26,6 @@ export default function CommentItem({ comment }: CommentItemProps) {
       <S.Description>{convertTextToElement(content)}</S.Description>
     </S.Container>
   );
-}
+};
+
+export default CommentItem;

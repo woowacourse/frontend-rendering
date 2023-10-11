@@ -23,12 +23,12 @@ interface PostDetailPageChildProps {
   isEventLoading: Record<LoadingType, boolean>;
 }
 
-export default function BottomButtonPart({
+const BottomButtonPart = ({
   isWriter,
   isClosed,
   handleEvent: { movePage, controlPost, openToast },
   isEventLoading,
-}: PostDetailPageChildProps) {
+}: PostDetailPageChildProps) => {
   const isLoggedIn = false;
   const { moveWritePostPage, moveVoteStatisticsPage } = movePage;
   const { setEarlyClosePost, deletePost, reportPost, reportNickname } =
@@ -108,4 +108,6 @@ export default function BottomButtonPart({
       )}
     </S.BottomButtonContainer>
   );
-}
+};
+
+export default BottomButtonPart;

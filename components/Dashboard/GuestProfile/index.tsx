@@ -5,7 +5,7 @@ import kakaoLogin from "@/assets/kakao_login.webp";
 import * as S from "./style";
 import Image from "next/image";
 
-export default function GuestProfile() {
+const GuestProfile = () => {
   return (
     <S.Container role="region" aria-label="비회원 프로필">
       <div>
@@ -16,4 +16,6 @@ export default function GuestProfile() {
       <S.TextCard>로그인 후 이용할 수 있습니다</S.TextCard>
     </S.Container>
   );
-}
+};
+
+export default GuestProfile;

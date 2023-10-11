@@ -1,5 +1,5 @@
-import ProgressBar from './ProgressBar';
-import * as S from './style';
+import ProgressBar from "./ProgressBar";
+import * as S from "./style";
 
 interface WrittenVoteOptionProps {
   handleVoteClick: () => void;
@@ -13,7 +13,7 @@ interface WrittenVoteOptionProps {
   ariaLabel: string;
 }
 
-export default function WrittenVoteOption({
+const WrittenVoteOption = ({
   handleVoteClick,
   text,
   isStatisticsVisible,
@@ -23,15 +23,17 @@ export default function WrittenVoteOption({
   isPreview,
   imageUrl,
   ariaLabel,
-}: WrittenVoteOptionProps) {
+}: WrittenVoteOptionProps) => {
   return (
     <S.Container
-      aria-live={isSelected ? 'polite' : 'off'}
+      aria-live={isSelected ? "polite" : "off"}
       aria-label={ariaLabel}
       $isSelected={isSelected}
       onClick={handleVoteClick}
     >
-      {!isPreview && imageUrl && <S.Image src={imageUrl} alt={'선택지에 포함된 이미지'} />}
+      {!isPreview && imageUrl && (
+        <S.Image src={imageUrl} alt={"선택지에 포함된 이미지"} />
+      )}
       {isPreview ? (
         <S.PreviewContent>{text}</S.PreviewContent>
       ) : (
@@ -44,10 +46,14 @@ export default function WrittenVoteOption({
           </S.ProgressContainer>
           <S.TextContainer>
             <S.PeopleText aria-hidden="true">{peopleCount}명</S.PeopleText>
-            <S.PercentText aria-hidden="true">({percent.toFixed(1)}%)</S.PercentText>
+            <S.PercentText aria-hidden="true">
+              ({percent.toFixed(1)}%)
+            </S.PercentText>
           </S.TextContainer>
         </>
       )}
     </S.Container>
   );
-}
+};
+
+export default WrittenVoteOption;

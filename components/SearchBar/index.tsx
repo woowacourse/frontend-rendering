@@ -13,7 +13,7 @@ interface SearchBarProps extends HTMLAttributes<HTMLInputElement> {
   isOpen?: boolean;
 }
 
-export default function SearchBar({ size, isOpen, ...rest }: SearchBarProps) {
+const SearchBar = ({ size, isOpen, ...rest }: SearchBarProps) => {
   const handleSearchEvent = () => {
     alert("현재 지원하지 않는 기능입니다.");
   };
@@ -39,4 +39,6 @@ export default function SearchBar({ size, isOpen, ...rest }: SearchBarProps) {
       )}
     </S.Form>
   );
-}
+};
+
+export default SearchBar;

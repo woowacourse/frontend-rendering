@@ -9,9 +9,7 @@ interface MobileLayoutTemplateProps {
   children: ReactNode;
 }
 
-export default function MobileLayoutTemplate({
-  children,
-}: MobileLayoutTemplateProps) {
+const MobileLayoutTemplate = ({ children }: MobileLayoutTemplateProps) => {
   return (
     <>
       <NarrowTemplateHeader>
@@ -23,4 +21,6 @@ export default function MobileLayoutTemplate({
       <S.ContentWrapper>{children}</S.ContentWrapper>
     </>
   );
-}
+};
+
+export default MobileLayoutTemplate;

@@ -1,15 +1,18 @@
-import { MouseEvent } from 'react';
+import { MouseEvent } from "react";
 
-import { type CommentAction, type CommentMenuItem } from '@components/comment/CommentList/types';
+import {
+  type CommentAction,
+  type CommentMenuItem,
+} from "@/components/comment/CommentList/types";
 
-import * as S from './style';
+import * as S from "./style";
 
 interface CommentMenuProps {
   menuList: CommentMenuItem[];
   handleMenuClick: (menu: CommentAction) => void;
 }
 
-export default function CommentMenu({ menuList, handleMenuClick }: CommentMenuProps) {
+const CommentMenu = ({ menuList, handleMenuClick }: CommentMenuProps) => {
   return (
     <S.Container>
       {menuList.map(({ content, color, action }) => (
@@ -29,4 +32,6 @@ export default function CommentMenu({ menuList, handleMenuClick }: CommentMenuPr
       ))}
     </S.Container>
   );
-}
+};
+
+export default CommentMenu;

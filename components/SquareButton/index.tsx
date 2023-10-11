@@ -1,9 +1,9 @@
-import { ButtonHTMLAttributes, ReactNode } from 'react';
+import { ButtonHTMLAttributes, ReactNode } from "react";
 
-import * as S from './style';
+import * as S from "./style";
 
 interface SquareButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  theme: 'blank' | 'fill' | 'gray';
+  theme: "blank" | "fill" | "gray";
   children: ReactNode;
 }
 
@@ -11,10 +11,13 @@ interface SquareButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
  * 부모에서 크기를 조절, 내용(children) 전달
  * props로 테마를 받음
  */
-export default function SquareButton({ theme, children, ...rest }: SquareButtonProps) {
+
+const SquareButton = ({ theme, children, ...rest }: SquareButtonProps) => {
   return (
     <S.Button $theme={theme} {...rest}>
       {children}
     </S.Button>
   );
-}
+};
+
+export default SquareButton;

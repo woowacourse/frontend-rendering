@@ -6,7 +6,7 @@ import CategorySection from "./CategorySection";
 import GuestProfile from "./GuestProfile";
 import * as S from "./style";
 
-export default function Dashboard() {
+const Dashboard = () => {
   return (
     <S.Container>
       <GuestProfile />
@@ -17,4 +17,6 @@ export default function Dashboard() {
       </S.CategorySectionWrapper>
     </S.Container>
   );
-}
+};
+
+export default Dashboard;

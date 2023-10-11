@@ -2,6 +2,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import StyledJsxRegistry from "./registry";
+import QueryWrapper from "./QueryWrapper";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -10,14 +11,16 @@ export const metadata: Metadata = {
   description: "chsua-votogether-next-app",
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="en">
-      <StyledJsxRegistry>{children}</StyledJsxRegistry>
+      <div>
+        <QueryWrapper>
+          <StyledJsxRegistry>{children}</StyledJsxRegistry>
+        </QueryWrapper>
+      </div>
     </html>
   );
-}
+};
+
+export default RootLayout;

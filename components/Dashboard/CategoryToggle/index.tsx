@@ -18,11 +18,11 @@ interface CategoryToggleProps {
   isInitialOpen?: boolean;
 }
 
-export default function CategoryToggle({
+const CategoryToggle = ({
   title,
   categoryList,
   isInitialOpen = true,
-}: CategoryToggleProps) {
+}: CategoryToggleProps) => {
   const [isToggleOpen, setIsToggleOpen] = useState(isInitialOpen);
 
   const isLoggedIn = false;
@@ -71,4 +71,6 @@ export default function CategoryToggle({
       )}
     </S.Container>
   );
-}
+};
+
+export default CategoryToggle;

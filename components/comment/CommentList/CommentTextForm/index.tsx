@@ -16,11 +16,11 @@ interface CommentTextFormProps {
   handleCancelClick?: () => void;
 }
 
-export default function CommentTextForm({
+const CommentTextForm = ({
   commentId,
   initialComment,
   handleCancelClick,
-}: CommentTextFormProps) {
+}: CommentTextFormProps) => {
   const {
     text: content,
     handleTextChange,
@@ -114,4 +114,6 @@ export default function CommentTextForm({
       </S.ButtonContainer>
     </S.Container>
   );
-}
+};
+
+export default CommentTextForm;

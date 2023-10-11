@@ -13,6 +13,7 @@ import { COMMENT_USER } from "./constants";
 import * as S from "./style";
 import { useCommentList } from "@/hooks/useCommentList";
 import { useMoreComment } from "@/hooks/useMoreComment";
+import { MOCK_TRANSFORMED_COMMENT_LIST } from "@/mock/comment";
 
 interface CommentListProps {
   postId: number;
@@ -30,12 +31,10 @@ const initialComment = {
   isEdit: false,
 };
 
-export default function CommentList({
-  postId,
-  postWriterName,
-}: CommentListProps) {
+const CommentList = ({ postId, postWriterName }: CommentListProps) => {
   const inputRef = useRef<HTMLInputElement>(null);
-  const { data: commentList } = useCommentList(postId);
+  // const { data: commentList } = useCommentList(postId);
+  const commentList = MOCK_TRANSFORMED_COMMENT_LIST;
   const isGuest = true;
 
   const { slicedCommentList, handleMoreComment, hasMoreComment } =
@@ -102,4 +101,6 @@ export default function CommentList({
       </S.ButtonContainer>
     </S.Container>
   );
-}
+};
+
+export default CommentList;

@@ -63,7 +63,8 @@ interface IconButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 /* 뒤로가기, 카테고리 열기 등에 사용될 아이콘 버튼
  */
-export default function IconButton({ category, ...rest }: IconButtonProps) {
+
+const IconButton = ({ category, ...rest }: IconButtonProps) => {
   const src = ICON_CATEGORY[category].url;
   const ariaLabelText = ICON_CATEGORY[category].name;
 
@@ -76,4 +77,6 @@ export default function IconButton({ category, ...rest }: IconButtonProps) {
       <Image src={src} alt={`${ariaLabelText} 버튼`} width={35} height={35} />
     </S.Button>
   );
-}
+};
+
+export default IconButton;

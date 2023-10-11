@@ -8,18 +8,20 @@ import Skeleton from "@/components/Skeleton";
 
 import PostDetail from "./PostDetail";
 
-export default function PostDetailPage() {
+const PostDetailPage = () => {
   return (
-    <Layout isSidebarVisible={true} isMobileDefaultHeaderVisible={false}>
-      <Suspense
-        fallback={
-          <MobileLayoutTemplate>
-            <Skeleton isLarge={true} />
-          </MobileLayoutTemplate>
-        }
-      >
-        <PostDetail />
-      </Suspense>
-    </Layout>
+    // <Layout isSidebarVisible={true} isMobileDefaultHeaderVisible={false}>
+    //   <Suspense
+    //     fallback={
+    //       <MobileLayoutTemplate>
+    //         <Skeleton isLarge={true} />
+    //       </MobileLayoutTemplate>
+    //     }
+    //   >
+    <PostDetail />
+    //   </Suspense>
+    // </Layout>
   );
-}
+};
+
+export default PostDetailPage;

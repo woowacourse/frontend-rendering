@@ -4,7 +4,7 @@ import SearchBar from "../SearchBar";
 
 import * as S from "./style";
 
-export default function WideHeader() {
+const WideHeader = () => {
   const movePostListPage = () => {
     alert("현재 지원하지 않는 기능입니다.");
   };
@@ -29,4 +29,6 @@ export default function WideHeader() {
       </S.Wrapper>
     </S.Container>
   );
-}
+};
+
+export default WideHeader;

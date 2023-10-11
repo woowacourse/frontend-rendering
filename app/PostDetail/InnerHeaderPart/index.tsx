@@ -25,7 +25,7 @@ interface PostDetailPageChildProps {
   isEventLoading: Record<LoadingType, boolean>;
 }
 
-export default function InnerHeaderPart({}: PostDetailPageChildProps) {
+const InnerHeaderPart = ({}: PostDetailPageChildProps) => {
   const toggleComponent = () => {
     alert("현재 해당 기능은 지원하지 않습니다.");
   };
@@ -50,4 +50,5 @@ export default function InnerHeaderPart({}: PostDetailPageChildProps) {
       </S.HeaderWrapper>
     </>
   );
-}
+};
+export default InnerHeaderPart;

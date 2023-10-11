@@ -6,9 +6,7 @@ interface CommentLoginSectionProps {
   name: string;
 }
 
-export default function CommentLoginSectionSection({
-  name,
-}: CommentLoginSectionProps) {
+const CommentLoginSectionSection = ({ name }: CommentLoginSectionProps) => {
   return (
     <S.Container>
       <S.Title>대화에 참여하려면 회원가입</S.Title>
@@ -22,4 +20,6 @@ export default function CommentLoginSectionSection({
       </S.LoginLink>
     </S.Container>
   );
-}
+};
+
+export default CommentLoginSectionSection;

@@ -22,13 +22,15 @@ import InnerHeaderPart from "../InnerHeaderPart";
 import * as S from "./style";
 import Image from "next/image";
 import Post from "@/components/Post";
+import { getMockGuestPost } from "@/mock/post";
+import { transformPostResponse } from "@/api/post";
 
-export default function PostDetail() {
+const PostDetail = () => {
   const postId = 1;
   const isLoggedIn = false;
 
-  const { data: postData } = usePostDetail(isLoggedIn, postId);
-
+  // const { data: postData } = usePostDetail(isLoggedIn, postId);
+  const postData = transformPostResponse(getMockGuestPost());
   const postDataFallback = postData ?? ({} as PostInfo);
 
   const isWriter = false;
@@ -45,9 +47,7 @@ export default function PostDetail() {
   const controlPost = {
     setEarlyClosePost: () => {},
     deletePost: () => {},
-    reportPost: async (reason: string) => {
-      const reportData: ReportRequest = { type: "POST", id: postId, reason };
-    },
+    reportPost: async (reason: string) => {},
     reportNickname: async (reason: string) => {},
     copyPostURL: () => {
       const currentURL = window.location.href;
@@ -112,4 +112,6 @@ export default function PostDetail() {
       </S.BottomContainer>
     </>
   );
-}
+};
+
+export default PostDetail;
