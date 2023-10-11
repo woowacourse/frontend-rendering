@@ -1,95 +1,89 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+'use client';
+
+import { ThemeProvider } from 'styled-components';
+import FoodDetail from './pages/FoodDetail/FoodDetail';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import theme from '@/styles/theme';
+import RootStyleRegistry from './lib/RootStyleRegistry';
+import GlobalStyle from './components/@common/GlobalStyle';
 
 export default function Home() {
+  const queryClient = new QueryClient({
+    defaultOptions: {
+      queries: {
+        suspense: true,
+        retry: false,
+        useErrorBoundary: true,
+      },
+      mutations: {
+        useErrorBoundary: true,
+      },
+    },
+  });
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <RootStyleRegistry>
+      <ThemeProvider theme={theme}>
+        <QueryClientProvider client={queryClient}>
+          <GlobalStyle />
+          <main
+            style={{
+              width: '100vw',
+              height: '100vh',
+              backgroundColor: '#3E5E8E',
+              position: 'fixed',
+              display: 'flex',
+              justifyContent: 'center',
+            }}
           >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+            <div
+              style={{
+                width: '60vw',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+              }}
+            >
+              <section
+                style={{
+                  left: '30vw',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: 24,
+                }}
+              >
+                <h3
+                  style={{
+                    fontSize: 26,
+                    color: theme.color.white,
+                    fontWeight: 400,
+                  }}
+                >
+                  사료 선택이 어려운 <br /> 초보 집사들을 위해
+                </h3>
+                <h1
+                  style={{
+                    fontSize: 52,
+                    color: theme.color.white,
+                    fontWeight: 700,
+                  }}
+                >
+                  집사의고민
+                </h1>
+              </section>
+              <section
+                style={{
+                  width: 418,
+                  height: '100vh',
+                  backgroundColor: '#fff',
+                  overflowY: 'scroll',
+                }}
+              >
+                <FoodDetail />
+              </section>
+            </div>
+          </main>
+        </QueryClientProvider>
+      </ThemeProvider>
+    </RootStyleRegistry>
+  );
 }
