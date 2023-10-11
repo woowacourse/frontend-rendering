@@ -1,6 +1,4 @@
-import ReminderAPI from '@/apis/reminder';
 import ReminderBox from '@/app/reminder/components/ReminderBox';
-import { Wrapper } from './ReminderPage.style';
 import ContentHeader from '@/components/@common/ContentHeader';
 
 import {
@@ -8,7 +6,6 @@ import {
 	HydrationBoundary,
 	QueryClient,
 } from '@tanstack/react-query';
-import throwOnInvalidStatus from '@/utils/throwOnInvalidStatus';
 import { getReminder } from './hooks/useReminder';
 
 export default async function ReminderPage() {
@@ -21,10 +18,7 @@ export default async function ReminderPage() {
 
 	return (
 		<HydrationBoundary state={dehydrate(queryClient)}>
-			<Wrapper>
-				<ContentHeader title='리마인더' />
-				<ReminderBox />
-			</Wrapper>
+			<ReminderBox />
 		</HydrationBoundary>
 	);
 }
