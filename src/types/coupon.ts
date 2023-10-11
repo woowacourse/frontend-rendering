@@ -9,6 +9,7 @@ export interface Coupon {
 
 export interface CouponInfo extends CouponDesign {
   id: number;
+  status: string;
   stampCount: number;
   maxStampCount: number;
   rewardName: string;
