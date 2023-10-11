@@ -1,34 +1,36 @@
 import styled from "@emotion/styled";
 import ProgressBar from "./ProgressBar";
-import { CafeInfo, CouponInfo } from "@/types/domain/coupon";
+import { CouponRes } from "@/types/api/response";
+import { Coupon } from "@/types/domain/coupon";
 
 interface CafeInfoProps {
-  cafeInfo: CafeInfo;
-  couponInfo: CouponInfo;
+  coupon: Coupon;
 }
 
-const CafeInfo = ({ cafeInfo, couponInfo }: CafeInfoProps) => {
-  const { name } = cafeInfo;
-  const { stampCount, maxStampCount } = couponInfo;
+const CafeInfo = ({ coupon }: CafeInfoProps) => {
+  const { cafeInfo, couponInfos } = coupon;
+  console.log(coupon);
 
   return (
     <>
       <InfoContainer>
         <NameContainer>
-          <CafeName aria-label="카페 이름">{name}</CafeName>
+          <CafeName aria-label="카페 이름">{cafeInfo.name}</CafeName>
         </NameContainer>
         <ProgressBarContainer aria-label="스탬프 개수">
           <ProgressBar
-            stampCount={stampCount}
-            maxCount={maxStampCount}
+            stampCount={couponInfos[0].stampCount}
+            maxCount={couponInfos[0].maxStampCount}
             color={"#FBF7A3"}
           />
-          <StampCount aria-label={`현재 스탬프 개수 ${stampCount}개`}>
-            {stampCount}
+          <StampCount
+            aria-label={`현재 스탬프 개수 ${couponInfos[0].stampCount}개`}
+          >
+            {couponInfos[0].stampCount}
           </StampCount>
           /
           <MaxStampCount aria-label="필요한 스탬프 개수">
-            {maxStampCount}
+            {couponInfos[0].maxStampCount}
           </MaxStampCount>
         </ProgressBarContainer>
       </InfoContainer>

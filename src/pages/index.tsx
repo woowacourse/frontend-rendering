@@ -1,49 +1,35 @@
 import Header from "@/common/Header";
-import { getCoupons } from "./api/get";
-import { useQuery } from "@tanstack/react-query";
-import styled from "@emotion/styled";
-import { css, keyframes } from "@emotion/react";
-import Coupon from "@/components/home/Coupon";
 import CafeInfo from "@/components/home/CafeInfo";
+import Coupons from "@/components/home/Coupons";
+import { CouponRes } from "@/types/api/response";
+import { Coupon } from "@/types/domain/coupon";
+import { useState } from "react";
 
-export default function Home() {
-  const { data: coupons, status: couponStatus } = useQuery({
-    queryKey: ["coupons"],
-    queryFn: getCoupons,
-    select: (data) => data.coupons,
+export async function getServerSideProps() {
+  const res = await fetch("http://localhost:3000/api/coupons", {
+    cache: "no-store",
   });
+  const data: CouponRes = await res.json();
 
-  if (couponStatus === "error") {
-    return <>에러가 발생했습니다.</>;
-  }
+  return { props: { data } };
+}
+interface HomeProps {
+  data: CouponRes;
+}
 
-  if (!coupons) return <>보유하고 있는 쿠폰이 없습니다.</>;
+export default function Home({ data }: HomeProps) {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  // const currentCoupon;
+  // console.log(coupons[currentIndex]);
+  console.log(data.coupons);
+
+  const { coupons } = data;
 
   return (
     <>
       <Header />
-      <CafeInfo
-        cafeInfo={coupons[0].cafeInfo}
-        couponInfo={coupons[0].couponInfos[0]}
-      />
-      <CouponsContainer>
-        {coupons.map(({ cafeInfo, couponInfos }, index) => (
-          <Coupon
-            key={cafeInfo.id}
-            coupon={{ cafeInfo, couponInfos }}
-            dataIndex={index}
-            aria-label={`${cafeInfo.name} 쿠폰`}
-          />
-        ))}
-      </CouponsContainer>
+      <CafeInfo coupon={coupons[currentIndex]} />
+      <Coupons coupons={coupons} />
     </>
   );
 }
-
-const CouponsContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  margin-top: 100px;
-`;
