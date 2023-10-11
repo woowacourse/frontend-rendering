@@ -1,5 +1,6 @@
 export const useAuthToken = () => {
-  const authToken = localStorage.getItem('accessToken');
+  let authToken: string = '';
+  if (typeof window !== 'undefined') authToken = localStorage.getItem('accessToken') || '';
 
   return { authToken };
 };
