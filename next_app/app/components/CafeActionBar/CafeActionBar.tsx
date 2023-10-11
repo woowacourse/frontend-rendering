@@ -1,8 +1,7 @@
-import { Suspense, useState } from "react";
+import { useState } from "react";
 import { PiReadCvLogoFill } from "react-icons/pi";
-import useCafeLikes from "../hooks/useCafeLikes";
-import useUser from "../hooks/useUser";
-import CafeMenuBottomSheet from "./CafeMenuBottomSheet";
+import useCafeLikes from "../../hooks/useUser";
+import useUser from "../../hooks/useUser";
 import LikeButton from "../LikeButton/LikeButton";
 import ShareButton from "../ShareButton/ShareButton";
 import styles from "./styles.module.css";
@@ -51,15 +50,6 @@ const CafeActionBar = (props: CafeActionBarProps) => {
           메뉴
         </div>
       </button>
-
-      {isMenuOpened && (
-        <Suspense>
-          <CafeMenuBottomSheet
-            cafe={cafe}
-            onClose={() => setIsMenuOpened(false)}
-          />
-        </Suspense>
-      )}
     </div>
   );
 };
