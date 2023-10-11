@@ -1,6 +1,11 @@
 import Image from "next/image";
 import styles from "./topicCard.module.css";
-export default function TopicCard() {
+import { TopicCardProps } from "./types";
+
+function formatDate(dateString: string) {
+  return dateString.split("T")[0];
+}
+export default function TopicCard({ topic }: { topic: TopicCardProps }) {
   return (
     <li className={styles.topicCardWrapper}>
       <div className={styles.topicCard}>
@@ -13,11 +18,11 @@ export default function TopicCard() {
         />
         <div className={styles.topicInfo}>
           <div className={styles.topicNameWrapper}>
-            <span className={styles.topicName}>지도 이름</span>
+            <span className={styles.topicName}>{topic.name}</span>
           </div>
-          <span className={styles.creator}>박근철</span>
+          <span className={styles.creator}>{topic.creator}</span>
           <div className={styles.space} />
-          <span className={styles.date}>2023.08.17</span>
+          <span className={styles.date}>{formatDate(topic.updatedAt)}</span>
           <div className={styles.icons}>
             <div className={styles.icon}>
               <Image
@@ -27,7 +32,7 @@ export default function TopicCard() {
                 height={16}
               />
               <div className={styles.space} />
-              <span className={styles.iconText}>1개</span>
+              <span className={styles.iconText}>{topic.pinCount}개</span>
             </div>
             <div className={styles.icon}>
               <Image
@@ -37,7 +42,7 @@ export default function TopicCard() {
                 height={16}
               />
               <div className={styles.space} />
-              <span className={styles.iconText}>1개</span>
+              <span className={styles.iconText}>{topic.bookmarkCount}개</span>
             </div>
           </div>
         </div>
