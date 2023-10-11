@@ -1,5 +1,5 @@
-import { NodeType } from '@/myTypes/roadmap/internal';
-import * as S from './roadmapNodeList.styles';
+import { NodeType } from "@/myTypes/roadmap/internal";
+import * as S from "./roadmapNodeList.styles";
 
 type RoadmapNodeListProps = {
   roadmapTitle: string;
@@ -14,15 +14,15 @@ const RoadmapNodeList = ({ roadmapTitle, nodeInfo }: RoadmapNodeListProps) => {
       </S.Title>
       {nodeInfo.map((node, index) => {
         return (
-          <S.NodeItemContainer>
+          <S.NodeItemContainer key={index}>
             <S.NodeIndicator>{index + 1}</S.NodeIndicator>
             <S.NodeContent>
               <S.NodeTitle>{node.title}</S.NodeTitle>
               <S.NodeDescription>{node.description}</S.NodeDescription>
-              {node.imageUrls.map((nodeImage) => {
+              {node.imageUrls.map((nodeImage, index) => {
                 return (
-                  <S.ImageWrapper>
-                    <img src={nodeImage} alt='노드 이미지' loading='lazy' />
+                  <S.ImageWrapper key={index}>
+                    <img src={nodeImage} alt="노드 이미지" loading="lazy" />
                   </S.ImageWrapper>
                 );
               })}

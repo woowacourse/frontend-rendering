@@ -1,5 +1,5 @@
-import { RoadmapDetailType } from '@myTypes/roadmap/internal';
-import * as S from './ExtraInfo.styles';
+import { RoadmapDetailType } from "../../../myTypes/roadmap/internal";
+import * as S from "./ExtraInfo.styles";
 
 type ExtraInfoProps = {
   roadmapInfo: RoadmapDetailType;
