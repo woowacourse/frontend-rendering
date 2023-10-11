@@ -5,10 +5,10 @@ export default function handler(
   req: NextApiRequest,
   res: NextApiResponse<CouponRes>
 ) {
-  res.status(200).json(customerCoupons);
+  res.status(200).json(mockCouponsData);
 }
 
-const customerCoupons = {
+const mockCouponsData = {
   coupons: [
     {
       cafeInfo: {

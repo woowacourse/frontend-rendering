@@ -3,13 +3,12 @@ import CafeInfo from "@/components/home/CafeInfo";
 import Coupons from "@/components/home/Coupons";
 import { API_BASE_URL } from "@/constants";
 import { CouponRes } from "@/types/api/response";
-import { useState } from "react";
 
 export async function getServerSideProps() {
   const res = await fetch(`${API_BASE_URL}/coupons`, {
     cache: "no-store",
   });
-  const data: CouponRes = await res.json();
+  const data = await res.json();
 
   return { props: { data } };
 }
@@ -19,16 +18,13 @@ interface HomeProps {
 }
 
 export default function Home({ data }: HomeProps) {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
   const { coupons } = data;
-
-  const swapCoupon = () => {};
 
   return (
     <>
       <Header />
-      <CafeInfo coupon={coupons[currentIndex]} />
+      {/** 카페 id 0값으로 하드코딩되어 있음 */}
+      <CafeInfo coupon={coupons[0]} />
       <Coupons coupons={coupons} />
     </>
   );
