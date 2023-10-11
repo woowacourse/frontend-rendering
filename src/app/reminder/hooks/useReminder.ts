@@ -6,7 +6,7 @@ import type {
 	ReminderExtendType,
 	TodayStatus,
 } from '@/types/reminder';
-import { useSuspenseQuery } from '@tanstack/react-query';
+import { useQuery } from '@tanstack/react-query';
 import StatusError from '@/models/statusError';
 import ReminderAPI, { REMINDER_URL } from '@/apis/reminder';
 import noRetryIfUnauthorized from '@/utils/noRetryIfUnauthorized';
@@ -63,7 +63,7 @@ export const convertReminderData = (
 };
 
 const useReminder = () => {
-	return useSuspenseQuery<
+	return useQuery<
 		DataResponse<Reminder[]>,
 		Error | StatusError,
 		ArrangedReminderWithStatus
@@ -79,6 +79,7 @@ const useReminder = () => {
 
 		select: convertReminderData,
 		retry: noRetryIfUnauthorized,
+		enabled: false,
 	});
 };
 
