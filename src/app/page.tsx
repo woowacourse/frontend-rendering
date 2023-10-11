@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { notFound } from "next/navigation";
 import styles from "./page.module.scss";
 
 import Banner from "@/assets/banner.svg";
@@ -8,14 +9,17 @@ import MiniRestaurantCard from "@/components/MiniRestaurantCard";
 import RegionList from "@/components/RegionList";
 import CategoryNavbar from "@/components/CategoryNavBar";
 import { RESTAURANT_CATEGORY } from "@/constants";
-import { getCelebs, getPopularRestaurants } from "../apiCall";
 
 import type { Celeb, RestaurantData } from "./types";
-import { notFound } from "next/navigation";
 
 export default async function Home() {
-  const celebs: Celeb[] = await getCelebs();
-  const popularRestaurants: RestaurantData[] = await getPopularRestaurants();
+  const resCelebs = await fetch("http://127.0.0.1:3000/api/celebs");
+  const celebs: Celeb[] = await resCelebs.json();
+  const resPopularRestaurants = await fetch(
+    "http://127.0.0.1:3000/api/popularRestaurants"
+  );
+  const popularRestaurants: RestaurantData[] =
+    await resPopularRestaurants.json();
 
   if (!(celebs || popularRestaurants)) {
     notFound();
