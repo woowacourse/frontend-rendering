@@ -62,24 +62,24 @@ export const convertReminderData = (
 	};
 };
 
+export const getReminder = async (): Promise<DataResponse<Reminder[]>> => {
+	const response = await ReminderAPI.getReminder();
+	throwOnInvalidStatus(response);
+
+	const results = await response.json();
+	return results;
+};
+
 const useReminder = () => {
 	return useQuery<
 		DataResponse<Reminder[]>,
 		Error | StatusError,
 		ArrangedReminderWithStatus
 	>({
-		queryKey: [REMINDER_URL],
-		queryFn: async () => {
-			const response = await ReminderAPI.getReminder();
-			throwOnInvalidStatus(response);
-
-			const results = await response.json();
-			return results;
-		},
-
+		queryKey: ['reminder'],
+		queryFn: getReminder,
 		select: convertReminderData,
 		retry: noRetryIfUnauthorized,
-		enabled: false,
 	});
 };
 

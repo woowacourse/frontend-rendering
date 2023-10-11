@@ -9,14 +9,12 @@ import {
 import Image from 'next/image';
 import { URL_PATH } from '@/constants';
 import PiumiEmotionlessPng from '@/assets/piumi-emotionless.png';
-import { ArrangedReminderWithStatus } from '@/types/reminder';
+import useReminder from '../../hooks/useReminder';
 
-interface ReminderBoxProps {
-	reminderData: Omit<ArrangedReminderWithStatus, 'status'>;
-}
+const ReminderBox = () => {
+	const { data: reminderData } = useReminder();
 
-const ReminderBox = ({ reminderData }: ReminderBoxProps) => {
-	const reminderBox = reminderData.data.map(([month, reminders]) => {
+	const reminderBox = reminderData?.data.map(([month, reminders]) => {
 		return (
 			<MonthBox
 				key={JSON.stringify(reminders[0])}
@@ -28,7 +26,7 @@ const ReminderBox = ({ reminderData }: ReminderBoxProps) => {
 
 	return (
 		<>
-			{reminderData.data.length === 0 ? (
+			{reminderData?.data.length === 0 ? (
 				<NoDataContainer>
 					<Image
 						width={250}

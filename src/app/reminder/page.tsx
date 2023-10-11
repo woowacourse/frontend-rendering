@@ -1,24 +1,30 @@
 import ReminderAPI from '@/apis/reminder';
 import ReminderBox from '@/app/reminder/components/ReminderBox';
-import { convertReminderData } from './hooks/useReminder';
 import { Wrapper } from './ReminderPage.style';
 import ContentHeader from '@/components/@common/ContentHeader';
-import { TodayStatus } from '@/types/reminder';
 
-const getData = async () => {
-	const res = await ReminderAPI.getReminder();
-	return await res.json();
-};
-const ReminderPage = async () => {
-	const data = await getData();
-	const reminderData = convertReminderData(data);
+import {
+	dehydrate,
+	HydrationBoundary,
+	QueryClient,
+} from '@tanstack/react-query';
+import throwOnInvalidStatus from '@/utils/throwOnInvalidStatus';
+import { getReminder } from './hooks/useReminder';
+
+export default async function ReminderPage() {
+	const queryClient = new QueryClient();
+
+	await queryClient.prefetchQuery({
+		queryKey: ['reminder'],
+		queryFn: getReminder,
+	});
 
 	return (
-		<Wrapper $status={reminderData.status}>
-			<ContentHeader title='리마인더' />
-			<ReminderBox reminderData={reminderData} />
-		</Wrapper>
+		<HydrationBoundary state={dehydrate(queryClient)}>
+			<Wrapper>
+				<ContentHeader title='리마인더' />
+				<ReminderBox />
+			</Wrapper>
+		</HydrationBoundary>
 	);
-};
-
-export default ReminderPage;
+}

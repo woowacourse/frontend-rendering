@@ -46,8 +46,6 @@ const ReminderCard = ({ data }: ReminderCardProps) => {
 		lastWaterDate,
 	} = data;
 
-	const { refetch } = useReminder();
-
 	const today = getDateToString();
 	const { isDateInRange } = DateValidate;
 
@@ -59,7 +57,6 @@ const ReminderCard = ({ data }: ReminderCardProps) => {
 		}
 
 		alert(`${convertDateKorYear(changeDate).slice(5)}로 물주기 날짜 변경`);
-		refetch();
 	};
 
 	const waterHandler = (waterDate: string) => {
@@ -69,7 +66,6 @@ const ReminderCard = ({ data }: ReminderCardProps) => {
 		}
 
 		alert(`${convertDateKorYear(waterDate).slice(5)}에 물주기 완료`);
-		refetch();
 	};
 
 	const changeDateValidator = (changeDate: string) => {
