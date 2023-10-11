@@ -8,6 +8,3 @@ function HomePage() {
   return <RoadmapDetail />;
 }
 export default HomePage;
-const Container = styled.div`
-  padding: 0 2rem;
-`;
