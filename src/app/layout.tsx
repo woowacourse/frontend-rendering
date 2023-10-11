@@ -25,6 +25,7 @@ export default function RootLayout({
 					<GlobalStyle />
 					<ClientTemplate>{children}</ClientTemplate>
 				</StyledComponentsRegistry>
+				<div id='modal-root'></div>
 			</body>
 		</html>
 	);

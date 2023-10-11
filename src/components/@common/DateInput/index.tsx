@@ -1,9 +1,11 @@
 'use client';
+import dynamic from 'next/dynamic';
 import Calendar from '../Calendar';
-import Modal from '../Modal';
 import { Wrapper, DateValue } from './DateInput.style';
-import useModal from '@/hooks/useModal';
 import { convertDateKorYear, getStringToDate } from '@/utils/date';
+import useToggle from '@/hooks/useToggle';
+
+const DynamicModal = dynamic(() => import('../Modal'), { ssr: false });
 
 interface DateInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
 	value: string;
@@ -22,13 +24,18 @@ const DateInput = (props: DateInputProps) => {
 		validator,
 		$fontSize = '',
 	} = props;
-	const { isOpen, open, close, modalRef } = useModal();
+
+	const {
+		isOn: isModalOpen,
+		on: modalOpen,
+		off: modalClose,
+	} = useToggle(false);
 
 	const dateCallbackHandler = (value: string) => {
 		if (validator && !validator(value)) return;
 
 		changeCallback?.(value);
-		close();
+		modalClose();
 	};
 
 	return (
@@ -38,18 +45,18 @@ const DateInput = (props: DateInputProps) => {
 				aria-label={props['aria-label']}
 				$placeholder={value === ''}
 				$fontSize={$fontSize}
-				onClick={open}
+				onClick={modalOpen}
 			>
 				{value ? convertDateKorYear(value) : placeholder}
 			</DateValue>
-			<Modal isOpen={isOpen} ref={modalRef} closeModal={close}>
+			<DynamicModal isOpen={isModalOpen} closeModal={modalClose}>
 				<Calendar
 					selectedDate={value === '' ? null : getStringToDate(value)}
 					dateCallback={dateCallbackHandler}
 					min={min}
 					max={max}
 				/>
-			</Modal>
+			</DynamicModal>
 		</Wrapper>
 	);
 };

@@ -100,7 +100,13 @@ const ReminderCard = ({ data }: ReminderCardProps) => {
 				aria-label={`${nickName} 상세로 이동`}
 			>
 				<StatusBar $status={status} />
-				<Image src={image} alt={nickName} width={64} height={64} />
+				<Image
+					src={image}
+					alt={nickName}
+					width={64}
+					height={64}
+					priority={true}
+				/>
 				<ContentBox role='list' tabIndex={0}>
 					<NickName role='listitem' aria-label='반려 식물 닉네임'>
 						{nickName}
