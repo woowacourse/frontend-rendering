@@ -1,95 +1,49 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+import CarouselItem from './_song/_components/carousel-item';
+import CollectionCarousel from './_song/_components/collection-carousel';
+import { GENRES } from './_song/_constants/constants';
+import styles from './page.module.css';
+import SongItemList from './_song/_components/song-item-list';
+import Spacing from './_shared/_components/spacing';
+import { Genre } from './_song/_types/song.type';
 
-export default function Home() {
+type VotingSong = {
+  id: number;
+  title: string;
+  singer: string;
+  videoLength: number;
+  albumCoverUrl: string;
+};
+
+async function getVotingSongs(): Promise<VotingSong[]> {
+  const response = await fetch('https://dev.s-hook.com/api/voting-songs');
+
+  return response.json();
+}
+
+export default async function Home() {
+  const genres = Object.keys(GENRES) as Genre[];
+
+  const votingSongs = await getVotingSongs();
+
+  const isEmptyVotingSongs = votingSongs.length === 0;
+
   return (
     <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+      <h2 className={styles.title}>현재 킬링파트 등록중인 노래</h2>
+      <Spacing direction="vertical" size={16} />
+      <CollectionCarousel>
+        {isEmptyVotingSongs ? (
+          <li className={styles.emptyMessage}>
+            <span>수집중인 노래가 곧 등록될 예정입니다.</span>
+          </li>
+        ) : (
+          votingSongs.map((votingSong) => <CarouselItem key={votingSong.id} votingSong={votingSong} />)
+        )}
+      </CollectionCarousel>
+      <Spacing direction="vertical" size={24} />
+      {genres.map((genre) => (
+        <SongItemList key={genre} genre={genre} />
+      ))}
     </main>
-  )
+  );
 }
