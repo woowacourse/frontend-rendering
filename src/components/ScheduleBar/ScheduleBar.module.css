@@ -1,0 +1,12 @@
+.inner:hover {
+  opacity: 0.8;
+}
+
+.title {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 100px;
+  font-size: 11px;
+  color: var(--color-white);
+}
