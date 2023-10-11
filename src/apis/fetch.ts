@@ -2,18 +2,13 @@ import { Method } from "@/types/api";
 
 export const BATON_BASE_URL = "https://baton-dev.n-e.kr/api/v1";
 
-const parseJson = async (response: Response): Promise<any> => {
-  try {
-    return await response.json();
-  } catch (error) {
-    return;
-  }
-};
-
 const fetchJson = async <T>(url: string, options?: RequestInit): Promise<T> => {
-  return await fetch(`${BATON_BASE_URL}${url}`, options).then(async (response) =>
-    parseJson(response)
-  );
+  const response = await fetch(`${BATON_BASE_URL}${url}`, options);
+
+  return response
+    .json()
+    .then((result) => result)
+    .catch(() => {});
 };
 
 const fetchApi = async <T>(url: string, method: Method, isAuth: boolean, body?: BodyInit) => {
