@@ -16,11 +16,11 @@ const Image = forwardRef<HTMLImageElement, ImageProps>(function Image(
 ) {
   const { size = 77, type = "circle" } = props;
 
-  // const setErrorImage: React.ReactEventHandler<HTMLImageElement> = ({
-  //   currentTarget,
-  // }) => {
-  //   currentTarget.src = "/sadpiumi.png";
-  // };
+  const setErrorImage: React.ReactEventHandler<HTMLImageElement> = ({
+    currentTarget,
+  }) => {
+    currentTarget.src = "/piumi-sad.png";
+  };
 
   return (
     <StyledImage
@@ -28,7 +28,7 @@ const Image = forwardRef<HTMLImageElement, ImageProps>(function Image(
       ref={ref}
       $type={type}
       $size={size}
-      // onError={setErrorImage}
+      onError={setErrorImage}
       {...props}
     />
   );
