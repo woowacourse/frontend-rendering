@@ -1,9 +1,11 @@
 import { getPetFoodsFixture } from '@/mocks/petFoodsFixture';
 import { GetPetFoodsRes } from '@/types/petFoods';
 
+const { BASE_URL } = process.env;
+
 export const getPetFoods = async (): Promise<GetPetFoodsRes> => {
   try {
-    const res = await fetch('http://localhost:3000/api/petFoods', {
+    const res = await fetch(`${BASE_URL}/api/petFoods`, {
       method: 'get',
     });
 
