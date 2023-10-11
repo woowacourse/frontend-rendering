@@ -11,7 +11,7 @@ export const getPetFoods = async (): Promise<GetPetFoodsRes> => {
       return await res.json();
     }
 
-    throw res;
+    return { petFoods: [] };
   } catch (e) {
     throw new Error('사료 목록을 받아오는 데에 실패했습니다.');
   }
