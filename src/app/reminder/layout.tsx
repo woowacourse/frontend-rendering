@@ -8,15 +8,16 @@ import { convertReminderData } from './hooks/useReminder';
 import ReminderSpinner from './loading';
 
 const getData = async () => {
-	return await ReminderAPI.getReminder().then((res) => res.json());
+	const res = await ReminderAPI.getReminder();
+	return await res.json();
 };
 
-export default async function ReminderLayout({
+export default function ReminderLayout({
 	children,
 }: {
 	children: React.ReactNode;
 }) {
-	const data = await getData();
+	const data = use(getData());
 	const reminderData = convertReminderData(data);
 
 	return (
