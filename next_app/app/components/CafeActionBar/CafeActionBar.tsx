@@ -3,8 +3,8 @@ import { PiReadCvLogoFill } from "react-icons/pi";
 import useCafeLikes from "../hooks/useCafeLikes";
 import useUser from "../hooks/useUser";
 import CafeMenuBottomSheet from "./CafeMenuBottomSheet";
-import LikeButton from "./LikeButton";
-import ShareButton from "./ShareButton";
+import LikeButton from "../LikeButton/LikeButton";
+import ShareButton from "../ShareButton/ShareButton";
 import styles from "./styles.module.css";
 import type { Cafe } from "../../types";
 
