@@ -17,3 +17,14 @@
   position: fixed;
   bottom: 0;
 }
+
+.childrenWrapper {
+  width: 1036px;
+  min-height: 100vh;
+  margin: 0px auto;
+  padding-top: 56px;
+  padding-bottom: 56px;
+  /* background-color: #532a2a; */
+  position: relative;
+  z-index: 1;
+}

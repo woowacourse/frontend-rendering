@@ -28,7 +28,7 @@ export default function RootLayout({
             height={36}
           />
         </section>
-        {children}
+        <article className={styles.childrenWrapper}>{children}</article>
         <Navbar />
       </body>
     </html>
