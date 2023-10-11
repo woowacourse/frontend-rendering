@@ -1,9 +1,9 @@
 import { getCelebs } from '@/api/celeb';
 import { getPopularRestaurants } from '@/api/restaurant';
-import CategoryList from '@/components/CategoryList';
-import CelebProfile from '@/components/CelebProfile';
-import RegionIcon from '@/components/RegionIcon';
-import RestaurantCard from '@/components/RestaurantCard';
+import CategoryList from '@/components/server/CategoryList';
+import CelebProfile from '@/components/server/CelebProfile';
+import RegionIcon from '@/components/server/RegionIcon';
+import RestaurantCard from '@/components/server/RestaurantCard';
 import { RECOMMENDED_REGION } from '@/constants/recommendedRegion';
 import Link from 'next/link';
 import { use } from 'react';

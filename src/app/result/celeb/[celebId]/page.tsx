@@ -1,6 +1,6 @@
 import { RestaurantData } from '@/@types/api.types';
 import { getRestaurantsByCeleb } from '@/api/restaurant';
-import RestaurantCard from '@/components/RestaurantCard';
+import RestaurantCard from '@/components/server/RestaurantCard';
 import { CELEB } from '@/constants/celeb';
 import Link from 'next/link';
 import { use } from 'react';

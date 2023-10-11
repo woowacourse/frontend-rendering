@@ -1,6 +1,6 @@
 import { RestaurantData } from '@/@types/api.types';
 import { getRestaurantsByAddress } from '@/api/restaurant';
-import RestaurantCard from '@/components/RestaurantCard';
+import RestaurantCard from '@/components/server/RestaurantCard';
 import { RECOMMENDED_REGION } from '@/constants/recommendedRegion';
 import Link from 'next/link';
 import { use } from 'react';
