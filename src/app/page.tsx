@@ -4,12 +4,13 @@ import TripItemList from '@/components/TripItemList/TripItemList';
 import TripItemListEmpty from '@/components/TripItemList/TripItemListEmpty';
 import { getTrips } from '@/api/getTrips';
 import { TripsData } from '@/types/trip';
+import styles from './styles.module.css';
 
 export default async function Home() {
   const trips: TripsData[] = await getTrips();
 
   return (
-    <>
+    <main className={styles.main}>
       <TripsHeader />
       <Suspense fallback={<div>loading...</div>}>
         {trips.length > 0 ? (
@@ -18,6 +19,6 @@ export default async function Home() {
           <TripItemListEmpty />
         )}
       </Suspense>
-    </>
+    </main>
   );
 }

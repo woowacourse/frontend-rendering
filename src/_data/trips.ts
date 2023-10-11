@@ -108,7 +108,8 @@ export const tripsData: TripsData[] = [
   {
     id: 6,
     title: '리옹 여행',
-    imageUrl: null,
+    imageUrl:
+      'https://www.discoverlosangeles.com/sites/default/files/images/2023-02/IMG_0410-Edit-3.jpg?width=1600&height=1200&fit=crop&quality=78&auto=webp',
     cities: [
       {
         id: 53,

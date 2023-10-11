@@ -8,7 +8,13 @@ const nextConfig = {
     return config;
   },
   images: {
-    domains: ['res.klook.com'],
+    domains: [
+      'res.klook.com',
+      'images.squarespace-cdn.com',
+      'a.cdn-hotels.com',
+      'www.jamonfive.com',
+      'www.discoverlosangeles.com',
+    ],
   },
 };
 
