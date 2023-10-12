@@ -35,7 +35,7 @@ export default function LogoButton({ content, ...rest }: LogoButtonProps) {
     return (
       <S.Button content={content} aria-label={ariaLabelText} {...rest}>
         <Image width={35} height={35} src={logo} alt="로고 아이콘" />
-        <Image src={votogether} alt="보투게더 아이콘" />
+        <Image width={168} height={21} src={votogether} alt="보투게더 아이콘" />
       </S.Button>
     );
   }
