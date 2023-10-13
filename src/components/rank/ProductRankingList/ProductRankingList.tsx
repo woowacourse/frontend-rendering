@@ -1,9 +1,8 @@
-import { ProductRanking } from '@/types/rank';
 import ProductRankingItem from '../ProductRankingItem';
-import useProductRanking from '@/hooks/useProductRanking';
+import { getProductRanking } from '@/apis/rank';
 
 const ProductRankingList = async () => {
-  const productResponse = await useProductRanking();
+  const productResponse = await getProductRanking();
 
   return (
     <ul>

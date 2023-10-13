@@ -2,14 +2,14 @@ import styles from './categoryList.module.css';
 import CategoryItem from '../CategoryItem';
 
 import { CategoryVariant } from '@/constants';
-import useCategory from '@/hooks/useCategory';
+import { getCategory } from '@/apis/category';
 
 interface CategoryListProps {
   menuVariant: CategoryVariant;
 }
 
 const CategoryList = async ({ menuVariant }: CategoryListProps) => {
-  const categoriesResponse = await useCategory(menuVariant);
+  const categoriesResponse = await getCategory(menuVariant);
 
   return (
     <ul className={styles.container}>

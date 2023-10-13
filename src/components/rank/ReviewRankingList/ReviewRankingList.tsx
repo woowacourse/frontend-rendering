@@ -1,9 +1,9 @@
 import styles from './reviewRankingList.module.css';
 import ReviewRankingItem from '../ReviewRankingItem/';
-import useReviewRanking from '@/hooks/useReviewRanking';
+import { getReviewRanking } from '@/apis/rank';
 
 const ReviewRankingList = async () => {
-  const reviewResponse = await useReviewRanking();
+  const reviewResponse = await getReviewRanking();
 
   return (
     <ul className={styles.container}>
