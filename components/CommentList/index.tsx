@@ -62,8 +62,7 @@ export default function CommentList({
                 '더보기 버튼을 눌러 댓글이 추가되었습니다';
             }}
             theme="fill"
-            aria-label="댓글 더보기"
-          >
+            aria-label="댓글 더보기">
             더보기
           </SquareButton>
         </S.MoreButtonWrapper>

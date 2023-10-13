@@ -9,7 +9,7 @@ export default async function CategorySection() {
   const categoryListFallback = categoryList ?? [];
 
   const allCategory = categoryListFallback.filter(
-    (category) => category.isFavorite === false
+    category => category.isFavorite === false
   );
 
   return (

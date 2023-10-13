@@ -1,3 +1,5 @@
+'use client';
+
 import { ForwardedRef, forwardRef, memo } from 'react';
 
 import WrittenVoteOptionList from '@components/optionList/WrittenVoteOptionList';
@@ -55,10 +57,9 @@ const Post = forwardRef(function Post(
       <S.Category
         tabIndex={isPreviewTabIndex}
         aria-label={`카테고리 ${category
-          .map((category) => category.name)
-          .join('|')}`}
-      >
-        {category.map((category) => category.name).join(' | ')}
+          .map(category => category.name)
+          .join('|')}`}>
+        {category.map(category => category.name).join(' | ')}
       </S.Category>
       <S.ActivateState
         tabIndex={isPreviewTabIndex}
@@ -69,30 +70,26 @@ const Post = forwardRef(function Post(
       <S.Title
         tabIndex={isPreviewTabIndex}
         aria-label={`게시글 제목: ${title}`}
-        $isPreview={isPreview}
-      >
+        $isPreview={isPreview}>
         {title}
       </S.Title>
       <S.Wrapper>
         <span
           aria-label={`작성자 ${writer.nickname}`}
-          tabIndex={isPreviewTabIndex}
-        >
+          tabIndex={isPreviewTabIndex}>
           {writer.nickname}
         </span>
         <S.Wrapper>
           <span
             aria-label={`작성일시 ${convertTimeToWord(createTime)}`}
-            tabIndex={isPreviewTabIndex}
-          >
+            tabIndex={isPreviewTabIndex}>
             {`${convertTimeToWord(createTime)}  |`}
           </span>
           <span
             aria-label={`투표 마감일시 ${
               isActive ? convertTimeToWord(deadline) : '마감 완료'
             }`}
-            tabIndex={isPreviewTabIndex}
-          >
+            tabIndex={isPreviewTabIndex}>
             {isActive ? convertTimeToWord(deadline) : '마감 완료'}
           </span>
         </S.Wrapper>
@@ -100,8 +97,7 @@ const Post = forwardRef(function Post(
       <S.Content
         tabIndex={isPreviewTabIndex}
         aria-label={`내용: ${content}`}
-        $isPreview={isPreview}
-      >
+        $isPreview={isPreview}>
         {convertTextToElement(content)}
       </S.Content>
       {!isPreview && imageUrl && (

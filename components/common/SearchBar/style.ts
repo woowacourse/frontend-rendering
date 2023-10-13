@@ -1,3 +1,5 @@
+'use client';
+
 import { styled } from 'styled-components';
 
 import { Size } from '@type/style';
@@ -18,7 +20,7 @@ export const Form = styled.form<SearchBarProps>`
   justify-content: space-between;
   gap: 5px;
 
-  width: ${(props) => (props.size === 'free' ? '100%' : formSize[props.size])};
+  width: ${props => (props.size === 'free' ? '100%' : formSize[props.size])};
   height: 36px;
   padding: 5px 10px;
   border-radius: 5px;

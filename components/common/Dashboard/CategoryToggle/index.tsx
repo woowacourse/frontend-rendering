@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState } from 'react';
 
 import { useToast } from '@hooks';
@@ -28,7 +30,7 @@ export default function CategoryToggle({
   const { isToastOpen, openToast, toastMessage } = useToast();
 
   const handleToggleClick = () => {
-    setIsToggleOpen((prevIsToggleOpen) => !prevIsToggleOpen);
+    setIsToggleOpen(prevIsToggleOpen => !prevIsToggleOpen);
   };
 
   return (
@@ -36,8 +38,7 @@ export default function CategoryToggle({
       <S.TitleContainer
         onClick={handleToggleClick}
         aria-label={isToggleOpen ? `${title} 닫기` : `${title} 열기`}
-        type="button"
-      >
+        type="button">
         <S.TriangleImage src={isToggleOpen ? chevronUp : chevronDown} alt="" />
         <span>{title}</span>
       </S.TitleContainer>
@@ -52,8 +53,7 @@ export default function CategoryToggle({
                 title="즐겨찾기 버튼"
                 onClick={() =>
                   openToast('즐겨찾기는 로그인 후 이용할 수 있습니다.')
-                }
-              >
+                }>
                 <Image src={isFavorite ? starFilled : startLined} alt="" />
               </S.Circle>
               <S.CategoryNameLink>{name}</S.CategoryNameLink>

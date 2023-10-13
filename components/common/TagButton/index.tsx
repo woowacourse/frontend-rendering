@@ -1,3 +1,5 @@
+'use client';
+
 import { ButtonHTMLAttributes } from 'react';
 
 import { Size } from '@type/style';
@@ -9,8 +11,15 @@ interface TagButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 export default function TagButton({ size, ...rest }: TagButtonProps) {
+  const copyUrlClick = () => {
+    const currentURL = window.location.href;
+    navigator.clipboard.writeText(currentURL).catch(error => {
+      console.error('URL 복사 실패:', error);
+    });
+  };
+
   return (
-    <S.Button $size={size} {...rest}>
+    <S.Button onClick={copyUrlClick} $size={size} {...rest}>
       {rest.children}
     </S.Button>
   );

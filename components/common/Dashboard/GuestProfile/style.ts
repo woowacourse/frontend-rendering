@@ -1,6 +1,8 @@
+'use client';
+
 import { styled } from 'styled-components';
 
-export const ProfileContainer = styled.section`
+export const Container = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: space-around;

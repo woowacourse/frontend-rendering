@@ -11,7 +11,11 @@ interface SquareButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
  * 부모에서 크기를 조절, 내용(children) 전달
  * props로 테마를 받음
  */
-export default function SquareButton({ theme, children, ...rest }: SquareButtonProps) {
+export default function SquareButton({
+  theme,
+  children,
+  ...rest
+}: SquareButtonProps) {
   return (
     <S.Button $theme={theme} {...rest}>
       {children}

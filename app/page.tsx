@@ -1,5 +1,3 @@
-'use client';
-
 import Layout from '@components/common/Layout';
 import PostDetail from '@components/post/PostDetail';
 
