@@ -2,6 +2,7 @@
 
 import Button from "@/components/common/Button/Button";
 import * as S from "./not-foundStyled";
+import { useRouter } from "next/navigation";
 
 export default function GlobalError({
   error,
@@ -10,6 +11,8 @@ export default function GlobalError({
   error: Error & { digest?: string };
   reset: () => void;
 }) {
+  const { replace } = useRouter();
+
   return (
     <S.NotFoundPageContainer>
       <S.Message>
@@ -22,6 +25,14 @@ export default function GlobalError({
         }}
       >
         다시 시도
+      </Button>
+      <Button
+        colorTheme="WHITE"
+        onClick={() => {
+          replace("/");
+        }}
+      >
+        홈으로
       </Button>
     </S.NotFoundPageContainer>
   );
