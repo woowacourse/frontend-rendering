@@ -1,4 +1,5 @@
 // RunnerPostItem.css.ts
+import { vars } from '@/styles/theme.css';
 import { style } from '@vanilla-extract/css';
 
 export const runnerPostItemContainer = style({
@@ -8,14 +9,14 @@ export const runnerPostItemContainer = style({
   width: '100%',
   height: 'max-content',
   padding: '35px 40px',
-  border: '0.5px solid var(--gray-500)',
+  border: `0.5px solid ${vars.color.gray500}`,
   borderRadius: '12px',
   boxShadow: '1px 2px 3px rgba(0, 0, 0, 0.2)',
   cursor: 'pointer',
   ':hover': {
     transition: 'all 0.3s ease',
     transform: 'scale(1.015)',
-    outline: '1.5px solid var(--baton-red)',
+    outline: `1.5px solid ${vars.color.batonRed}`,
   },
   '@media': {
     '(max-width: 768px)': {
@@ -43,7 +44,7 @@ export const deadLineContainer = style({
 
 export const deadLine = style({
   marginBottom: '60px',
-  color: 'var(--gray-600)',
+  color: `${vars.color.gray600}`,
   '@media': {
     '(max-width: 768px)': {
       marginBottom: '40px',
@@ -64,7 +65,7 @@ export const tagContainer = style({
 export const tag = style({
   marginRight: '10px',
   fontSize: '14px',
-  color: 'var(--gray-600)',
+  color: `${vars.color.gray600}`,
 });
 
 export const leftSideContainer = style({});

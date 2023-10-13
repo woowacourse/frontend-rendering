@@ -1,3 +1,4 @@
+import { vars } from '@/styles/theme.css';
 import { style } from '@vanilla-extract/css';
 
 export const imageWrapper = style({
@@ -7,7 +8,7 @@ export const imageWrapper = style({
 });
 
 export const image = style({
-  border: '1px solid var(--gray-800)',
+  border: `1px solid ${vars.color.gray800}`,
   borderRadius: '50%',
   objectFit: 'cover',
 });
