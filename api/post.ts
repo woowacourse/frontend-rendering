@@ -68,7 +68,9 @@ export interface OptionData {
 }
 
 export const getPostForGuest = async (postId: number): Promise<PostInfo> => {
-  const post = await getSSRFetch<PostDetailResponse>(`${BASE_URL}/api/post`);
+  const post = await getSSRFetch<PostDetailResponse>(
+    `${BASE_URL}/posts/${postId}/guest`
+  );
 
   return transformPostResponse(post);
 };

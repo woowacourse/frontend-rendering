@@ -31,7 +31,7 @@ export const transformCommentListResponse = (
 
 export const getCommentList = async (postId: number): Promise<Comment[]> => {
   const commentList = await getSSRFetch<CommentResponse[]>(
-    `${BASE_URL}/api/comment`
+    `${BASE_URL}/posts/${postId}/comments`
   );
 
   return transformCommentListResponse(commentList);

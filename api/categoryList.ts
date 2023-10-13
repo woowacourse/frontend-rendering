@@ -20,7 +20,7 @@ const BASE_URL = process.env.NEXT_PUBLIC_ENV_BASE_URL ?? '';
 
 export const getGuestCategoryList = async () => {
   const categoryList = await getSSRFetch<CategoryResponse[]>(
-    `${BASE_URL}/api/category`
+    `${BASE_URL}/categories/guest`
   );
 
   return transformCategoryListResponse(categoryList);
