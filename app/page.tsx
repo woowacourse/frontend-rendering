@@ -5,7 +5,7 @@ import Navbar from "./components/navbar/Navbar";
 import TitleAndCategory from "./components/titleAndCategory/TitleAndCategory";
 
 const Page = async () => {
-  const cafes = (await fetchCafes(1)) as Cafe[];
+  const cafes = await fetchCafes(1);
   return (
     <>
       <Navbar />
