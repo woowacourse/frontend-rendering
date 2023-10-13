@@ -3,5 +3,5 @@ import { fetchApi } from './fetch';
 
 export const getRunnerPost = async () => {
   const url = `/posts/runner?limit=20`;
-  return await fetchApi<GetRunnerPostResponse>(url);
+  return await fetchApi<GetRunnerPostResponse>(url, { cache: 'no-store' });
 };
