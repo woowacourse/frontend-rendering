@@ -8,7 +8,7 @@ import {
   ReviewRankingList,
 } from '@/components/rank';
 
-const Home = async () => {
+const Home = () => {
   return (
     <>
       <section>
