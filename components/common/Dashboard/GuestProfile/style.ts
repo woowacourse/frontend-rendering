@@ -1,9 +1,19 @@
 import { styled } from 'styled-components';
 
-import { ProfileContainer } from '../profileStyle';
-
-export const Container = styled(ProfileContainer)`
+export const ProfileContainer = styled.section`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   align-items: center;
+
+  width: 100%;
+  height: 130px;
+  padding: 16px 12px;
+  border-radius: 4px;
+
+  font: var(--text-body);
+
+  background-color: var(--gray);
 `;
 
 export const Image = styled.img`
