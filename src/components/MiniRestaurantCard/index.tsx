@@ -13,9 +13,10 @@ interface MiniRestaurantCardProps {
   showWaterMark?: boolean;
 }
 
-function MiniRestaurantCard({ restaurant, celebs }: MiniRestaurantCardProps) {
-  const { id, images, name, roadAddress, category } = restaurant;
-
+function MiniRestaurantCard({
+  restaurant: { id, images, name, roadAddress, category },
+  celebs,
+}: MiniRestaurantCardProps) {
   const rating = 5;
 
   return (

@@ -1,5 +1,3 @@
-import { NextResponse } from "next/server";
-
 const popularRestaurants = [
   {
     lat: 37.5332565,

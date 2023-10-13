@@ -1,5 +1,3 @@
-import { NextResponse } from "next/server";
-
 const celebs = [
   {
     id: 7,
