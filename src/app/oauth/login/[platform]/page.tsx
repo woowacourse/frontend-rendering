@@ -1,8 +1,9 @@
 'use client';
+
 import Spinner from 'components/@common/Spinner/Spinner';
 import { useEffect } from 'react';
-import { styled } from 'styled-components';
 import { useLoginOauth } from './useLoginOauth';
+import { S } from './styles';
 
 const OauthPage = () => {
   const { loginOauth } = useLoginOauth();
@@ -18,16 +19,3 @@ const OauthPage = () => {
 };
 
 export default OauthPage;
-
-const S = {
-  SpinnerContainer: styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 1.5rem;
-    width: 100vw;
-    height: 100vh;
-    font-size: 1.5rem;
-  `,
-};
