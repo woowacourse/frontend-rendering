@@ -1,3 +1,4 @@
+'use client';
 // import { HomeIcon } from 'assets/icons';
 import {
   CSSProperties,
@@ -39,7 +40,7 @@ const Button = (
     icon,
     ...rest
   }: Props,
-  ref: ForwardedRef<HTMLButtonElement>,
+  ref: ForwardedRef<HTMLButtonElement>
 ) => {
   return (
     <S.Button ref={ref} $variant={variant} $size={size} $block={block} $align={align} {...rest}>
