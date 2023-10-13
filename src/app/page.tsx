@@ -2,9 +2,11 @@ import Image from 'next/image';
 import styles from './page.module.css';
 import { IMAGE_URL } from '@/constants';
 import { CategoryList } from '@/components/common';
-import RecipeRankingList from '@/components/rank/RecipeRankingList';
-import ProductRankingList from '@/components/rank/ProductRankingList';
-import ReviewRankingList from '@/components/rank/ReviewRankingList';
+import {
+  RecipeRankingList,
+  ProductRankingList,
+  ReviewRankingList,
+} from '@/components/rank';
 
 const Home = async () => {
   return (
