@@ -11,7 +11,7 @@ import Image from 'next/image';
 function Error({ reset }: { reset: () => void }) {
   return (
     <NotFoundContainer $justifyContent="center" $alignItems="center" width="100vw" height="100vh">
-      <Image src="/NotFoundIcon.svg" alt="에러 발생" layout="intrinsic" width={200} height={190} />
+      <Image src="/NotFoundIcon.svg" alt="에러 발생" width={200} height={190} />
       <Space size={6} />
       <Flex $flexDirection="column" $justifyContent="center" $alignItems="center">
         <Text color="black" $fontSize="extraLarge" $fontWeight="bold">

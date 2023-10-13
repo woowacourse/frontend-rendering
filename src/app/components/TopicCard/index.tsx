@@ -37,14 +37,14 @@ function TopicCard({ image, creator, name, updatedAt, pinCount, bookmarkCount }:
 
           <Flex>
             <Flex $alignItems="center" width="64px">
-              <Image src="/smallTopicPin.svg" alt="핀 이미지" layout="intrinsic" width={11} height={16} />
+              <Image src="/smallTopicPin.svg" alt="핀 이미지" width={11} height={16} />
               <Space size={0} />
               <Text color="black" $fontSize="extraSmall" $fontWeight="normal" aria-label={`핀 갯수 ${pinCount}개`}>
                 {pinCount > 999 ? '+999' : pinCount}개
               </Text>
             </Flex>
             <Flex $alignItems="center" width="64px">
-              <Image src="/smallTopicStar.svg" alt="즐겨찾기 이미지" layout="intrinsic" width={18} height={16} />
+              <Image src="/smallTopicStar.svg" alt="즐겨찾기 이미지" width={18} height={16} />
               <Space size={0} />
               <Text
                 color="black"
