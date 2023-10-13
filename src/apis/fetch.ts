@@ -1,6 +1,5 @@
+import { BATON_BASE_URL } from "@/constants";
 import { Method } from "@/types/api";
-
-export const BATON_BASE_URL = "https://baton-dev.n-e.kr/api/v1";
 
 const fetchJson = async <T>(url: string, options?: RequestInit): Promise<T> => {
   const response = await fetch(`${BATON_BASE_URL}${url}`, options);

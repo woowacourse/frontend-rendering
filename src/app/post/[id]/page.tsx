@@ -21,8 +21,6 @@ const RunnerPostPage = async ({ params }: Props) => {
 
   const runnerPostDetail = await getRunnerPostDetail(runnerPostId);
 
-  console.log(runnerPostDetail);
-
   return (
     <Layout>
       <S.RunnerPostContainer>
