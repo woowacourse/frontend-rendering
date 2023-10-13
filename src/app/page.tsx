@@ -14,6 +14,7 @@ import { BlurBackgroundIcon, DonggleIcon } from 'assets/icons';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import { useAuthToken } from 'hooks/useAuthToken';
+import { usePageNavigate } from 'hooks/usePageNavigate';
 
 const DynamicLoginModal = dynamic(() => import('components/Modal/LoginModal/LoginModal'), {
   ssr: false,
@@ -22,8 +23,9 @@ const DynamicLoginModal = dynamic(() => import('components/Modal/LoginModal/Logi
 export default function Page() {
   const { authToken } = useAuthToken();
   const { isOpen, openModal, closeModal } = useModal();
+  const { goSpacePage } = usePageNavigate();
 
-  // if (authToken) return <Navigate to={`${PATH.space}`} />;
+  if (authToken) goSpacePage();
 
   return (
     <Container>
