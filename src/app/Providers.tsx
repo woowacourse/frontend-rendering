@@ -1,5 +1,3 @@
-'use client';
-
 import StyledComponentsRegistry from './registry';
 import { ThemeProvider } from 'styled-components';
 import theme from '../styles/theme';
