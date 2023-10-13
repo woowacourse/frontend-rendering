@@ -1,3 +1,4 @@
+import { vars } from '@/styles/theme.css';
 import { style } from '@vanilla-extract/css';
 
 export const headerWrapper = style({
@@ -6,7 +7,7 @@ export const headerWrapper = style({
 
   width: '100%',
   padding: '0 30px',
-  borderBottom: '0.3px solid var(--label-color)',
+  borderBottom: `0.3px solid ${vars.color.gray600}`,
 });
 
 export const headerContainer = style({
