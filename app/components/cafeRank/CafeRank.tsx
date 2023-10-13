@@ -1,5 +1,3 @@
-"use client";
-
 import RankCard from "../rankCard/RankCard";
 
 type CafeRankProps = {

@@ -1,5 +1,3 @@
-"use client";
-
 import styles from "./styles.module.css";
 import { PiHeartFill } from "react-icons/pi";
 import Image from "next/image";
