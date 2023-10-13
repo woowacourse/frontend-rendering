@@ -12,6 +12,11 @@ const nextConfig = {
       },
       {
         protocol: 'https',
+        hostname: 'baton-review.com',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
         hostname: 'avatars.githubusercontent.com',
         pathname: '/**',
       },
