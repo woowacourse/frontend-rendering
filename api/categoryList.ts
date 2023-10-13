@@ -9,7 +9,7 @@ export interface CategoryResponse {
 export const transformCategoryListResponse = (
   categoryList: CategoryResponse[]
 ) => {
-  return categoryList.map((category) => ({
+  return categoryList.map(category => ({
     id: category.id,
     name: category.name,
     isFavorite: category.isFavorite,
@@ -20,7 +20,7 @@ const BASE_URL = process.env.NEXT_PUBLIC_ENV_BASE_URL ?? '';
 
 export const getGuestCategoryList = async () => {
   const categoryList = await getSSRFetch<CategoryResponse[]>(
-    `${BASE_URL}/api/category`
+    `${BASE_URL}/categories/guest`
   );
 
   return transformCategoryListResponse(categoryList);

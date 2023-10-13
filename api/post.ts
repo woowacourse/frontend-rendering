@@ -32,7 +32,7 @@ export interface PostDetailResponse {
 
 export const transformPostResponse = (post: PostDetailResponse): PostInfo => {
   return {
-    category: post.categories.map((category) => ({
+    category: post.categories.map(category => ({
       id: category.id,
       name: category.name,
     })),
@@ -47,7 +47,7 @@ export const transformPostResponse = (post: PostDetailResponse): PostInfo => {
     voteInfo: {
       allPeopleCount: post.voteInfo.totalVoteCount,
       selectedOptionId: post.voteInfo.selectedOptionId,
-      options: post.voteInfo.options.map((option) => ({
+      options: post.voteInfo.options.map(option => ({
         id: option.optionId,
         text: option.content,
         peopleCount: option.voteCount,
@@ -68,7 +68,9 @@ export interface OptionData {
 }
 
 export const getPostForGuest = async (postId: number): Promise<PostInfo> => {
-  const post = await getSSRFetch<PostDetailResponse>(`${BASE_URL}/api/post`);
+  const post = await getSSRFetch<PostDetailResponse>(
+    `${BASE_URL}/posts/${postId}/guest`
+  );
 
   return transformPostResponse(post);
 };

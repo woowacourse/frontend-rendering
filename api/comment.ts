@@ -20,7 +20,7 @@ export type CommentRequest = Pick<CommentResponse, 'content'>;
 export const transformCommentListResponse = (
   commentList: CommentResponse[]
 ): Comment[] => {
-  return commentList.map((comment) => ({
+  return commentList.map(comment => ({
     id: comment.id,
     content: comment.content,
     createdAt: comment.createdAt,
@@ -31,7 +31,7 @@ export const transformCommentListResponse = (
 
 export const getCommentList = async (postId: number): Promise<Comment[]> => {
   const commentList = await getSSRFetch<CommentResponse[]>(
-    `${BASE_URL}/api/comment`
+    `${BASE_URL}/posts/${postId}/comments`
   );
 
   return transformCommentListResponse(commentList);
