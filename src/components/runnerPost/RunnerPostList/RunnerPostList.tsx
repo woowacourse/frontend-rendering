@@ -10,7 +10,7 @@ interface Props {
 const RunnerPostList = ({ posts }: Props) => {
   return (
     <div className={styles.runnerPostWrapper}>
-      {posts?.map((runnerPostData) => (
+      {posts.map((runnerPostData) => (
         <RunnerPostItem key={runnerPostData.runnerPostId} runnerPostData={runnerPostData} />
       ))}
     </div>
