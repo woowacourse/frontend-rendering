@@ -19,23 +19,13 @@ const RecipeRankingItem = ({ rank, recipe }: RecipeRankingItemProps) => {
 
   return (
     <div className={styles.container}>
-      {image ? (
-        <Image
-          src={image}
-          className={styles.recipeImage}
-          width={60}
-          height={60}
-          alt={`${rank}위 이미지`}
-        />
-      ) : (
-        <Image
-          src='/plate.svg'
-          className={styles.recipeImage}
-          width={60}
-          height={60}
-          alt={`${rank}위 이미지`}
-        />
-      )}
+      <Image
+        src={image ?? '/plate.svg'}
+        className={styles.recipeImage}
+        width={60}
+        height={60}
+        alt={`${rank}위 이미지`}
+      />
       <div className={styles.recipeInfo}>
         <p className={styles.recipeName}>{title}</p>
         <div className={styles.favorite}>

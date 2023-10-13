@@ -19,7 +19,7 @@ const SvgIcon = ({
 }: SvgIconProps) => {
   return (
     <svg width={width} height={height} fill={color} {...props}>
-      <use xlinkHref={`/sprite.svg#${variant}`} />
+      <use href={`/sprite.svg#${variant}`} />
     </svg>
   );
 };

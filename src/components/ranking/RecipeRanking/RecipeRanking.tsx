@@ -7,7 +7,7 @@ interface RecipeRankingProps {
   recipes: RecipeRanking[];
 }
 
-const RecipeRanking = async ({ recipes }: RecipeRankingProps) => {
+const RecipeRanking = ({ recipes }: RecipeRankingProps) => {
   const extendedRecipes = [...recipes, recipes[0]];
 
   return (
