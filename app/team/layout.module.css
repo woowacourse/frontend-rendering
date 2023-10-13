@@ -1,0 +1,19 @@
+.pageContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+
+  height: calc(100vh - 64px);
+}
+
+.pageWrapper {
+  flex: 1;
+}
