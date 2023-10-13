@@ -2,9 +2,11 @@ import CategoryToggle from '../CategoryToggle';
 
 import * as S from './style';
 import { getGuestCategoryList } from '@api/categoryList';
+import { MOCK_GUEST_CATEGORY_LIST } from '@mocks/categoryList';
 
 export default async function CategorySection() {
   const categoryList = await getGuestCategoryList();
+  // const categoryList = MOCK_GUEST_CATEGORY_LIST;
 
   const categoryListFallback = categoryList ?? [];
 
