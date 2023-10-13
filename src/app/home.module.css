@@ -1,0 +1,31 @@
+.bannerImage {
+  width: 100%;
+  height: auto;
+}
+
+.section {
+  padding: 0 20px;
+  margin-top: 40px;
+}
+
+.sectionTitle {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.categoryWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  @media screen and (min-width: 500px) {
+    align-items: center;
+  }
+}
+
+.spacing {
+  height: 40px;
+}

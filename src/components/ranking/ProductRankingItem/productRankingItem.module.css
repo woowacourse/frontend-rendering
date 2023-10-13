@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  height: 60px;
+  padding: 0 15px;
+  border-radius: 8px;
+  background-color: var(--color-gray1);
+}
+
+.rankText {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.productImage {
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.productName {
+  font-size: 18px;
+  font-weight: 600;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  overflow: hidden;
+}
