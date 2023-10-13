@@ -5,10 +5,13 @@ export const BATON_BASE_URL = "https://baton-dev.n-e.kr/api/v1";
 const fetchJson = async <T>(url: string, options?: RequestInit): Promise<T> => {
   const response = await fetch(`${BATON_BASE_URL}${url}`, options);
 
-  return response
-    .json()
-    .then((result) => result)
-    .catch(() => {});
+  try {
+    if (!response.ok) throw new Error("잘못된 요청입니다.");
+
+    return response.json();
+  } catch (error) {
+    throw new Error(error instanceof Error ? error.message : "알 수 없는 에러");
+  }
 };
 
 const fetchApi = <T>(url: string, method: Method, isAuth: boolean, body?: BodyInit) => {
