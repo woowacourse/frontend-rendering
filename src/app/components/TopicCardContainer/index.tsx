@@ -1,20 +1,20 @@
 import { Fragment } from 'react';
-import { styled } from 'styled-components';
-
+import { getTopics } from '@/apis/topics';
 import Box from '../common/Box';
 import Flex from '../common/Flex';
 import Space from '../common/Space';
 import Text from '../common/Text';
 import TopicCard from '../TopicCard';
-import { Topic } from '@/types/Topic';
+import * as S from './TopicCardContainer.style';
 
 interface TopicCardContainerProps {
-  topics: Topic[];
   containerTitle: string;
   containerDescription: string;
 }
 
-function TopicCardContainer({ topics, containerTitle, containerDescription }: TopicCardContainerProps) {
+async function TopicCardContainer({ containerTitle, containerDescription }: TopicCardContainerProps) {
+  const topics = await getTopics();
+
   return (
     <section>
       <Flex $justifyContent="space-between" $alignItems="flex-end">
@@ -28,14 +28,14 @@ function TopicCardContainer({ topics, containerTitle, containerDescription }: To
           </Text>
         </Box>
 
-        <PointerText color="primary" $fontSize="small" $fontWeight="normal" tabIndex={0}>
+        <S.PointerText color="primary" $fontSize="small" $fontWeight="normal" tabIndex={0}>
           전체 보기
-        </PointerText>
+        </S.PointerText>
       </Flex>
 
       <Space size={4} />
 
-      <TopicsWrapper>
+      <S.TopicsWrapper>
         {topics &&
           topics.map(
             (topic, index) =>
@@ -52,20 +52,9 @@ function TopicCardContainer({ topics, containerTitle, containerDescription }: To
                 </Fragment>
               )
           )}
-      </TopicsWrapper>
+      </S.TopicsWrapper>
     </section>
   );
 }
-
-const PointerText = styled(Text)`
-  cursor: pointer;
-`;
-
-const TopicsWrapper = styled.ul`
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
-`;
 
 export default TopicCardContainer;

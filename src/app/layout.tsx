@@ -1,5 +1,3 @@
-'use client';
-
 import Providers from './Providers';
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
