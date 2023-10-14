@@ -7,7 +7,7 @@ import {
   stepGuideImage,
   titleStyle,
 } from './studyStepGuide.css';
-import Image from '../Image/Image';
+import WebpImage from '../WebpImage/WebpImage';
 
 const GUIDE = [
   {
@@ -41,7 +41,17 @@ const StudyStepGuide = () => {
       {GUIDE.map(({ originUrl, webpUrl, title, description }, index) => (
         <li className={`${stepGuide} ${index % 2 && evenStepGuid}`} key={title}>
           <div className={stepGuideImage}>
-            <Image originUrl={originUrl} webpUrl={webpUrl} alt={title} />
+            <WebpImage
+              originUrl={originUrl}
+              webpUrl={webpUrl}
+              alt={title}
+              width={300}
+              height={300}
+              imageStyle={{
+                width: '100%',
+                height: 'auto',
+              }}
+            />
           </div>
           <div className={stepGuideDescription}>
             <h2 className={titleStyle}>{title}</h2>

@@ -8,7 +8,7 @@ import {
 } from './landingMainSection.css';
 import ArrowIcon from '@/components/icons/ArrowIcon';
 import LandingButton from '../LandingButton/LandingButton';
-import Image from '../Image/Image';
+import WebpImage from '../WebpImage/WebpImage';
 
 const LandingMainSection = () => {
   return (
@@ -25,10 +25,16 @@ const LandingMainSection = () => {
           <LandingButton />
         </div>
         <div className={heroImageContainer}>
-          <Image
+          <WebpImage
             originUrl="/assets/heroImage.jpg"
             webpUrl="/assets/heroImage.webp"
             alt="목표, 학습, 회고 스탭"
+            width={1000}
+            height={300}
+            imageStyle={{
+              minWidth: '50%',
+              height: 'auto',
+            }}
           />
         </div>
       </div>
