@@ -1,7 +1,6 @@
 import { css } from "@emotion/react";
 
 export const GlobalStyle = css({
-  // Places API - Autocomplete Widget 스타일링
   ".pac-container": {
     borderTop: "none",
     borderRadius: "8px",

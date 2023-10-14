@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 
-import styles from "./style.module.scss"; // 추가된 부분
+import styles from "./style.module.scss";
 
 import DefaultThumbnail from "../../assets/png/trip_default-thumbnail.png";
 import EmptyLike from "../../assets/svg/empty-like.svg";

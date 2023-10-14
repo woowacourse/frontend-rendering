@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-// import communityTripsData from "../../../mocks/communityTripsData";
+
 import communityTripsData from "../../../mocks/communityTripsData";
 
 export async function GET() {

@@ -1,5 +1,5 @@
 import CommunityHeaderImage from "../../assets/svg/TripsHeader.svg";
-import styles from "./style.module.scss"; // 추가된 부분
+import styles from "./style.module.scss";
 
 const CommunityHeader = () => {
   return (
