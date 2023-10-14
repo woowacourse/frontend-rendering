@@ -1,0 +1,29 @@
+.container {
+  margin: auto 0;
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+
+  & > div:first-child {
+    font-size: 32px;
+    font-weight: 700;
+  }
+  & > span {
+    font-size: 20px;
+  }
+  & > *:last-child {
+    font-size: 20px;
+    margin-top: 2.4rem;
+    padding: 1.2rem 4.8rem;
+    border-radius: 12px;
+    background: #f2f2f2;
+
+    &:hover {
+      background: #eee;
+    }
+  }
+}
