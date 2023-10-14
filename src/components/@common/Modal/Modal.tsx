@@ -41,7 +41,6 @@ const Modal = ({
 
   useEffect(() => {
     if (isOpen) {
-      console.log('1df');
       document.body.style.overflow = 'hidden';
       myRef.current?.focus();
     }
