@@ -1,0 +1,86 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 20px 30px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.titleContainer {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+}
+
+.dateWrapper {
+  display: flex;
+  justify-content: center;
+  column-gap: 4px;
+}
+
+.calendarButton {
+  width: 30px;
+  height: 30px;
+}
+
+.date {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  height: 24px;
+  border-bottom: 2px solid var(--color-gray200);
+}
+
+.day {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 16px;
+}
+
+.day:nth-child(1) {
+  color: var(--color-red);
+}
+
+.day:nth-child(7) {
+  color: var(--color-purple);
+}
+
+.scheduleAddButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  padding: 4px;
+  background-color: var(--color-primary);
+  border-radius: 4px;
+}
+
+.scheduleAddButton:hover {
+  opacity: 0.8;
+}
+
+.scheduleBarContainer {
+  position: relative;
+}
+
+.dateCellContainer {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  height: 100%;
+
+  background-color: var(--color-white);
+
+  border-left: 2px solid var(--color-gray200);
+}
