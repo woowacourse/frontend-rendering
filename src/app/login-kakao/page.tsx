@@ -1,7 +1,7 @@
 import styles from "./page.module.css";
 import Link from "next/link";
 
-export default function LoginKakao() {
+export default function Page() {
   return (
     <div>
       <h1>kakao 로그인 페이지</h1>
