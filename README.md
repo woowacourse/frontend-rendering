@@ -62,14 +62,16 @@
 **SPA**
 
 <img src="https://cdn.discordapp.com/attachments/1013694524435992650/1162739922323644478/2023-10-14_10.12.50.png?ex=653d08f0&is=652a93f0&hm=fbf57e1645ce592d904929d1490e5ada2963b7786ca52bf98122d9daa3e0e606&">
-<img src="https://cdn.discordapp.com/attachments/1013694524435992650/1162737633588424725/csrcsr.gif?ex=653d06ce&is=652a91ce&hm=2a0eeb0a13392b2a0407bf0326ceb1b85dd90e3bfb27edd11aa43f7525ac16f0&">
+
+![화면 기록 2023-10-14 오후 10 00 29](https://github.com/jeongwusi/frontend-rendering/assets/122500517/c4289369-49d0-4a63-aa24-7f5553096754)
 
 먼저 SPA의 성능 측정 결과입니다. SPA의 경우 네비게이션 바를 시작으로 차례대로 렌더링이 되었습니다. 또한 First Contentful Paint(FCP)는 0.2 초로 상당히 빠르지만 Largest Contentful Paint(LCP)는 0.5초로 0.3초의 간격이 있는 것을 확인할 수 있습니다.
 
 **SSR**
 
 <img src="https://cdn.discordapp.com/attachments/1013694524435992650/1162740628355022878/2023-10-14_10.15.42.png?ex=653d0998&is=652a9498&hm=cb8045d17aaace719567b4893b64fabc92bbb8ff456d20c080511e4c36e58afc&">
-<img src="https://cdn.discordapp.com/attachments/1013694524435992650/1162734772242628739/ssr.gif?ex=653d0424&is=652a8f24&hm=85c23ca08e8836ca6ebe07ab1ede8911828c6009cc518db79379f30066052602&">
+
+![화면 기록 2023-10-14 오후 9 33 42](https://github.com/jeongwusi/frontend-rendering/assets/122500517/f918478b-27fd-4a3c-bf40-6e8866b41ea4)
 
 그 다음은 SSR의 성능 측정 결과입니다. SSR의 경우 SPA처럼 차례대로 렌더링이 되는 것이 아니라 한번에 렌더링이 되었습니다. 또한 First Contentful Paint(FCP)는 0.2초로 동일하지만 Largest Contentful Paint(LCP)는 0.3초로 0.1초 밖에 차이가 나지 않는 것을 확인할 수 있었습니다.
 
