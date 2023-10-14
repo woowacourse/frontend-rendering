@@ -14,8 +14,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang='ko'>
-      <body className='flex justify-center'>
-        <div className='max-w-screen-xl'>
+      <body>
+        <div className='max-w-screen-xl mx-auto'>
           <Header />
           {children}
         </div>
