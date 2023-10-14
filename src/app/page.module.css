@@ -71,12 +71,12 @@
   z-index: 2;
 }
 
-.--small {
+.--small-link {
   width: 11rem;
   height: 3.5rem;
 }
 
-.--large {
+.--large-link {
   width: 20rem;
   font-size: 2rem;
   font-weight: 500;
