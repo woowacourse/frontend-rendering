@@ -6,8 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "server": "npx json-server --port 9999 --watch db.json"
+    "lint": "next lint"
   },
   "dependencies": {
     "next": "13.5.4",
