@@ -1,0 +1,24 @@
+.notFound {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.homeLink {
+  display: block;
+  width: 160px;
+  height: 40px;
+  margin: 0 auto;
+  line-height: 40px;
+  border-radius: 8px;
+  background-color: var(--color-primary);
+}

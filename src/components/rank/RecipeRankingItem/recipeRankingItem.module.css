@@ -1,0 +1,57 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 560px;
+  margin: 12px 0;
+  padding: 0 5px;
+}
+
+.rankingWrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 95%;
+}
+
+.recipeWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.recipeImage {
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+.InfoWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+  margin-left: 20px;
+}
+
+.recipeName,
+.favoriteCount {
+  font-weight: 600;
+}
+
+.favoriteWrapper {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.authorWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+}
+
+.authorImage {
+  border: 2px solid var(--color-primary);
+  border-radius: 50%;
+  object-fit: cover;
+}
