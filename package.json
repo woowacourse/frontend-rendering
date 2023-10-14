@@ -1,0 +1,29 @@
+{
+  "name": "chsua-votogether-next-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@tanstack/react-query": "^4.36.1",
+    "babel-plugin-styled-components": "^2.1.4",
+    "next": "13.5.4",
+    "react": "^18",
+    "react-dom": "^18",
+    "styled-components": "^6.0.8"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "autoprefixer": "^10",
+    "eslint": "^8",
+    "eslint-config-next": "13.5.4",
+    "postcss": "^8",
+    "typescript": "^5"
+  }
+}
