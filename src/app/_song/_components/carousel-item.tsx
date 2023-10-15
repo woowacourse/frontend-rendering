@@ -1,22 +1,21 @@
-'use client';
-
 import { toMinSecText } from '@/app/_shared/_utils/convertTime';
 import Spacing from '@/app/_shared/_components/spacing';
 import styles from './carousel-item.module.css';
 import Image from 'next/image';
 import Thumbnail from './thumbnail';
 import { VotingSong } from '../_types/song.type';
+import Link from 'next/link';
 
 type CarouselItemProps = {
   votingSong: VotingSong;
 };
 
 export default function CarouselItem({ votingSong }: CarouselItemProps) {
-  const { singer, title, videoLength, albumCoverUrl } = votingSong;
+  const { id, singer, title, videoLength, albumCoverUrl } = votingSong;
 
   return (
     <li className={styles.carouselItem}>
-      <a className={styles.collectingLink} onClick={() => alert('기능이 준비중입니다.')}>
+      <Link href={`/collect/${id}`} className={styles.collectingLink}>
         <Thumbnail src={albumCoverUrl} size="xl" borderRadius={4} />
         <Spacing direction={'horizontal'} size={24} />
         <div className={styles.contents}>
@@ -28,7 +27,7 @@ export default function CarouselItem({ votingSong }: CarouselItemProps) {
             <span>{toMinSecText(videoLength)}</span>
           </div>
         </div>
-      </a>
+      </Link>
     </li>
   );
 }
