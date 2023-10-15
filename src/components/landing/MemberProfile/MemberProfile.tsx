@@ -3,24 +3,27 @@
 import Menu from '@/components/common/Menu/Menu';
 import { useRouter } from 'next/navigation';
 import MenuTrigger from '../MenuTrigger/MenuTrigger';
+import Link from 'next/link';
 
 const DEFAULT_MENU_ITEMS = [
   {
     key: 0,
-    text: '사용자 피드백',
-    onClick: () => {
-      window.open('https://forms.gle/gjEejNBaQmbhwh3C8', 'blank');
-    },
+    Link: (
+      <Link href="https://forms.gle/gjEejNBaQmbhwh3C8" target="_blank">
+        사용자 피드백
+      </Link>
+    ),
   },
   {
     key: 1,
-    text: 'github',
-    onClick: () => {
-      window.open(
-        'https://github.com/woowacourse-teams/2023-haru-study',
-        'blank'
-      );
-    },
+    Link: (
+      <Link
+        href="https://github.com/woowacourse-teams/2023-haru-study"
+        target="_blank"
+      >
+        github
+      </Link>
+    ),
   },
 ];
 
@@ -29,18 +32,14 @@ const MemberProfile = () => {
 
   return (
     <Menu trigger={<MenuTrigger />}>
-      <Menu.Item
-        onClick={() => router.push('member-record/list?period=entire&page=1')}
-      >
-        스터디 기록
+      <Menu.Item>
+        <Link href="member-record/list?period=entire&page=1">스터디 기록</Link>
       </Menu.Item>
       <Menu.Item onClick={() => window.alert('로그아웃')} bottomSeparator>
         로그아웃
       </Menu.Item>
-      {DEFAULT_MENU_ITEMS.map(({ key, text, onClick }) => (
-        <Menu.Item key={key} onClick={onClick}>
-          {text}
-        </Menu.Item>
+      {DEFAULT_MENU_ITEMS.map(({ key, Link }) => (
+        <Menu.Item key={key}>{Link}</Menu.Item>
       ))}
     </Menu>
   );

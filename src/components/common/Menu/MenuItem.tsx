@@ -4,7 +4,7 @@ import { layout, separator } from './menuItem.css';
 type Props = {
   bottomSeparator?: boolean;
   hide?: () => void;
-  onClick: () => void;
+  onClick?: () => void;
 };
 
 const MenuItem = ({
@@ -16,7 +16,7 @@ const MenuItem = ({
 }: PropsWithChildren<Props> & LiHTMLAttributes<HTMLLIElement>) => {
   const handleClick = () => {
     if (hide) hide();
-    onClick();
+    if (onClick) onClick();
   };
 
   return (

@@ -2,16 +2,13 @@
 
 import Button from '@/components/common/Button/Button';
 import { buttonContainer } from './landingButton.css';
+import Link from 'next/link';
 
 const LandingButton = () => {
-  const handleClickStartButton = () => {
-    window.alert('하루스터디 시작하기');
-  };
-
   return (
-    <div className={buttonContainer}>
-      <Button onClick={handleClickStartButton}>하루스터디 시작하기</Button>
-    </div>
+    <Link href="/" className={buttonContainer}>
+      <Button>하루스터디 시작하기</Button>
+    </Link>
   );
 };
 

@@ -8,7 +8,7 @@ import { layout, menuIconWrapper, menuList } from './menu.css';
 export type MenuItem = {
   key: number;
   text: string;
-  onClick: () => void;
+  onClick?: () => void;
   bottomSeparator?: boolean;
 };
 
