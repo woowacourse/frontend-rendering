@@ -29,11 +29,11 @@
 
 ### SPA 방식인 하루스터디 메인 페이지
 
-<img src="https://github.com/yeopto/frontend-rendering/blob/step2/img/spa.png?raw=true", height="170px", width="150px">
+![spa 메인페이지](https://github.com/yeopto/frontend-rendering/blob/step2/img/spa.png?raw=true)
 
 ### Next.js를 이용하여 SSG 방식으로 구현한 메인 페이지
 
-<img src="https://github.com/yeopto/frontend-rendering/blob/step2/img/ssg.png?raw=true", height="170px", width="150px">
+![ssg 메인페이지](https://github.com/yeopto/frontend-rendering/blob/step2/img/ssg.png?raw=true)
 
 기존 하루스터디 메인페이지는 SPA 방식으로, 네트워크 탭을 보면 빈 HTML을 불러오는걸 확인할 수 있습니다. 그 후 번들링된 JS 파일을 실행시켜 화면을 렌더링 시켜줍니다(CSR). 반면에, Next.js를 이용하여 SSG 방식으로 구현한 하루스터디 메인페이지는 빌드시점에 정적인 HTML파일을 만들어 브라우저로 내려줌으로써, 네트워크 탭을 확인하면 컨텐츠가 채워진 HTML을 받아오는 것을 확인할 수 있습니다.
 
@@ -41,11 +41,11 @@
 
 ### 하루스터디 메인페이지
 
-<img src="https://github.com/yeopto/frontend-rendering/blob/step2/img/react.png?raw=true", height="170px", width="150px">
+![spa 메인페이지 성능](https://github.com/yeopto/frontend-rendering/blob/step2/img/react.png?raw=true)
 
 ### Next.js로 마이그레이션한 하루스터디 메인페이지
 
-<img src="https://github.com/yeopto/frontend-rendering/blob/step2/img/next.png?raw=true", height="170px", width="150px">
+![ssg 메인페이지 성능](https://github.com/yeopto/frontend-rendering/blob/step2/img/next.png?raw=true)
 
 Chrome LightHouse로 두 페이지를 성능 측정한 결과입니다.
 
