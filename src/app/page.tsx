@@ -5,7 +5,6 @@ import styles from './page.module.css';
 import SongItemList from './_song/_components/song-item-list';
 import Spacing from './_shared/_components/spacing';
 import { Genre } from './_song/_types/song.type';
-import CarouselSkeleton from './_song/_components/carousel-skeleton';
 
 type VotingSong = {
   id: number;
