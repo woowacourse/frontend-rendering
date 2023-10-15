@@ -8,6 +8,7 @@ import StartSection from "@/components/landing/StartSection/StartSection";
 import Footer from "@/components/common/Footer/Footer";
 
 export default function Home() {
+  throw new Error("qwe");
   return (
     <>
       <Header />
