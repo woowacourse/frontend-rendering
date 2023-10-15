@@ -1,3 +1,4 @@
+'use client';
 import { SyntheticEvent } from 'react';
 import defaultAlbumJacket from '@/assets/default-jacket.svg';
 import styles from './Thumbnail.module.css';

@@ -1,15 +1,24 @@
+import { BASE_URL } from '@/env.constant';
+import { SongDetail } from '@/songs/song.type';
+import SongDetailItem from '@/songs/components/SongDetailItem';
+
 interface SongDetailPageProps {
   params: {
     info: [string, string];
   };
 }
 
-const SongDetailPage = ({ params }: SongDetailPageProps) => {
+const SongDetailPage = async ({ params }: SongDetailPageProps) => {
   const [songId, genre] = params.info;
+  const response = await fetch(`${BASE_URL}/songs/high-liked/${songId}?genre=${genre}`, {
+    cache: 'no-store',
+  });
+
+  const songDetail = (await response.json()).currentSong as SongDetail;
 
   return (
-    <div style={{ fontSize: '44px', height: '400px', color: 'white', margin: 'auto' }}>
-      {songId} {genre}
+    <div style={{ width: '100%' }}>
+      <SongDetailItem detail={songDetail} />
     </div>
   );
 };
