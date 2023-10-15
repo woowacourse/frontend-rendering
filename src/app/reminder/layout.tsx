@@ -12,9 +12,7 @@ export default function ReminderLayout({
 	return (
 		<div>
 			<ContentHeader title='리마인더' />
-			<Wrapper>
-				<Suspense fallback={<ReminderSpinner />}>{children}</Suspense>
-			</Wrapper>
+			<Wrapper>{children}</Wrapper>
 			<Navbar />
 		</div>
 	);
