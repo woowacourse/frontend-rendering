@@ -6,9 +6,10 @@ interface SongDetailItemProps {
   detail: SongDetail;
 }
 const SongDetailItem = ({ detail }: SongDetailItemProps) => {
-  const { id, singer, title, albumCoverUrl } = detail;
+  const { singer, title, albumCoverUrl } = detail;
+
   return (
-    <div className={styles.container} role="article" data-song-id={id}>
+    <div className={styles.container} role="article">
       <div className={styles.flex}>
         <div className={styles.columnFlex}>
           <div className={styles.songInfoContainer}>

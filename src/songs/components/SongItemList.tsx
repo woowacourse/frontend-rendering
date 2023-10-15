@@ -10,8 +10,7 @@ interface SongItemListProps {
 }
 
 const SongItemList = async ({ genre }: SongItemListProps) => {
-  const query = genre === 'ALL' ? '' : `?genre=${genre}`;
-  const response = await fetch(`${BASE_URL}/songs/high-liked${query}`);
+  const response = await fetch(`${BASE_URL}/songs/high-liked?genre=${genre}`);
   const songs = (await response.json()) as Song[];
 
   return (
@@ -20,13 +19,15 @@ const SongItemList = async ({ genre }: SongItemListProps) => {
       <Spacing direction="vertical" size={16} />
       <ol className={styles.songList}>
         {songs.map(({ id, albumCoverUrl, title, singer, totalLikeCount }, i) => (
-          <li key={id} className={styles.li}>
+          <li key={`${id}${genre}`} className={styles.li}>
             <SongItem
+              id={id}
               rank={i + 1}
               albumCoverUrl={albumCoverUrl}
               title={title}
               singer={singer}
               totalLikeCount={totalLikeCount}
+              genre={genre}
             />
           </li>
         ))}

@@ -8,7 +8,9 @@ import CarouselItem from '@/songs/components/CarouselItem';
 import { BASE_URL } from '@/env.constant';
 
 const MainPage = async () => {
-  const response = await fetch(`${BASE_URL}/voting-songs`);
+  const response = await fetch(`${BASE_URL}/voting-songs`, {
+    cache: 'no-store',
+  });
   const votingSongs = (await response.json()) as VotingSong[];
 
   return (

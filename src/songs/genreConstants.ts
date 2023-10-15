@@ -1,5 +1,4 @@
 export const GENRES = {
-  ALL: '전체',
   DANCE: '댄스',
   BALLAD: '발라드',
   POP: '팝',
