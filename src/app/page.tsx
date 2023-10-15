@@ -5,6 +5,7 @@ import styles from './page.module.css';
 import SongItemList from './_song/_components/song-item-list';
 import Spacing from './_shared/_components/spacing';
 import { Genre } from './_song/_types/song.type';
+import CarouselSkeleton from './_song/_components/carousel-skeleton';
 
 type VotingSong = {
   id: number;
@@ -16,6 +17,10 @@ type VotingSong = {
 
 async function getVotingSongs(): Promise<VotingSong[]> {
   const response = await fetch('https://dev.s-hook.com/api/voting-songs');
+
+  if (!response.ok) {
+    throw new Error('투표할 노래를 가져오는데 실패하였습니다.');
+  }
 
   return response.json();
 }

@@ -9,6 +9,10 @@ async function getSongs(genre: Genre): Promise<Song[]> {
   const query = genre === 'ALL' ? '' : `?genre=${genre}`;
   const response = await fetch(`https://dev.s-hook.com/api/songs/high-liked${query}`);
 
+  if (!response.ok) {
+    throw new Error('킬링파트를 가져오는데 실패하였습니다.');
+  }
+
   return response.json();
 }
 
