@@ -1,6 +1,7 @@
 'use client';
 
 import { ImgHTMLAttributes } from 'react';
+import styles from './index.module.css';
 
 interface Props extends ImgHTMLAttributes<HTMLImageElement> {
   $errorDefaultSrc?: string;
@@ -18,6 +19,7 @@ const CustomImage = ({
 }: Props) => {
   return (
     <img
+      className={styles.image}
       src={src}
       alt={alt}
       width={width}
