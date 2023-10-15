@@ -1,7 +1,13 @@
+import dynamic from 'next/dynamic';
 import RecipeRankingItem from '../RecipeRankingItem/RecipeRankingItem';
 
-import { Carousel } from '@/components/Common';
+import { CarouselChildren } from '../../Common/Carousel/Carousel';
+const Carousel = dynamic<{ carouselList: CarouselChildren[] }>(
+  () => import('../../Common/Carousel/Carousel'),
+  { ssr: false, loading: () => <p>Loading...</p> }
+);
 import { RecipeRanking } from '@/apis/recipeRanking';
+import styles from './recipeRankingList.module.css';
 
 interface RecipeRankingListProps {
   recipes: RecipeRanking[];
@@ -15,7 +21,11 @@ const RecipeRankingList = ({ recipes }: RecipeRankingListProps) => {
     children: <RecipeRankingItem rank={index + 1} recipe={recipe} />,
   }));
 
-  return <Carousel carouselList={carouselList} />;
+  return (
+    <div className={styles.container}>
+      <Carousel carouselList={carouselList} />
+    </div>
+  );
 };
 
 export default RecipeRankingList;
