@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { Inter } from 'next/font/google';
 
 import { Customer, CustomerOrderOption, Option } from '@/app/types';
 import {
@@ -14,8 +13,6 @@ import Text from '@/components/Text';
 import SelectBox from '@/components/SelectBox';
 import Customers from '@/components/CustomerList/Customers';
 import { API_BASE_URL } from '@/app/constants';
-
-const inter = Inter({ subsets: ['latin'] });
 
 const CUSTOMERS_ORDER_OPTIONS: CustomerOrderOption[] = [
   {
