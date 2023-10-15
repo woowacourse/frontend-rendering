@@ -1,3 +1,5 @@
+'use client';
+
 import { SyntheticEvent } from 'react';
 import styles from './thumbnail.module.css';
 import Image from 'next/image';
