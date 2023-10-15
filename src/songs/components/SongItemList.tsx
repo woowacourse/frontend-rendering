@@ -13,6 +13,10 @@ const SongItemList = async ({ genre }: SongItemListProps) => {
   const response = await fetch(`${BASE_URL}/songs/high-liked?genre=${genre}`);
   const songs = (await response.json()) as Song[];
 
+  if (!response.ok) {
+    throw new Error();
+  }
+
   return (
     <>
       <h2 className={styles.title}>{`${GENRES[genre]} Top 10`}</h2>

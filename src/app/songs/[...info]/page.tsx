@@ -14,6 +14,10 @@ const SongDetailPage = async ({ params }: SongDetailPageProps) => {
     cache: 'no-store',
   });
 
+  if (!response.ok) {
+    throw new Error();
+  }
+
   const songDetail = (await response.json()).currentSong as SongDetail;
 
   return (

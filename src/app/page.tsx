@@ -11,6 +11,11 @@ const MainPage = async () => {
   const response = await fetch(`${BASE_URL}/voting-songs`, {
     cache: 'no-store',
   });
+
+  if (!response.ok) {
+    throw new Error();
+  }
+
   const votingSongs = (await response.json()) as VotingSong[];
 
   return (
