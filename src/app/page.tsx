@@ -1,4 +1,4 @@
-import { fetchCategory } from '@/apis/fetchCategory';
+import { fetchCategory } from '@/apis/category';
 import { fetchProductRanking } from '@/apis/productRanking';
 import { fetchRecipeRanking } from '@/apis/recipeRanking';
 import { fetchReviewRanking } from '@/apis/reviewRanking';

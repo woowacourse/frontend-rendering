@@ -1,4 +1,4 @@
-import { Category, CategoryType, fetchCategory } from '@/apis/fetchCategory';
+import { Category, CategoryType, fetchCategory } from '@/apis/category';
 import CategoryItem from '../CategoryItem/CategoryItem';
 
 import styles from './categoryList.module.css';
