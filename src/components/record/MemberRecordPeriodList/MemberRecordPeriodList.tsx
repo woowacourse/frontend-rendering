@@ -6,12 +6,9 @@ import MemberRecordItem from '../MemberRecordItem/MemberRecordItem';
 
 type Props = {
   memberRecords: StudyInfo[] | null;
-  isLoading: boolean;
 };
 
-const MemberRecordPeriodList = ({ memberRecords, isLoading }: Props) => {
-  if (isLoading) return <MemberRecordPeriodListSkeleton />;
-
+const MemberRecordPeriodList = ({ memberRecords }: Props) => {
   if (memberRecords && memberRecords.length === 0) return <EmptyMemberRecord />;
 
   return (

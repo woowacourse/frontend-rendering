@@ -11,14 +11,12 @@ import {
 type Props = {
   totalPagesNumber: number;
   currentPageNumber: number;
-  isLoading: boolean;
   shiftPage: (page: number) => void;
 };
 
 const PaginationButton = ({
   totalPagesNumber,
   currentPageNumber,
-  isLoading,
   shiftPage,
 }: Props) => {
   const handleClickPageButton = (page: number) => {
@@ -57,7 +55,6 @@ const PaginationButton = ({
     <div className={layout}>
       <button
         className={paginationButton}
-        disabled={isLoading}
         onClick={() => handleClickPageButton(currentPageNumber - 1)}
       >
         <ArrowIcon color={color.neutral[500]} direction="left" />
@@ -69,7 +66,6 @@ const PaginationButton = ({
             className={`${paginationButton} ${
               isCurrentButton && currentButton
             }`}
-            disabled={isLoading}
             key={pageNumber}
             onClick={() => handleClickPageButton(pageNumber)}
           >
@@ -79,7 +75,6 @@ const PaginationButton = ({
       })}
       <button
         className={paginationButton}
-        disabled={isLoading}
         onClick={() => handleClickPageButton(currentPageNumber + 1)}
       >
         <ArrowIcon

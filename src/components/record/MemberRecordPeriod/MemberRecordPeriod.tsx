@@ -1,42 +1,67 @@
-'use client';
-
 import PeriodSelectionBar from '../PeriodSelectionBar/PeriodSelectionBar';
 import PaginationButton from '../PaginationButton/PaginationButton';
 import MemberRecordPeriodList from '../MemberRecordPeriodList/MemberRecordPeriodList';
 import { layout } from './memberRecordPeriod.css';
-import useMemberListRecord from '@/hooks/useMemberListRecord';
+import { ResponseMemberListRecord } from '@/types/record';
 
-const MemberRecordPeriod = () => {
-  const {
-    memberRecords,
-    isLoading,
-    totalPagesNumber,
-    currentPageNumber = 1,
-    shiftPage,
-  } = useMemberListRecord({
-    memberId: '1',
-  });
+const getMemberRecord = async (
+  memberId: string,
+  currentPageNumber: number,
+  startDate?: string,
+  endDate?: string
+) => {
+  const fetchAPi =
+    startDate && endDate
+      ? `/api/view/study-records?memberId=${memberId}&page=${
+          currentPageNumber - 1
+        }&size=${20}&startDate=${startDate}&endDate=${endDate}&sort=createdDate,desc`
+      : `/api/view/study-records?memberId=${memberId}&page=${
+          currentPageNumber - 1
+        }&size=${20}&sort=createdDate,desc`;
+
+  const res = await fetch(fetchAPi);
+  const data = (await res.json()) as ResponseMemberListRecord;
+
+  return { studyRecords: data.studyRecords, pageInfo: data.pageInfo };
+};
+
+type Props = {
+  shiftPage: (page: number) => void;
+  memberId: string;
+  startDate?: string;
+  endDate?: string;
+  page: number;
+};
+
+const MemberRecordPeriod = async ({
+  shiftPage,
+  memberId,
+  startDate,
+  endDate,
+  page,
+}: Props) => {
+  const { studyRecords, pageInfo } = await getMemberRecord(
+    memberId,
+    page,
+    startDate,
+    endDate
+  );
 
   return (
     <div className={layout}>
       <PeriodSelectionBar />
-      {totalPagesNumber !== 0 && (
+      {pageInfo.totalPages !== 0 && (
         <PaginationButton
-          totalPagesNumber={totalPagesNumber}
-          currentPageNumber={currentPageNumber}
-          isLoading={isLoading}
+          totalPagesNumber={pageInfo.totalPages}
+          currentPageNumber={page}
           shiftPage={shiftPage}
         />
       )}
-      <MemberRecordPeriodList
-        memberRecords={memberRecords}
-        isLoading={isLoading}
-      />
-      {memberRecords && memberRecords.length > 3 && (
+      <MemberRecordPeriodList memberRecords={studyRecords} />
+      {studyRecords && studyRecords.length > 3 && (
         <PaginationButton
-          totalPagesNumber={totalPagesNumber}
-          currentPageNumber={currentPageNumber}
-          isLoading={isLoading}
+          totalPagesNumber={pageInfo.totalPages}
+          currentPageNumber={page}
           shiftPage={shiftPage}
         />
       )}
