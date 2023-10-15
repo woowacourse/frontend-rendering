@@ -1,11 +1,5 @@
 'use client';
-import {
-	PropsWithChildren,
-	forwardRef,
-	useCallback,
-	useEffect,
-	useRef,
-} from 'react';
+import { PropsWithChildren, useCallback, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import { CloseButton, ModalBox, ModalContent } from './Modal.style';
 
@@ -18,24 +12,30 @@ const Modal = ({ isOpen, closeModal, children }: ModalProps) => {
 	const root = document.getElementById('modal-root') ?? document.body;
 	const modalRef = useRef<HTMLDialogElement>(null);
 
-	const keyDownHandler = useCallback((e: KeyboardEvent) => {
-		if (e.key === 'Escape') {
-			close();
-		}
-	}, []);
+	const keyDownHandler = useCallback(
+		(e: KeyboardEvent) => {
+			if (e.key === 'Escape') {
+				closeModal();
+			}
+		},
+		[closeModal]
+	);
 
-	const closeOnBackdropClick = useCallback((event: MouseEvent) => {
-		if (!modalRef.current) return;
+	const closeOnBackdropClick = useCallback(
+		(event: MouseEvent) => {
+			if (!modalRef.current) return;
 
-		const dialog = modalRef.current.getBoundingClientRect();
-		const isClickInsideDialog =
-			dialog.top <= event.clientY &&
-			event.clientY <= dialog.top + dialog.height &&
-			dialog.left <= event.clientX &&
-			event.clientX <= dialog.left + dialog.width;
+			const dialog = modalRef.current.getBoundingClientRect();
+			const isClickInsideDialog =
+				dialog.top <= event.clientY &&
+				event.clientY <= dialog.top + dialog.height &&
+				dialog.left <= event.clientX &&
+				event.clientX <= dialog.left + dialog.width;
 
-		if (!isClickInsideDialog) close();
-	}, []);
+			if (!isClickInsideDialog) closeModal();
+		},
+		[closeModal]
+	);
 
 	useEffect(() => {
 		const dialog = modalRef.current;
