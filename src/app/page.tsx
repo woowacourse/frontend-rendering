@@ -5,9 +5,10 @@ import SongItemList from '@/songs/components/SongItemList';
 import CollectionCarousel from '@/songs/components/CollectionCarousel';
 import { VotingSong } from '@/songs/song.type';
 import CarouselItem from '@/songs/components/CarouselItem';
+import { BASE_URL } from '@/env.constant';
 
 const MainPage = async () => {
-  const response = await fetch(`https://dev.s-hook.com/api/voting-songs`);
+  const response = await fetch(`${BASE_URL}/voting-songs`);
   const votingSongs = (await response.json()) as VotingSong[];
 
   return (

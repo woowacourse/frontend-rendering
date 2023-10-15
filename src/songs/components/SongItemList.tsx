@@ -3,6 +3,7 @@ import styles from './SongItemList.module.css';
 import { Genre, GENRES } from '@/songs/genreConstants';
 import { Song } from '@/songs/song.type';
 import Spacing from '@/common/Spacing';
+import { BASE_URL } from '@/env.constant';
 
 interface SongItemListProps {
   genre: Genre;
@@ -10,7 +11,7 @@ interface SongItemListProps {
 
 const SongItemList = async ({ genre }: SongItemListProps) => {
   const query = genre === 'ALL' ? '' : `?genre=${genre}`;
-  const response = await fetch(`https://dev.s-hook.com/api/songs/high-liked${query}`);
+  const response = await fetch(`${BASE_URL}/songs/high-liked${query}`);
   const songs = (await response.json()) as Song[];
 
   return (
