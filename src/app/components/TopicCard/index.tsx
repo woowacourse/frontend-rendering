@@ -1,6 +1,7 @@
 import { Topic } from '@/app/types/topic';
 import styles from './index.module.css';
 import Image from 'next/image';
+import CustomImage from '../CustomImage';
 
 const TopicCard = ({
   id,
@@ -14,13 +15,7 @@ const TopicCard = ({
   return (
     <div className={styles.container}>
       <div className={styles.inner}>
-        <Image
-          height={138}
-          width={138}
-          src={image}
-          alt="사진 이미지"
-          priority
-        />
+        <CustomImage src={image} alt="이미지" width={140} height={140} />
 
         <div className={styles.info}>
           <div className={styles.name}>
