@@ -1,0 +1,48 @@
+.wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.carouselWrapper {
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  scroll-snap-stop: always;
+  overflow-x: scroll;
+  display: flex;
+  column-gap: 16px;
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.carouselWrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.carouselWrapper > li,
+.carouselWrapper > div {
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+  min-width: 67% !important;
+  height: 140px;
+  color: var(--color-white);
+  background-color: var(--color-secondary);
+  border-radius: 8px;
+}
+
+.indicatorWrapper {
+  display: flex;
+  column-gap: 8px;
+  justify-content: center;
+  background-color: transparent;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-secondary);
+  border-radius: 50%;
+}
+
+.dotActive {
+  background-color: var(--color-primary);
+}

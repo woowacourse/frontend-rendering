@@ -1,0 +1,96 @@
+/* global.css */
+
+:root {
+  /* Colors */
+  --color-primary: #FF137F;
+  --color-secondary: #242424;
+  --color-success: #52c41a;
+  --color-warning: #fadb14;
+  --color-error: #f5222d;
+  --color-link: #1677ff;
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-black500: #0d0d0d;
+  --color-black400: #1a1a1a;
+  --color-black300: #17171C;
+  --color-black200: #262626;
+  --color-disabledBackground: #5d5d5d;
+  --color-disabled: #2d2c2c;
+  --color-subText: #a7a7a7;
+  --color-oauth-kakao: #fee500;
+  --color-oauth-google: #ffffff;
+
+  /* Breakpoints */
+  --breakpoint-xxs: 380px;
+  --breakpoint-xs: 420px;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-xxl: 1440px;
+
+  /* Header heights */
+  --header-height-xxs: 50px;
+  --header-height-mobile: 60px;
+  --header-height-tablet: 80px;
+  --header-height-desktop: 80px;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+  background: transparent;
+}
+
+*,
+:after,
+:before {
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+img,
+video,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  border: 0;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  background: transparent;
+}
+
+
+
+

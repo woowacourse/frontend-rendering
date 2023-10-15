@@ -1,0 +1,52 @@
+.wrapper {
+  width: 100%;
+  min-width: 350px;
+}
+
+.collectingLink {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+.contents {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-evenly;
+  width: 150px;
+  white-space: nowrap;
+}
+
+.title {
+  overflow: hidden;
+  max-width: 150px;
+  margin-left: 0;
+  font-size: 18px;
+  font-weight: 700;
+  text-overflow: ellipsis;
+}
+
+.singer {
+  overflow: hidden;
+  max-width: 150px;
+  margin-left: 0;
+  font-size: 14px;
+  text-overflow: ellipsis;
+}
+
+.playingTime {
+  display: flex;
+  column-gap: 8px;
+  border-radius: 20px;
+}
+
+.playingTimeText {
+  padding-top: 2px;
+}
+
+.playIcon {
+  width: 16px;
+  height: 16px;
+  margin: auto;
+}

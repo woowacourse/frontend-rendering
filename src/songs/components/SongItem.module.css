@@ -1,0 +1,22 @@
+.flex {
+  display: flex;
+  flex-direction: column;
+  color: var(--color-white);
+}
+
+.songTitle {
+  overflow: hidden;
+  grid-area: title;
+  font-size: 14px;
+  font-weight: 700;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.singer {
+  overflow: hidden;
+  grid-area: singer;
+  font-size: 12px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

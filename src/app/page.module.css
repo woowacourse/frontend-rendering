@@ -1,0 +1,33 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-top: var(--header-height-desktop);
+}
+
+@media (max-width: var(--breakpoint-xs)) {
+  .container {
+    padding-top: var(--header-height-mobile);
+  }
+}
+
+@media (max-width: var(--breakpoint-xxs)) {
+  .container {
+    padding-top: var(--header-height-xxs);
+  }
+}
+
+.title {
+  align-self: flex-start;
+  font-size: 20px;
+  font-weight: 700;
+  color: white;
+}
+
+.emptyMessage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-width: 350px;
+}
