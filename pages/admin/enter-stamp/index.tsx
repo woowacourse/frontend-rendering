@@ -1,3 +1,4 @@
+'use client';
 const EnterStamp = () => {
   return <div>EnterStamp</div>;
 };

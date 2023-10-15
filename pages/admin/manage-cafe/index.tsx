@@ -1,3 +1,4 @@
+'use client';
 const ManageCafe = () => {
   return <div>ManageCafe</div>;
 };

@@ -1,3 +1,4 @@
+'use client';
 const EnterReward = () => {
   return <div>EnterReward</div>;
 };
