@@ -10,7 +10,9 @@ interface SongItemListProps {
 }
 
 const SongItemList = async ({ genre }: SongItemListProps) => {
-  const response = await fetch(`${BASE_URL}/songs/high-liked?genre=${genre}`);
+  const response = await fetch(`${BASE_URL}/songs/high-liked?genre=${genre}`, {
+    cache: 'no-store',
+  });
   const songs = (await response.json()) as Song[];
 
   if (!response.ok) {
