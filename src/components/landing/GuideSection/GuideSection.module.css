@@ -1,0 +1,48 @@
+.guideSectionLayout {
+  display: flex;
+  flex-direction: column;
+  gap: 180px;
+
+  padding: 135px 0;
+}
+
+.introduce {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  text-align: center;
+}
+
+.introduce span:nth-child(1) {
+  color: #3b82f6;
+}
+
+.introduce span:nth-child(2) {
+  color: #ba4849;
+}
+
+.introduce span:nth-child(3) {
+  color: #38848a;
+}
+
+@media screen and (max-width: 768px) {
+  .introduce h2 {
+    font-size: 28px;
+  }
+
+  .introduce p {
+    font-size: 20px;
+  }
+}
+
+.guideHeaderText {
+  font-size: 4rem;
+  font-weight: 700;
+}
+
+.guideDescriptionText {
+  font-size: 2.4rem;
+  font-weight: 500;
+  word-break: keep-all;
+}

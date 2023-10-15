@@ -1,0 +1,15 @@
+.headerLayout {
+  display: flex;
+  padding: 40px;
+}
+
+.headerText {
+  display: inline;
+
+  font-size: 4rem;
+  font-weight: 200;
+}
+
+.emphasis {
+  color: #3b82f6;
+}
