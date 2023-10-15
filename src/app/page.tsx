@@ -5,7 +5,6 @@ import styles from './page.module.css';
 import SongItemList from './_song/_components/song-item-list';
 import Spacing from './_shared/_components/spacing';
 import { Genre } from './_song/_types/song.type';
-import { Metadata } from 'next';
 
 type VotingSong = {
   id: number;
@@ -25,16 +24,6 @@ async function getVotingSongs(): Promise<VotingSong[]> {
   }
 
   return response.json();
-}
-
-export async function generateMetadata(): Promise<Metadata> {
-  const votingSongsData: Promise<VotingSong[]> = getVotingSongs();
-  const votingSongs: VotingSong[] = await votingSongsData;
-
-  return {
-    title: votingSongs[0].title,
-    description: `This is the page of ${votingSongs[0].title}`,
-  };
 }
 
 export default async function Home() {
