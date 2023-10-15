@@ -1,5 +1,3 @@
-'use client';
-
 import { DateLabel, InfoBox, ReminderCardBox } from './CardBox.style';
 import ReminderCard from '../Card';
 import { ReminderExtendType } from '@/types/reminder';
