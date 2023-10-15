@@ -28,24 +28,6 @@ export default function Page(props: PageProps) {
     useDictionaryPlantDetail(dictionaryPlantId);
   const { image, name } = dictionaryPlantDetail;
 
-  // const goPetPlantRegisterForm = () => {
-  //   router.push("/pet/register/" + dictionaryPlantId);
-  // };
-
-  // const goLogin = () => {
-  //   navigate(URL_PATH.login);
-  // };
-
-  // const warning = () => {
-  //   addToast({
-  //     type: "info",
-  //     message: "로그인 후 등록할 수 있어요",
-  //     time: 4000,
-  //     buttonContent: "로그인",
-  //     onClickButton: goLogin,
-  //   });
-  // };
-
   return (
     <>
       <Header>
