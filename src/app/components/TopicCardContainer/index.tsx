@@ -1,6 +1,7 @@
-import { getTopics } from '@/app/apis/topics';
 import styles from './index.module.css';
 import TopicCard from '../TopicCard';
+import { getApi } from '@/app/apis/getApi';
+import { Topic } from '@/app/types/topic';
 
 interface Props {
   title: string;
@@ -8,7 +9,7 @@ interface Props {
 }
 
 const TopicCardContainer = async ({ title, description }: Props) => {
-  const topics = await getTopics();
+  const topics = await getApi<Topic[]>('/topics/bests');
 
   return (
     <section>

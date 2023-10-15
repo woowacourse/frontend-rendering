@@ -1,7 +1,7 @@
-const { NEXT_PUBLIC_DEFAULT_URL } = process.env;
+const DEFAULT_URL = 'https://mapbefine.kro.kr/api';
 
 export const getApi = async <T>(url: string) => {
-  const apiUrl = `${NEXT_PUBLIC_DEFAULT_URL + url}`;
+  const apiUrl = `${DEFAULT_URL + url}`;
   const headers: any = {
     'content-type': 'application/json',
   };
