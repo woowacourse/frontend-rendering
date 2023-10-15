@@ -20,5 +20,8 @@ export interface ReviewRankingResponse {
 }
 
 export const fetchReviewRanking = () => {
-  return fetchApi<ReviewRankingResponse>('/ranks/reviews', { method: 'GET' });
+  return fetchApi<ReviewRankingResponse>('/ranks/reviews', {
+    method: 'GET',
+    cache: 'no-store',
+  });
 };

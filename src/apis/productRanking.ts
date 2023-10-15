@@ -13,5 +13,6 @@ export interface ProductRankingResponse {
 export const fetchProductRanking = async () => {
   return fetchApi<ProductRankingResponse>('/ranks/products', {
     method: 'GET',
+    cache: 'no-store',
   });
 };

@@ -11,5 +11,6 @@ export interface Category {
 export const fetchCategory = (categoryType: CategoryType) => {
   return fetchApi<Category[]>(`/categories?type=${categoryType}`, {
     method: 'GET',
+    cache: 'no-store',
   });
 };

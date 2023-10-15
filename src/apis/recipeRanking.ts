@@ -20,5 +20,6 @@ export interface RecipeRankingResponse {
 export const fetchRecipeRanking = async () => {
   return fetchApi<RecipeRankingResponse>('/ranks/recipes', {
     method: 'GET',
+    cache: 'no-store',
   });
 };
