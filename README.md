@@ -79,9 +79,15 @@ ISR를 사용하면 빌드 타임에 HTML 파일이 생성되기 때문에 아�
 
 <img width="600" alt="스크린샷 2023-10-16 오전 12 31 17" src="https://github.com/hae-on/woowacourse/assets/80464961/fb8914c4-9d6b-4cc4-9d2d-6e85fb41b877">
 
+<br />
+
 또한, 초기 빌드 단계에서 모든 페이지의 내용과 데이터를 포함해 미리 준비해 둔 다음 클라이언트에게 제공하기 때문에, 네트워크 탭에 따로 뜨지 않는 것을 볼 수 있다.
 
+<br />
+
 <img width="500" alt="스크린샷 2023-10-16 오전 12 39 35" src="https://github.com/hae-on/woowacourse/assets/80464961/fcc635c7-6989-4dc7-a46c-79ee426e28f8">
+
+<br />
 
 카테고리처럼 주기적으로 업데이트가 될 필요가 없는 경우 SSG로 적용된다.
 
@@ -91,12 +97,23 @@ ISR를 사용하면 빌드 타임에 HTML 파일이 생성되기 때문에 아�
 
 revalidate의 Time-based Revalidation을 사용해 시간 기반의 업데이트를 할 수 있도록 설정하였다.
 
+```tsx
+export const getRecipeRanking = () => {
+  const params = 'recipes';
+  return fetchApi<RecipeRankingResponse>(`ranks/${params}`, {
+    next: { revalidate: 7 * 24 * 60 * 60 },
+  });
+};
+```
+
 ### Light House 점수
 
 - SPA 방식
+
   <img width="600" alt="스크린샷 2023-10-16 오전 12 34 19" src="https://github.com/hae-on/woowacourse/assets/80464961/21a3935e-1d9f-435c-983b-f95ca1f6a95e">
 
 - SSG & ISR 방식
+
   <img width="600" alt="스크린샷 2023-10-16 오전 12 33 46" src="https://github.com/hae-on/woowacourse/assets/80464961/0ffb2f78-ac44-4547-b4f0-4daf614f4487">
 
 위 사진을 보면 SPA 방식일 때와 ISR 방식일 때 Light House 점수가 많이 차이 나는 것을 볼 수 있다.
