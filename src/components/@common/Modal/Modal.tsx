@@ -41,12 +41,12 @@ const Modal = ({
 
   useEffect(() => {
     if (isOpen) {
-      document.body.style.overflow = 'hidden';
+      document.body.classList.add('no-scroll');
       myRef.current?.focus();
     }
 
     return () => {
-      document.body.style.overflow = 'auto';
+      document.body.classList.remove('no-scroll');
     };
   }, [isOpen]);
 
