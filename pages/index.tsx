@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Inter } from 'next/font/google';
 
 import { Customer, CustomerOrderOption, Option } from '@/app/types';
@@ -44,8 +44,6 @@ type Props = {
 };
 
 export default function Home({ customers }: Props) {
-  const [customerData, setCustomerData] = useState<Customer[]>([]);
-
   const [registerType, setRegisterType] = useState<Option>({
     key: 'all',
     value: '전체',
@@ -55,51 +53,6 @@ export default function Home({ customers }: Props) {
     key: 'stampCount',
     value: '스탬프순',
   });
-  /** TODO: 필터링 기능 구현 */
-  // useEffect(() => {
-  //   let filteredData = [...customers];
-
-  //   switch (orderOption.key) {
-  //     case 'stampCount':
-  //       filteredData.sort((a, b) => a.stampCount - b.stampCount);
-  //       break;
-  //     case 'rewardCount':
-  //       filteredData.sort((a, b) => a.rewardCount - b.rewardCount);
-  //       break;
-  //     case 'visitCount':
-  //       filteredData.sort((a, b) => a.visitCount - b.visitCount);
-  //       break;
-  //     case 'recentVisitDate':
-  //       filteredData.sort((a, b) =>
-  //         a.recentVisitDate < b.recentVisitDate
-  //           ? -1
-  //           : a.recentVisitDate > b.recentVisitDate
-  //           ? 1
-  //           : 0
-  //       );
-  //       break;
-  //   }
-
-  //   switch (registerType.key) {
-  //     case 'all':
-  //       break;
-  //     case 'register':
-  //       filteredData.filter((customer) => customer.isRegistered);
-  //       console.log(filteredData);
-  //       break;
-  //     case 'temporary':
-  //       filteredData.filter((customer) => !customer.isRegistered);
-  //       console.log(filteredData);
-
-  //       break;
-  //   }
-
-  //   setCustomerData(filteredData);
-
-  //   console.log(customerData);
-  // }, [orderOption, registerType]);
-
-  const registerTypeKey = registerType.key === 'all' ? null : registerType.key;
 
   const changeRegisterType = (registerType: Option) => () => {
     setRegisterType(registerType);
