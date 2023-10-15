@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { description, layout, pageState } from './not-founc.css';
+import { description, layout, pageState } from './not-found.css';
 
 export default function NotFound() {
   return (
