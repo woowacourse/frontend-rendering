@@ -1,11 +1,8 @@
 import Layout from '@/components/common/Layout';
 
-// import ErrorBoundary from '@pages/ErrorBoundary';
-
 import ToggleSwitch from '@/components/common/ToggleSwitch';
 
 import * as S from '@/styles/rankingStyle';
-import { useToggleSwitch } from '@/hooks';
 
 import firstRankIcon from '@/assets/first-rank.webp';
 import secondRankIcon from '@/assets/second-rank.webp';
@@ -14,8 +11,8 @@ import thirdRankIcon from '@/assets/third-rank.webp';
 import Image, { StaticImageData } from 'next/image';
 import { getPassionUserRanking } from '@/api/ranking';
 import { PassionUserRanking } from '@/types/ranking';
-import { GetStaticProps } from 'next';
 import Seo from '@/components/Seo';
+import { use } from 'react';
 
 const columnNameList = ['등수', '닉네임', '작성글 수', '투표 수', '점수'];
 
@@ -25,15 +22,23 @@ const rankIconUrl: Record<number, StaticImageData> = {
   3: thirdRankIcon,
 };
 
-export default function RankingPage({
-  rankerList,
-}: {
-  rankerList: PassionUserRanking[];
-}) {
-  const { selectedButton, firstButton, secondButton } = useToggleSwitch(
-    '열정 유저',
-    '인기글 유저'
-  );
+let selectedButton = '열정 유저';
+
+export default function RankingPage() {
+  const rankerList: PassionUserRanking[] = use(getPassionUserRanking());
+
+  const firstButton = {
+    text: '열정 유저',
+    event: async () => {
+      'use server';
+    },
+  };
+  const secondButton = {
+    text: '인기글 유저',
+    event: async () => {
+      'use server';
+    },
+  };
 
   return (
     <>
@@ -101,14 +106,3 @@ export default function RankingPage({
     </>
   );
 }
-
-export const getStaticProps: GetStaticProps = async () => {
-  const rankerList = await getPassionUserRanking();
-
-  return {
-    props: {
-      rankerList,
-    },
-    revalidate: 60 * 30, // 30분
-  };
-};
