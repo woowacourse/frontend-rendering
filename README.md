@@ -22,8 +22,8 @@
 
 ### 성능 측정 및 비교
 
-- ![SPA]("./images/SPA.png")
-- ![SSG]("./images/SSG.png")
+- ![SPA](./images/SPA.png)
+- ![SSG](./images/SSG.png)
 
 - 사진으로만 보아도 SSG가 로딩속도가 더 빠르고, SEO에도 장점을 보입니다.
 - 성능 측정은 같은 환경에서 크롬 라이트하우스를 사용했습니다.
