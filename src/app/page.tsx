@@ -2,7 +2,7 @@ import RestaurantWishList from '@/components/RestaurantWishList';
 
 export default async function Home() {
   const res = await fetch('https://json-server-4140.onrender.com/restaurants', {
-    next: { revalidate: 10 },
+    cache: 'force-cache',
   });
 
   const data = await res.json();
