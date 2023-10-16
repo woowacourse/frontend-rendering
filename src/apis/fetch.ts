@@ -14,7 +14,10 @@ const parseJson = async (response: Response): Promise<any> => {
 };
 
 const fetchJson = async <T>(url: string, options?: RequestInit): Promise<T> => {
-  return await fetch(`${BATON_BASE_URL}${url}`, options)
+  return await fetch(`${BATON_BASE_URL}${url}`, {
+    ...options,
+    cache: 'no-cache',
+  })
     .catch(() => throwErrorBadRequest())
     .then(async (response) => parseJson(response));
 };
