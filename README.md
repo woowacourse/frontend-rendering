@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# **🎯 렌더링 방식 탐구 및 비교 분석**
 
-## Getting Started
+## **SSR,SPA,SSG,ISR의 특징**
 
-First, run the development server:
+### SSR
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- 웹 기술들이 발전하기 시작한 초창기에 사용하던 근본있는 방식으로, 1990년대~2000년대 초반에 주로 사용하던 대표적인 기술에는 JSP/Servlet과 같은 기술들이 있다.
+- WAS(Web Application Server)가 SSR을 구현하는데 사용이 가능하다. 데이터를 가져온 뒤 초기 HTML을 구성하여 클라이언트에게 전송하는 방식이기 때문이다.
+- 웹 기술들이 발전하던 초창기에는 정적인 페이지들이 대부분이었으나, 기술 발전에 따라 동적인 작업을 많이 해야했다. 페이지의 데이터가 일부 변경될때마다 새로운 페이지를 만들어야 하는 문제를 해결하고자 AJAX라는 기술이 생겨났다.
+- SSR의 한계로 인해 CSR이 탄생했지만 초기 렌더링, SEO문제 등의 CSR의 한계로 인해 다시금 SSR이야기가 나오고 있다.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+  ![스크린샷 2023-10-15 오후 10 11 35](https://github.com/woowacourse/frontend-rendering/assets/45068522/37450a43-6e6a-416d-ae78-ea8417ce6903)
+  ![스크린샷 2023-10-15 오후 10 12 18](https://github.com/woowacourse/frontend-rendering/assets/45068522/95136821-dae0-4ec3-9588-9c32dfc70812)
+  ![스크린샷 2023-10-15 오후 10 13 06](https://github.com/woowacourse/frontend-rendering/assets/45068522/b5b0a0f1-fb3f-4336-9e40-891ef2f55df7)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+  위와 같이 message에 뭔가를 보내주는 WAS가 데이터를 직접 집어넣어서 사용자에게 HTML을 보내주는 방식이다.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### CSR
 
-## Learn More
+- 웹 기술들이 발전하며 웹 페이지가 사용자와 상호작용하는 경우가 많아지자, 매번 HTML을 받아올 때 UX가 떨어지는 한계가 있었고, 이를 개선하고자 나온 방법이 CSR이다.
+- 빈 html파일과 하나의 js파일을 보내 사용자측에서 동적으로 렌더링하도록 하는 방식.
+- 동적인 화면을 표현하는데 최적화되어있다.
 
-To learn more about Next.js, take a look at the following resources:
+### SSG
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- 처음 빌드 시 초기 HTML을 생성하는 방법이다.
+- 초기 HTML을 생성할 수 있기에 metadata 등을 넣을 수 있고, 이를 이용해 SEO를 개선할 수 있다.
+- 이미 정적 파일들이 모두 만들어져 있는 방식이기에, 배포를 CSR과 비슷한 방법으로 할 수 있다.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### ISR
 
-## Deploy on Vercel
+- SSG와 동일하게 초기 빌드 시에 HTML이 생성되는 방식이나, 특정 주기에 따라 새롭게 빌드를 진행한다.
+- 페이지의 일부만 정적 생성이 가능하다.
+- 주기적으로 빌드를 해 줄 무언가가 필요하기에, 사실상 ISR도 SSR의 일부라고 볼 수 있을 듯 하다. 따라서 배포 시 SSR과 동일하게 WAS를 올릴 수 있는 컴퓨터가 필요하다.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 행록 **렌더링 방식 분석**
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+![스크린샷 2023-10-15 오후 10 32 08](https://github.com/woowacourse/frontend-rendering/assets/45068522/a39fe81f-6d9e-48f6-899a-2468e32503cc)
+
+- 초기 페이지에서 매 요청마다 데이터가 달라질 수 있는 상황이기에, 매번 동적으로 fetch를 해 다른 HTML을 사용자에게 보내줄 수 있는 렌더링 방식이 유리하다고 생각합니다.
+
+## **성능 측정 및 비교**
+
+### CSR
+
+![스크린샷 2023-10-15 오후 10 37 26](https://github.com/woowacourse/frontend-rendering/assets/45068522/e497e586-4811-4f9f-8ac0-e5921d163619)
+
+### SSR
+
+![스크린샷 2023-10-15 오후 10 37 33](https://github.com/woowacourse/frontend-rendering/assets/45068522/ad3a1888-dc9b-4eaa-8497-ffd850a128e9)
+
+성능은 CSR점수가 더 높게나왔는데, 실제 행록에서는 압축된 이미지를 보여주기 때문입니다.
+미션에서 SSR하면서 mock데이터에 사진 용량이 큰 것들을 넣어서 점수가 떨어지는 것으로 보입니다.
+**TBT가 50밀리초에서 0초로 줄어든게 핵심이 아닐까 싶습니다.**
