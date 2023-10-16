@@ -9,7 +9,7 @@ export default async function Home() {
 
   return (
     <main>
-      <RestaurantWishList restaurantData={[]} />
+      <RestaurantWishList restaurantData={data} />
     </main>
   );
 }
