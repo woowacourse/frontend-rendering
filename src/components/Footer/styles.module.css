@@ -1,0 +1,24 @@
+/* containerStyling.module.css */
+
+.containerStyling {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  width: 100vw;
+  height: 164px;
+  padding: 0 64px;
+  border-top: 1px solid #e8e8e8;
+  background-color: white;
+}
+
+@media screen and (max-width: 600px) {
+  .containerStyling {
+    height: 124px;
+  }
+}
+
+.containerStyling * {
+  color: #727272;
+}

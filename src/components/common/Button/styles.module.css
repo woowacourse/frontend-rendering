@@ -1,0 +1,49 @@
+.buttonStyling {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 4px;
+  outline: 0 solid white;
+  background-color: white;
+  font-weight: 600;
+  transition: all 0.2s ease-in;
+  cursor: pointer;
+}
+
+.buttonStyling:focus {
+  outline-width: 1px;
+}
+
+.buttonStyling:disabled {
+  opacity: 0.4;
+}
+
+.large {
+  padding: 14px 16px;
+  font-size: 18px;
+  line-height: 28px;
+}
+
+.medium {
+  padding: 12px 16px;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.small {
+  padding: 8px 12px;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.primary {
+  background-color: #00b2ff;
+  color: #ffffff;
+}
+.primary:hover:enabled {
+  background-color: #009ee2;
+}
+.primary:focus {
+  box-shadow: 0 0 0 3px #009ee2;
+}

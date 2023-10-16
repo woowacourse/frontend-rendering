@@ -1,0 +1,20 @@
+.containerStyling {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 16px;
+  margin-bottom: 24px;
+}
+
+.headingStyling {
+  margin: 0 128px;
+  font-weight: 800;
+  font-size: 48px;
+  word-break: keep-all;
+}
+
+.imageStyling {
+  width: 854px;
+  margin-left: 48px;
+}

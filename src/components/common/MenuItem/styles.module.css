@@ -1,0 +1,11 @@
+.menuItemStyling {
+  padding: 8px;
+  font-size: 14px;
+  line-height: 1.5;
+  transition: all 0.2s ease-in;
+  cursor: pointer;
+}
+
+.menuItemStyling:hover {
+  background-color: #f4f4f4;
+}

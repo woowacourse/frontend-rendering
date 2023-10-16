@@ -1,0 +1,11 @@
+/* badgeStyling.module.css */
+
+.badgeStyling {
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  line-height: 20px;
+
+  background-color: #d8f3ff;
+  color: #006f9f;
+}

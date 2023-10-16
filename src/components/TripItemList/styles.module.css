@@ -1,0 +1,20 @@
+.containerStyling {
+  min-height: calc(100vh - 331px);
+}
+
+.gridBoxStyling {
+  margin: 24px 50px 64px; /* Use CSS variables for margin values */
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  row-gap: 32px;
+  column-gap: 24px;
+  place-items: center;
+}
+
+.headingStyling {
+  font-size: 24px;
+}
+
+.emptyBoxStyling {
+  margin-left: 50px;
+}
