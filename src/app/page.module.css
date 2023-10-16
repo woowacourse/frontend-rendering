@@ -1,0 +1,10 @@
+.main {
+  width: 1044px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.space {
+  min-width: 40px;
+  min-height: 40px;
+}

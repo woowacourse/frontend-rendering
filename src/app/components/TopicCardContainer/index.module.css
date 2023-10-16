@@ -1,0 +1,30 @@
+.info {
+  display: flex;
+  align-items: flex-end;
+}
+
+.title {
+  display: block;
+  font-size: 24px;
+  font-weight: 700;
+  color: #454545;
+}
+
+.description {
+  display: block;
+  font-size: 16px;
+  font-weight: 400;
+  color: #767676;
+}
+
+.space {
+  min-width: 4px;
+  min-height: 4px;
+}
+
+.topics {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
