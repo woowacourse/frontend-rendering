@@ -1,0 +1,88 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@*": [
+        "./src/*"
+      ],
+      "@mocks/*": [
+        "./src/mocks/*"
+      ],
+      "@utils/*": [
+        "./src/utils/*"
+      ],
+      "@map/*": [
+        "./src/components/google-maps/map/*"
+      ],
+      "@marker/*": [
+        "./src/components/google-maps/marker/*"
+      ],
+      "@ui/*": [
+        "./src/components/ui/*"
+      ],
+      "@common/*": [
+        "./src/components/common/*"
+      ],
+      "@components/*": [
+        "./src/components/*"
+      ],
+      "@hooks/*": [
+        "./src/hooks/*"
+      ],
+      "@stores/*": [
+        "./src/stores/*"
+      ],
+      "@constants": [
+        "./src/constants/index"
+      ],
+      "@constants/*": [
+        "./src/constants/*"
+      ],
+      "@style": [
+        "./src/style/index"
+      ],
+      "@style/*": [
+        "./src/style/*"
+      ],
+      "@assets/*": [
+        "./src/assets/*"
+      ],
+      "@type": [
+        "./src/types/index"
+      ],
+      "@type/*": [
+        "./src/types/*"
+      ]
+    }
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
