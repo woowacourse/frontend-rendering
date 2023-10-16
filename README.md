@@ -37,8 +37,7 @@
    <img width="432" alt="스크린샷 2023-10-16 오후 2 58 33" src="https://github.com/turtle601/json-server-for-react-payment/assets/78203399/d9f20eeb-61d1-41d4-a093-9d97af08bd01">
 
 2. SSR
-
+   <img width="403" alt="스크린샷 2023-10-16 오후 3 22 29" src="https://github.com/ssi02014/react-query-tutorial/assets/78203399/9217d643-4713-457b-bf24-a96df157e681">
 
 3. ISR
 
-<img width="543" alt="스크린샷 2023-10-16 오후 2 52 22" src="https://github.com/turtle601/json-server-for-react-payment/assets/78203399/3c9b8209-60d7-4caa-8dee-4d4f4c40246a">
