@@ -1,7 +1,7 @@
 import RestaurantWishList from '@/components/RestaurantWishList';
 
 export default async function Home() {
-  const res = await fetch('https://frontend-rendering-imsd.vercel.app/api', {
+  const res = await fetch('https://json-server-4140.onrender.com/restaurants', {
     cache: 'force-cache',
   });
 
