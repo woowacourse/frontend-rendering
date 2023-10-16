@@ -3,7 +3,9 @@ import axios from 'axios';
 // import { Tokens } from '@/types/auth/client';
 // import { zipgoLocalStorage } from '@/utils/localStorage';
 
-export const { BASE_URL } = { BASE_URL: 'https://api.zipgo.pet' };
+export const { BASE_URL } = {
+  BASE_URL: 'https://step1--graceful-tapioca-ffe2ed.netlify.app',
+};
 
 // const tokens = zipgoLocalStorage.getTokens();
 

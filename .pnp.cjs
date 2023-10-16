@@ -30,6 +30,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["@tanstack/react-query", "virtual:eabc90e8f9acf7b3d3d578cfed456c31953e21821e16166b57e93444be688ec735c0930f0d059ee4d778683f0db2fe4d844de1be0c1239e8cd08e8fc39fbf972#npm:4.36.1"],\
             ["@types/color-convert", "npm:2.0.1"],\
+            ["@types/debug", "npm:4.1.9"],\
             ["@types/node", "npm:20.8.4"],\
             ["@types/react", "npm:18.2.28"],\
             ["@types/react-dom", "npm:18.2.13"],\
@@ -37,6 +38,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/styled-components", "npm:5.1.28"],\
             ["axios", "npm:1.5.1"],\
             ["babel-plugin-styled-components", "virtual:eabc90e8f9acf7b3d3d578cfed456c31953e21821e16166b57e93444be688ec735c0930f0d059ee4d778683f0db2fe4d844de1be0c1239e8cd08e8fc39fbf972#npm:2.1.4"],\
+            ["debug", "virtual:feb0771c9f8eadaf509cfed41e14a8bebbea5442233275c1c87085111077a08ef71eb773b899665b154d8203a55a489610a54117ae059fce5f5b8b844493b1b1#npm:4.3.4"],\
             ["eslint", "npm:8.51.0"],\
             ["eslint-config-airbnb", "virtual:eabc90e8f9acf7b3d3d578cfed456c31953e21821e16166b57e93444be688ec735c0930f0d059ee4d778683f0db2fe4d844de1be0c1239e8cd08e8fc39fbf972#npm:19.0.4"],\
             ["eslint-config-next", "virtual:eabc90e8f9acf7b3d3d578cfed456c31953e21821e16166b57e93444be688ec735c0930f0d059ee4d778683f0db2fe4d844de1be0c1239e8cd08e8fc39fbf972#npm:13.5.4"],\
@@ -67,6 +69,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["2023-zipgo-next", "workspace:."],\
             ["@tanstack/react-query", "virtual:eabc90e8f9acf7b3d3d578cfed456c31953e21821e16166b57e93444be688ec735c0930f0d059ee4d778683f0db2fe4d844de1be0c1239e8cd08e8fc39fbf972#npm:4.36.1"],\
             ["@types/color-convert", "npm:2.0.1"],\
+            ["@types/debug", "npm:4.1.9"],\
             ["@types/node", "npm:20.8.4"],\
             ["@types/react", "npm:18.2.28"],\
             ["@types/react-dom", "npm:18.2.13"],\
@@ -74,6 +77,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/styled-components", "npm:5.1.28"],\
             ["axios", "npm:1.5.1"],\
             ["babel-plugin-styled-components", "virtual:eabc90e8f9acf7b3d3d578cfed456c31953e21821e16166b57e93444be688ec735c0930f0d059ee4d778683f0db2fe4d844de1be0c1239e8cd08e8fc39fbf972#npm:2.1.4"],\
+            ["debug", "virtual:feb0771c9f8eadaf509cfed41e14a8bebbea5442233275c1c87085111077a08ef71eb773b899665b154d8203a55a489610a54117ae059fce5f5b8b844493b1b1#npm:4.3.4"],\
             ["eslint", "npm:8.51.0"],\
             ["eslint-config-airbnb", "virtual:eabc90e8f9acf7b3d3d578cfed456c31953e21821e16166b57e93444be688ec735c0930f0d059ee4d778683f0db2fe4d844de1be0c1239e8cd08e8fc39fbf972#npm:19.0.4"],\
             ["eslint-config-next", "virtual:eabc90e8f9acf7b3d3d578cfed456c31953e21821e16166b57e93444be688ec735c0930f0d059ee4d778683f0db2fe4d844de1be0c1239e8cd08e8fc39fbf972#npm:13.5.4"],\
@@ -3245,6 +3249,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["@types/debug", [\
+        ["npm:4.1.9", {\
+          "packageLocation": "./.yarn/cache/@types-debug-npm-4.1.9-8e7cf27fbd-e88ee8b19d.zip/node_modules/@types/debug/",\
+          "packageDependencies": [\
+            ["@types/debug", "npm:4.1.9"],\
+            ["@types/ms", "npm:0.7.32"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["@types/hoist-non-react-statics", [\
         ["npm:3.3.3", {\
           "packageLocation": "./.yarn/cache/@types-hoist-non-react-statics-npm-3.3.3-6a79e5822d-107ac20ab3.zip/node_modules/@types/hoist-non-react-statics/",\
@@ -3270,6 +3284,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@types-minimist-npm-1.2.3-902ebca4e0-666ea4f8c3.zip/node_modules/@types/minimist/",\
           "packageDependencies": [\
             ["@types/minimist", "npm:1.2.3"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@types/ms", [\
+        ["npm:0.7.32", {\
+          "packageLocation": "./.yarn/cache/@types-ms-npm-0.7.32-38dadca018-610744605c.zip/node_modules/@types/ms/",\
+          "packageDependencies": [\
+            ["@types/ms", "npm:0.7.32"]\
           ],\
           "linkType": "HARD"\
         }]\

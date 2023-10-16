@@ -11,6 +11,7 @@ __metadata:
   dependencies:
     "@tanstack/react-query": ^4.36.1
     "@types/color-convert": ^2
+    "@types/debug": ^4
     "@types/node": ^20
     "@types/react": ^18
     "@types/react-dom": ^18
@@ -18,6 +19,7 @@ __metadata:
     "@types/styled-components": ^5.1.26
     axios: ^1.5.1
     babel-plugin-styled-components: ^2.1.4
+    debug: ^4.3.4
     eslint: ^8.51.0
     eslint-config-airbnb: ^19.0.4
     eslint-config-next: 13.5.4
@@ -1919,6 +1921,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/debug@npm:^4":
+  version: 4.1.9
+  resolution: "@types/debug@npm:4.1.9"
+  dependencies:
+    "@types/ms": "*"
+  checksum: e88ee8b19d106f33eb0d3bc58bacff9702e98d821fd1ebd1de8942e6b97419e19a1ccf39370f1764a1dc66f79fd4619f3412e1be6eeb9f0b76412f5ffe4ead93
+  languageName: node
+  linkType: hard
+
 "@types/hoist-non-react-statics@npm:*":
   version: 3.3.3
   resolution: "@types/hoist-non-react-statics@npm:3.3.3"
@@ -1940,6 +1951,13 @@ __metadata:
   version: 1.2.3
   resolution: "@types/minimist@npm:1.2.3"
   checksum: 666ea4f8c39dcbdfbc3171fe6b3902157c845cc9cb8cee33c10deb706cda5e0cc80f98ace2d6d29f6774b0dc21180c96cd73c592a1cbefe04777247c7ba0e84b
+  languageName: node
+  linkType: hard
+
+"@types/ms@npm:*":
+  version: 0.7.32
+  resolution: "@types/ms@npm:0.7.32"
+  checksum: 610744605c5924aa2657c8a62d307052af4f0e38e2aa015f154ef03391fabb4fd903f9c9baacb41f6e5798b8697e898463c351e5faf638738603ed29137b5254
   languageName: node
   linkType: hard
 
