@@ -14,9 +14,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang='ko'>
-      <head>
-        <title>VoTogether by Next</title>
-      </head>
       <body>
         <Providers>{children}</Providers>
       </body>

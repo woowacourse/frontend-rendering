@@ -11,8 +11,14 @@ import thirdRankIcon from '@/assets/third-rank.webp';
 import Image, { StaticImageData } from 'next/image';
 import { getPassionUserRanking } from '@/api/ranking';
 import { PassionUserRanking } from '@/types/ranking';
-import Seo from '@/components/Seo';
 import { use } from 'react';
+import { Metadata } from 'next/types';
+
+export const generateMetadata = async ({ params }: any): Promise<Metadata> => {
+  return {
+    title: '보투게더 랭킹',
+  };
+};
 
 const columnNameList = ['등수', '닉네임', '작성글 수', '투표 수', '점수'];
 
@@ -24,7 +30,7 @@ const rankIconUrl: Record<number, StaticImageData> = {
 
 let selectedButton = '열정 유저';
 
-export default function RankingPage() {
+export default function RankingPage({ params }: any) {
   const rankerList: PassionUserRanking[] = use(getPassionUserRanking());
 
   const firstButton = {
@@ -42,7 +48,6 @@ export default function RankingPage() {
 
   return (
     <>
-      <Seo title='랭킹' />
       <Layout isSidebarVisible>
         <S.Container>
           <S.PageHeader>🏆 랭킹 🏆</S.PageHeader>
