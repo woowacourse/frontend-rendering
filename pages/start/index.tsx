@@ -1,5 +1,5 @@
 import Text from '../../components/common/Text/Text';
-import * as S from './StartPage.styled';
+import * as S from '../../components/StartPage.styled';
 import Button from '../../components/common/Button/Button';
 import IntroCardPile from '../../components/IntroCardPile/IntroCardPile';
 import BackButton from '../../components/common/BackButton/BackButton';

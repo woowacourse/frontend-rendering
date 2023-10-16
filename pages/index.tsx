@@ -1,4 +1,4 @@
-import * as S from '../components/index.styled';
+import * as S from '../components/LandingPage.styled';
 import Button from '../components/common/Button/Button';
 import IntroCardPile from '../components/IntroCardPile/IntroCardPile';
 import Text from '../components/common/Text/Text';
