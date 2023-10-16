@@ -1,7 +1,6 @@
-import styled from 'styled-components';
+import Link from 'next/link';
 import Avatar from '../Avatar/Avatar';
 import * as S from './Header.style';
-import { getRunnerPost } from '@/apis/apis';
 
 const Header = async () => {
   const profile = { name: '도리', imageUrl: null };
@@ -9,7 +8,9 @@ const Header = async () => {
   return (
     <S.HeaderWrapper>
       <S.HeaderContainer>
-        <S.Logo />
+        <Link href={'/'}>
+          <S.Logo />
+        </Link>
         <S.MenuContainer>
           <S.AvatarContainer>
             <S.ProfileName>{profile.name}</S.ProfileName>
