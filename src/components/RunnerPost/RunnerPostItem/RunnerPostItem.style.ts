@@ -7,7 +7,7 @@ export const RunnerPostItemContainer = styled.li`
   justify-content: space-between;
 
   min-width: 340px;
-  width: 100%;
+  width: 1080px;
   height: max-content;
   padding: 35px 40px;
 
@@ -24,6 +24,7 @@ export const RunnerPostItemContainer = styled.li`
   }
 
   @media (max-width: 768px) {
+    width: 360px;
     padding: 25px 30px;
   }
 `;

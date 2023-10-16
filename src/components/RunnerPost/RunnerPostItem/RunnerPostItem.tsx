@@ -5,6 +5,7 @@ import Label from '../../Label/Label';
 import Avatar from '../../Avatar/Avatar';
 import * as S from './RunnerPostItem.style';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 
 const REVIEW_STATUS_LABEL_TEXT = {
   ALL: '전체',
@@ -32,52 +33,54 @@ const RunnerPostItem = ({
   const router = useRouter();
 
   return (
-    <S.RunnerPostItemContainer onClick={() => router.push(postUrl)}>
-      <S.LeftSideContainer>
-        <S.PostTitle>{title}</S.PostTitle>
-        <S.DeadLineContainer>
-          <S.DeadLine>{deadline.replace('T', ' ')} 까지</S.DeadLine>
-          <Label
-            height="15px"
-            colorTheme={
-              reviewStatus === 'NOT_STARTED'
-                ? 'WHITE'
-                : reviewStatus === 'IN_PROGRESS'
-                ? 'RED'
-                : 'GRAY'
-            }
-            fontSize="12px"
-          >
-            {REVIEW_STATUS_LABEL_TEXT[reviewStatus]}
-          </Label>
-        </S.DeadLineContainer>
-        <S.TagContainer>
-          {tags.map((tag, index) => (
-            <S.Tag key={index}>#{tag}</S.Tag>
-          ))}
-        </S.TagContainer>
-      </S.LeftSideContainer>
-      <S.RightSideContainer>
-        {runnerProfile ? (
-          <S.ProfileContainer>
-            <Avatar
-              width="40px"
-              height="40px"
-              imageUrl={runnerProfile.imageUrl}
-            />
-            <S.ProfileName>{runnerProfile.name}</S.ProfileName>
-          </S.ProfileContainer>
-        ) : null}
-        <S.ChatViewContainer>
-          <S.statisticsContainer>
-            <S.statisticsImage src={'/eye-icon.svg'} alt="조회수" />
-            <S.statisticsText>{watchedCount}</S.statisticsText>
-            <S.statisticsImage src={'/applicant-icon.svg'} alt="리뷰요청수" />
-            <S.statisticsText>{applicantCount}</S.statisticsText>
-          </S.statisticsContainer>
-        </S.ChatViewContainer>
-      </S.RightSideContainer>
-    </S.RunnerPostItemContainer>
+    <Link href={postUrl}>
+      <S.RunnerPostItemContainer onClick={() => router.push(postUrl)}>
+        <S.LeftSideContainer>
+          <S.PostTitle>{title}</S.PostTitle>
+          <S.DeadLineContainer>
+            <S.DeadLine>{deadline.replace('T', ' ')} 까지</S.DeadLine>
+            <Label
+              height="15px"
+              colorTheme={
+                reviewStatus === 'NOT_STARTED'
+                  ? 'WHITE'
+                  : reviewStatus === 'IN_PROGRESS'
+                  ? 'RED'
+                  : 'GRAY'
+              }
+              fontSize="12px"
+            >
+              {REVIEW_STATUS_LABEL_TEXT[reviewStatus]}
+            </Label>
+          </S.DeadLineContainer>
+          <S.TagContainer>
+            {tags.map((tag, index) => (
+              <S.Tag key={index}>#{tag}</S.Tag>
+            ))}
+          </S.TagContainer>
+        </S.LeftSideContainer>
+        <S.RightSideContainer>
+          {runnerProfile ? (
+            <S.ProfileContainer>
+              <Avatar
+                width="40px"
+                height="40px"
+                imageUrl={runnerProfile.imageUrl}
+              />
+              <S.ProfileName>{runnerProfile.name}</S.ProfileName>
+            </S.ProfileContainer>
+          ) : null}
+          <S.ChatViewContainer>
+            <S.statisticsContainer>
+              <S.statisticsImage src={'/eye-icon.svg'} alt="조회수" />
+              <S.statisticsText>{watchedCount}</S.statisticsText>
+              <S.statisticsImage src={'/applicant-icon.svg'} alt="리뷰요청수" />
+              <S.statisticsText>{applicantCount}</S.statisticsText>
+            </S.statisticsContainer>
+          </S.ChatViewContainer>
+        </S.RightSideContainer>
+      </S.RunnerPostItemContainer>
+    </Link>
   );
 };
 

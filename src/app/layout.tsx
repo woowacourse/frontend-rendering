@@ -1,5 +1,6 @@
 import StyledComponentsRegistry from '@/lib/registry';
 import type { Metadata } from 'next';
+import { GlobalStyle } from './GlobalStyles';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -14,6 +15,7 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body>
+        <GlobalStyle />
         <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
       </body>
     </html>
