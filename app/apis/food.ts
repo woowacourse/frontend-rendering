@@ -17,6 +17,12 @@ export const getFoodList = async (payload: GetFoodListReq) => {
 };
 
 export const getFoodDetail = async ({ petFoodId }: GetFoodDetailReq) => {
+  // const data = await fetch(`https://api.zipgo.pet/pet-foods/${petFoodId}`, {
+  //   method: 'GET',
+  // });
+
+  // const res = await data.json();
+
   const { data } = await client.get<GetFoodDetailRes>(
     `/pet-foods/${petFoodId}`
   );

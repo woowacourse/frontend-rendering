@@ -2,6 +2,8 @@ import { useInfiniteQuery, useQuery } from '@tanstack/react-query';
 
 import { getFoodDetail, getFoodList, getFoodListFilterMeta } from '@/apis/food';
 import { Parameter } from '@/types/common/utility';
+import { useEffect, useState } from 'react';
+import { GetFoodDetailRes } from '@/types/food/remote';
 
 const QUERY_KEY = {
   foodList: 'foodList',
@@ -50,9 +52,19 @@ export const useFoodDetailQuery = (
     queryFn: () => getFoodDetail(payload),
   });
 
+  // const [foodData, setFoodData] = useState<GetFoodDetailRes | null>(null);
+
+  // const getData = async () => {
+  //   const data = await getFoodDetail(payload);
+  //   setFoodData(data);
+  // };
+
+  // useEffect(() => {
+  //   getData();
+  // }, []);
+
   return {
     foodData: data,
-    ...restQuery,
   };
 };
 

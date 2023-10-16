@@ -38,5 +38,6 @@ module.exports = {
     indent: 'off',
     'object-curly-newline': 'off',
     'no-console': 'off',
+    '@next/next/no-async-client-component': 'off',
   },
 };

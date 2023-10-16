@@ -11,15 +11,12 @@ export default function Home() {
   const queryClient = new QueryClient({
     defaultOptions: {
       queries: {
-        suspense: true,
         retry: false,
-        useErrorBoundary: true,
-      },
-      mutations: {
-        useErrorBoundary: true,
+        suspense: true,
       },
     },
   });
+
   return (
     <RootStyleRegistry>
       <ThemeProvider theme={theme}>
