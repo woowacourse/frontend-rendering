@@ -9,12 +9,6 @@ const Main = () => {
       <Wrapper>
         <LogoMessage>식물을 쉽게</LogoMessage>
         <ImageArea>
-          {/* <Image
-            src={LogoSvg}
-            alt="피움 로고. 녹색으로 '피움'이라는 글자가 적혀 있다."
-            width={112}
-            priority={true}
-          /> */}
           <Logo width={112} height={101} />
         </ImageArea>
         <SearchBoxArea>
