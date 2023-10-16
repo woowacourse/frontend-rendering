@@ -1,0 +1,23 @@
+{
+  "name": "frontend-rendering",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "babel-plugin-styled-components": "^2.1.4",
+    "next": "13.5.4",
+    "react": "^18",
+    "react-dom": "^18"
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-private-methods": "^7.22.5",
+    "@types/styled-components": "^5.1.28",
+    "styled-components": "^6.0.8",
+    "typescript": "5.2.2"
+  }
+}
