@@ -15,8 +15,9 @@ import GlobalStyle from '@/components/@common/GlobalStyle';
 import theme from '@/styles/theme';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import RootStyleRegistry from '@/lib/RootStyleRegistry';
+import { GetFoodDetailRes } from '@/types/food/remote';
 
-const FoodDetail = ({ foodData }) => {
+const FoodDetail = ({ foodData }: { foodData: GetFoodDetailRes }) => {
   const {
     name,
     hasStandard,
