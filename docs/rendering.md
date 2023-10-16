@@ -1,5 +1,4 @@
-![isr-lighthouse](https://github.com/inyeong-kang/frontend-rendering/assets/81199414/cf9a207a-08fa-46ad-8fc9-7ba91b33c3ad)# 렌더링 시점 비교
-
+# 렌더링 시점 비교
 ## SPA (Single Page Application) / CSR (Client Side Rendering)
 
 - 웹 페이지의 초기 로딩은 정적 HTML로 이뤄지나 이후 클라이언트 측 JavaScript로 동적 콘텐츠를 렌더링함.
