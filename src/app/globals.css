@@ -1,0 +1,90 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+
+  font-size: 62.5%;
+
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+*::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera*/
+}
+
+html,
+body {
+  max-width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+body {
+  background: #3e5e8e;
+}
+
+img {
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+
+  cursor: pointer;
+}
+
+a:hover,
+img:hover,
+button:hover {
+  transition: transform 0.3s ease;
+  transform: scale(1.05);
+}
+
+.flex {
+  display: flex;
+  gap: 1.6rem;
+}
+
+.layout {
+  width: 100vw;
+  height: 100%;
+
+  background-color: #ffffff;
+  overflow-y: auto;
+}
+
+.flexCenter {
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (min-width: 768px) {
+  .layout {
+    position: relative;
+    max-width: 430px;
+  }
+
+  .zipgoBackground {
+    width: 100%;
+
+    background-image: url('/zipgo_background.webp');
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .defaultDesktop {
+    display: flex;
+    justify-content: flex-end;
+
+    width: 1024px;
+  }
+}

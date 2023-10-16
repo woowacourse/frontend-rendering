@@ -1,0 +1,84 @@
+.petFoodItemWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+
+  width: 100%;
+
+  text-decoration: none;
+}
+
+.petFoodImageWrapper {
+  position: relative;
+
+  overflow: hidden;
+
+  width: 100%;
+  height: 0;
+  padding-top: 100%;
+
+  border: 1px solid #e6e6e6;
+  border-radius: 14%;
+}
+
+.petFoodImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition: all 200ms ease;
+}
+
+.skeleton {
+  background: linear-gradient(-90deg, #aaa, #f0f0f0, #aaa, #f0f0f0);
+  background-size: 400%;
+  animation: skeleton-animation 5s infinite ease-out;
+  border-radius: 14%;
+}
+
+@keyframes skeleton-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.brandName {
+  margin-top: 1.6rem;
+
+  font-size: 1.4rem;
+  font-weight: 600;
+  font-style: normal;
+  line-height: 17px;
+  color: #939393;
+  letter-spacing: -0.5px;
+}
+
+.foodName {
+  overflow: hidden;
+  display: -webkit-box;
+
+  margin: 1rem 0;
+
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 1.7rem;
+  color: #4b4b4b;
+  text-overflow: ellipsis;
+  letter-spacing: -0.5px;
+  word-break: break-word;
+
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
