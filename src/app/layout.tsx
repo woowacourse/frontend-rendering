@@ -1,6 +1,7 @@
 import StyledComponentsRegistry from '@/lib/registry';
 import type { Metadata } from 'next';
 import { GlobalStyle } from './GlobalStyles';
+import Layout from '@/components/layout/Layout';
 
 export const metadata: Metadata = {
   title: 'Baton',
@@ -15,8 +16,10 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body>
-        <GlobalStyle />
-        <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+        <StyledComponentsRegistry>
+          <GlobalStyle />
+          <Layout>{children}</Layout>
+        </StyledComponentsRegistry>
       </body>
     </html>
   );

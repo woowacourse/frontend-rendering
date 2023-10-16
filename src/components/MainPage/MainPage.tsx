@@ -10,16 +10,14 @@ const MainPage = async () => {
   const runnerPostList = await getRunnerPost({ limit: 10 });
 
   return (
-    <Layout maxWidth="none">
-      <S.MainContainer>
-        <S.TitleWrapper>
-          <S.Title>서포터를 찾고 있어요 👀</S.Title>
-        </S.TitleWrapper>
-        <S.RunnerPostContainer>
-          <RunnerPostList posts={runnerPostList.data} />
-        </S.RunnerPostContainer>
-      </S.MainContainer>
-    </Layout>
+    <S.MainContainer>
+      <S.TitleWrapper>
+        <S.Title>서포터를 찾고 있어요 👀</S.Title>
+      </S.TitleWrapper>
+      <S.RunnerPostContainer>
+        <RunnerPostList posts={runnerPostList.data} />
+      </S.RunnerPostContainer>
+    </S.MainContainer>
   );
 };
 
