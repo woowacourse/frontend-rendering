@@ -59,7 +59,7 @@ const RunnerPostPage = async ({ runnerPostId }: Props) => {
                   <S.statisticsText>
                     {runnerPostDetail.watchedCount}
                   </S.statisticsText>
-                  <S.statisticsImage src={'/application-icon.svg'} />
+                  <S.statisticsImage src={'/applicant-icon.svg'} />
                   <S.statisticsText>
                     {runnerPostDetail.applicantCount}
                   </S.statisticsText>
