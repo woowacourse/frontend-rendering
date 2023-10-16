@@ -1,0 +1,17 @@
+.banner {
+  width: 100%;
+  height: auto;
+  margin-bottom: 40px;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 0px 20px;
+  margin-top: 20px;
+}
+
+.title {
+  font-size: 2rem;
+}

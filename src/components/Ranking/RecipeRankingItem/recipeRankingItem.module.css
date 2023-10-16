@@ -1,0 +1,64 @@
+.bold {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.container {
+  width: calc(100% - 50px);
+  max-width: 560px;
+  margin: 12px 0;
+  padding: 0 5px;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 95%;
+}
+
+.rankingWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.recipeImage {
+  margin-right: 12px;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+.titleFavoriteWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+}
+
+.favoriteWrapper {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.favoriteIcon {
+  fill: red;
+}
+
+.authorWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+}
+
+.authorImage {
+  border: 2px solid var(--color-primary);
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.nickname {
+  font-size: 1.2rem;
+  color: var(--text-sub);
+}

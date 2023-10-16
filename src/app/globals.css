@@ -1,0 +1,78 @@
+:root {
+  --color-primary: #d8eaff;
+  --color-secondary: #ffec99;
+
+  --color-white: #ffffff;
+  --color-gray1: #f7f7f7;
+  --color-gray2: #dddddd;
+  --color-gray3: #a0a0a0;
+  --color-gray4: #6b6b6b;
+  --color-gray5: #444444;
+  --color-black: #232527;
+
+  --text-default: var(--color-black);
+  --text-sub: var(--color-gray5);
+  --text-info: var(--color-gray4);
+  --text-disabled: var(--color-gray3);
+  --text-white: var(--color-white);
+
+  --border-default: var(--color-gray3);
+  --border-strong: var(--color-gray4);
+  --border-disabled: var(--color-gray2);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: var(--color-white);
+}
+
+a {
+  color: var(--text-default);
+  text-decoration: none;
+  outline: none;
+}
+
+ol,
+ul,
+li {
+  list-style: none;
+}
+
+input {
+  background-color: transparent;
+  border: 0;
+}
+
+button {
+  color: initial;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.container {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.main {
+  position: relative;
+  max-width: 600px;
+  height: calc(100% - 120px);
+  margin: 0 auto;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
