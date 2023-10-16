@@ -4,17 +4,10 @@ import { getFetch } from '@/utils/fetch';
 
 const BASE_URL = process.env.VOTOGETHER_BASE_URL;
 
-export const getUserRanking = async (isLoggedIn: boolean) => {
-  if (!isLoggedIn) return null;
-
-  return await getFetch<PassionUserRanking>(
-    `${BASE_URL}/members/me/ranking/passion`
-  );
-};
-
 export const getPassionUserRanking = async () => {
   return await getFetch<PassionUserRanking[]>(
-    `${BASE_URL}/members/ranking/passion/guest`
+    `${BASE_URL}/members/ranking/passion/guest`,
+    60 * 30
   );
 };
 

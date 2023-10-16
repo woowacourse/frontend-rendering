@@ -28,12 +28,16 @@ const makeFetchMultiHeaders = () => {
   };
 };
 
-export const getFetch = async <T>(url: string): Promise<T> => {
+export const getFetch = async <T>(
+  url: string,
+  revalidate?: number
+): Promise<T> => {
   try {
     await silentLogin();
     const response = await fetch(url, {
       method: 'GET',
       headers: makeFetchHeaders(),
+      next: { revalidate },
     });
 
     if (!response.ok) {
