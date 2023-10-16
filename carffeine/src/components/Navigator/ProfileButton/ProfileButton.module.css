@@ -1,0 +1,17 @@
+.container {
+  position: relative;
+  display: inline-block;
+}
+
+.container:first-child {
+  left: calc(100% + 20px);
+  position: absolute;
+  top: -18px;
+}
+
+.caption {
+  font-size: 12px;
+  color: #666;
+
+  margin-top: 5px;
+}
