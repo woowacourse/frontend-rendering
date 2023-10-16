@@ -1,36 +1,97 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## CSR
 
-## Getting Started
+### CSR이란?
 
-First, run the development server:
+React를 사용한 클라이언트 측 렌더링(CSR)에서 브라우저는 페이지에 필요한 최소한의 HTML 페이지와 JavaScript를 다운로드하고 JavaScript를 사용하여 DOM을 업데이트하고 페이지를 렌더링하는 방식.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### 장점
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+페이지가 처음 로드된 후에는 필요한 데이터만 가져오면 되고 JavaScript는 전체 페이지를 새로 고칠 필요 없이 페이지의 일부를 다시 렌더링할 수 있으므로 동일한 웹 사이트의 다른 페이지로 이동하는 것이 일반적으로 더 빠름.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 단점
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+애플리케이션이 처음 로드되면 모든 JavaScript가 다운로드, 구문 분석 및 실행될 때까지 페이지가 완전히 렌더링되지 않기 때문에 지연을 느낄 수 있음.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## SSG
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### SSG란?
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+페이지가 페이지 HTML이 빌드 시 생성되는 렌더링 방식. 외부 데이터가 있는 경우 데이터를 미리 받아와 정적 페이지를 생성.
 
-## Deploy on Vercel
+### 장점
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+html 페이지를 미리 생성해 놓기 때문에 페이지를 빠르게 로딩할 수 있다는 장점이 있음
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### 단점
+
+데이터가 수정될 때마다 수정 사항을 반영하기 위해서는 빌드 과정을 다시 해야한다는 단점이 있음
+
+---
+
+## SSR
+
+### SSR이란?
+
+사용자 요청이 있을 때마다 html 페이지를 생성하는 렌더링 방식
+
+### 장점
+
+자바스크립트를 클라이언트에 보내지 않아도 되므로 CSR방식에 비해 빠름
+
+### 단점
+
+서버에서 렌더링을 진행하기 때문에 서버의 부담이 커질 수 있다는 단점이 있
+
+---
+
+## ISR
+
+### ISR이란?
+
+revalidate 시간 동안 생성해 놓은 페이지로 캐싱하는 렌더링 방식.
+생성되지 않은 경로에 대한 요청이 이루어지면 첫 번째 요청에서 페이지를 서버를 렌더링하고
+이후 revalidate 시간이 지난 후 요청이 들어오면 페이지를 재 렌더링 한다.
+
+### 장점
+
+변경된 데이터를 반영하기 위해 다시 빌드할 필요가 없다.
+
+### 단점
+
+데이터 수정이 페이지에 즉시 반영되지 않는다.
+
+---
+
+## 서비스에 적용
+
+저희 바톤 서비스에서는 CSR또는 SSR방식이 적합하다고 생각합니다.
+
+우선 SSG 방식은 실시간으로 글을 작성하고 이를 조회해야 해 데이터의 수정이 빈번하게 일어나므로 적합하지 않습니다
+
+### SSR, CSR ??
+
+#### SSR 방식
+
+<img width="818" alt="스크린샷 2023-10-16 오후 2 45 31" src="https://github.com/woowacourse/frontend-rendering/assets/103256030/f9cd3098-04d8-4b18-9e67-2fc4343830e5">
+
+#### CSR 방식
+
+<img width="818" alt="스크린샷 2023-10-16 오후 2 44 51" src="https://github.com/woowacourse/frontend-rendering/assets/103256030/b4163c8e-08ab-4dc6-ae78-f7edc78f12eb">
+
+CSR, SSR 방식으로 구현된 페이지의 성능 측정 결과입니다.
+채널톡과 이벤트 배너 기능을 삽입하지 않은 것을 감안해도 SSR 방식에서 LCP가 큰폭으로 줄어든 것을 볼 수 있습니다.
+하지만 서버 성능이 감소할 경우 TBT가 증가할 것으로 예상됩니다.
+
+유저가 메인페이지에 진입해 게시물 리스트를 보고 클릭하는 경우를 생각해보면
+페이지가 렌더링 되자마자 게시물을 바로 클릭하지 않고 게시물 리스트에 나와 있는 정보를 보고 판단해 일정시간이 지난 후 게시물을 클릭할 것이므로 사용자 경험으로는 TBT 보다는 최초 렌더링에 걸리는 시간인 LCP가 더 중요하다고 생각합니다.
+
+따라서 제가 구현한 페이지의 UX에는 SSR방식이 적합하다고 생각합니다.
+
+### SSR, ISR ??
+
+그렇다면 캐시를 이용하는 ISR 방식도 고려할 수 있습니다.
+캐시를 이용해 서버의 부담을 줄일 수 있지만, 저희 서비스의 이용자가 그렇게 많지 않아서버의 부담을 줄이기 보다는 플랫폼의 특성상 즉각적으로 업데이트 된 정보를 바로 반영하는 게 좀 더 UX적인 측면에서 좋을거라 생각합니다.
+
+따라서 최종적으로는 SSR방식이 저희 프로젝트에 적합한 방식이라고 생각합니다.
