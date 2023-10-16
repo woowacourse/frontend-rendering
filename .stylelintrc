@@ -1,5 +1,0 @@
-{
-  "extends": ["stylelint-config-clean-order", "stylelint-config-styled-components"],
-  "plugins": ["stylelint-order"],
-  "customSyntax": "postcss-styled-syntax"
-}
