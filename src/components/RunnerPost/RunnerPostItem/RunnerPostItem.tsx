@@ -1,10 +1,7 @@
-'use client';
-
 import { RunnerPost } from '../../../types/runnerPost';
 import Label from '../../Label/Label';
 import Avatar from '../../Avatar/Avatar';
 import * as S from './RunnerPostItem.style';
-import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 
 const REVIEW_STATUS_LABEL_TEXT = {
@@ -30,11 +27,10 @@ const RunnerPostItem = ({
   runnerPostData: RunnerPost;
 }) => {
   const postUrl = `/runnerPost/${runnerPostId}`;
-  const router = useRouter();
 
   return (
     <Link href={postUrl}>
-      <S.RunnerPostItemContainer onClick={() => router.push(postUrl)}>
+      <S.RunnerPostItemContainer>
         <S.LeftSideContainer>
           <S.PostTitle>{title}</S.PostTitle>
           <S.DeadLineContainer>
