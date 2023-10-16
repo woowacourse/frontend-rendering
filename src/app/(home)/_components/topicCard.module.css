@@ -1,0 +1,79 @@
+.topicCardWrapper {
+  width: 332px;
+  height: 140px;
+  cursor: pointer;
+  border: 1px solid rgb(150, 150, 150);
+  border-radius: 4px;
+}
+
+.topicCard {
+  display: flex;
+  position: relative;
+}
+
+.topicImage {
+  object-fit: cover;
+  display: block;
+}
+
+.topicInfo {
+  display: block;
+  padding: 8px;
+  width: 192px;
+}
+
+.topicNameWrapper {
+  display: block;
+  height: 52px;
+}
+
+.topicName {
+  display: block;
+  line-height: 160%;
+  color: rgb(69, 69, 69);
+  font-size: 16px;
+  font-weight: 600;
+  white-space: pre-wrap;
+}
+
+.creator {
+  display: block;
+  line-height: 160%;
+  color: rgb(69, 69, 69);
+  font-size: 14px;
+  font-weight: 400;
+  white-space: pre-wrap;
+}
+
+.space {
+  min-width: 4px;
+  min-height: 4px;
+}
+
+.date {
+  display: block;
+  line-height: 160%;
+  color: rgb(150, 150, 150);
+  font-size: 14px;
+  font-weight: 400;
+  white-space: pre-wrap;
+}
+
+.icons {
+  display: flex;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  width: 64px;
+}
+
+.iconText {
+  display: block;
+  line-height: 160%;
+  color: rgb(69, 69, 69);
+  font-size: 12px;
+  font-weight: 400;
+  white-space: pre-wrap;
+}

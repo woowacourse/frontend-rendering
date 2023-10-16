@@ -1,0 +1,30 @@
+.logoWrapper {
+  width: 100vw;
+  display: flex;
+  padding: 12px 20px 0 20px;
+}
+
+.navBarWrapper {
+  width: 100%;
+  min-height: 56px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  z-index: 2;
+  box-shadow: 0 -1px 8px rgba(0, 0, 0, 0.3);
+  justify-content: space-around;
+  position: fixed;
+  bottom: 0;
+}
+
+.childrenWrapper {
+  width: 1036px;
+  min-height: 100vh;
+  margin: 0px auto;
+  padding-top: 56px;
+  padding-bottom: 56px;
+  /* background-color: #532a2a; */
+  position: relative;
+  z-index: 1;
+}
