@@ -7,8 +7,9 @@ const nextConfig = {
   env: {
     HOST:
       process.env.NODE_ENV === 'development'
-        ? 'http://localhost:3000'
-        : 'https://sparrow-frontend-rendering.vercel.app',
+        ? 'http://localhost:7942'
+        : 'https://server-frontend-rendering-1d9d4e7d2546.herokuapp.com',
+    DICT_COUNT: 5,
   },
 
   images: {
