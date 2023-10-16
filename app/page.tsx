@@ -1,9 +1,9 @@
 'use client';
 
 import { ThemeProvider } from 'styled-components';
-import FoodDetail from './pages/FoodDetail/FoodDetail';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import theme from '@/styles/theme';
+import FoodDetail from './pages/FoodDetail/FoodDetail';
 import RootStyleRegistry from './lib/RootStyleRegistry';
 import GlobalStyle from './components/@common/GlobalStyle';
 

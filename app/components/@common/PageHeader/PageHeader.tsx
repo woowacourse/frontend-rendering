@@ -6,15 +6,13 @@ import useCurrentScroll from '@/hooks/@common/useCurrentScroll';
 // import { routerPath } from '@/router/routes';
 
 import Image from 'next/image';
-import { useRef } from 'react';
 
 interface PageHeaderProps {
-  onClick?: VoidFunction;
   title?: string;
 }
 
 const PageHeader = (pageHeaderProps: PageHeaderProps) => {
-  const { onClick, title } = pageHeaderProps;
+  const { title } = pageHeaderProps;
 
   const scrollPosition = useCurrentScroll();
 
@@ -22,7 +20,7 @@ const PageHeader = (pageHeaderProps: PageHeaderProps) => {
     <HeaderWrapper $scrollPosition={scrollPosition}>
       <BackButtonWrapper
         type="button"
-        onClick={onClickBackButton}
+        onClick={() => {}}
         role="button"
         aria-label="뒤로가기"
       >

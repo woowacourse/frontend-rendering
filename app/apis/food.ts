@@ -3,9 +3,9 @@ import {
   GetFoodListFilterMetaRes,
   GetFoodListReq,
   GetFoodListRes,
+  GetFoodDetailReq,
 } from '@/types/food/remote';
 
-import { GetFoodDetailReq } from '../types/food/remote';
 import { client } from '.';
 
 export const getFoodList = async (payload: GetFoodListReq) => {

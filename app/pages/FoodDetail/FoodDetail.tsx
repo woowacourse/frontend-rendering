@@ -7,7 +7,6 @@ import Button from '@/components/@common/Button/Button';
 import InfoBlock from '@/components/@common/InfoBlock/InfoBlock';
 import Label from '@/components/@common/Label/Label';
 import NavigationBar from '@/components/@common/NavigationBar/NavigationBar';
-import PageHeader from '@/components/@common/PageHeader/PageHeader';
 import BrandBlock from '@/components/Food/BrandBlock/BrandBlock';
 import FoodProfile from '@/components/Food/FoodProfile/FoodProfile';
 import NutritionStandardBlock, {
@@ -15,7 +14,6 @@ import NutritionStandardBlock, {
 } from '@/components/Food/NutritionStandardBlock/NutritionStandardBlock';
 import usePageTitle from '@/hooks/@common/usePageTitle';
 import { useFoodDetailQuery } from '@/hooks/query/food';
-import { useRouter } from 'next/navigation';
 
 const FoodDetail = () => {
   const { foodData } = useFoodDetailQuery({ petFoodId: '39' });
@@ -148,25 +146,4 @@ const FunctionalList = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 0.8rem;
-`;
-
-const BrandIconInfo = styled.p`
-  font-size: 1.2rem;
-  font-weight: 400;
-  color: ${({ theme }) => theme.color.grey300};
-  letter-spacing: -0.05rem;
-`;
-
-const StandardToolTip = styled.button`
-  display: flex;
-  gap: 0.8rem;
-  align-items: center;
-
-  font-size: 1.2rem;
-  font-weight: 400;
-  color: ${({ theme }) => theme.color.grey300};
-  letter-spacing: -0.05rem;
-
-  background-color: transparent;
-  border: none;
 `;
