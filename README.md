@@ -40,4 +40,15 @@
    <img width="403" alt="스크린샷 2023-10-16 오후 3 22 29" src="https://github.com/ssi02014/react-query-tutorial/assets/78203399/9217d643-4713-457b-bf24-a96df157e681">
 
 3. ISR
+   <img width="431" alt="스크린샷  2023-10-16 오후 3 27 05" src="https://github.com/ssi02014/react-query-tutorial/assets/78203399/dbcac33d-0a71-4e0b-8787-7dde01f5ed50">
 
+### 사용자 경험 측면 비교하기
+
+성능 비교: SSG > ISR > SSR 순
+
+빌드 타임에서 정적인 html을 만들기 때문에 SSG가 가장 빠르다.
+그 다음 revalidate 타임에 따라 새로운 정적인 html을 만들기 때문에 ISR이 그 다음으로 빠르다.
+SSR의 경우 데이터 fetching 이후 정적인 html을 만들기 때문에 가장 느리다.
+
+현재 셀럽잇 서비스에서 위시리스트의 경우 api 요청 값 url이 변경되지 않기 때문에 SSR보다는 ISR, SSG가 적합하다고 판단됩니다.
+하지만 위시리스트의 경우 유저가 실시간으로 좋아요한 음식점 데이터들이 변경될 여부가 있기 때문에 ISR이 가장 적합하다고 판단됩니다.
