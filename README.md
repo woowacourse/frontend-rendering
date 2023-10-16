@@ -105,15 +105,13 @@
 
 ### 동글 (SPA)
 
-![스크린샷 2023-10-16 오후 5.12.45.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b851684d-7354-4b08-bc23-cf450eac18ff/d069e0c3-523a-444f-a551-a1dfe1563577/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2023-10-16_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_5.12.45.png)
-
-![스크린샷 2023-10-16 오후 5.17.00.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b851684d-7354-4b08-bc23-cf450eac18ff/91a62aa2-67e4-422b-864b-80ccda01f0c9/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2023-10-16_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_5.17.00.png)
+<img width="1228" alt="스크린샷 2023-10-16 오후 5 12 45" src="https://github.com/woowacourse/frontend-rendering/assets/64737872/9ed4cf41-a4c1-4d24-964c-a0310aa3e7e4">
+<img width="605" alt="스크린샷 2023-10-16 오후 5 17 00" src="https://github.com/woowacourse/frontend-rendering/assets/64737872/770adc76-5b19-49d3-8ebf-898575ed5a19">
 
 ### 동글 (SSG)
 
-![스크린샷 2023-10-16 오후 5.12.55.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b851684d-7354-4b08-bc23-cf450eac18ff/597e9e9d-e046-43e4-b74f-6d1bcec0f614/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2023-10-16_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_5.12.55.png)
-
-![스크린샷 2023-10-16 오후 5.17.25.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b851684d-7354-4b08-bc23-cf450eac18ff/d8b5277e-bb36-42a6-8b27-503549ceb42b/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2023-10-16_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_5.17.25.png)
+<img width="1228" alt="스크린샷 2023-10-16 오후 5 12 55" src="https://github.com/woowacourse/frontend-rendering/assets/64737872/b933fa69-beca-43d1-b845-4ad6a85dc6fc">
+<img width="583" alt="스크린샷 2023-10-16 오후 5 17 25" src="https://github.com/woowacourse/frontend-rendering/assets/64737872/34bd968c-d93e-4778-914e-c9d726b18ea8">
 
 ### 결론
 
