@@ -5,6 +5,7 @@ import TripItemListEmpty from '@/components/TripItemList/TripItemListEmpty';
 import { getTrips } from '@/api/getTrips';
 import { TripsData } from '@/types/trip';
 import styles from './styles.module.css';
+import Error from './error';
 
 export default async function Home() {
   const trips: TripsData[] = await getTrips();
