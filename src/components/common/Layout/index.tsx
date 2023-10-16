@@ -1,3 +1,5 @@
+'use client';
+
 import { PropsWithChildren } from 'react';
 
 import WideHeader from '@/components/common/WideHeader';

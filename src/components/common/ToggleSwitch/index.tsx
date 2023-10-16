@@ -1,3 +1,5 @@
+'use client';
+
 import { Size } from '@/types/style';
 
 import * as S from './style';
