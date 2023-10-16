@@ -1,4 +1,4 @@
-# 렌더링 시점 비교
+![isr-lighthouse](https://github.com/inyeong-kang/frontend-rendering/assets/81199414/cf9a207a-08fa-46ad-8fc9-7ba91b33c3ad)# 렌더링 시점 비교
 
 ## SPA (Single Page Application) / CSR (Client Side Rendering)
 
@@ -64,22 +64,33 @@
 ### SPA / CSR
 
 기존에 보투게더의 랭킹 페이지는 CSR로 렌더링되며, Lighthouse 로 측정한 결과는 아래와 같습니다.
+
 (테스트 환경은 한국, 데스크탑입니다.)
-[그림 첨부]
+
+![csr-lighthouse](https://github.com/inyeong-kang/frontend-rendering/assets/81199414/a21b3294-62bc-435a-81ea-f6c633334e05)
+
 
 Webpage Test 결과, LCP는 아래와 같습니다.
+
 (테스트 환경은 4G, 미국, 모바일입니다.)
-[그림 첨부]
+
+![csr-web](https://github.com/inyeong-kang/frontend-rendering/assets/81199414/6c949eac-5c3a-4926-ab28-20fe0654b7ee)
+
 
 ### ISR
 
 클론한 보투게더의 랭킹 페이지는 ISR로 렌더링되며, Lighthouse 로 측정한 결과는 아래와 같습니다.
+
 (테스트 환경은 한국, 데스크탑입니다.)
-[그림 첨부]
+![isr-lighthouse](https://github.com/inyeong-kang/frontend-rendering/assets/81199414/c6f381fe-0e5c-41e1-ae8f-d912def176b1)
+
 
 Webpage Test 결과, LCP는 아래와 같습니다.
+
 (테스트 환경은 CSR과 같습니다.)
-[그림 첨부]
+![isr-web](https://github.com/inyeong-kang/frontend-rendering/assets/81199414/4e3265e8-4063-4aee-9ba0-8b7f5bc2ab27)
+
+
 
 ---
 
