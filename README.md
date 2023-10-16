@@ -1,36 +1,61 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# SPA (Single Page Application)
 
-## Getting Started
+SPA는 페이지의 초기 로딩 시 모든 HTML, JavaScript 및 CSS를 한 번에 불러옵니다. 이후 데이터를 서버로부터 비동기식으로 받아와서 동적으로 페이지를 갱신합니다. 주로 React, Angular, Vue.js와 같은 프레임워크를 사용하여 개발합니다.
 
-First, run the development server:
+## 장점
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- 사용자 경험이 매끄럽습니다. 전체 페이지가 아닌 필요한 부분만 업데이트되므로 화면 전환시 깜빡임이 없습니다.
+- 서버 요청이 적어져서 서버 부하가 줄어듭니다.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 단점
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- 초기 로딩 속도가 다소 느릴 수 있습니다. 모든 자원을 한 번에 가져오기 때문입니다.
+- 검색 엔진 최적화(SEO)에 어려움이 있을 수 있습니다. 크롤러가 JavaScript를 실행하지 않으면 콘텐츠를 인식할 수 없기 때문입니다.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+# SSR (Server-Side Rendering)
 
-## Learn More
+SSR은 서버에서 초기 HTML을 생성하고, 이를 클라이언트로 보내줍니다. 클라이언트에서는 초기 로딩된 페이지를 받아오고, 이후 클라이언트 측 렌더링을 사용하여 상호작용을 수행합니다.
 
-To learn more about Next.js, take a look at the following resources:
+## 장점
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- 초기 로딩 속도가 빠르며, SEO에 용이합니다. 검색 엔진은 초기 HTML을 쉽게 색인화할 수 있습니다.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## 단점
 
-## Deploy on Vercel
+- 매 요청마다 서버에서 HTML 파일을 생성해야 하므로 서버 부하가 커질 수 있습니다.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+# SSG (Static Site Generation)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+SSG는 빌드 시점에서 웹 페이지의 모든 HTML을 미리 생성합니다. 사전에 렌더링된 페이지를 서빙하기 때문에 초기 로딩 속도가 매우 빠릅니다.
+
+## 장점
+
+- 초고속으로 웹사이트를 제공할 수 있으며 CDN(Content Delivery Network)과 함께 사용됩니다.
+- SEO 친화적입니다.
+- 서버 요청이 없거나 적기 때문에 서버 비용을 절약할 수 있습니다.
+
+## 단점
+
+- 사이트의 콘텐츠가 변경될 때마다 전체 사이트를 다시 빌드해야 합니다.
+- 실시간으로 변경되는 데이터를 다루는 것이 어렵습니다.
+
+# ISR (Incremental Static Regeneration)
+
+ISR은 SSG의 한 변종으로, 정적 페이지를 사전 생성하면서도 동적 데이터를 주기적으로 갱신할 수 있습니다. 페이지의 일부만 정적으로 생성하고 나머지는 동적으로 처리할 수 있습니다.
+
+## 장점
+
+- SSG와 비슷하게 초기 로딩 속도가 빠르며, 동적 데이터 갱신이 가능합니다. 따라서 실시간 업데이트가 필요한 웹사이트에 유용합니다.
+
+## 단점
+
+- 설정과 관리가 복잡할 수 있으며, 모든 환경에서 지원되지 않을 수 있습니다.
+
+# 사용자 경험(UX) 측면 분석
+
+이번 미션에서는 메인페이지(랜딩페이지)를 next.js app router를 통해 구현했습니다.
+메인 페이지는 실시간으로 업데이트가 중요하지 않아서 SSG 방식을 적용했습니다.
+이전 버전과 달리 13 app router에서는 fetch 함수의 두번째 인자 option에 따라 fetch 방식이 다른데 option을 비워두거나 await fetch(`https://...`, { cache: 'force-cache' })와 같은 방법으로 구현할 수 있었습니다.
+위의 설명에서처럼 CDN과 함께 이용하면 실제 서버 요청을 줄일 수 있으며 초기 로딩 속도도 획기적으로 향상시킬 수 있었습니다.
+아직은 많은 사용자가 동시에 사용하는 경우가 많지 않지만 서비스가 커진다면 ISR 방식으로 특정 시간마다 새롭게 요청하도록 하거나 SSR 방식으로 변경하여 다른 사용자에 의해 변경된 정보를 실시간으로 확인할 수 있게 해야할 것 같습니다.
+구현은 안되어 있지만 메인 페이지에서 상세페이지로 진입할 수 있는 api를 갖고 있기 때문에 각 지도의 id를 사용해서 상세페이지를 pre-rendering하면 SSG의 장점을 더 느낄 수 있을 것 같습니다.
