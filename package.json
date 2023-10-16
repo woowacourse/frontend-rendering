@@ -1,0 +1,33 @@
+{
+  "name": "next-car-ffeine",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbo",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@googlemaps/react-wrapper": "^1.1.35",
+    "@heroicons/react": "^2.0.18",
+    "@tanstack/react-query": "^4.36.1",
+    "@types/google.maps": "^3.54.3",
+    "next": "13.5.4",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-icons": "^4.11.0",
+    "styled-components": "^6.0.8"
+  },
+  "devDependencies": {
+    "@tanstack/react-query-devtools": "^4.36.1",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "@typescript-eslint/eslint-plugin": "^6.7.4",
+    "@typescript-eslint/parser": "^6.7.4",
+    "eslint": "^8",
+    "eslint-config-next": "13.5.4",
+    "typescript": "^5"
+  }
+}
