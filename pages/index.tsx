@@ -4,8 +4,38 @@ import IntroCardPile from '../components/IntroCardPile/IntroCardPile';
 import Text from '../components/common/Text/Text';
 import Image from 'next/image';
 import Layout from '../src/app/layout';
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
 
 const LandingPage = () => {
+  const router = useRouter();
+  /**
+   * 이 부분의 token 초깃값을 자유롭게 바꾸어 보세요.
+   * "LOGIN_TOKEN" 이 값이 아닐 경우 로그인이 진행되지 않습니다.
+   */
+  const [token, setToken] = useState('LOGIN_TOKEN');
+
+  useEffect(() => {
+    fetch('/api/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ token }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        const resultMessage = data.isSuccess
+          ? '로그인 상태입니다. 팀 개설 페이지로 이동합니다.'
+          : '로그인 상태가 아니거나 토큰 값이 올바르지 않습니다. 리다이렉트가 진행되지 않으며 랜딩 페이지를 보여줍니다.';
+        alert(`결과: ${resultMessage}\n응답: ${JSON.stringify(data)}`);
+
+        if (data.isSuccess) {
+          router.push('/start');
+        }
+      });
+  }, [router, token]);
+
   return (
     <Layout>
       <S.MainContainer>
@@ -24,7 +54,12 @@ const LandingPage = () => {
               짭바팀으로 관리해보세요.
             </Text>
           </S.LoreTextContainer>
-          <Button type="button" variant="plain" css={S.googleLoginButton}>
+          <Button
+            type="button"
+            variant="plain"
+            css={S.googleLoginButton}
+            onClick={() => setToken('token')}
+          >
             <S.GoogleLoginButtonAppearance>
               <Image
                 src="/images/google-logo.png"
