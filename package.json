@@ -14,7 +14,6 @@
     "react-dom": "^18"
   },
   "devDependencies": {
-    "@emotion/babel-plugin": "^11.11.0",
     "@svgr/webpack": "^8.1.0",
     "@types/node": "^20",
     "@types/react": "^18",
