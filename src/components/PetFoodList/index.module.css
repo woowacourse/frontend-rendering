@@ -1,0 +1,13 @@
+.petFoodListWrapper {
+  padding: 2rem;
+
+  background-color: white;
+}
+
+.petFoodListGrid {
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-columns: repeat(2, calc((100% - 2rem) / 2));
+  place-items: center;
+  justify-content: center;
+}
