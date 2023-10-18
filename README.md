@@ -28,10 +28,24 @@ SSR, ISR, SSG : 초기 렌더링 속도가 SPA에 비해 빠른편이지만, 단
 
 ### 성능 측정 및 비교
 
-- [ ] SPA와 본인이 선택한 렌더링 방식(SSR, SSG, ISR)의 성능을 측정하고 비교 (사용한 측정 도구나 방법을 명시)
+- [x] SPA와 본인이 선택한 렌더링 방식(SSR, SSG, ISR)의 성능을 측정하고 비교 (사용한 측정 도구나 방법을 명시)
 
-현재 개발 서버가 안되는 관계로, 추후 채워놓도록 하겠습니다 - 10.16. 오후 5시 50분
+#### FCP
 
-### SPA
+SSR과 SPA 두 개를 비교한 결과 FCP (페이지 로드가 시작된 시점부터 페이지 콘텐츠의 일부가 화면에 렌더링되는 시점까지의 시간)은 동일했습니다
 
-<img width="1439" alt="image" src="https://github.com/Gilpop8663/frontend-rendering/assets/80146176/bd877004-14cc-4390-b9c2-26f5268ff4a6">
+#### LCP
+
+LCP(페이지가 처음 로드하기 시작한 시점을 기준으로 표시 영역 내에 표시되는 가장 큰 이미지 또는 텍스트 블록의 렌더링 시간)는 차이가 있었는데 SSR은 0.5초인 반면, SPA는 1.6초였습니다. 두 개의 방법에 따라 차이가 나게 된 이유는 SSR은 HTML을 서버에서 그려줘서 HTML을 다운받고 보여주면 되지만, SPA의 경우에는 자바스크립트를 다운받고, 실행하여 HTML을 그린 후 콘텐츠를 보여줘야 하기에 시간이 더 걸린 것으로 생각듭니다.
+
+#### TBT
+
+또 하나의 차이점으로는 TBT(total blocking time, 입력 응답을 방지하기에 충분한 시간 동안 기본 스레드가 차단된 콘텐츠가 포함된 첫 페인트 (FCP)와 상호작용 시작 시간 (TTI) 사이의 총 시간)의 지표가 달랐는데요. SPA의 경우 0.05초, SSR의 경우 0초였습니다. 이 또한 SSR은 HTML을 바로 받고, SPA는 자바스크립트를 다운로드하고 실행해야 하기에 시간 차이가 난 것으로 생각이 듭니다
+
+### SSR로 만든 페이지
+
+<img width="1439" alt="image" src="https://github.com/woowacourse/frontend-rendering/assets/80146176/7f2a1c71-7de0-4239-af5e-5d1ed2d09975">
+
+### SPA로 만든 페이지
+
+<img width="1439" alt="image" src="https://github.com/woowacourse/frontend-rendering/assets/80146176/8b35ed13-1c63-4784-8c84-6c41f16e8a44">
