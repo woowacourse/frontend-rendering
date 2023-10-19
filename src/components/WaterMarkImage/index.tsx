@@ -28,9 +28,9 @@ function WaterMarkImage({ waterMark, imageUrl, sns }: WaterMarkImageProps) {
       <picture>
         <source type="images/webp" srcSet={getImgUrl(imageUrl, "webp")} />
         <source type="images/jpeg" srcSet={getImgUrl(imageUrl, "jpeg")} />
-        <Image
+        <img
           className={styles.image}
-          src={getImgUrl(imageUrl, "webp")}
+          src={getImgUrl(imageUrl, "jpeg")}
           alt="음식점"
           loading="lazy"
         />
