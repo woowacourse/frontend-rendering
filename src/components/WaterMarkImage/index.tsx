@@ -1,3 +1,4 @@
+import Image from "next/image";
 import styles from "./styles.module.scss";
 
 interface WaterMarkImageProps {
@@ -27,7 +28,7 @@ function WaterMarkImage({ waterMark, imageUrl, sns }: WaterMarkImageProps) {
       <picture>
         <source type="images/webp" srcSet={getImgUrl(imageUrl, "webp")} />
         <source type="images/jpeg" srcSet={getImgUrl(imageUrl, "jpeg")} />
-        <img
+        <Image
           className={styles.image}
           src={getImgUrl(imageUrl, "webp")}
           alt="음식점"
