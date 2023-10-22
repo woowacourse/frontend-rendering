@@ -2,8 +2,9 @@
 ## SPA (Single Page Application) / CSR (Client Side Rendering)
 
 - 웹 페이지의 초기 로딩은 정적 HTML로 이뤄지나 이후 클라이언트 측 JavaScript로 동적 콘텐츠를 렌더링함.
-- 초기 로딩은 빠를 수 있으나, `검색 엔진 최적화와 초기 로딩 속도`는 한계 있음.
-
+- CSR의 경우 초기 로딩 속도는 느리지만, 이후에는 서버에 다시 요청할 필요없이 클라이언트(브라우저) 내에서 캐싱된 자원(html, js 등)을 가져오므로 빠름.
+- 초기 로딩 속도가 느리므로 SSR에 비해 검색 엔진 최적화(SEO)에 불리함. (에를 들어 각 라우터마다 동적인 메타 값을 원한다면 `react-helmet`과 같은 별도의 라이브러리가 필요함)
+ 
 ### CSR 을 보투게더 메인 홈(게시글 목록 페이지)에 적용
 
 - 메인 홈페이지는 TanStack Query의 `useInfiniteQuery`를 이용하여 데이터를 fetchin 하고 있습니다.
