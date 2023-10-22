@@ -19,6 +19,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang='ko'>
+      <head>
+        <meta name='robots' content='index, follow' />
+      </head>
       <body className='max-w-screen-xl mx-auto'>
         <Header />
         {children}
