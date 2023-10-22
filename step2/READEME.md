@@ -31,3 +31,13 @@ ISR은 SSG와 SSR을 합친 새로운 렌더링 개념입니다. 빌드 시점�
 ![preview](./assets/zipgo_preview.png)
 
 로드 된 html을 확인하면 데이터가 채워진 상태로 로드되는 것을 확인할 수 있습니다 😄
+
+![spa_scripting](./assets/spa_scripting.png)
+
+before
+
+![ssg_scripting](./assets/ssg_scripting.png)
+
+after
+
+scripting 시간이 단축된 것도 확인할 수 있습니다 😄
