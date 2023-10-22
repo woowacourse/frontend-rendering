@@ -16,7 +16,7 @@ const fetchJson = async <T>(url: string, options?: RequestInit): Promise<T> => {
 const fetchApi = <T>(url: string, method: Method, isAuth: boolean, body?: BodyInit) => {
   return fetchJson<T>(url, {
     method,
-    body,
+    cache: "no-cache",
   });
 };
 
