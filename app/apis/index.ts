@@ -4,7 +4,7 @@ import axios from 'axios';
 // import { zipgoLocalStorage } from '@/utils/localStorage';
 
 export const { BASE_URL } = {
-  BASE_URL: 'https://step1--graceful-tapioca-ffe2ed.netlify.app',
+  BASE_URL: 'http://localhost:3000',
 };
 
 // const tokens = zipgoLocalStorage.getTokens();

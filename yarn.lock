@@ -19,10 +19,10 @@ __metadata:
     "@types/styled-components": ^5.1.26
     axios: ^1.5.1
     babel-plugin-styled-components: ^2.1.4
+<<<<<<< HEAD
     debug: ^4.3.4
+=======
     eslint: ^8.51.0
-    eslint-config-airbnb: ^19.0.4
-    eslint-config-next: 13.5.4
     eslint-plugin-import: ^2.27.5
     eslint-plugin-jsx-a11y: ^6.7.1
     eslint-plugin-prettier: ^5.0.0
@@ -1921,6 +1921,7 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 "@types/debug@npm:^4":
   version: 4.1.9
   resolution: "@types/debug@npm:4.1.9"
@@ -1930,6 +1931,8 @@ __metadata:
   languageName: node
   linkType: hard
 
+=======
+>>>>>>> 4a70173 (chore: yarn berry 환경 설정)
 "@types/hoist-non-react-statics@npm:*":
   version: 3.3.3
   resolution: "@types/hoist-non-react-statics@npm:3.3.3"
@@ -1954,6 +1957,7 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 "@types/ms@npm:*":
   version: 0.7.32
   resolution: "@types/ms@npm:0.7.32"
@@ -1961,6 +1965,8 @@ __metadata:
   languageName: node
   linkType: hard
 
+=======
+>>>>>>> 4a70173 (chore: yarn berry 환경 설정)
 "@types/node@npm:^20":
   version: 20.8.4
   resolution: "@types/node@npm:20.8.4"
