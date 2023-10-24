@@ -10,16 +10,11 @@ import SearchInput from '../components/SearchInput';
 import useSearchCafes from '../hooks/useSearchCafes';
 import type { Theme } from '../styles/theme';
 import Resource from '../utils/Resource';
-import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 
 const SearchPage = () => {
-  const searchParams = useSearchParams();
-  const pathname = usePathname();
-  const router = useRouter();
-
-  const [searchName, setSearchName] = useState(searchParams.get('cafeName') || '');
-  const [searchAddress, setSearchAddress] = useState(searchParams.get('address') || '');
-  const [searchMenu, setSearchMenu] = useState(searchParams.get('menu') || '');
+  const [searchName, setSearchName] = useState('');
+  const [searchAddress, setSearchAddress] = useState('');
+  const [searchMenu, setSearchMenu] = useState('');
 
   const [isDetailEnabled, setIsDetailEnabled] = useState(false);
 
@@ -30,18 +25,6 @@ const SearchPage = () => {
   const handleSearch: FormEventHandler = (event) => {
     event.preventDefault();
   };
-
-  useEffect(() => {
-    const setSearchParams = (searchParams: URLSearchParams) => {
-      const query = searchParams.toString();
-      router.push(`${pathname}${query ? `?${query}` : ''}`);
-    }
-
-    const cleanedSearchParams = Object.fromEntries(
-      Object.entries({ cafeName: searchName, address: searchAddress, menu: searchMenu }).filter(([, value]) => !!value),
-    );
-    setSearchParams(new URLSearchParams(cleanedSearchParams));
-  }, [searchName, searchAddress, searchMenu]);
 
   return (
     <Container>
