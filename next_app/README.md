@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## 🎯 프론트엔드 렌더링 방식 탐구 및 비교 분석
 
-## Getting Started
+### 프론트엔드 렌더링 방식 탐구
 
-First, run the development server:
+프론트엔드 렌더링 방식은 웹 애플리케이션의 사용자 인터페이스를 표시하는 방법에 대한 핵심 측면입니다. SPA, SSR, SSG, ISR에 대해 간략히 살펴보겠습니다.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### 1. SPA (Single Page Application):
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+모든 HTML, JavaScript 및 CSS를 초기 로딩 시에 불러옵니다.
+이후 데이터를 비동기적으로 서버로부터 받아와 페이지를 동적으로 갱신합니다.
+React, Angular, Vue.js와 같은 프레임워크를 주로 사용합니다.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+기존에 SPA인 React의 초기 렌더링은 상대적으로 시간이 좀 소요됩니다. 화면이 로드되는 것이 html과 javascript를 전부 받고 렌더링 하기 때문입니다. 제일 처음에 오는 HTML이 아무것도 그려지지 않은 페이지다보니 검색 엔진 최적화에 단점을 갖고 있습니다.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### 2. SSR (Server-Side Rendering):
 
-## Learn More
+서버에서 초기 HTML을 생성하고 클라이언트로 보냅니다.
+클라이언트에서는 초기 로딩된 페이지를 받아오고 이후 클라이언트 측 렌더링을 사용하여 상호작용을 수행합니다.
+검색엔진 최적화에 이점이 있고 화면 렌더링을 하고 데이터 요청을 할 필요가 없습니다.
 
-To learn more about Next.js, take a look at the following resources:
+### 3. SSG (Static Site Generation):
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+빌드 시점에서 웹 페이지의 모든 HTML을 미리 생성합니다.
+사전에 렌더링된 페이지를 서빙하기 때문에 초기 로딩 속도가 매우 빠릅니다.
+페이지가 정적이어야 하고, 동적 데이터에 한계가 있습니다.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### 4. ISR (Incremental Static Regeneration):
 
-## Deploy on Vercel
+SSG의 변종으로, 정적 페이지를 사전 생성하면서도 동적 데이터를 주기적으로 갱신할 수 있습니다.
+페이지의 일부를 정적으로 생성하고 나머지는 동적으로 처리할 수 있습니다.
+각 렌더링 방식은 고유한 특징과 장단점을 가지며, 프로젝트의 요구사항과 목표에 따라 선택되어야 합니다.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 요즘카페 메인 페이지 렌더링 방식 분석
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### 렌더링 시점 비교
+
+요즘카페 메인 페이지는 초기 로딩 속도와 사용자 경험을 최적화하기 위해 SSR을 사용합니다.
+
+### 1. SSR (Server-Side Rendering):
+
+사용자가 페이지에 접근할 때 서버에서 초기 HTML과 데이터를 렌더링합니다.
+초기 로딩 속도가 빠르며, SEO에 유리합니다.
+
+### 빠른 초기 로딩 속도:
+
+SSR은 초기 로딩 속도를 향상시킵니다. 사용자는 페이지를 빠르게 볼 수 있어 불편함을 최소화합니다.
+
+### 검색 엔진 최적화(SEO):
+
+SSR은 검색 엔진 최적화에 유리합니다. 검색 엔진은 서버에서 렌더링된 페이지를 쉽게 색인화하고 이해할 수 있습니다.
+
+### 성능 측정 및 비교
+
+구글 크롬 개발자 도구의 Lighthouse와 성능 탭을 사용하여 SPA 기반 요즘카페 메인 페이지와 Next.js를 활용한 클론 페이지를 비교 분석했습니다.
+
+Next.js를 이용한 요즘카페 메인 페이지에서는 SSR을 사용하고 있어 초기 로딩 속도와 사용자 경험 측면에서 어느정도의 이점을 가지고 있습니다. 그러나 데이터를 최신으로 업데이트 할 때 페이지를 서버에다 새로 요청해야 하는 문제가 있었습니다.
